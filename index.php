@@ -26,11 +26,11 @@ include_once('include/config.php');
     <h1 style="color:white; text-align:center;">England-Premier League</h1>
     	<div class="row">
         	<div class="col">
-            
+
 					<div id="news" class="bg-light mt-3 px-1" style="border-radius: 5px; border:black solid thick; height:680px; max-height:100%; width:auto; background-color:transparent; background: rgba(0, 0, 0, 0.6); border-radius:9px;">
                     <marquee id="slide" behavior="scroll" direction="up" scrollamount="15" overflow="hidden" onmouseover="this.stop();" onmouseout="this.start();">
                     <img src="images/richarlison-everton-wolves.jpg" class="img-fluid" alt="Picture" style="width:100%;">
-                    
+
                 <h2>Richarlison return a welcome one for Everton</h2>
 				<br><p>Everton have endured mixed fortunes in Marco Silva’s first five Premier League games in charge. However, one stark stat stands is the fact the Toffees have won just one of their first league games.
 In truth, the Toffees were handed a relatively kind start to the season. However, things have gone wrong since the second half at Bournemouth in their third top-flight game of the season.
@@ -38,7 +38,7 @@ The Toffees threw away a two-goal lead, centre-back Michael Keane picked up a he
 It was a petulant act from a very talented young player. No doubt he will have learnt a lot from the incident. The youngster has now served his three-game ban and is available for Sunday’s trip to Arsenal. </p>
 
 					<br><img src="images/Shaqiri-Mane.jpg" class="img-fluid" alt="Picture" style="width:100%;">
-                    
+
                 <br> <h2>Xherdan Shaqiri stars in 3-0 win over Southampton that maintains Reds' perfect start to the season</h2>
 				<br><p style="border-bottom:black solid thick;">Liverpool earned their sixth win in a row from the season’s start with a comfortable 3-0 victory over Southampton.
 
@@ -52,7 +52,7 @@ After going close a number of times, Mohamed Salah scored on the stroke of half-
 
 The second half was quieter. Virgil Van Dijk went off with an injury that did not look serious, while Salah thought he had a late second but was ruled offside.
 
-Liverpool are top with 18 points, while Southampton are 14th with five.</p>
+Liverpool are the top with 18 points, while Southampton are 14th with five.</p>
 
 
 					<br><img src="images/edenhazard0810.jpg" class="img-fluid" alt="Picture" style="width:100%;">
@@ -75,7 +75,7 @@ Liverpool's attacking left-back has already supplied two assists to go with his 
 
 
 				<br><img src="images/1037821302.jpg" class="img-fluid" alt="Picture" style="width:100%;">
-					
+
                 <br><h2>Harry Kane penalty and Erik Lamela strike earns Londoners 2-1 win at Brighton</h2>
 				<br><p style="border-bottom:black solid thick;">Mauricio's reaction External Link
 Erik Lamela came off the bench to give Tottenham Hotspur a 2-1 victory at Brighton & Hove Albion.
@@ -91,9 +91,9 @@ Knockaert pulled a goal back in the third minute of stoppage time and had a good
 Spurs move up to fifth, on 12 points, with Brighton in 13th on five.</p>
 
 
-				
+
             	<br><img src="images/Granit-Xhaka.jpg" class="img-fluid" alt="Picture" style="width:100%;">
-					
+
                 <br><h2>Adrian Clarke highlights importance of midfielder to Arsenal head coach's game plan</h2>
 				<br><p style="border-bottom:black solid thick;">Adrian Clarke looks at tactical battles set to take place in Matchweek 6.
 
@@ -119,41 +119,41 @@ In fact, no one else at Arsenal comes close to making as many vertical passes th
 </marquee>
         		</div>
            		</div>
-                
-                
-                
+
+
+
 
             <div class="col">
           		<div class="bg-light mt-3 px-2" style="border-radius: 5px; border:black solid thick;">
 <?php $html = ""; $url = "http://www.soccerstats247.com/RankingswFormRssWidget.aspx?langId=1&leagueId=1204&groupName=";$xml = simplexml_load_file($url); foreach($xml->channel->item as $item){$html .= $item->description;$html .= "<hr />";}echo $html; ?>
 </div>
         		</div>
-                
-                
 
-                
-                
-                
+
+
+
+
+
   </div>
 
-    
+
     <p style="border-top:black solid thin;"></p>
     <h1 style="color:white; margin-top:1%; text-align:center;" >Spain-LaLiga</h1><br>
-    
+
         	<div class="row">
-            
-            
+
+
                     	<div class="col">
-            
+
         		<div class="bg-light mt-3 px-2" style="border-radius: 5px; border:black solid thick;">
-                
+
 <?php $html = ""; $url = "http://www.soccerstats247.com/RankingswFormRssWidget.aspx?langId=1&leagueId=1399&groupName=";$xml = simplexml_load_file($url); foreach($xml->channel->item as $item){$html .= $item->description;$html .= "<hr />";}echo $html; ?></div>
         		</div>
-            
-            
-            
+
+
+
                 	<div class="col">
-            
+
                     		<div class="bg-light mt-3 px-2" style=" border:black solid thick; height:680px; width:100%; max-height:100%">
                             <marquee id="slide" behavior="scroll" direction="up" scrollamount="15" overflow="hidden" onmouseover="this.stop();" onmouseout="this.start();">
                             <img src="images/skysports-marco-asensio-real-madrid_4430454.jpg" class="img-fluid" alt="Picture" style="width:100%;">
@@ -161,7 +161,7 @@ In fact, no one else at Arsenal comes close to making as many vertical passes th
 				<br><p style="border-bottom:black solid thick;"><b>Asensio's low angled finish shortly before half-time sealed Real a third straight home win, but they were far from convincing against dogged opponents.</b>
 
 Julen Lopetegui's side dismantled Champions League rivals Roma at the Bernabeu in midweek, but lacked the same fluency against Espanyol, for whom Borja Iglesias struck the crossbar in the second half. </p><br>
-                
+
                                             <img src="images/skysports-lionel-messi-barcelona_4425829.jpg" class="img-fluid" alt="Picture" style="width:100%;">
                 <br><h2>Lionel Messi 'makes the extraordinary routine', says Barcelona manager Ernesto Valverde</h2>
 				<br><p style="border-bottom:black solid thick;"><b>Ernesto Valverde hailed the performance of Lionel Messi after his hat-trick helped Barcelona to a 4-0 win against PSV Eindhoven in the Champions League.</b>
@@ -177,18 +177,18 @@ It was Messi's eighth Champions League hat-trick - a new record - and Valverde s
 Valverde's contract with Barca expires at the end of the current campaign and he revealed on Saturday he has an option to extend the deal by another year.
 
 "I have a contract and I have a possibility to extend it a year more," said Valerde, who took over the reins from Luis Enrique at the Nou Camp in 2017.</p>
-                
-                
-                 </marquee> 
+
+
+                 </marquee>
                 </div>
            		</div>
-   
+
             </div>
 
-    
+
   </div>
-   
-	
+
+
 	<?php include("include/footer.inc") ?>
 </body>
 </html>
