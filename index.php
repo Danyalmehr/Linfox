@@ -56,11 +56,11 @@ Liverpool are the top with 18 points, while Southampton are 14th with five.</p>
 
 
 					<br><img src="images/edenhazard0810.jpg" class="img-fluid" alt="Picture" style="width:100%;">
-					
+
                       <br> <h2>Midweek rest boosts Chelsea winger's potential but it is Mohamed Salah who has the captaincy for Gameweek 6</h2>
 				<br><p style="border-bottom:black solid thick;">Eden Hazard's (£10.9m) outstanding start to 2018/19 ensures his place in The Scout's XI for Gameweek 6.
 
-He is the only player to produce a goal or an assist in all five Gameweeks.
+He is the only player to produce goal or an assist in all five Gameweeks.
 
 Hazard's hat-trick against Cardiff City helped him soar to the top of the FPL player standings on 47 points.
 
