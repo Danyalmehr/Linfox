@@ -1,11 +1,16 @@
 
 <?php
 //must appear BEFORE the <html> tag
-session_start();
+	session_start();
+
+  include 'database.php';
+  $conn = OpenCon();
+  echo "Connected Successfully";
+
 ?>
 <?php
-$conn = mysqli_connect("localhost","root","","quiz");
-$query = "SELECT * from test";	
+
+$query = "SELECT * from test";
 $result = mysqli_query($conn,$query);
 
 while($row = mysqli_fetch_array($result)):
@@ -16,12 +21,12 @@ while($row = mysqli_fetch_array($result)):
 <title>QUIZ</title>
 <head>
 <body>
-					
-					
+
+
 					<div>
 					<form method='post' action ='index.php'>
 					<table>
-					
+
 					<tr>
 					<td><?php echo $row['id'];?></td>
 
@@ -36,21 +41,21 @@ while($row = mysqli_fetch_array($result)):
 					<tr><td><?php echo "<span><input type='radio'name='selectedanswer'>".$option2.""?></span></td>
 					<tr><td><?php echo "<span><input type='radio'name='selectedanswer'>".$option3.""?></span></td>
 					<tr><td><?php echo "<span><input type='radio'name='selectedanswer'>".$option4.""?></span></td>
-					
+
 
 					<tr><td></td>
 					</tr>
-					
+
 					</table>
-					
-					
+
+
                     </div>
 			<?php endwhile;?>
 <tr><td><?php echo "<span><input type='submit'name='submit' onClick=='result()'>"?></span></td></form>
 </body>
 </html>
-	
-	
+
+
 <script>
 function result()
 {
@@ -67,7 +72,7 @@ if($selectedanswer == $correct_answer)
 }
 else {
 echo"counter is not".$counter."";
-	
+
 }
 
 }
