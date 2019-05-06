@@ -42,38 +42,24 @@ while($row = mysqli_fetch_array($result)):
 					<tr><td><?php echo "<span><input type='radio'name='selectedanswer'>".$option3.""?></span></td>
 					<tr><td><?php echo "<span><input type='radio'name='selectedanswer'>".$option4.""?></span></td>
 
-
-					<tr><td></td>
-					</tr>
-
 					</table>
-
-
-                    </div>
+					<tr>
+						<button type="button" name="submit" onclick="result()">Submit</button>
+					</tr>
 			<?php endwhile;?>
-<tr><td><?php echo "<span><input type='submit'name='submit' onClick=='result()'>"?></span></td></form>
+
 </body>
 </html>
 
 
 <script>
-function result()
-{
-$Counter = 0;
-$correct_answer= $row['answer'];
-$selectedanswer = "";
-if(isset($_POST["selectedanswer"]));
-{}
-
-$selectedanswer = $_POST["selectedanswer"];
-if($selectedanswer == $correct_answer)
-{
-
-}
-else {
-echo"counter is not".$counter."";
-
-}
-
-}
+			function result()
+			{	counter = 0
+				correct_answer = '<?php echo $correct_answer;?>';
+				choice = document.getElementsByName('selectedanswer').innerHTML;
+				if (choice == correct_answer){
+					counter++;
+				}
+				alert (counter + "result function");
+		}
 </script>
