@@ -31,7 +31,9 @@ while($row = mysqli_fetch_array($result)):
 					<table>
 
 					<tr>
-					<td><?php echo $row['id'];?></td>
+					<td><?php $qid= $row['id'];?>
+
+						<?php echo $qid;?></td>
 
 					<td><?php echo $row['question'];?></td></tr>
 					<?php $option1= $row['option1'];?>
@@ -45,15 +47,14 @@ while($row = mysqli_fetch_array($result)):
 					<tr><td><?php echo "<input type='radio' name='choice' value='$option3'>".$option3.""?></td>
 					<tr><td><?php echo "<input type='radio' name='choice' value='$option4'>".$option4.""?></td>
 
-					<tr>
-						<button type="button" name="submit" onclick="result()">Submit</button>
-					</tr>
 						</table>
 			<?php endwhile;?>
+			<tr>
+				<button type="button" name="submit" onclick="result()">Submit</button>
+			</tr>
 
 </body>
 </html>
-
 
 <script>
 			function result()
