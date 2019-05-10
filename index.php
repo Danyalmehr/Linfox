@@ -1,76 +1,91 @@
 
-<?php
-//must appear BEFORE the <html> tag
-	session_start();
-
-  include 'database.php';
-  $conn = OpenCon();
-  echo "Connected Successfully";
-
-?>
-<?php
-
-
-
-$query = "SELECT * from test";
-$result = mysqli_query($conn,$query);
-
-while($row = mysqli_fetch_array($result)):
-?>
-
-
+<!DOCTYPE>
 <html>
-<title>QUIZ</title>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<?php require 'database.php';
+session_start(); ?>
 <head>
-<body>
+<link rel="stylesheet" href="css/styles.css">
+<title>Quiz</title>
 
+</head>
+<body><center>
+<div class="title"> L I N F O X  	   Q U I Z </div>
 
-					<div>
-					<form method='post' action ='index.php'>
-					<table>
+<?php 															
+if (isset($_POST['click']) || isset($_GET['start'])) {
+@$_SESSION['clicks'] += 1 ;
+$c = $_SESSION['clicks'];
+if(isset($_POST['userans'])) { $userselected = $_POST['userans'];
+$fetchqry2 = "UPDATE `quiz` SET `userans`='$userselected' WHERE `id`=$c-1"; 
+$result2 = mysqli_query($con,$fetchqry2);
+}
+} else {
+	$_SESSION['clicks'] = 0;
+}
+	//echo($_SESSION['clicks']);
+?>
+																
+																
+<div class="bump"><br>
+<form>
+		<?php 
+			if($_SESSION['clicks']==0)
+				{ ?> 
+				<!--Start button -->
+				<button class="button" name="start" float="left"><span>START QUIZ</span></button> 
 
-					<tr>
-					<td><?php $qid= $row['id'];?>
-
-						<?php echo $qid;?></td>
-
-					<td><?php echo $row['question'];?></td></tr>
-					<?php $option1= $row['option1'];?>
-					<?php $option2= $row['option2'];?>
-					<?php $option3= $row['option3'];?>
-					<?php $option4= $row['option4'];?>
-					<?php $correct_answer= $row['answer'];?>
-
-					<tr><td><?php echo "<input type='radio' name='choice' value='$option1' checked>".$option1.""?></td>
-					<tr><td><?php echo "<input type='radio' name='choice' value='$option2'>".$option2.""?></td>
-					<tr><td><?php echo "<input type='radio' name='choice' value='$option3'>".$option3.""?></td>
-					<tr><td><?php echo "<input type='radio' name='choice' value='$option4'>".$option4.""?></td>
-
-						</table>
-			<?php endwhile;?>
-			<tr>
-				<button type="button" name="submit" onclick="result()">Submit</button>
-			</tr>
-
+			<?php } ?>
+</form>
+</div>
+<form action="" method="post" class="test-display">  				
+<table><?php if(isset($c)) {   $fetchqry = "SELECT * FROM `quiz` where id='$c'"; 
+				$result=mysqli_query($con,$fetchqry);
+				$num=mysqli_num_rows($result);
+				$row = mysqli_fetch_array($result,MYSQLI_ASSOC); }
+		  ?>
+<tr><td><h3><br><?php echo @$row['que'];?></h3></td></tr> <?php if($_SESSION['clicks'] > 0 && $_SESSION['clicks'] < 6){ ?>
+  <tr><td><input required type="radio" name="userans" value="<?php echo $row['option 1'];?>">&nbsp;<?php echo $row['option 1']; ?><br>
+  <tr><td><input required type="radio" name="userans" value="<?php echo $row['option 2'];?>">&nbsp;<?php echo $row['option 2'];?></td></tr>
+  <tr><td><input required type="radio" name="userans" value="<?php echo $row['option 3'];?>">&nbsp;<?php echo $row['option 3']; ?></td></tr>
+  <tr><td><input required type="radio" name="userans" value="<?php echo $row['option 4'];?>">&nbsp;<?php echo $row['option 4']; ?><br><br><br></td></tr>
+  <tr><td><button class="button3" name="click" >Next</button></td></tr> <?php }  ?> 
+  <form>
+  
+  
+ <?php if($_SESSION['clicks']>5)
+{ 
+	$qry3 = "SELECT `ans`, `userans` FROM `quiz`;";
+	$result3 = mysqli_query($con,$qry3);
+	$storeArray = Array();
+	while ($row3 = mysqli_fetch_array($result3, MYSQLI_ASSOC)) {
+     if($row3['ans']==$row3['userans']){
+		 @$_SESSION['score'] += 1 ;
+	 }
+}
+ 
+ ?> 
+ <span class="test-result" id="test-result"> 
+ <h2>Result</h2> No. of Correct Answer:&nbsp;<?php echo $no = @$_SESSION['score']; 
+ session_unset();?><br>
+ Your Score:&nbsp<?php echo $no*2; ?>
+ </span>
+<?php } ?>
+ <!-- <script type="text/javascript">
+    function radioValidation(){
+		/* var useransj = document.getElementById('rd').value;
+        //document.cookie = "username = " + userans;
+		alert(useransj); */
+		var uans = document.getElementsByName('userans');
+		var tok;
+		for(var i = 0; i < uans.length; i++){
+			if(uans[i].checked){
+				tok = uans[i].value;
+				alert(tok);
+			}
+		}
+    }
+</script> -->
+</center>
 </body>
 </html>
-
-<script>
-			function result()
-			{	counter = 0
-				correct_answer = '<?php echo $correct_answer;?>';
-				var choice = $("input[name='choice']:checked").val();
-				if (choice == correct_answer) {
-					counter++;
-					alert(counter)
-					return counter;
-				}
-				else {
-					alert(counter + "wrong answer")
-				}
-
-
-
-		}
-</script>
