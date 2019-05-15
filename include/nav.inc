@@ -7,7 +7,7 @@
             <ul class="navbar-nav md-auto">
 			
 			 <li class="nav-item">
-                    <a class="nav-link" href="contactUs.php" id="0" onClick="nav_item_selected(0)"> Home </a>
+                    <a class="nav-link" href="dashboard.php" id="0" onClick="nav_item_selected(0)"> Home </a>
                 </li>
                 <li class="nav-item"><a class="nav-link" id="1" onClick="nav_item_selected(1)" href="courses.php"> Courses </a></li>
     
