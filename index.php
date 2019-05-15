@@ -22,17 +22,19 @@ session_start();
           $num=mysqli_num_rows($result);
           while ($row = mysqli_fetch_assoc($result))
             {
-          $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4'], $row['ans']);
-          $ans_array = array($row['option 1'], $row['option 2'], $row['option 3'], $row['option 4']);
-            shuffle($ans_array);
-            ?>
+              
+
+              $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4'], $row['ans']);
+              $ans_array = array($row['option 1'], $row['option 2'], $row['option 3'], $row['option 4']);
+                shuffle($ans_array);
+                ?>
 
             <form class="" method="post">
               <table align="center">
 
                     <tr><td><?php echo $row['que_id'];?>.<?php echo $row['que']; ?></tr>
 
-                    <tr><td><input required type="radio" name="userans" value="<?=$ans_array[0]?>" required> &nbsp;<?=$ans_array[0]?><br>
+                    <tr><td><input required type="radio" name="userans<?=$row['que_id']?>" value="<?=$ans_array[0]?>" required> &nbsp;<?=$ans_array[0]?><br>
                     <tr><td><input required type="radio" name="userans<?=$row['que_id']?>" value="<?=$ans_array[1]?>">&nbsp;<?=$ans_array[1]?></td></tr>
                     <tr><td><input required type="radio" name="userans<?=$row['que_id']?>" value="<?=$ans_array[2]?>">&nbsp;<?=$ans_array[2]?></td></tr>
                     <tr><td><input required type="radio" name="userans<?=$row['que_id']?>" value="<?=$ans_array[3]?>">&nbsp;<?=$ans_array[3]?><br><br><br></td></tr>
