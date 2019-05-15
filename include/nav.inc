@@ -1,4 +1,9 @@
-     <nav class="container-fluid navbar navbar-expand-lg bg-light navbar-light" style="padding:1%; border-bottom:1px solid black;">
+<?php
+//must appear BEFORE the <html> tag
+
+include_once('include/database.php');
+?>
+<nav class="container-fluid navbar navbar-expand-lg bg-light navbar-light" style="padding:1%; border-bottom:1px solid black;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,10 +30,6 @@
             </ul>
         </div>
 		<?php if(isset($_SESSION['valid_user'])): ?>
-		
-		
-			
-		
               		
 				<?php
 					$conn  = db_connect();
@@ -36,7 +37,7 @@
 					$ses_sql = "select fname from user where email='$user_check'";
 					$result = $conn -> query($ses_sql);
 					$row = $result -> fetch_assoc();
-					$fname = $row['fname'];?>
+					$fname = $row['fname']; ?>
 					
 					
 				<li class="nav-item dropdown">
