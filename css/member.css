@@ -1,0 +1,47 @@
+body {background-image:url(../images/imageedit_1_8803947616.jpg); background-size:cover;
+background-repeat:no-repeat;
+}
+.member_frm label {
+    width: 6em;
+    float: left;
+    text-align: right;
+    padding-right: 0.5em;
+	
+}
+#reset {
+    margin-left: 1em;
+}
+.error_msg {
+    color: red;
+}
+#pwd_msg, #zip_msg {
+    padding-left: 5px;
+}
+.row{
+    margin-bottom: 0.5em;
+}
+
+
+#td
+ {
+  border: 2px thick black;
+}
+
+.feedback
+{
+	border:2px dotted black;
+	border-bottom-left-radius:2px;
+	border-top-left-radius:2px;
+	background-color:#B8ECF3;
+	}
+#footer
+{
+	position:relative;
+	bottom:-1px;
+	padding-bottom: 5px;
+}
+
+.container-fluid login { background-color:#2C9CE3;padding:3px;
+		border:2px solid black;}
+		
+.footer h2 a{text-decoration:none; color:#F4EEEE;}	

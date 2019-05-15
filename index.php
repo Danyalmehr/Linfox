@@ -1,79 +1,100 @@
-<!DOCTYPE html>
-
-<?php require 'database.php';
-session_start();
-//echo "successful";?>
-
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  </head>
-  <body>
-
-
-
 <?php
-    function getQuestion()
-    {     require 'database.php';
-          $fetchqry = "SELECT * FROM `question`";
-          $result=mysqli_query($con,$fetchqry);
-          $num=mysqli_num_rows($result);
-          while ($row = mysqli_fetch_assoc($result))
-            {
-              
+//must appear BEFORE the <html> tag
+session_start();
+include_once('include/database.php');
 
-              $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4'], $row['ans']);
-              $ans_array = array($row['option 1'], $row['option 2'], $row['option 3'], $row['option 4']);
-                shuffle($ans_array);
-                ?>
+//make the database connection
+$conn  = db_connect();
 
-            <form class="" method="post">
-              <table align="center">
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    // username and password sent from form
+    $email = $conn -> real_escape_string($_POST['email']);
+    $password = $conn -> real_escape_string($_POST['password']);
 
-                    <tr><td><?php echo $row['que_id'];?>.<?php echo $row['que']; ?></tr>
-
-                    <tr><td><input required type="radio" name="userans<?=$row['que_id']?>" value="<?=$ans_array[0]?>" required> &nbsp;<?=$ans_array[0]?><br>
-                    <tr><td><input required type="radio" name="userans<?=$row['que_id']?>" value="<?=$ans_array[1]?>">&nbsp;<?=$ans_array[1]?></td></tr>
-                    <tr><td><input required type="radio" name="userans<?=$row['que_id']?>" value="<?=$ans_array[2]?>">&nbsp;<?=$ans_array[2]?></td></tr>
-                    <tr><td><input required type="radio" name="userans<?=$row['que_id']?>" value="<?=$ans_array[3]?>">&nbsp;<?=$ans_array[3]?><br><br><br></td></tr>
-
-          <?php };?>
-          <tr><td><button class="button3" name="click" onclick="result()">submit</button></td></tr>
-                </tr>
-              </table>
-            </form>
+    //make a query to check if user login successfully
+    $sql = "select * from user where email='$email' and password='$password'";
+    $result = $conn -> query($sql);
+    $numOfRows = $result -> num_rows;
+    $row = $result -> fetch_assoc();
+    if ($numOfRows == 1) {
+        $_SESSION['valid_user'] = $email;
+        header("location: dashboard.php");
+    }else {
+        $error = 'Your Login Name or Password is invalid';
+    }
+}
+?>
 
 
 
-<script>
-      function result()
-              {
-                <?php
-                $fetchqry = "SELECT * FROM `question`";
-                $result=mysqli_query($con,$fetchqry);
-                $num=mysqli_num_rows($result);
-                $row = mysqli_fetch_assoc($result) ?>
-              counter = 0
-              correct_answer = '<?php echo $row['ans'];?>';
 
-              var choice = $("input[name='userans<?=$row['que_id']?>']:checked").val();
-              if (choice == correct_answer) {
-                counter++;
-                alert(counter)
-                return counter;
-              }
-              else {
-                alert(counter + "wrong answer")
-              }
-              }
 
-              <?php }
-              getQuestion();
-              ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/read_more.js"></script>
+    
+    <title>Login</title>
+</head>
+<body onLoad="run_first()">
+	<?php include("include/banner.inc") ?>
+   
+    <div class="login">
+     
+    	<form action="index.php" method="post">
+		
+        <span class="login_header"><h1>Login</h1><span><br>
+            
+            <div class="row">
+            	<div class="col">
+                	<label for="email">Email</label>
+                	<input type="email" id="email" name="email" size="30" maxlength="30" placeholder=" example@abc.com " required />
+                </div>
+            </div><br>
+            <div class="row">
+            	<div class="col">
+                	<label for="password">Password</label>
+                    <input type="password" id="password" name="password"
+                           size="30" maxlength="30" placeholder= " ****** " required />
+                </div>
+           	</div>
+           	<br>
+			<div class="row">
+            	<div class="col">
+                	<label>&nbsp;</label>
+                   <button class="button_login" style="vertical-align:middle" value="Submit"><span>Submit </span></button>
 
-</script>
-
-  </body>
+                    
+                   
+                    <br>
+                    <br>
+                    <span class="signupnotice"><a href="member.php"><i>Signup to become a member</i></a></span>
+                    <?php
+                    if(isset($error)) {
+                        echo "<span class='error-color'><p style=\"color: red; \">$error</p></span>";
+                        unset($error);
+                    }
+                    ?>
+                
+   
+        </div>
+        </div>
+        </form>
+    </div>
+    <br>
+    
+        
+                    <br>
+                        <br>
+                            <br>
+	
+</body>
 </html>
