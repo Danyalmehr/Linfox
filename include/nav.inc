@@ -3,13 +3,17 @@
 
 include_once('include/database.php');
 ?>
-<nav class="container-fluid navbar navbar-expand-lg bg-light navbar-light" style="padding:1%; border-bottom:1px solid black;">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+<nav class="container-fluid navbar navbar-expand-lg bg-light navbar-light " id="navbar"style="padding:1%; font-size:1.5em; 
+border-bottom:1px solid black; color:black;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"> </span>
         </button>
         <div class="collapse navbar-collapse " id="collapsibleNavbar">
             <!-- md-auto: left, ml-auto: right, mx-auto: center -->
-            <ul class="navbar-nav md-auto">
+            <ul class="navbar-nav mx-auto">
 			
 			 <li class="nav-item">
                     <a class="nav-link" href="dashboard.php" id="0" onClick="nav_item_selected(0)"> Home </a>
@@ -39,16 +43,16 @@ include_once('include/database.php');
 					$row = $result -> fetch_assoc();
 					$fname = $row['fname']; ?>
 					
-					
+				<ul class="navbar-nav mx-auto">
 				<li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="5" onClick="nav_item_selected(4)" data-toggle="dropdown"> 
-				  <?php echo " Welcome $fname! "; ?>
+                <a class="nav-link dropdown-toggle" href="#" id="4" onClick="nav_item_selected(4)" data-toggle="dropdown"> 
+				  <?php echo " Welcome $fname ! "; ?>
                     </a>
                     <div class="dropdown-menu">
  						<a class="nav-link" href="index.php" id="5" onClick="nav_item_selected(5)">Sign-out</a>                        
                     </div>
 				 </li>       
-					
+				</ul>
 		
 					
 				</a>
