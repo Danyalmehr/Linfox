@@ -82,18 +82,7 @@ session_start();
                                 radio_arr.push($(this).find('input[type=radio]:checked').val());
                               });
                               console.log(radio_arr);
-                              $.ajax({
-                                insert: "POST",
-                                data:{data:radio_arr},
-                                cache:false,
-                
-                                success: function(){
-                                  <?php $data = json_decode(stripslashes($_POST['data']));
-                                  ?>
-                                  data = <?php echo $data; ?>;
-                                  alert (data);
-                                }
-                              });
+                              alert(radio_arr);
                             });
 
 
