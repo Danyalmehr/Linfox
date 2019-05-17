@@ -20,63 +20,77 @@ session_start();
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
-    
+
     <div class="container-fluid">
     <div class="options">
-    <?php 
+    <?php
 
 			if(isset($_POST['submit']))
 			{
-					
-    			
-					
+
+
 				if(!empty($_POST['userans']))
 				{
 					$count = count($_POST['userans']);
-				
+
 					echo " <h3> Out of All questions you have answred " .$count." options </h3>";
-					
-					
+
+
 					$i = 1;
-					
+
 					 $score = 0;
 					 $selected = $_POST['userans'];
 					//print_r($selected); check to see weather it is retriving the value that user have selected
-					
+
 					$fetchqry = "select * FROM question";
 					$result = mysqli_query($con,$fetchqry);
-					
-				  
+
+
 				  while ($row = mysqli_fetch_array($result) )
 				  {
-					 // print_r($row['ans']); check to see weather it is retriving the value from the database
-					  
+					 //print_r($row['ans']); check to see weather it is retriving the value from the database
+            $que_id = $row['que_id'];
 					  $checked = strval($row['ans']) == $selected[$i];
-					
-					  
+
+
 					   if($checked)
 					   {
 						   $score = $score + 1;
 					   }
 					  $i++;
 				  }
-					
+
 					echo (" Your total score is ".$score." out of ".$count."");
+
+
+
+
+          foreach ($selected as $key => $value) {
+            $fetchqry2 = "INSERT INTO result values ('', '".$value."', '".$que_id."')";
+            $result1 = mysqli_query($con,$fetchqry2);
+          }
+          if (mysqli_query($con, $fetchqry2)) {
+             echo "New record created successfully";
+          } else {
+             echo "Error: " . $fetchqry2 . "" . mysqli_error($con);
+          }
 				}
-				
-				// If unable to fetch the value 
+
+
+
+				// If unable to fetch the value
 				else
 				{
 					echo("Failed to retrive the data");
 				}
 			}
-	
-					
+
+
+
+
 			?>
 			</div>
     </div>
-		
-		
 
 
 
