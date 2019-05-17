@@ -27,14 +27,6 @@ session_start();
             		<h2> THIS IS TEST PAGE</h2>
 
 
-
-
-
-
-
-
-
-
         <?php
               function getQuestion()
               {     require 'database.php';
@@ -76,6 +68,8 @@ session_start();
                 <script>
                       function resultdisplay()
                               {
+                              var correct_answer = <?php echo json_encode($correct_answer); ?>;
+                              alert(correct_answer)
                               $(document).ready(function(){
                               var radio_arr = [];
                               $('tr').each(function(){
