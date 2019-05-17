@@ -13,21 +13,18 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-   
+
     <title>About us</title>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
-    
+
     <div class="container-fluid">
     	<div class="row">
         	<div class="col">
-            	
+
             		<h2> THIS IS TEST PAGE</h2>
-            
-
-    
 
 
 
@@ -35,68 +32,91 @@ session_start();
 
 
 
-<?php
-    function getQuestion()
-    {     require 'database.php';
-          $fetchqry = "SELECT * FROM `question`";
-          $result=mysqli_query($con,$fetchqry);
-          $num=mysqli_num_rows($result);
-          while ($row = mysqli_fetch_assoc($result))
-            {
-              
-
-              $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4'], $row['ans']);
-              $ans_array = array($row['option 1'], $row['option 2'], $row['option 3'], $row['option 4']);
-                shuffle($ans_array);
-                ?>
-
-            <form class="" method="post">
-              <table align="center">
-
-                    <tr><td><?php echo $row['que_id'];?>.<?php echo $row['que']; ?></tr>
-
-                    <tr><td><input required type="radio" name="userans<?=$row['que_id']?>" value="<?=$ans_array[0]?>" required> &nbsp;<?=$ans_array[0]?><br>
-                    <tr><td><input required type="radio" name="userans<?=$row['que_id']?>" value="<?=$ans_array[1]?>">&nbsp;<?=$ans_array[1]?></td></tr>
-                    <tr><td><input required type="radio" name="userans<?=$row['que_id']?>" value="<?=$ans_array[2]?>">&nbsp;<?=$ans_array[2]?></td></tr>
-                    <tr><td><input required type="radio" name="userans<?=$row['que_id']?>" value="<?=$ans_array[3]?>">&nbsp;<?=$ans_array[3]?><br><br><br></td></tr>
-
-          <?php };?>
-          <tr><td><button class="button3" name="click" onclick="result()">submit</button></td></tr>
-                </tr>
-              </table>
-            </form>
-
-        	
-            </div>
-        </div>
-    </div>
 
 
-<script>
-      function result()
-              {
-                <?php
-                $fetchqry = "SELECT * FROM `question`";
-                $result=mysqli_query($con,$fetchqry);
-                $num=mysqli_num_rows($result);
-                $row = mysqli_fetch_assoc($result) ?>
-              counter = 0
-              correct_answer = '<?php echo $row['ans'];?>';
 
-              var choice = $("input[name='userans<?=$row['que_id']?>']:checked").val();
-              if (choice == correct_answer) {
-                counter++;
-                alert(counter)
-                return counter;
-              }
-              else {
-                alert(counter + "wrong answer")
-              }
-              }
+        <?php
+              function getQuestion()
+              {     require 'database.php';
+                          $fetchqry = "SELECT * FROM `question`";
+                          $result=mysqli_query($con,$fetchqry);
+                          $num=mysqli_num_rows($result);
+                          while ($row = mysqli_fetch_assoc($result))
+                            { $que_id = $row['que_id'];
 
-              <?php }
-              getQuestion();
-              ?>
+
+
+                              $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4']);
+                              $correct_answer = array($row['ans']);
+                              $ans_array = array($row['option 1'], $row['option 2'], $row['option 3'], $row['option 4']);
+                                shuffle($ans_array);
+                                ?>
+
+                            <form method="post" action="">
+                              <table align="center">
+
+                                    <p> <?php echo $row['que_id'];?>.<?php echo $row['que']; ?></p>
+
+                                    <tr><td><input required class="userans" type="radio" name="userans<?=$que_id?>" value="<?=$ans_array[0]?>" required> &nbsp;<?=$ans_array[0]?><br></tr>
+                                    <tr><td><input required class="userans" type="radio" name="userans<?=$que_id?>" value="<?=$ans_array[1]?>">&nbsp;<?=$ans_array[1]?></td></tr>
+                                    <tr><td><input required class="userans" type="radio" name="userans<?=$que_id?>" value="<?=$ans_array[2]?>">&nbsp;<?=$ans_array[2]?></td></tr>
+                                    <tr><td><input required class="userans" type="radio" name="userans<?=$que_id?>" value="<?=$ans_array[3]?>">&nbsp;<?=$ans_array[3]?><br><br><br></td></tr>
+
+                          <?php };?>
+                            <a href="result.php"><p> <button class="button3" name="submit" onclick="resultdisplay()"> submit</button></p></a>
+
+                              </table>
+                            </form>
+
+
+
+
+
+
+                <script>
+                      function resultdisplay()
+                              {
+                              $(document).ready(function(){
+                              var radio_arr = [];
+                              $('tr').each(function(){
+                                radio_arr.push($(this).find('input[type=radio]:checked').val());
+                              });
+                              console.log(radio_arr);
+                              $.ajax({
+                                insert: "POST",
+                                data:{data:radio_arr},
+                                cache:false,
+                
+                                success: function(){
+                                  <?php $data = json_decode(stripslashes($_POST['data']));
+                                  ?>
+                                  data = <?php echo $data; ?>;
+                                  alert (data);
+                                }
+                              });
+                            });
+
+
+
+
+
+
+                              if (choice == correct_answer) {
+                                counter++;
+                                alert(counter)
+                                return counter;
+                              }
+                              else {
+                                alert(counter + "wrong answer")
+                              }
+                              }
+
+                              <?php }
+                              getQuestion();
+                              ?>
+
+                </script>
+
 
 </script>
 	<?php include("include/footer.inc") ?>
