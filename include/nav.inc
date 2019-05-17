@@ -25,7 +25,7 @@ border-bottom:1px solid black; color:black;">
                 <a class="nav-link dropdown-toggle" href="#" id="2" onClick="nav_item_selected(2)" data-toggle="dropdown"> Test
                     </a>
                     <div class="dropdown-menu">
-						<a class="dropdown-item" href="test.php"> Take test </a>
+						<a class="dropdown-item" href="Stest.php"> Take test </a>
                         <a class="dropdown-item" href="previousresults.php"> Previous test result </a>
                     </div>
 				 </li>               

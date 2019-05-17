@@ -59,7 +59,7 @@ session_start();
                             </form>
 
                             <?php
-                            public function resultdisplay()
+                            function resultdisplay()
                             {
                               while(isset($_POST["userans$que_id"])){
                                 $userselected = $_POST["userans$que_id"];
