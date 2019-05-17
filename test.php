@@ -28,18 +28,16 @@ session_start();
 
 
         <?php
-              function getQuestion()
-              {     require 'database.php';
+
+              require 'database.php';
                           $fetchqry = "SELECT * FROM `question`";
                           $result=mysqli_query($con,$fetchqry);
                           $num=mysqli_num_rows($result);
                           while ($row = mysqli_fetch_assoc($result))
-                            { $que_id = $row['que_id'];
+                            {
 
-
-
+                              $que_id = $row['que_id'];
                               $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4']);
-                              $correct_answer = array($row['ans']);
                               $ans_array = array($row['option 1'], $row['option 2'], $row['option 3'], $row['option 4']);
                                 shuffle($ans_array);
                                 ?>
@@ -60,48 +58,34 @@ session_start();
                               </table>
                             </form>
 
+                            <?php
+                            public function resultdisplay()
+                            {
+                              while(isset($_POST["userans$que_id"])){
+                                $userselected = $_POST["userans$que_id"];
+                                print_r($userselected);
+                            }
+}
+                                  //$fetchqry2 = "UPDATE `quiz` SET `userans`='$userselected' WHERE `id`=$c-1";
+                                  //$result2 = mysqli_query($con,$fetchqry2);
 
 
-
-
-
-                <script>
-                      function resultdisplay()
-                              {
-                              var correct_answer = <?php echo json_encode($correct_answer); ?>;
-                              alert(correct_answer)
-                              $(document).ready(function(){
-                              var radio_arr = [];
-                              $('tr').each(function(){
-                                radio_arr.push($(this).find('input[type=radio]:checked').val());
-                              });
-                              console.log(radio_arr);
-                              alert(radio_arr);
-                            });
-
-
-
-
-
-
-                              if (choice == correct_answer) {
-                                counter++;
-                                alert(counter)
-                                return counter;
-                              }
-                              else {
-                                alert(counter + "wrong answer")
-                              }
-                              }
-
-                              <?php }
-                              getQuestion();
                               ?>
 
-                </script>
+                            <?php
+                              $fetchqry1 = "SELECT `ans` FROM `question`";
+                              $result1=mysqli_query($con,$fetchqry1);
+                              while ($row1 = mysqli_fetch_assoc($result1))
+                                { $correct_answer = array($row1['ans']); ?>
+                                <?php
+                              }
+                              ?>
 
 
-</script>
+
+
+c
+
 	<?php include("include/footer.inc") ?>
   </body>
 </html>
