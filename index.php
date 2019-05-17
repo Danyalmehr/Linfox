@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
-   
+   <div class="container">
     <div class="login">
      
     	<form action="index.php" method="post">
@@ -89,12 +89,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         </form>
     </div>
-    <br>
-    
-        
-                    <br>
-                        <br>
-                            <br>
-	
+    </div>
+   
 </body>
 </html>

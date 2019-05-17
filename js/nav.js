@@ -8,7 +8,7 @@ function run_first() {
 }
 
 function nav_item_selected(item_id) {
-    for(i = 0; i < 4; i++) {
+    for(i = 0; i < 5; i++) {
         document.getElementById(i.toString()).classList.remove("text-white");
     }
     document.getElementById(item_id.toString()).classList.add("text-white");

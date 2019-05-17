@@ -39,15 +39,24 @@ footer {
 #slide {
 	max-height:670px;
 	width:100%;}
+
+
+
+
+
+
+
+
 /*-------------------------------------------------------------------------------------------- Login Page ------------------------------------------------------------------------ */
 
 	
-.login{ margin:4%;position: relative;left: 26%; align-content:center; padding:4%; border:1px solid #B39019;   
+.login{ margin:4%;position: relative;left: 27%; align-content:center; padding:4%; border:1px solid #B39019;   
 
-color:black; border-radius:4px; width: 40%;}
+color:black; border-radius:4px; width: 35%;}
 .login label {
     width: 5em;
     float: left;
+	
      padding:0.2%;
     padding-right: 0.5em;
 	
@@ -60,7 +69,7 @@ color:black; border-radius:4px; width: 40%;}
   background-color: #07D14A;
   border: none;
 	position: relative;
-	left: 14%;
+	left: 2%;
   color: #FFFFFF;
   text-align: center;
   font-size: 18px;
@@ -76,7 +85,7 @@ color:black; border-radius:4px; width: 40%;}
   background-color: #1C8F42;
   border: none;
 	position: relative;
-	left: 14%;
+	left: 2%;
   color: #FFFFFF;
   text-align: center;
   font-size: 18px;
@@ -113,8 +122,8 @@ color:black; border-radius:4px; width: 40%;}
   opacity: 1;
   right: 0;
 }
-.signupnotice a {text-decoration: none;color: black;position: relative; left: 25%;}
-.signupnotice a:hover {text-decoration: none;color: #B39019;position: relative; left: 25%;}
+.signupnotice a {text-decoration: none;color: black;position: relative; left: 18%;}
+.signupnotice a:hover {text-decoration: none;color: #B39019;position: relative; left: 18%;}
 
 
 /*-------------------------------------------------------------------------------------------- Signup Page ------------------------------------------------------------------------ */
@@ -209,37 +218,6 @@ color:black; border-radius:4px; width: 50%;}
 	}
 #member_details p { color:#8E8E8E;word-spacing:0.5px;}
 
-
-/*-------------------------------------------------------------------------------------------- yourfeedback Page ------------------------------------------------------------------------ */
-
-.enterfeedback { margin:4%; align-content:center; padding:1%; border:5px solid black; background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0.6); border-radius:9px;}
-.enterfeedback label{
-    width: 15em;
-    float: left;
-	padding:1%;
-    padding-right: 0.5em;
-	}
-	label{font-size:18px;}
-	#feedback{border-radius:8px;
-	}
-	input{	border-radius:8px; }
-	#submit {padding:0.4%; margin:0.2%; }
-	#reset {padding:0.4%; margin:0.2%; width:auto;}
-/*-------------------------------------------------------------------------------------------- latestfeedback Page ------------------------------------------------------------------------ */
-
-	
-.latestfeedback {margin:4%; align-content:center; padding:1%; border:5px solid black; background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0.6); border-radius:9px;}
-
-.latestfeedback p {background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0.6); padding:2%; border-radius:12px; 
-word-spacing:0.5px;
-text-align:justify;
-font-family:'Dancing Script', cursive; 
-
-font-size:26px;
-
-border-style:dashed; font-stretch:extra-expanded;} 
-
-
 /*-------------------------------------------------------------------------------------------- editMember Page ---------------------------------------------------------------------------- */
 
 
@@ -261,44 +239,227 @@ border-style:dashed; font-stretch:extra-expanded;}
 submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0.6); border-radius:9px;}
 
 
-
-/*-------------------------------------------------------------------------------------------- search_results :---------------------------------------------------------------------------- */
-.search_results{ margin:4%; align-content:center; padding:1%; border:5px solid black; background-color:transparent; color:#F1E9E9; background: rgba(0, 0, 0, 0.6); border-radius:9px;}
-#search_table th{padding:3%; margin:5%;width:15em;font-size:24px;alignment-adjust:central;}
-#search_table td{padding:3%; margin:5%; border:2px solid black; resize:both;}
-
-
-
 /*-------------------------------------------------------------------------------------------- header :---------------------------------------------------------------------------- */
-#banner{align-content:center; background-color:transparent; color:#F1E9E9; background: rgba(0, 0, 0, 0.6); border-radius:9px;widows:auto; background-image:url(../images/banner.png); background-size:cover;padding:4%; width:auto;}
+#banner{align-content:center;color:#000000;
+	background-color:#E8E1E1; 
+widows:auto; background-image:url(images/bg.jpg); background-size:cover;padding:4%; width:auto;}
 
 
-#footer{ border-top: 5px solid black; align-content:center; background-color:transparent; color:#F1E9E9; background: rgba(0, 0, 0, 0.6); border-radius:9px;widows:auto; background-image:url(../images/banner.png); background-size:cover;padding:2%; margin-top:2%;
 
 
+
+
+
+
+
+/*------------------------------------------------------
+				Footer 
+
+-------------------------------------------------- */
+
+
+.footer-distributed{
+	background-color:#E8E1E1;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font:16px;
+	padding: 55px 50px;
+	margin-top: 80px;
+	border-top: 2px solid black;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:black; /* U N I Q U E Logo */
+	font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, DejaVu Sans, Verdana," sans-serif";
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:black;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #E8E1E1;
+	color: black;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: black;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  black;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  black;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #E8E1E1;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: black;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+
+
+/*-------------------------------
+		NAVBAR
+------------------------------*/
+.navbar{background-color: red;}
+
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
 
 }
 
 
 
 
-/*--------------------------------------------------------------------------------------------picture ---------------------------------------------------------------------------- */
-
-.picture{margin:4%; margin-left:9%;align-content:center; padding:1%; border:5px solid black; background-color:transparent; background: rgba(0, 0, 0, 0.6); border-radius:9px;color:#F5F0F0;}
-.picture p{color:white; align-content:flex-start;text-align:justify;word-spacing:0.5px;}
-
-/*--------------------------------------------------------------------------------------------contact_us---------------------------------------------------------------------------- */
-.contact_us{margin:4%; margin-left:9%;align-content:center; padding:1%; border:5px solid black; background-color:transparent; background: rgba(0, 0, 0, 0.6); border-radius:9px;color:#F5F0F0;}
-/*--------------------------------------------------------------------------------------------about_us---------------------------------------------------------------------------- */
 
 
-.about_us{margin:4%; margin-left:9%;align-content:center; padding:1%; border:5px solid black; background-color:transparent; background: rgba(0, 0, 0, 0.6); border-radius:9px;color:#F5F0F0;}
-.about_us p {color:#B5B5B5; text-align:justify;word-spacing:0.5px; }
 
 
-.feedbackqqw {margin:4%; margin-left:9%;align-content:center; padding:1%; border:5px solid black; background-color:transparent; background: rgba(0, 0, 0, 0.6); border-radius:9px;color:#F5F0F0;}
 
-.feedbackqqw p{color:#EFEAEA; text-align:justify;word-spacing:0.5px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
