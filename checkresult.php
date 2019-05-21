@@ -42,41 +42,24 @@ session_start();
 					 $selected = $_POST['userans'];
 					//print_r($selected); check to see weather it is retriving the value that user have selected
 
-					$fetchqry = "select * FROM question";
+					$fetchqry = "SELECT * FROM question";
 					$result = mysqli_query($con,$fetchqry);
+				  $row = mysqli_fetch_array($result);
 
-
-				  while ($row = mysqli_fetch_array($result) )
-				  {
-					 //print_r($row['ans']); check to see weather it is retriving the value from the database
-            $que_id = $row['que_id'];
-					  $checked = strval($row['ans']) == $selected[$i];
-
-
-					   if($checked)
-					   {
-						   $score = $score + 1;
-					   }
-					  $i++;
-				  }
-
-					echo (" Your total score is ".$score." out of ".$count."");
-
-
-
+          $que_id = 1;
 
           foreach ($selected as $key => $value) {
-            $fetchqry2 = "INSERT INTO result values ('', '".$value."', '".$que_id."')";
-            $result1 = mysqli_query($con,$fetchqry2);
+
+            $fetchqry2 = "INSERT INTO result(`userans`, `que_id`) values ('$value','$que_id')";
+            $result2 = mysqli_query($con,$fetchqry2);
+            $que_id += 1;
           }
-          if (mysqli_query($con, $fetchqry2)) {
-             echo "New record created successfully";
+          if ($result2) {
+             echo " New record created successfully";
           } else {
              echo "Error: " . $fetchqry2 . "" . mysqli_error($con);
           }
 				}
-
-
 
 				// If unable to fetch the value
 				else
@@ -85,10 +68,54 @@ session_start();
 				}
 			}
 
+      $array1 = array();
+      $array2 = array();
+      $array3 = array();
+      $array4 = array();
+      $array5 = array();
+      $array6 = array();
+      $array7 = array();
+      $array8 = array();
+
+      foreach ($selected as $checkans) {
+        array_push($array1, $checkans);
+      }
+
+      foreach ($result as $res) {
+          array_push($array2, $res['ans']);
+          array_push($array3, $res['que_id']);
+          array_push($array4, $res['que']);
+          array_push($array5, $res['option 1']);
+          array_push($array6, $res['option 2']);
+          array_push($array7, $res['option 3']);
+          array_push($array8, $res['option 4']);
+      }
+
+      for ($x=0; $x < 5 ; $x++) {?>
+        <form class="test-display" action="" method="post">
+        <div class="options">
+
+
+            <p><?= $array3[$x]?>.&nbsp;<?=$array4[$x]?></p>
+            <?php if ($array2[$x] != $array1[$x]) {?>
+              <p> <span style="background-color: #ff9C9E"><?= $array1[$x]; ?></span> </p>
+              <p> <span style="background-color: #ADFFB4"><?= $array2[$x] ?></span> </p>
+
+          <?php  } else {?>
+
+            <p> <span style="background-color: #ADFFB4"><?= $array1[$x] ?></span> </p>
+            <?php $score = $score + 1; ?>
+
+            <?php  }
+
+            ?>
 
 
 
-			?>
+        </div>
+      <?php }
+          echo (" Your total score is ".$score." out of ".$count."");?>
+
 			</div>
     </div>
 
