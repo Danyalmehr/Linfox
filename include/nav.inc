@@ -4,9 +4,9 @@
 include_once('include/database.php');
 ?>
 
-    <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/responsive.css">
 
-<nav class="container-fluid navbar navbar-expand-lg bg-light navbar-light " id="navbar"style="padding:1%; font-size:1.5em; 
+<nav class="container-fluid navbar navbar-expand-lg bg-light navbar-light " id="navbar"style="padding:1%; font-size:1.5em;
 border-bottom:1px solid black; color:black;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"> </span>
@@ -14,13 +14,13 @@ border-bottom:1px solid black; color:black;">
         <div class="collapse navbar-collapse " id="collapsibleNavbar">
             <!-- md-auto: left, ml-auto: right, mx-auto: center -->
             <ul class="navbar-nav mx-auto">
-			
+
 			 <li class="nav-item">
-                    <a class="nav-link" href="dashboard.php" id="0" onClick="nav_item_selected(0)"> Home </a>
+                    <a class="nav-link" href="dashboard1.php" id="0" onClick="nav_item_selected(0)"> Home </a>
                 </li>
                 <li class="nav-item"><a class="nav-link" id="1" onClick="nav_item_selected(1)" href="courses.php"> Courses </a></li>
-    
-                           
+
+
 			      <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="2" onClick="nav_item_selected(2)" data-toggle="dropdown"> Test
                     </a>
@@ -28,13 +28,13 @@ border-bottom:1px solid black; color:black;">
 						<a class="dropdown-item" href="Stest.php"> Take test </a>
                         <a class="dropdown-item" href="previousresults.php"> Previous test result </a>
                     </div>
-				 </li>               
-				
-              			
+				 </li>
+
+
             </ul>
         </div>
 		<?php if(isset($_SESSION['valid_user'])): ?>
-              		
+
 				<?php
 					$conn  = db_connect();
 					$user_check = $_SESSION['valid_user'];
@@ -42,26 +42,26 @@ border-bottom:1px solid black; color:black;">
 					$result = $conn -> query($ses_sql);
 					$row = $result -> fetch_assoc();
 					$fname = $row['fname']; ?>
-					
+
 				<ul class="navbar-nav mx-auto">
 				<li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="4" onClick="nav_item_selected(4)" data-toggle="dropdown"> 
+                <a class="nav-link dropdown-toggle" href="#" id="4" onClick="nav_item_selected(4)" data-toggle="dropdown">
 				  <?php echo " Welcome $fname ! "; ?>
                     </a>
                     <div class="dropdown-menu">
- 						<a class="nav-link" href="index.php" id="5" onClick="nav_item_selected(5)">Sign-out</a>                        
+ 						<a class="nav-link" href="index.php" id="5" onClick="nav_item_selected(5)">Sign-out</a>
                     </div>
-				 </li>       
+				 </li>
 				</ul>
-		
-					
+
+
 				</a>
                 </li>
-				<?php else: ?>	
+				<?php else: ?>
                 <li class="nav-item">
-                    
+
                 </li>
-                
-               
+
+
                 <?php endif; ?>
     </nav>

@@ -3,10 +3,6 @@
 session_start();
 include_once('include/database.php');
 ?>
-<?php require 'database.php';
-session_start();
-//echo "successful";?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8">
@@ -18,36 +14,36 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
-	
-	
-	
-	
+
+
+
+
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link type="text/css" href="css/theme.css" rel="stylesheet">
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
             rel='stylesheet'>
-   
+
     <title>Dashboard</title>
-	
+
 	<style>
 		.btn-course {
 			height: 100px;
 			vertical-align: middle;
 		}
 		.course-btn:hover{
-			
+
 			color: #3E4FD7;
 		}
 		.course-txt{
 			vertical-align:middle;
 		}
-		
+
 		.btn-lg{
 			height: 10em;
 		}
-		
+
 		.btn-course{
 			margin-top: 2em;
 			margin-left: 1em;
@@ -55,21 +51,21 @@ session_start();
 		.course{
 			margin-left: 1em;
 		}
-	
+
 	</style>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
-    
+
     <div class="container-fluid">
     	<div class="row">
         	<div class="col">
-            	
+
             		<h2> THIS IS Dashboard PAGE</h2>
-				
-				
-				
+
+
+
         <!-- /navbar -->
         <div class="wrapper">
             <div class="container">
@@ -85,11 +81,11 @@ session_start();
                                     11</b>--> </a></li>
                                 <!--<li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
                                     19</b> </a></li>-->
-                            
+
                             <!--/.widget-nav-->
-                            
-                            
-                            
+
+
+
                                 <li><a href="ui-button-icon.html"><i class="menu-icon icon-file"></i>Results </a></li>
 								<li><a href="ui-button-icon.html"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
 								<li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
@@ -119,72 +115,72 @@ session_start();
                         <div class="content">
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid course">
-									
-									
-	<?php								
-									
+
+
+	<?php
+
 					$courses = "select course_id, course_name, course_desc FROM courses";
-					$result = mysqli_query($con,$courses);
-	
-	
+					$result = mysqli_query($conn,$courses);
+
+
 
 					/*$i=0;*/
 				  /*$row_num = mysqli_fetch_array($result,MYSQLI_NUM);
 					$row=mysqli_fetch_assoc($result);
 					$course_name=$row['course_name'];
-					
+
 	*/
-					
+
 					while ($row=mysqli_fetch_assoc($result)){
-						
-						
+
+
 						$course_name=$row['course_name'];
-						
-						
-					
-				  
-                                    
+
+
+
+
+
 										echo"<button type=\"button\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\">$course_name</button>";
-									
-									
+
+
 /*<!-- The Modal -->*/
   echo"<div class=\"modal\" id=\"$course_name\">
     <div class=\"modal-dialog\">
       <div class=\"modal-content\">
-      
-        
+
+
         <div class=\"modal-header\">
           <h4 class=\"modal-title\">Course Description</h4>
           <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
         </div>
-        
-        
+
+
         <div class=\"modal-body\">
 			<p>Description comes here</p>
-			
+
 			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a>See Results</a></button>
  			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
         </div>
-        
-        
+
+
         <div class=\"modal-footer\">
           <button type=\"button\" class=\"btn btn-dark\" data-dismiss=\"modal\">Close</button>
         </div>
-        
+
       </div>
     </div>
   </div>";
-						
-						
-					/*$i=$i+1;*/
-			  
-					}
-  
-?>  
 
-                                        
-                                 
-                                    
+
+					/*$i=$i+1;*/
+
+					}
+
+?>
+
+
+
+
                                 </div>
                                 <!--<div class="btn-box-row row-fluid">
                                     <div class="span8">
@@ -247,23 +243,23 @@ session_start();
                             </div>
 						</div>
 					</div>
-            
 
-            	
+
+
             </div>
         </div>
     </div>
 	<?php include("include/footer.inc") ?>
-				
+
 	<script>
 		function(popup){
-			
+
 			var btn=document.getElementsByClassName("btn-course")
-			var 
+			var
 		}
-	
-				
-				
+
+
+
 	</script>
 </body>
 </html>
