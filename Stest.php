@@ -26,10 +26,6 @@ include_once('include/database.php');
        	<div class="col-md-2"></div>
         	<div class="col-md-8">
 
-
-
-
-
 <?php
 
           $fetchqry = "SELECT * FROM `question`";

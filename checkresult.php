@@ -43,11 +43,15 @@ include_once('include/database.php');
 
 					$fetchqry = "SELECT * FROM question";
 					$result = mysqli_query($conn,$fetchqry);
+          $num=mysqli_num_rows($result);
 				  $row = mysqli_fetch_array($result);
 
           $que_id = 1;
 
           foreach ($selected as $key => $value) {
+
+           //$fetchqry2= "INSERT INTO useranswer (`userans`, `que_id`) VALUES
+            //( '$value', (SELECT `que_id` from `question`) )";
 
             $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`) values ('$value','$que_id')";
             $result2 = mysqli_query($conn,$fetchqry2);
@@ -84,7 +88,7 @@ include_once('include/database.php');
           array_push($array4, $res['que']);
       }
 
-      for ($x=0; $x < 5 ; $x++) {?>
+      for ($x=0; $x < $num ; $x++) {?>
         <form class="test-display" action="" method="post">
         <div class="options">
 
@@ -103,8 +107,6 @@ include_once('include/database.php');
 
             ?>
 
-
-
         </div>
       <?php }
 
@@ -112,8 +114,6 @@ include_once('include/database.php');
           $result3 = mysqli_query($conn,$fetchqry3);
 
           echo (" Your total score is ".$score." out of ".$count."");
-
-
 
           mysqli_free_result($result);?>
 
