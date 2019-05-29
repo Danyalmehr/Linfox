@@ -60,6 +60,7 @@ include_once('include/database.php');
           } else {
              echo "Error: " . $fetchqry2 . "" . mysqli_error($con);
           }
+
 				}
 
 				// If unable to fetch the value
@@ -107,8 +108,16 @@ include_once('include/database.php');
 
 
         </div>
-      <?php } mysqli_free_result($result);
-          echo (" Your total score is ".$score." out of ".$count."");?>
+      <?php }
+
+          $fetchqry3 = "INSERT INTO attempt (`final_score`) values ('$score')";
+          $result3 = mysqli_query($conn,$fetchqry3);
+
+          echo (" Your total score is ".$score." out of ".$count."");
+
+
+
+          mysqli_free_result($result);?>
 
 			</div>
     </div>

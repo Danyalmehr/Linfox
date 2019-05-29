@@ -1,6 +1,5 @@
 <?php
 //must appear BEFORE the <html> tag
-
 include_once('include/database.php');
 ?>
 
@@ -47,8 +46,6 @@ include_once('include/database.php');
 
       </ul>
  				<?php else: ?>
-
-
-                 <?php endif; ?>
+        <?php endif; ?>
 
  </div>

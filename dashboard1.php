@@ -15,16 +15,11 @@ include_once('include/database.php');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
-
-
-
-
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link type="text/css" href="css/theme.css" rel="stylesheet">
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
-        <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
-            rel='stylesheet'>
+        <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
 
     <title>Dashboard</title>
 
@@ -59,13 +54,12 @@ include_once('include/database.php');
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
 
+    <div class="container-fluid">
+    	<div class="row">
+            <!-- /navbar -->
 
 
 
-        <!-- /navbar -->
-        <div class="wrapper">
-            <div class="container">
-                <div class="row">
                     <div class="span3">
                         <div class="sidebar" style="display: inline">
                             <ul class="widget widget-menu unstyled">
@@ -116,8 +110,8 @@ include_once('include/database.php');
 	<?php
 
 					$courses = "select course_id, course_name, course_desc FROM courses";
-					$result = mysqli_query($con,$courses);
-
+					$result = mysqli_query($conn,$courses);
+            $num=mysqli_num_rows($result);
 
 
 					/*$i=0;*/
@@ -128,45 +122,43 @@ include_once('include/database.php');
 	*/
 
 					while ($row=mysqli_fetch_assoc($result))
-            {
+              {
 
-						        $course_name=$row['course_name'];
-										echo"<button type=\"button\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\">$course_name</button>";
-
-
-                      /*<!-- The Modal -->*/
-                        echo"<div class=\"modal\" id=\"$course_name\">
-                          <div class=\"modal-dialog\">
-                            <div class=\"modal-content\">
+        $course_name=$row['course_name'];
+        echo"<button type=\"button\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\">$course_name</button>";
 
 
-                              <div class=\"modal-header\">
-                                <h4 class=\"modal-title\">Course Description</h4>
-                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
-                              </div>
+        /*<!-- The Modal -->*/
+          echo"<div class=\"modal\" id=\"$course_name\">
+            <div class=\"modal-dialog\">
+              <div class=\"modal-content\">
 
 
-                              <div class=\"modal-body\">
-                      			<p>Description comes here</p>
-
-                      			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a>See Results</a></button>
-                       			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
-                              </div>
+                <div class=\"modal-header\">
+                  <h4 class=\"modal-title\">Course Description</h4>
+                  <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                </div>
 
 
-                              <div class=\"modal-footer\">
-                                <button type=\"button\" class=\"btn btn-dark\" data-dismiss=\"modal\">Close</button>
-                              </div>
+                <div class=\"modal-body\">
+        			<p>Description comes here</p>
 
-                            </div>
-                          </div>
-                        </div>";
-                      					/*$i=$i+1;*/
-                      					}
+        			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a>See Results</a></button>
+         			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
+                </div>
 
-                      ?>
 
-</div>
+                <div class=\"modal-footer\">
+                  <button type=\"button\" class=\"btn btn-dark\" data-dismiss=\"modal\">Close</button>
+                </div>
+
+              </div>
+            </div>
+          </div>";
+        					/*$i=$i+1;*/
+    }
+?>
+                                </div>
                                 <!--<div class="btn-box-row row-fluid">
                                     <div class="span8">
                                         <div class="row-fluid">
@@ -228,23 +220,14 @@ include_once('include/database.php');
                             </div>
 						</div>
 					</div>
-
-
-
-            </div>
+          </div>
         </div>
-    </div>
 	<?php include("include/footer.inc") ?>
-
-<!--	<script>
-		function(popup)
-    {
-
-			var btn=document.getElementsByClassName("btn-course");
+<!--!	<script>
+		function(popup){
+			var btn=document.getElementsByClassName("btn-course")
+			var
 		}
-
-
-
-	</script> -->
+	</script>-->
 </body>
 </html>
