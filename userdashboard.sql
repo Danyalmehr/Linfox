@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2019 at 06:12 PM
+-- Generation Time: May 29, 2019 at 08:39 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -31,7 +31,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `attempt` (
   `att_id` int(255) NOT NULL,
   `final_score` varchar(255) DEFAULT NULL,
-  `test_id` int(255) DEFAULT NULL
+  `test_id` int(255) DEFAULT NULL,
+  `email_FK` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -45,6 +46,14 @@ CREATE TABLE `courses` (
   `course_name` varchar(255) NOT NULL,
   `course_desc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`course_id`, `course_name`, `course_desc`) VALUES
+(1, 'Example 1', 'gfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgc'),
+(2, 'Example 2', 'gfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgcgfdfgdfgcgfcgfcgfcfgc');
 
 -- --------------------------------------------------------
 
@@ -77,49 +86,6 @@ INSERT INTO `question` (`que_id`, `que`, `option 1`, `option 2`, `option 3`, `op
 -- --------------------------------------------------------
 
 --
--- Table structure for table `result`
---
-
-CREATE TABLE `result` (
-  `ans_id` int(255) NOT NULL,
-  `userans` varchar(255) NOT NULL,
-  `que_id` int(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `result`
---
-
-INSERT INTO `result` (`ans_id`, `userans`, `que_id`) VALUES
-(472, 'Preprocessed Hypertext Page', 1),
-(473, '2', 2),
-(474, 'header', 3),
-(475, 'CSS', 4),
-(476, 'Softglobe.net', 5),
-(477, 'Hypertext Preprocessor', 1),
-(478, '0', 2),
-(479, 'headers_list', 3),
-(480, 'JS', 4),
-(481, 'php.net', 5),
-(482, 'Hypertext Preprocessor', 1),
-(483, '1', 2),
-(484, 'header_send', 3),
-(485, 'JS', 4),
-(486, 'technopoints.co.in', 5),
-(487, 'Preprocessed Hypertext Page', 1),
-(488, '0', 2),
-(489, 'header_sent', 3),
-(490, 'JS', 4),
-(491, 'technopoints.co.in', 5),
-(492, 'Preprocessed Hypertext Page', 1),
-(493, '0', 2),
-(494, 'header_sent', 3),
-(495, 'JS', 4),
-(496, 'technopoints.co.in', 5);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `test`
 --
 
@@ -127,6 +93,39 @@ CREATE TABLE `test` (
   `test_id` int(255) NOT NULL,
   `test_name` varchar(255) NOT NULL,
   `course_id` int(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `fname` text NOT NULL,
+  `lname` text NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`fname`, `lname`, `email`, `password`) VALUES
+('Shesh', 'Sonar', 's@s.s', 'ss');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `useranswer`
+--
+
+CREATE TABLE `useranswer` (
+  `ans_id` int(255) NOT NULL,
+  `userans` varchar(255) NOT NULL,
+  `que_id` int(255) DEFAULT NULL,
+  `email_FK` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -154,18 +153,25 @@ ALTER TABLE `question`
   ADD KEY `test_id` (`test_id`);
 
 --
--- Indexes for table `result`
---
-ALTER TABLE `result`
-  ADD PRIMARY KEY (`ans_id`),
-  ADD KEY `que_id` (`que_id`);
-
---
 -- Indexes for table `test`
 --
 ALTER TABLE `test`
   ADD PRIMARY KEY (`test_id`),
   ADD KEY `course_id` (`course_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`email`);
+
+--
+-- Indexes for table `useranswer`
+--
+ALTER TABLE `useranswer`
+  ADD PRIMARY KEY (`ans_id`),
+  ADD KEY `que_id` (`que_id`),
+  ADD KEY `email_FK` (`email_FK`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -184,16 +190,16 @@ ALTER TABLE `question`
   MODIFY `que_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `result`
---
-ALTER TABLE `result`
-  MODIFY `ans_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=497;
-
---
 -- AUTO_INCREMENT for table `test`
 --
 ALTER TABLE `test`
   MODIFY `test_id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `useranswer`
+--
+ALTER TABLE `useranswer`
+  MODIFY `ans_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=497;
 
 --
 -- Constraints for dumped tables
@@ -212,16 +218,16 @@ ALTER TABLE `question`
   ADD CONSTRAINT `question_ibfk_2` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`);
 
 --
--- Constraints for table `result`
---
-ALTER TABLE `result`
-  ADD CONSTRAINT `result_ibfk_1` FOREIGN KEY (`que_id`) REFERENCES `question` (`que_id`);
-
---
 -- Constraints for table `test`
 --
 ALTER TABLE `test`
   ADD CONSTRAINT `test_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `courses` (`course_id`);
+
+--
+-- Constraints for table `useranswer`
+--
+ALTER TABLE `useranswer`
+  ADD CONSTRAINT `useranswer_ibfk_1` FOREIGN KEY (`que_id`) REFERENCES `question` (`que_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
