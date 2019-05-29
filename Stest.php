@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-
-<?php require 'database.php';
+<?php
+//must appear BEFORE the <html> tag
 session_start();
-//echo "successful";?>
+include_once('include/database.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +33,7 @@ session_start();
 <?php
 
           $fetchqry = "SELECT * FROM `question`";
-          $result=mysqli_query($con,$fetchqry);
+          $result=mysqli_query($conn,$fetchqry);
           $num=mysqli_num_rows($result);
           while ($row = mysqli_fetch_array($result))
             {
