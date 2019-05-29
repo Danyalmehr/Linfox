@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <?php
 //must appear BEFORE the <html> tag
 session_start();

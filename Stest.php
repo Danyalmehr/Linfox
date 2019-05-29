@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <?php
 //must appear BEFORE the <html> tag
 session_start();
@@ -55,8 +57,6 @@ include_once('include/database.php');
 
 
            <button class="button" name="submit" style="vertical-align:middle"> <span>Submit </span> </button>
-
-           <?php mysqli_free_result($result);?>
 
 				</form></div>
             <div class="col-md-2"></div>

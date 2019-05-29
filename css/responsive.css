@@ -14,13 +14,13 @@ h1 {
 
 h2 {
 	font-size:18px;
-	}	
-	
+	}
+
 p {
 	font-size:14px;
 	color:black;
-	text-align:justify;word-spacing:0.5px;}		
-	
+	text-align:justify;word-spacing:0.5px;}
+
 footer {
 	clear: both;
 	margin-top: 10px;
@@ -49,18 +49,18 @@ footer {
 
 /*-------------------------------------------------------------------------------------------- Login Page ------------------------------------------------------------------------ */
 
-	
-.login{ margin:4%;position: relative;left: 27%; align-content:center; padding:4%; border:1px solid #B39019;   
+
+.login{ margin:4%;position: relative;left: 27%; align-content:center; padding:4%; border:1px solid #B39019;
 
 color:black; border-radius:4px; width: 35%;}
 .login label {
     width: 5em;
     float: left;
-	
+
      padding:0.2%;
     padding-right: 0.5em;
-	
-	
+
+
 }
 
 .button_login {
@@ -115,7 +115,7 @@ color:black; border-radius:4px; width: 35%;}
 
 .button_login:hover span {
   padding-right: 25px;
-	
+
 }
 
 .button_login:hover span:after {
@@ -129,7 +129,7 @@ color:black; border-radius:4px; width: 35%;}
 /*-------------------------------------------------------------------------------------------- Signup Page ------------------------------------------------------------------------ */
 
 
-.member {margin:4%;position: relative;left: 22%; align-content:center; padding:4%; border:1px solid #B39019;   
+.member {margin:4%;position: relative;left: 22%; align-content:center; padding:4%; border:1px solid #B39019;
 
 color:black; border-radius:4px; width: 50%;}
 
@@ -138,9 +138,9 @@ color:black; border-radius:4px; width: 50%;}
     width: 10em;
     float: left;
 	padding:0.5%;
-	
+
     padding-right: 0.5em;
-	
+
 }
 
 
@@ -197,7 +197,7 @@ color:black; border-radius:4px; width: 50%;}
 
 .button_signup:hover span {
   padding-right: 25px;
-	
+
 }
 
 .button_signup:hover span:after {
@@ -241,7 +241,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 
 /*-------------------------------------------------------------------------------------------- header :---------------------------------------------------------------------------- */
 #banner{align-content:center;color:#000000;
-	background-color:#E8E1E1; 
+	background-color:#E8E1E1;
 widows:auto; background-image:url(images/bg.jpg); background-size:cover;padding:4%; width:auto;}
 
 
@@ -253,7 +253,7 @@ widows:auto; background-image:url(images/bg.jpg); background-size:cover;padding:
 
 
 /*------------------------------------------------------
-				Footer 
+				Footer
 
 -------------------------------------------------- */
 
@@ -410,7 +410,7 @@ widows:auto; background-image:url(images/bg.jpg); background-size:cover;padding:
 /*-------------------------------
 		NAVBAR
 ------------------------------*/
-.navbar{background-color: red;}
+.navbar{display: :inline-block;}
 
 
 /* If you don't want the footer to be responsive, remove these media queries */
@@ -466,20 +466,20 @@ widows:auto; background-image:url(images/bg.jpg); background-size:cover;padding:
 
 /* For tablets: */
 @media only screen and (min-width:600px){
-	
-	
+
+
 h1 {
 	font-size:32px;
 	}
 h2 {
 	font-size:24px;
-	}	
+	}
 p {
 	font-size:16px;
-	}		
 	}
-	
-/* For desktop: */	
+	}
+
+/* For desktop: */
 @media only screen and (min-width: 768px) {
 
 h1 {
@@ -487,15 +487,8 @@ h1 {
 	}
 h2 {
 	font-size:30px;
-	}	
+	}
 p {
 	font-size:20px;
-	}	
+	}
 }
-
-
-	
-	
-
-
-
