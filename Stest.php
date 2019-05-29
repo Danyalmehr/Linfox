@@ -20,24 +20,24 @@ session_start();
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
-    
+
     <div class="container-fluid">
     	<div class="row">
        	<div class="col-md-2"></div>
         	<div class="col-md-8">
-    
+
 
 
 
 
 <?php
-           
+
           $fetchqry = "SELECT * FROM `question`";
           $result=mysqli_query($con,$fetchqry);
           $num=mysqli_num_rows($result);
-          while ($row = mysqli_fetch_assoc($result))
+          while ($row = mysqli_fetch_array($result))
             {
-              
+
 			    $que_id = $row['que_id'];
               $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4'], $row['ans']);
               $ans_array = array($row['option 1'], $row['option 2'], $row['option 3'], $row['option 4']);
@@ -46,8 +46,8 @@ session_start();
 
        <form class="test-display" action="checkresult.php" method="post">
 		   <div class="options">
-          
-          
+
+
            <p><?php echo $row['que_id'];?>.&nbsp;<?php echo $row['que']; ?></p>
            <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[0]?>">&nbsp;<label><?=$ans_array[0]?></label><br>
            <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[1]?>">&nbsp;<label><?=$ans_array[1]?></label><br>
@@ -55,11 +55,13 @@ session_start();
            <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[3]?>">&nbsp;<label><?=$ans_array[3]?></label><br>
 		   </div>
        		 <div style="border-bottom: 1px dotted black; margin: 1em; background-color: aqua;"></div>
-          <?php }?>
-                      
+         <?php } ?>
+
 
            <button class="button" name="submit" style="vertical-align:middle"> <span>Submit </span> </button>
-   
+
+           <?php mysqli_free_result($result);?>
+
 				</form></div>
             <div class="col-md-2"></div>
         </div>
