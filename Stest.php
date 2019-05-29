@@ -37,7 +37,7 @@ include_once('include/database.php');
           $fetchqry = "SELECT * FROM `question`";
           $result=mysqli_query($conn,$fetchqry);
           $num=mysqli_num_rows($result);
-          while ($row = mysqli_fetch_assoc($result))
+          while ($row = mysqli_fetch_array($result))
             {
 
 			    $que_id = $row['que_id'];
@@ -57,7 +57,7 @@ include_once('include/database.php');
            <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[3]?>">&nbsp;<label><?=$ans_array[3]?></label><br>
 		   </div>
        		 <div style="border-bottom: 1px dotted black; margin: 1em; background-color: aqua;"></div>
-          <?php }?>
+         <?php } ?>
 
 
            <button class="button" name="submit" style="vertical-align:middle"> <span>Submit </span> </button>

@@ -30,7 +30,6 @@ include_once('include/database.php');
 			if(isset($_POST['submit']))
 			{
 
-
 				if(!empty($_POST['userans']))
 				{
 					$count = count($_POST['userans']);
@@ -74,10 +73,7 @@ include_once('include/database.php');
       $array2 = array();
       $array3 = array();
       $array4 = array();
-      $array5 = array();
-      $array6 = array();
-      $array7 = array();
-      $array8 = array();
+
 
       foreach ($selected as $checkans) {
         array_push($array1, $checkans);
@@ -87,10 +83,6 @@ include_once('include/database.php');
           array_push($array2, $res['ans']);
           array_push($array3, $res['que_id']);
           array_push($array4, $res['que']);
-          array_push($array5, $res['option 1']);
-          array_push($array6, $res['option 2']);
-          array_push($array7, $res['option 3']);
-          array_push($array8, $res['option 4']);
       }
 
       for ($x=0; $x < 5 ; $x++) {?>
@@ -115,7 +107,7 @@ include_once('include/database.php');
 
 
         </div>
-      <?php }
+      <?php } mysqli_free_result($result);
           echo (" Your total score is ".$score." out of ".$count."");?>
 
 			</div>
