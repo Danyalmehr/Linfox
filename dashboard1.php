@@ -3,6 +3,7 @@
 session_start();
 include_once('include/database.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8">
@@ -58,11 +59,6 @@ include_once('include/database.php');
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
 
-    <div class="container-fluid">
-    	<div class="row">
-        	<div class="col">
-
-            		<h2> THIS IS Dashboard PAGE</h2>
 
 
 
@@ -120,7 +116,7 @@ include_once('include/database.php');
 	<?php
 
 					$courses = "select course_id, course_name, course_desc FROM courses";
-					$result = mysqli_query($conn,$courses);
+					$result = mysqli_query($con,$courses);
 
 
 
@@ -131,57 +127,46 @@ include_once('include/database.php');
 
 	*/
 
-					while ($row=mysqli_fetch_assoc($result)){
+					while ($row=mysqli_fetch_assoc($result))
+            {
 
-
-						$course_name=$row['course_name'];
-
-
-
-
-
+						        $course_name=$row['course_name'];
 										echo"<button type=\"button\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\">$course_name</button>";
 
 
-/*<!-- The Modal -->*/
-  echo"<div class=\"modal\" id=\"$course_name\">
-    <div class=\"modal-dialog\">
-      <div class=\"modal-content\">
+                      /*<!-- The Modal -->*/
+                        echo"<div class=\"modal\" id=\"$course_name\">
+                          <div class=\"modal-dialog\">
+                            <div class=\"modal-content\">
 
 
-        <div class=\"modal-header\">
-          <h4 class=\"modal-title\">Course Description</h4>
-          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
-        </div>
+                              <div class=\"modal-header\">
+                                <h4 class=\"modal-title\">Course Description</h4>
+                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                              </div>
 
 
-        <div class=\"modal-body\">
-			<p>Description comes here</p>
+                              <div class=\"modal-body\">
+                      			<p>Description comes here</p>
 
-			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a>See Results</a></button>
- 			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
-        </div>
-
-
-        <div class=\"modal-footer\">
-          <button type=\"button\" class=\"btn btn-dark\" data-dismiss=\"modal\">Close</button>
-        </div>
-
-      </div>
-    </div>
-  </div>";
+                      			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a>See Results</a></button>
+                       			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
+                              </div>
 
 
-					/*$i=$i+1;*/
+                              <div class=\"modal-footer\">
+                                <button type=\"button\" class=\"btn btn-dark\" data-dismiss=\"modal\">Close</button>
+                              </div>
 
-					}
+                            </div>
+                          </div>
+                        </div>";
+                      					/*$i=$i+1;*/
+                      					}
 
-?>
+                      ?>
 
-
-
-
-                                </div>
+</div>
                                 <!--<div class="btn-box-row row-fluid">
                                     <div class="span8">
                                         <div class="row-fluid">
@@ -251,15 +236,15 @@ include_once('include/database.php');
     </div>
 	<?php include("include/footer.inc") ?>
 
-	<script>
-		function(popup){
+<!--	<script>
+		function(popup)
+    {
 
-			var btn=document.getElementsByClassName("btn-course")
-			var
+			var btn=document.getElementsByClassName("btn-course");
 		}
 
 
 
-	</script>
+	</script> -->
 </body>
 </html>

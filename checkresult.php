@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 
-<?php require 'database.php';
+<?php
+//must appear BEFORE the <html> tag
 session_start();
-//echo "successful";?>
+include_once('include/database.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +45,7 @@ session_start();
 					//print_r($selected); check to see weather it is retriving the value that user have selected
 
 					$fetchqry = "SELECT * FROM question";
-					$result = mysqli_query($con,$fetchqry);
+					$result = mysqli_query($conn,$fetchqry);
 				  $row = mysqli_fetch_array($result);
 
           $que_id = 1;
@@ -51,7 +53,7 @@ session_start();
           foreach ($selected as $key => $value) {
 
             $fetchqry2 = "INSERT INTO result(`userans`, `que_id`) values ('$value','$que_id')";
-            $result2 = mysqli_query($con,$fetchqry2);
+            $result2 = mysqli_query($conn,$fetchqry2);
             $que_id += 1;
           }
           if ($result2) {

@@ -16,21 +16,21 @@ include_once('include/database.php');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
-    
+
     <title>Courses </title>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
-    
+
     <div class="container-fluid">
     	<div class="row">
         	<div class="col">
-            	
-            		<h2> THIS IS COURSES PAGE</h2>
-            
 
             	
+
+
+
             </div>
         </div>
     </div>

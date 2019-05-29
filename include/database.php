@@ -13,7 +13,5 @@ function db_connect()
 		die('Connect Error: ' . $conn -> connect_error);
 	}
 	return $conn;
-} 
+}
 ?>
-
-

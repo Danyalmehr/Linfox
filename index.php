@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = $result -> fetch_assoc();
     if ($numOfRows == 1) {
         $_SESSION['valid_user'] = $email;
-        header("location: dashboard.php");
+        header("location: dashboard1.php");
     }else {
         $error = 'Your Login Name or Password is invalid';
     }
@@ -41,18 +41,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
-    
+
     <title>Login</title>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
    <div class="container">
     <div class="login">
-     
+
     	<form action="index.php" method="post">
-		
+
         <span class="login_header"><h1>Login</h1><span><br>
-            
+
             <div class="row">
             	<div class="col">
                 	<label for="email">Email</label>
@@ -72,8 +72,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 	<label>&nbsp;</label>
                    <button class="button_login" style="vertical-align:middle" value="Submit"><span>Submit </span></button>
 
-                    
-                   
+
+
                     <br>
                     <br>
                     <span class="signupnotice"><a href="member.php"><i>Signup to become a member</i></a></span>
@@ -83,13 +83,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                         unset($error);
                     }
                     ?>
-                
-   
+
+
         </div>
         </div>
         </form>
     </div>
     </div>
-   
+
 </body>
 </html>

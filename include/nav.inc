@@ -4,64 +4,51 @@
 include_once('include/database.php');
 ?>
 
-<link rel="stylesheet" href="css/responsive.css">
-
-<nav class="container-fluid navbar navbar-expand-lg bg-light navbar-light " id="navbar"style="padding:1%; font-size:1.5em;
-border-bottom:1px solid black; color:black;">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"> </span>
-        </button>
-        <div class="collapse navbar-collapse " id="collapsibleNavbar">
-            <!-- md-auto: left, ml-auto: right, mx-auto: center -->
-            <ul class="navbar-nav mx-auto">
-
-			 <li class="nav-item">
-                    <a class="nav-link" href="dashboard1.php" id="0" onClick="nav_item_selected(0)"> Home </a>
-                </li>
-                <li class="nav-item"><a class="nav-link" id="1" onClick="nav_item_selected(1)" href="courses.php"> Courses </a></li>
 
 
-			      <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="2" onClick="nav_item_selected(2)" data-toggle="dropdown"> Test
-                    </a>
-                    <div class="dropdown-menu">
-						<a class="dropdown-item" href="Stest.php"> Take test </a>
-                        <a class="dropdown-item" href="previousresults.php"> Previous test result </a>
-                    </div>
-				 </li>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css\nav.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="script.js"></script>
+    <title>CSS MenuMaker</title>
+ </head>
+ <body>
+
+  		<?php if(isset($_SESSION['valid_user'])): ?>
+
+ 				<?php
+ 					$conn  = db_connect();
+ 					$user_check = $_SESSION['valid_user'];
+ 					$ses_sql = "select fname from user where email='$user_check'";
+ 					$result = $conn -> query($ses_sql);
+ 					$row = $result -> fetch_assoc();
+ 					$fname = $row['fname']; ?>
+
+          <div id='cssmenu' class="cssmenu">
+          <ul>
+             <li><a href='dashboard1.php'><span>Home</span></a></li>
+             <li class='has-sub'><a href=''><span>Test</span></a>
+                <ul>
+                   <li class='last'><a href='Stest.php'><span>Take test</span></a></li>
+                   <li class='last'><a href='Previousresult.php'><span>Previous test results</span></a></li>
+                </ul>
+             </li>
 
 
-            </ul>
-        </div>
-		<?php if(isset($_SESSION['valid_user'])): ?>
+             <li class='has-sub'><a href=''><span> <?php echo " Welcome $fname ! "; ?></span></a>
+                <ul>
+                   <li class='last'><a href='index.php'><span>Sign-out</span></a></li>
 
-				<?php
-					$conn  = db_connect();
-					$user_check = $_SESSION['valid_user'];
-					$ses_sql = "select fname from user where email='$user_check'";
-					$result = $conn -> query($ses_sql);
-					$row = $result -> fetch_assoc();
-					$fname = $row['fname']; ?>
-
-				<ul class="navbar-nav mx-auto">
-				<li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="4" onClick="nav_item_selected(4)" data-toggle="dropdown">
-				  <?php echo " Welcome $fname ! "; ?>
-                    </a>
-                    <div class="dropdown-menu">
- 						<a class="nav-link" href="index.php" id="5" onClick="nav_item_selected(5)">Sign-out</a>
-                    </div>
-				 </li>
-				</ul>
+                </ul>
+             </li>
 
 
-				</a>
-                </li>
-				<?php else: ?>
-                <li class="nav-item">
-
-                </li>
+      </ul>
+ 				<?php else: ?>
 
 
-                <?php endif; ?>
-    </nav>
+                 <?php endif; ?>
+
+ </div>
