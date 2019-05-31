@@ -31,7 +31,7 @@ include_once('include/database.php');
              <li class='has-sub'><a href=''><span>Test</span></a>
                 <ul>
                    <li class='last'><a href='Stest.php'><span>Take test</span></a></li>
-                   <li class='last'><a href='Previousresult.php'><span>Previous test results</span></a></li>
+                   <li class='last'><a href='checkresult.php'><span>Previous test results</span></a></li>
                 </ul>
              </li>
 
