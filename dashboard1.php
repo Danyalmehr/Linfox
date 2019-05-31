@@ -3,6 +3,11 @@
 session_start();
 include_once('include/database.php');
 ?>
+<?php require 'database.php';
+session_start();
+//echo "successful";?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +20,8 @@ include_once('include/database.php');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
+	
+	
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -110,7 +117,7 @@ include_once('include/database.php');
 	<?php
 
 					$courses = "select course_id, course_name, course_desc FROM courses";
-					$result = mysqli_query($conn,$courses);
+					$result = mysqli_query($con,$courses);
             $num=mysqli_num_rows($result);
 
 
