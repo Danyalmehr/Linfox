@@ -44,12 +44,9 @@ include_once('include/database.php');
                 </form>
               <?php };
               if(isset($_POST['submit'])){
-                $array1 = $_POST['submit'], $row['test_id'];
-                foreach ($_POST['submit'] as $Test) {
-                  array_push($array1, $Test);
-                }
-                $fetchqry2 = "INSERT INTO question(`test_id`) values ('$testID')";
-                $result2 = mysqli_query($conn, $fetchqry2);
+
+                //$fetchqry2 = "INSERT INTO question(`test_id`) values ('$testID')";
+                //$result2 = mysqli_query($conn, $fetchqry2);
               }
                ?>
 
