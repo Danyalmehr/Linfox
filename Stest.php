@@ -2,7 +2,7 @@
 //must appear BEFORE the <html> tag
 session_start();
 include('database.php');
-echo "Connected";
+//echo "Connected";
 ?>
 
 <!DOCTYPE html>

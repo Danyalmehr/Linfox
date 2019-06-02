@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2019 at 02:34 AM
+-- Generation Time: Jun 02, 2019 at 05:51 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -34,6 +34,13 @@ CREATE TABLE `attempt` (
   `test_id` int(255) DEFAULT NULL,
   `email_FK` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `attempt`
+--
+
+INSERT INTO `attempt` (`att_id`, `final_score`, `test_id`, `email_FK`) VALUES
+(1, '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -129,6 +136,17 @@ CREATE TABLE `useranswer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `useranswer`
+--
+
+INSERT INTO `useranswer` (`ans_id`, `userans`, `que_id`, `email_FK`) VALUES
+(497, 'Preprocessed Hypertext Page', 1, NULL),
+(498, '1', 2, NULL),
+(499, 'header', 3, NULL),
+(500, 'CSS', 4, NULL),
+(501, 'w3school.com', 5, NULL);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -181,7 +199,7 @@ ALTER TABLE `useranswer`
 -- AUTO_INCREMENT for table `attempt`
 --
 ALTER TABLE `attempt`
-  MODIFY `att_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `att_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `question`
@@ -199,7 +217,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `useranswer`
 --
 ALTER TABLE `useranswer`
-  MODIFY `ans_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=497;
+  MODIFY `ans_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=502;
 
 --
 -- Constraints for dumped tables
