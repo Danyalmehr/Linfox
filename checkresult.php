@@ -116,6 +116,12 @@ session_start();
 
           mysqli_free_result($result);?>
 
+          <form>
+            <input type="button" class="button" name="back" style="vertical-align:middle" value="Take the test again" onclick="history.go(-1)">
+            <a href="dashboard1.php"><input type="button" class="button" name="back" style="vertical-align:middle" value="back to Dashboard" onclick="history.go(-1)"></a>
+          </form>
+
+
 			</div>
     </div>
 

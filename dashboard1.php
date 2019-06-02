@@ -1,8 +1,8 @@
-<?php
-//must appear BEFORE the <html> tag
+
+<?php require 'database.php';
 session_start();
-include_once('include/database.php');
-?>
+//echo "successful";?>
+
 
 
 <!DOCTYPE html>
@@ -113,7 +113,7 @@ include_once('include/database.php');
 	<?php
 
 					$courses = "select course_id, course_name, course_desc FROM courses";
-					$result = mysqli_query($conn,$courses);
+					$result = mysqli_query($con,$courses);
             $num=mysqli_num_rows($result);
 
 
