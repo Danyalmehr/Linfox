@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-
 <?php
-//must appear BEFORE the <html> tag
+require 'database.php';
 session_start();
-include_once('include/database.php');
-?>
+//echo "successful";?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +41,7 @@ include_once('include/database.php');
 					//print_r($selected); check to see weather it is retriving the value that user have selected
 
 					$fetchqry = "SELECT * FROM question";
-					$result = mysqli_query($conn,$fetchqry);
+					$result = mysqli_query($con,$fetchqry);
           $num=mysqli_num_rows($result);
 				  $row = mysqli_fetch_array($result);
 
@@ -56,7 +53,7 @@ include_once('include/database.php');
             //( '$value', (SELECT `que_id` from `question`) )";
 
             $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`) values ('$value','$que_id')";
-            $result2 = mysqli_query($conn,$fetchqry2);
+            $result2 = mysqli_query($con,$fetchqry2);
             $que_id += 1;
           }
           if ($result2) {
@@ -113,7 +110,7 @@ include_once('include/database.php');
       <?php }
 
           $fetchqry3 = "INSERT INTO attempt (`final_score`) values ('$score')";
-          $result3 = mysqli_query($conn,$fetchqry3);
+          $result3 = mysqli_query($con,$fetchqry3);
 
           echo (" Your total score is ".$score." out of ".$count."");
 

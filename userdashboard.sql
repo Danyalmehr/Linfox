@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: May 26, 2019 at 11:10 AM
--- Server version: 5.7.24
--- PHP Version: 7.2.14
+-- Host: 127.0.0.1
+-- Generation Time: Jun 02, 2019 at 02:34 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,13 +28,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `attempt`
 --
 
-DROP TABLE IF EXISTS `attempt`;
-CREATE TABLE IF NOT EXISTS `attempt` (
-  `att_id` int(255) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `attempt` (
+  `att_id` int(255) NOT NULL,
   `final_score` varchar(255) DEFAULT NULL,
   `test_id` int(255) DEFAULT NULL,
-  PRIMARY KEY (`att_id`),
-  KEY `test_id` (`test_id`)
+  `email_FK` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -43,12 +41,10 @@ CREATE TABLE IF NOT EXISTS `attempt` (
 -- Table structure for table `courses`
 --
 
-DROP TABLE IF EXISTS `courses`;
-CREATE TABLE IF NOT EXISTS `courses` (
+CREATE TABLE `courses` (
   `course_id` int(255) NOT NULL,
   `course_name` varchar(255) NOT NULL,
-  `course_desc` text NOT NULL,
-  PRIMARY KEY (`course_id`)
+  `course_desc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -65,19 +61,16 @@ INSERT INTO `courses` (`course_id`, `course_name`, `course_desc`) VALUES
 -- Table structure for table `question`
 --
 
-DROP TABLE IF EXISTS `question`;
-CREATE TABLE IF NOT EXISTS `question` (
-  `que_id` int(255) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `question` (
+  `que_id` int(255) NOT NULL,
   `que` text NOT NULL,
   `option 1` varchar(222) NOT NULL,
   `option 2` varchar(222) NOT NULL,
   `option 3` varchar(222) NOT NULL,
   `option 4` varchar(222) NOT NULL,
   `ans` varchar(222) NOT NULL,
-  `test_id` int(255) DEFAULT NULL,
-  PRIMARY KEY (`que_id`),
-  KEY `test_id` (`test_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+  `test_id` int(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `question`
@@ -93,77 +86,13 @@ INSERT INTO `question` (`que_id`, `que`, `option 1`, `option 2`, `option 3`, `op
 -- --------------------------------------------------------
 
 --
--- Table structure for table `result`
---
-
-DROP TABLE IF EXISTS `result`;
-CREATE TABLE IF NOT EXISTS `result` (
-  `ans_id` int(255) NOT NULL AUTO_INCREMENT,
-  `userans` varchar(255) NOT NULL,
-  `que_id` int(255) DEFAULT NULL,
-  PRIMARY KEY (`ans_id`),
-  KEY `que_id` (`que_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=497 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `result`
---
-
-INSERT INTO `result` (`ans_id`, `userans`, `que_id`) VALUES
-(472, 'Preprocessed Hypertext Page', 1),
-(473, '2', 2),
-(474, 'header', 3),
-(475, 'CSS', 4),
-(476, 'Softglobe.net', 5),
-(477, 'Hypertext Preprocessor', 1),
-(478, '0', 2),
-(479, 'headers_list', 3),
-(480, 'JS', 4),
-(481, 'php.net', 5),
-(482, 'Hypertext Preprocessor', 1),
-(483, '1', 2),
-(484, 'header_send', 3),
-(485, 'JS', 4),
-(486, 'technopoints.co.in', 5),
-(487, 'Preprocessed Hypertext Page', 1),
-(488, '0', 2),
-(489, 'header_sent', 3),
-(490, 'JS', 4),
-(491, 'technopoints.co.in', 5),
-(492, 'Preprocessed Hypertext Page', 1),
-(493, '0', 2),
-(494, 'header_sent', 3),
-(495, 'JS', 4),
-(496, 'technopoints.co.in', 5);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `score`
---
-
-DROP TABLE IF EXISTS `score`;
-CREATE TABLE IF NOT EXISTS `score` (
-  `final_score` int(11) NOT NULL,
-  `email_FK` varchar(100) NOT NULL,
-  `test_id_FK` int(255) NOT NULL,
-  `course_id_FK` int(255) NOT NULL,
-  UNIQUE KEY `final_score` (`final_score`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `test`
 --
 
-DROP TABLE IF EXISTS `test`;
-CREATE TABLE IF NOT EXISTS `test` (
-  `test_id` int(255) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `test` (
+  `test_id` int(255) NOT NULL,
   `test_name` varchar(255) NOT NULL,
-  `course_id` int(255) DEFAULT NULL,
-  PRIMARY KEY (`test_id`),
-  KEY `course_id` (`course_id`)
+  `course_id` int(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -172,13 +101,11 @@ CREATE TABLE IF NOT EXISTS `test` (
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE `user` (
   `fname` text NOT NULL,
   `lname` text NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` text NOT NULL,
-  PRIMARY KEY (`email`)
+  `password` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -188,9 +115,101 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`fname`, `lname`, `email`, `password`) VALUES
 ('Shesh', 'Sonar', 's@s.s', 'ss');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `useranswer`
+--
+
+CREATE TABLE `useranswer` (
+  `ans_id` int(255) NOT NULL,
+  `userans` varchar(255) NOT NULL,
+  `que_id` int(255) DEFAULT NULL,
+  `email_FK` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `attempt`
+--
+ALTER TABLE `attempt`
+  ADD PRIMARY KEY (`att_id`),
+  ADD KEY `test_id` (`test_id`);
+
+--
+-- Indexes for table `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`course_id`);
+
+--
+-- Indexes for table `question`
+--
+ALTER TABLE `question`
+  ADD PRIMARY KEY (`que_id`),
+  ADD KEY `test_id` (`test_id`);
+
+--
+-- Indexes for table `test`
+--
+ALTER TABLE `test`
+  ADD PRIMARY KEY (`test_id`),
+  ADD KEY `course_id` (`course_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`email`);
+
+--
+-- Indexes for table `useranswer`
+--
+ALTER TABLE `useranswer`
+  ADD PRIMARY KEY (`ans_id`),
+  ADD KEY `que_id` (`que_id`),
+  ADD KEY `email_FK` (`email_FK`) USING BTREE;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `attempt`
+--
+ALTER TABLE `attempt`
+  MODIFY `att_id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `question`
+--
+ALTER TABLE `question`
+  MODIFY `que_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `test`
+--
+ALTER TABLE `test`
+  MODIFY `test_id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `useranswer`
+--
+ALTER TABLE `useranswer`
+  MODIFY `ans_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=497;
+
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `attempt`
+--
+ALTER TABLE `attempt`
+  ADD CONSTRAINT `attempt_ibfk_1` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`);
 
 --
 -- Constraints for table `question`
@@ -199,16 +218,16 @@ ALTER TABLE `question`
   ADD CONSTRAINT `question_ibfk_2` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`);
 
 --
--- Constraints for table `result`
---
-ALTER TABLE `result`
-  ADD CONSTRAINT `result_ibfk_1` FOREIGN KEY (`que_id`) REFERENCES `question` (`que_id`);
-
---
 -- Constraints for table `test`
 --
 ALTER TABLE `test`
   ADD CONSTRAINT `test_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `courses` (`course_id`);
+
+--
+-- Constraints for table `useranswer`
+--
+ALTER TABLE `useranswer`
+  ADD CONSTRAINT `useranswer_ibfk_1` FOREIGN KEY (`que_id`) REFERENCES `question` (`que_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
