@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2019 at 05:51 AM
+-- Generation Time: Jun 02, 2019 at 07:37 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `userdashboard`
+-- Database: `userdashboard(1)`
 --
 
 -- --------------------------------------------------------
@@ -113,7 +113,7 @@ CREATE TABLE `user` (
   `lname` text NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
@@ -155,7 +155,8 @@ INSERT INTO `useranswer` (`ans_id`, `userans`, `que_id`, `email_FK`) VALUES
 --
 ALTER TABLE `attempt`
   ADD PRIMARY KEY (`att_id`),
-  ADD KEY `test_id` (`test_id`);
+  ADD KEY `test_id` (`test_id`),
+  ADD KEY `email_FK` (`email_FK`);
 
 --
 -- Indexes for table `courses`
@@ -227,7 +228,8 @@ ALTER TABLE `useranswer`
 -- Constraints for table `attempt`
 --
 ALTER TABLE `attempt`
-  ADD CONSTRAINT `attempt_ibfk_1` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`);
+  ADD CONSTRAINT `attempt_ibfk_1` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`),
+  ADD CONSTRAINT `attempt_ibfk_2` FOREIGN KEY (`email_FK`) REFERENCES `user` (`email`);
 
 --
 -- Constraints for table `question`
@@ -245,7 +247,8 @@ ALTER TABLE `test`
 -- Constraints for table `useranswer`
 --
 ALTER TABLE `useranswer`
-  ADD CONSTRAINT `useranswer_ibfk_1` FOREIGN KEY (`que_id`) REFERENCES `question` (`que_id`);
+  ADD CONSTRAINT `useranswer_ibfk_1` FOREIGN KEY (`que_id`) REFERENCES `question` (`que_id`),
+  ADD CONSTRAINT `useranswer_ibfk_2` FOREIGN KEY (`email_FK`) REFERENCES `user` (`email`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
