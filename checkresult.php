@@ -31,7 +31,7 @@ session_start();
 				{
 					$count = count($_POST['userans']);
 
-					echo " <h3> Out of All questions you have answred " .$count." options </h3>";
+					echo " <h3> There were ".$count." questions in this test </h3>";
 
 
 					$i = 1;
@@ -57,7 +57,7 @@ session_start();
             $que_id += 1;
           }
           if ($result2) {
-             echo "Your result is submitted!";
+             echo " Your answers have been submitted!";
           } else {
              echo "Error: " . $fetchqry2 . "" . mysqli_error($con);
           }
@@ -101,7 +101,7 @@ session_start();
 
             <p> <span style="background-color: #ADFFB4"><?= $array1[$x] ?></span> </p>
             <?php $score = $score + 1;
-            echo (" Your total score is ".$score." out of ".$count.""); ?>
+            $scorePercentage = ($score/$count)*100;?>
 
             <?php  }
 
@@ -111,11 +111,11 @@ session_start();
       <?php }
 
           $fetchqry3 = "INSERT INTO attempt (`final_score`) values ('$score')";
-          $result3 = mysqli_query($con,$fetchqry3);
+          $result3 = mysqli_query($con,$fetchqry3); ?>
 
+         <h2> Your have answered <?=$scorePercentage?>% of all the questions </h2>
 
-
-          mysqli_free_result($result);?>
+        <?php  mysqli_free_result($result);?>
 
           <form>
             <input type="button" class="button" name="back" style="vertical-align:middle" value="Take the test again" onclick="history.go(-1)">
