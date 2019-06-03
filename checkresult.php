@@ -57,7 +57,7 @@ include_once('include/database.php');?>
             $que_id += 1;
           }
           if ($result2) {
-             echo " New record created successfully";
+             echo "Your result is submitted!";
           } else {
              echo "Error: " . $fetchqry2 . "" . mysqli_error($con);
           }
@@ -100,7 +100,8 @@ include_once('include/database.php');?>
           <?php  } else {?>
 
             <p> <span style="background-color: #ADFFB4"><?= $array1[$x] ?></span> </p>
-            <?php $score = $score + 1; ?>
+            <?php $score = $score + 1;
+            echo (" Your total score is ".$score." out of ".$count.""); ?>
 
             <?php  }
 
@@ -112,7 +113,7 @@ include_once('include/database.php');?>
           $fetchqry3 = "INSERT INTO attempt (`final_score`) values ('$score')";
           $result3 = mysqli_query($conn,$fetchqry3);
 
-          echo (" Your total score is ".$score." out of ".$count."");
+
 
           mysqli_free_result($result);?>
 
