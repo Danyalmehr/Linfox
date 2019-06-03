@@ -1,7 +1,7 @@
 <?php
-require 'database.php';
+//must appear BEFORE the <html> tag
 session_start();
-//echo "successful";?>
+include_once('include/database.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +41,7 @@ session_start();
 					//print_r($selected); check to see weather it is retriving the value that user have selected
 
 					$fetchqry = "SELECT * FROM question";
-					$result = mysqli_query($con,$fetchqry);
+					$result = mysqli_query($conn,$fetchqry);
           $num=mysqli_num_rows($result);
 				  $row = mysqli_fetch_array($result);
 
@@ -53,7 +53,7 @@ session_start();
             //( '$value', (SELECT `que_id` from `question`) )";
 
             $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`) values ('$value','$que_id')";
-            $result2 = mysqli_query($con,$fetchqry2);
+            $result2 = mysqli_query($conn,$fetchqry2);
             $que_id += 1;
           }
           if ($result2) {
@@ -111,7 +111,7 @@ session_start();
       <?php }
 
           $fetchqry3 = "INSERT INTO attempt (`final_score`) values ('$score')";
-          $result3 = mysqli_query($con,$fetchqry3); ?>
+          $result3 = mysqli_query($conn,$fetchqry3);
 
          <h2> Your have answered <?=$scorePercentage?>% of all the questions </h2>
 

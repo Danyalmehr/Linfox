@@ -1,8 +1,7 @@
 <?php
 //must appear BEFORE the <html> tag
 session_start();
-include('database.php');
-//echo "Connected";
+include_once('include/database.php');
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +29,7 @@ include('database.php');
 <?php
 
           $fetchqry = "SELECT * FROM `question`";
-          $result=mysqli_query($con,$fetchqry);
+          $result=mysqli_query($conn,$fetchqry);
           $num=mysqli_num_rows($result);
           while ($row = mysqli_fetch_array($result))
             {

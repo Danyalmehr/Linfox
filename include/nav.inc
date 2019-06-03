@@ -1,5 +1,5 @@
 <?php
-//must appear BEFORE the <html> tag
+//must appear BEFORE the <html> tag. I want to add something
 include_once('include/database.php');
 ?>
 
