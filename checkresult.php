@@ -87,7 +87,7 @@ session_start();
           array_push($array4, $res['que']);
       }
 
-      for ($x=0; $x < $num ; $x++) {?>
+      for ($x=0; $x < $count ; $x++) {?>
         <form class="test-display" action="" method="post">
         <div class="options">
 

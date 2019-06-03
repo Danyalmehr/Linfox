@@ -22,13 +22,28 @@ include_once('database.php');
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
+
+      <?php
+      $fetchqry7 = "SELECT *
+      FROM question
+      INNER JOIN test ON question.test_id = test.test_id
+      INNER JOIN courses ON test.course_id = courses.course_id
+      ";
+      $result7=mysqli_query($con,$fetchqry7);
+      $row7 = mysqli_fetch_array($result7);
+      $courseName = $row7['course_name'];
+      $testName = $row7['test_name'];
+      echo "<h1>Course name: $courseName</h1>";
+      echo "<h2>Test name: $testName</h2>";
+
+       ?>
+
     	<div class="row">
        	<div class="col-md-2"></div>
         	<div class="col-md-8">
 
 <?php
-
-          $fetchqry = "SELECT * FROM `question`";
+          $fetchqry = "SELECT * FROM `question` WHERE test_id = 1";
           $result=mysqli_query($con,$fetchqry);
           $num=mysqli_num_rows($result);
           $questionNum = 1;
