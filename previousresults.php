@@ -27,7 +27,7 @@ include_once('database.php');
     <title>Previous Results</title>
 </head>
 <style>
-
+.table_heading {font-size: 30px;padding: 3%;}
 .result_banner{width: 100%;background-color: #E8E1E1;font-size: 1.2em; font-weight: 500;padding: 3%;border-radius: 3%;margin-top:4%;}
 </style>
 <body onLoad="run_first()">
@@ -96,7 +96,7 @@ include_once('database.php');
         $result=mysqli_query($con,$fetchqry);
         while ($row = mysqli_fetch_array($result)) {
 
-        $final_score = $row['final_score'];
+        $final_score = $row['final_score']*50;
         $testName = $row['test_name'];
         $fname = $row['fname'];
         $lname = $row['lname'];
@@ -104,7 +104,7 @@ include_once('database.php');
     ?>
     <div class="search_results" id="search_results">
             <table id="search_table">
-              <tr><center><h1> Previous test results for <?php echo" $fname "?> are as following </h1><Center></tr>
+              <tr><center class="table_heading">Test results for  <?php echo" $fname "?> are as following<Center></tr>
                <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
@@ -116,7 +116,7 @@ include_once('database.php');
 
                 	<tr><td><?= $fname ?></td>
                     <td><?= $lname ?></td>
-                    <td><?= $final_score ?></td>
+                    <td><?= $final_score ?><?php echo " % "?></td>
                     <td><?= $courseName ?></td>
                     <td><?= $testName ?></td>
                		</tr>
