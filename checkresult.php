@@ -102,7 +102,7 @@ session_start();
           foreach ($selected as $key => $value) {
            //$fetchqry2= "INSERT INTO useranswer (`userans`, `que_id`) VALUES
             //( '$value', (SELECT `que_id` from `question`) )";
-            $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`) values ('$value','$que_id')";
+            $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`, `email_FK`, test_id) values ('$value','$que_id', '$email', '$test_id')";
             $result2 = mysqli_query($con,$fetchqry2);
             $que_id += 1;
           }
