@@ -1,7 +1,7 @@
 <?php
 require 'database.php';
 session_start();
-//echo "successful";?>
+//echo " successful";?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -122,7 +122,6 @@ session_start();
       $array2 = array();
       $array3 = array();
       $array4 = array();
-
       foreach ($selected as $checkans) {
         array_push($array1, $checkans);
       }
@@ -136,12 +135,12 @@ session_start();
         <div class="options">
 
 
-            <p><?= $array3[$x]?>.&nbsp;<?=$array4[$x]?></p>
+            <p><?= $i?>.&nbsp;<?=$array4[$x]?></p>
             <?php if ($array2[$x] != $array1[$x]) {?>
               <p> <span style="background-color: #ff9C9E"><?= $array1[$x]; ?></span> </p>
               <p> <span style="background-color: #ADFFB4"><?= $array2[$x] ?></span> </p>
 
-          <?php  } else {?>
+          <?php $i += 1;  } else {?>
 
             <p> <span style="background-color: #ADFFB4"><?= $array1[$x] ?></span> </p>
             <?php $score = $score + 1; ?>
