@@ -98,7 +98,12 @@ include_once('database.php');
         $courseName = $row['course_name'];
     ?>
         <tr>
-          <td><?= $final_score, $testName, $fname, $lname, $courseName ?></td>
+          <td>
+            First name : <?= $fname ?>
+            Last name : <?= $lname ?>
+            final score : <?= $final_score ?>
+            course name : <?= $courseName ?>
+            Test Name : <?= $testName ?><br> </td>
         </tr>
     <?php } ?>
     </div>
