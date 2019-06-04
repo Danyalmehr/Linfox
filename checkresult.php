@@ -14,78 +14,66 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
-    <link type="text/css" href="css/theme.css" rel="stylesheet">
-    <title> TAKE TEST </title>
+    <title> Take test </title>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
-  <?php include("include/nav.inc") ?>
-  <div class="container-fluid">
-  <div class="options">
-  <?php
+    <?php include("include/nav.inc") ?>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2"></div>
+          <div class="col-md-8">
+    <div class="options">
+    <?php
 			if(isset($_POST['submit']))
 			{
-
 				if(!empty($_POST['userans']))
 				{
 					$count = count($_POST['userans']);
-
-					echo "<h3> There were ".$count." questions in this test </h3>";
-
-
+					//echo " <h3> There were ".$count." questions in this test </h3>";
 					$i = 1;
-
-					$score = 0;
-					$selected = $_POST['userans'];
+					 $score = 0;
+					 $selected = $_POST['userans'];
 					//print_r($selected); check to see weather it is retriving the value that user have selected
-
 					$fetchqry = "SELECT * FROM question";
 					$result = mysqli_query($con,$fetchqry);
           $num=mysqli_num_rows($result);
 				  $row = mysqli_fetch_array($result);
-
           $que_id = 1;
-
           foreach ($selected as $key => $value) {
-
            //$fetchqry2= "INSERT INTO useranswer (`userans`, `que_id`) VALUES
             //( '$value', (SELECT `que_id` from `question`) )";
-
             $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`) values ('$value','$que_id')";
             $result2 = mysqli_query($con,$fetchqry2);
             $que_id += 1;
           }
           if ($result2) {
-             echo " Your answers have been submitted!";
+          //   echo " Your answers have been submitted!";
           } else {
              echo "Error: " . $fetchqry2 . "" . mysqli_error($con);
           }
-
 				}
-
 				// If unable to fetch the value
 				else
 				{
 					echo("Failed to retrive the data");
 				}
 			}
-
       $array1 = array();
       $array2 = array();
       $array3 = array();
       $array4 = array();
-
-
+      $array5 = array();//i made this
+      $array6 = array();
       foreach ($selected as $checkans) {
         array_push($array1, $checkans);
       }
-
       foreach ($result as $res) {
           array_push($array2, $res['ans']);
           array_push($array3, $res['que_id']);
           array_push($array4, $res['que']);
       }
-
       for ($x=0; $x < $count ; $x++) {?>
         <form class="test-display" action="" method="post">
         <div class="options">
@@ -103,20 +91,22 @@ session_start();
               ?>
 
             <?php  }
-
             ?>
 
         </div>
-      <?php }
-
+      <?php } ?>
+<?php
           $fetchqry3 = "INSERT INTO attempt (`final_score`) values ('$score')";
           $result3 = mysqli_query($con,$fetchqry3);
+          $scorePercentage = ($score/$count)*100; ?>
 
-          $scorePercentage = ($score/$count)*100;
+            <center class="result_display">
+          <?php echo " Number of questions : ".$count."  <br>";
+          echo " Number of correct questions : ".$score." <br>";
+          echo (" Your score : ".$scorePercentage."% ");?>
+        </center>
 
-          echo (" <h2>Your have answered ".$scorePercentage."% of all the questions </h2>");
-
-          mysqli_free_result($result);?>
+        <?php  mysqli_free_result($result);?>
 
           <form>
             <input type="button" class="button" name="back" style="vertical-align:middle" value="Take the test again" onclick="history.go(-1)">
@@ -125,7 +115,9 @@ session_start();
 
 
 			</div>
-    </div>
+      	</div>
+          <div class="col-md-2"></div>
+    </div>  </div>
 
 
 
