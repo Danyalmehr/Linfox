@@ -1,12 +1,11 @@
-/*
-
-Edming Admin Template
-EGrappler.com
-All Rights Reserved.
-
-*/
 
 
+body {
+	font-size: 13px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	background: #fff;
+	color: #777
+}
 h1, h2, h3, h4, h5, h6 {
 	color: #333;
 	margin-top: 0
@@ -50,9 +49,9 @@ pre, code {
 blockquote {
 	border-left: 3px solid #dcdddf
 }
-/*blockquote p {
+blockquote p {
 	font-size: 14px
-}*/
+}
 blockquote small::before {
 	content: "# "
 }
@@ -89,7 +88,13 @@ blockquote small::before {
 form {
 	margin: 0
 }
-
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input, label, input, button, select, textarea {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 13px;
+	font-family: 'Open Sans', Tahoma, Arial, sans-serif
+}
 .input-append input, .input-prepend input, .input-append select, .input-prepend select, .input-append .uneditable-input, .input-prepend .uneditable-input {
 	-webkit-border-radius: 0 3px 3px 0;
 	-moz-border-radius: 0 3px 3px 0;
@@ -141,8 +146,36 @@ body [class^="icon-"], body [class*=" icon-"] {
 	box-shadow: 0 0 1px rgba(0,0,0,0.2);
 	margin-bottom: 30px
 }
-
-
+.align-center {
+	text-align: center
+}
+.align-right {
+	text-align: right!important
+}
+.clear {
+	clear: both
+}
+.none {
+	display: none
+}
+.nav>li>a:hover {
+	background: 0
+}
+.form-horizontal .control-group, .form-vertical .control-group {
+	margin-bottom: 0
+}
+.form-horizontal .control-group+.control-group, .form-vertical .control-group+.control-group {
+	margin-top: 13px;
+	padding-top: 13px;
+	border-top: 1px solid #f5f5f5
+}
+.module-login {
+	margin-bottom: 80px;
+	margin-top: 80px
+}
+.module-login .form-vertical input {
+	margin-bottom: 0!important
+}
 .alert {
 	background: #fffaef;
 	border-color: #ecdcb6;
@@ -747,7 +780,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@topColor', end
 	overflow: hidden
 }
 .widget-menu a {
-	color: #555;
+	color: #FFFFFF;
 	display: block;
 	line-height: 20px;
 	padding: 15px;
@@ -755,15 +788,15 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@topColor', end
 }
 .widget-menu .menu-icon {
 
-	margin-right: 10px;
+	margin-right: 20px;
 
-	color: #767676;
+	color: #DBDBDB;
 	 -webkit-transition: all .2s ease-in-out;
 -moz-transition: all .2s ease-in-out;
 transition: all .2s ease-in-out;
 }
 .widget-menu .label {
-	background: #888;
+	background: #FCFCFC;
 	-webkit-box-shadow: 0 0 2px rgba(0,0,0,0.4) inset;
 	-moz-box-shadow: 0 0 2px rgba(0,0,0,0.4) inset;
 	box-shadow: 0 0 2px rgba(0,0,0,0.4) inset;
@@ -780,7 +813,7 @@ transition: all .2s ease-in-out;
 	background: #d74f2a
 }
 .widget-menu>li+li {
-	border-top: 1px solid #555
+	border-top: 1px solid #E0DFCF
 }
 .widget-menu>li>a {
 	background-color: #2d2b32;
@@ -802,11 +835,11 @@ transition: all .2s ease-in-out;
 	display: block
 }
 .widget-menu>li>a:hover {
-	background-color: #28262c;
+	background-color: #50CC03;
 	color: #fafafa;
 }
 
-.widget-menu>li>a:hover .menu-icon { color:#fff;}
+.widget-menu>li>a:hover .menu-icon { color:#EC0003;}
 
 .widget-menu>li ul li {
 	background: #eee;
@@ -843,7 +876,7 @@ text-decoration: none!important;
 
 
 }
-.widget-usage  {
+.widget-usage p {
 	margin-bottom: 10px;
 	line-height: 1.2
 }
@@ -851,7 +884,7 @@ text-decoration: none!important;
 	padding: 15px
 }
 .widget-usage li+li {
-	border-top: 1px solid #ddd
+	border-top: 1px solid #F40004
 }
 .module {
 
@@ -969,7 +1002,7 @@ border-top-left-radius: 3px;
 .stream.new-update a, .stream.load-more a {
 	background: #background: #f7f7f7;;
 
-	color: #555;
+	color: #FFFFFF;
 	font-weight: 600;
 	font-size: 14px;
 	display: block;
@@ -1563,3 +1596,13 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', end
 .big {
 	height: 200px;
 }
+
+		.widget .left_icon a {
+			
+			color: #FFFFFF;
+			
+		}
+
+		.widget .active a {
+			background-color: #50CC03
+		}
