@@ -1,10 +1,4 @@
-/*
 
-Edming Admin Template
-EGrappler.com
-All Rights Reserved.
-
-*/
 
 body {
 	font-size: 13px;
@@ -786,7 +780,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@topColor', end
 	overflow: hidden
 }
 .widget-menu a {
-	color: #555;
+	color: #FFFFFF;
 	display: block;
 	line-height: 20px;
 	padding: 15px;
@@ -794,15 +788,15 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@topColor', end
 }
 .widget-menu .menu-icon {
 
-	margin-right: 10px;
+	margin-right: 20px;
 
-	color: #767676;
+	color: #DBDBDB;
 	 -webkit-transition: all .2s ease-in-out;
 -moz-transition: all .2s ease-in-out;
 transition: all .2s ease-in-out;
 }
 .widget-menu .label {
-	background: #888;
+	background: #FCFCFC;
 	-webkit-box-shadow: 0 0 2px rgba(0,0,0,0.4) inset;
 	-moz-box-shadow: 0 0 2px rgba(0,0,0,0.4) inset;
 	box-shadow: 0 0 2px rgba(0,0,0,0.4) inset;
@@ -819,7 +813,7 @@ transition: all .2s ease-in-out;
 	background: #d74f2a
 }
 .widget-menu>li+li {
-	border-top: 1px solid #555
+	border-top: 1px solid #E0DFCF
 }
 .widget-menu>li>a {
 	background-color: #2d2b32;
@@ -841,11 +835,11 @@ transition: all .2s ease-in-out;
 	display: block
 }
 .widget-menu>li>a:hover {
-	background-color: #28262c;
+	background-color: #50CC03;
 	color: #fafafa;
 }
 
-.widget-menu>li>a:hover .menu-icon { color:#fff;}
+.widget-menu>li>a:hover .menu-icon { color:#EC0003;}
 
 .widget-menu>li ul li {
 	background: #eee;
@@ -890,7 +884,7 @@ text-decoration: none!important;
 	padding: 15px
 }
 .widget-usage li+li {
-	border-top: 1px solid #ddd
+	border-top: 1px solid #F40004
 }
 .module {
 
@@ -1008,7 +1002,7 @@ border-top-left-radius: 3px;
 .stream.new-update a, .stream.load-more a {
 	background: #background: #f7f7f7;;
 
-	color: #555;
+	color: #FFFFFF;
 	font-weight: 600;
 	font-size: 14px;
 	display: block;
@@ -1602,3 +1596,13 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', end
 .big {
 	height: 200px;
 }
+
+		.widget .left_icon a {
+			
+			color: #FFFFFF;
+			
+		}
+
+		.widget .active a {
+			background-color: #50CC03
+		}

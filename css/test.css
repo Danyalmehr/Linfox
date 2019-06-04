@@ -1,30 +1,30 @@
 
-/*------------------------------------------ 
-			
+/*------------------------------------------
+
 		Test Page
 
 -------------------------------------------- */
 
-	
+
 @media screen and (min-width: 601px) {
 form p{font-size:1em; text-align: left; position: relative;left:10%; width: 76%;}
 		.options {
-			
+
 			font-size:1.2em;
 			text-align: left;
 			line-height: 2em;
-		
+
 		}
 			.col-md-8{border:1px solid black; padding: 3%; border-radius:1%; margin: 4%;}
-		
+
 		input , label {
 				  position: relative;
 				  left: 17%;
 		}
-	
+
 	.procedure-button{margin: auto;}
-	
-	
+
+
 .button {
   display: inline-block;
   border-radius: 3px;
@@ -34,11 +34,11 @@ form p{font-size:1em; text-align: left; position: relative;left:10%; width: 76%;
   text-align: center;
   font-size: 1em;
   padding: 1%;
-  width: 15%;
+  width: 20%;
   transition: all 0.5s;
   cursor: pointer;
   margin-top: 5%;
-	position: relative;left: 45%; 
+	position: relative;left: 35%;
   box-shadow: 0 5px #666;
 }
 
@@ -74,34 +74,36 @@ form p{font-size:1em; text-align: left; position: relative;left:10%; width: 76%;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-	
+
+.result_display{width: 100%;background-color: #E8E1E1;font-size: 1.2em; font-weight: 500;padding: 3%;border-radius: 3%;}
+
 }
 
 @media screen and (max-width: 600px) {
 	.options {
-			
+
 			font-size:1em;
 			text-align: left;
 			line-height: 1em;
-		
+
 		}
 		input , label {
 				  position: relative;
 				  left: 17%;
 		}
 	.col-md-8{border:2px solid black; padding: 3%; border-radius:3%; margin: 4%; }
-	
+
 
 	form p{font-size:0.8em; text-align: left; position: relative;left: 10%;width: 76%;}
 		.options {
-			
+
 			font-size:0.5em;
 			text-align: left;
 			line-height: 2em;
-		
+
 		}
-	  
-	  
+
+
 	  .button {
   display: inline-block;
   border-radius: 4px;
@@ -115,7 +117,7 @@ form p{font-size:1em; text-align: left; position: relative;left:10%; width: 76%;
   transition: all 0.5s;
   cursor: pointer;
   margin-top: 5%;
-  position: relative;left: 30%; 
+  position: relative;left: 30%;
   box-shadow: 0 5px #666;
 }
 
@@ -152,7 +154,5 @@ form p{font-size:1em; text-align: left; position: relative;left:10%; width: 76%;
   transform: translateY(4px);
 }
 
-	  
+
 }
-
-
