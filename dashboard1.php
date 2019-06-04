@@ -28,7 +28,7 @@ session_start();
     <title> DASHBOARD </title>
 
 	<style>
-
+.span8{margin-top:1%; padding: 3%;border-radius: 2%; border: 1px solid black;}
     .span3{margin: 2em;}
 		.btn-course {
 			height: 100px;
@@ -73,6 +73,7 @@ session_start();
             <!-- /navbar -->
 
                     <div class="span3">
+
                         <div class="sidebar" style="display: inline">
                             <ul class="widget widget-menu unstyled">
                                 <li class="active"><a href="dashboard1.php"><i class="menu-icon icon-dashboard"></i><small> DASHBOARD </small>
@@ -119,63 +120,61 @@ session_start();
                         <div class="content">
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid course">
+                                  <center>  <h2>  Available Courses </h2> </center>
+                      	<?php
+                      					$courses = "select course_id, course_name, course_desc FROM courses";
+                      					$result = mysqli_query($con,$courses);
+                                  $num=mysqli_num_rows($result);
 
 
-	<?php
+                      					/*$i=0;*/
+                      				  /*$row_num = mysqli_fetch_array($result,MYSQLI_NUM);
+                      					$row=mysqli_fetch_assoc($result);
+                      					$course_name=$row['course_name'];
 
-					$courses = "select course_id, course_name, course_desc FROM courses";
-					$result = mysqli_query($con,$courses);
-            $num=mysqli_num_rows($result);
+                      	*/
 
+                      					while ($row=mysqli_fetch_assoc($result))
+                                    {
 
-					/*$i=0;*/
-				  /*$row_num = mysqli_fetch_array($result,MYSQLI_NUM);
-					$row=mysqli_fetch_assoc($result);
-					$course_name=$row['course_name'];
+                                          $course_name=$row['course_name'];
+                                          $course_id=$row['course_id'];
+                                          $course_desc=$row['course_desc'];
 
-	*/
-
-					while ($row=mysqli_fetch_assoc($result))
-              {
-
-        $course_name=$row['course_name'];
-        $course_id=$row['course_id'];
-        $course_desc=$row['course_desc'];
-
-        echo"<button type=\"button\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\" > $course_name </button>";
+                                          echo"<button type=\"button\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\" > $course_name </button>";
 
 
-        /*<!-- The Modal -->*/
-          echo"<div class=\"modal\" id=\"$course_name\">
-            <div class=\"modal-dialog\">
-              <div class=\"modal-content\">
+                                          /*<!-- The Modal -->*/
+                                            echo"<div class=\"modal\" id=\"$course_name\">
+                                              <div class=\"modal-dialog\">
+                                                <div class=\"modal-content\">
 
 
-                <div class=\"modal-header\">
-                  <h4 class=\"modal-title\">$course_name</h4>
-                  <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
-                </div>
+                                                  <div class=\"modal-header\">
+                                                    <h4 class=\"modal-title\">$course_name</h4>
+                                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                                                  </div>
 
 
-                <div class=\"modal-body\">
-        			<p> $course_desc </p>
+                                                  <div class=\"modal-body\">
+                                          			<p> $course_desc </p>
 
-        			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a href='previousresults.php'>See Results</a></button>
-         			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
-                <button type=\"button\" class=\"btn btn-primary btn-block\" ><i class=\"menu-icon icon-check\"></i><a href='Stest.php'>Take test</a></button>
-                </div>
+                                          			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a href='previousresults.php'>See Results</a></button>
+                                           			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
+                                                  <button type=\"button\" class=\"btn btn-primary btn-block\" ><i class=\"menu-icon icon-check\"></i><a href='Stest.php'>Take test</a></button>
+                                                  </div>
 
 
-                <div class=\"modal-footer\">
-                  <button type=\"button\" class=\"btn btn-dark\" data-dismiss=\"modal\">Close</button>
-                </div>
+                                                  <div class=\"modal-footer\">
+                                                    <button type=\"button\" class=\"btn btn-dark\" data-dismiss=\"modal\">Close</button>
+                                                  </div>
 
-              </div>
-            </div>
-          </div>";
-        					/*$i=$i+1;*/
-    }
-?>
+                                                </div>
+                                              </div>
+                                            </div>";
+                                          					/*$i=$i+1;*/
+                          }
+                      ?>
                                 </div>
                                 <!--<div class="btn-box-row row-fluid">
                                     <div class="span8">
@@ -235,8 +234,8 @@ session_start();
                                         </li>
                                     </ul>
                                 </div>-->
-                            </div>
-						</div>
+                   </div>
+					   	</div>
 					</div>
           </div>
         </div>
