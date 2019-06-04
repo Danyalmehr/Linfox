@@ -100,7 +100,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		var password=document.getElementById("password");
 		var error_msg=document.getElementById("password_check");
 		if (password.value.length <= 7) {
-			error_msg.innerHTML="Please enter more than 7 characters";
+			error_msg.innerHTML="Please enter more than 8 characters";
 			password.focus();
 			return false; }
 		else {
