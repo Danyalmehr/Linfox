@@ -51,12 +51,12 @@
   text-decoration: none;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
 
-  font-size: 23px;
+  font-size: 20px;
 
-  border-right: 1px solid #080808;
+
   color: #ffffff;
   padding: 17px;
-  margin: px;
+  margin: 3px;
 }
 #cssmenu > ul > li:first-child > a {
   border-radius: 5px 0 0 5px;
