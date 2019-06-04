@@ -61,9 +61,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </div><br>
             <div class="row">
             	<div class="col">
-                	<label for="password"> PASSWORD </label>
-                    <input type="password" id="password" name="password"
-                           size="30" maxlength="30" placeholder= " ****** " required />
+                	<label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="at least 8 characters" size="30" maxlength="30" onChange="passwordCheck(document)" required />
+                    <span id="pwd_msg" class="error_msg"></span>
+					<span id="password_check" class="error_msg"></span> />
                 </div>
            	</div>
            	<br>
@@ -92,4 +93,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
 </body>
+	   
+	   	   <script>
+	   
+	   function passwordCheck(document){
+		var password=document.getElementById("password");
+		var error_msg=document.getElementById("password_check");
+		if (password.value.length <= 7) {
+			error_msg.innerHTML="Please enter more than 7 characters";
+			password.focus();
+			return false; }
+		else {
+			password_check.innerHTML=""
+			return true;
+			}
+	}
+	   
+	   </script>
 </html>
