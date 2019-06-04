@@ -1,9 +1,9 @@
 <?php
 //define constants for connection info
 define("MYSQLUSER","root");
-define("MYSQLPASS","");
+define("MYSQLPASS","root");
 define("HOSTNAME","localhost");
-define("MYSQLDB","userdashboard");
+define("MYSQLDB","userdashboard1");
 
 //make connection to database
 function db_connect()
