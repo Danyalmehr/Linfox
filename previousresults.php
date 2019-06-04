@@ -26,6 +26,10 @@ include_once('database.php');
 
     <title>Previous Results</title>
 </head>
+<style>
+
+.result_banner{width: 100%;background-color: #E8E1E1;font-size: 1.2em; font-weight: 500;padding: 3%;border-radius: 3%;margin-top:4%;}
+</style>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
@@ -80,7 +84,7 @@ include_once('database.php');
     </div>
 
     <div class="col-md-9">
-      <center class="result_display"><h1>Previous test results</h1><Center>
+      <center class="result_banner"><h1>Previous test results</h1><Center>
 <?php
         $fetchqry = "SELECT final_score, test_name, fname, lname, course_name
         FROM attempt
