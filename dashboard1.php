@@ -72,7 +72,7 @@ session_start();
                     <div class="span3">
                         <div class="sidebar" style="display: inline">
                             <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="dashboard1.php"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                <li class="active left_icon"><a href="dashboard1.php"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
                                 <!--<li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
                                 </li>-->
