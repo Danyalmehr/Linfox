@@ -135,7 +135,7 @@ session_start();
         <div class="options">
 
 
-            <p><?= $i?>.&nbsp;<?=$array4[$x]?></p>
+            <p><?= $i ?>.&nbsp;<?=$array4[$x]?></p>
             <?php if ($array2[$x] != $array1[$x]) {?>
               <p> <span style="background-color: #ff9C9E"><?= $array1[$x]; ?></span> </p>
               <p> <span style="background-color: #ADFFB4"><?= $array2[$x] ?></span> </p>
