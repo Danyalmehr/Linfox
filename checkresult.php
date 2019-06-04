@@ -108,7 +108,7 @@ session_start();
 				{
 					$count = count($_POST['userans']);
 					//echo " <h3> There were ".$count." questions in this test </h3>";
-					$i = 1;
+
 					 $score = 0;
 					 $selected = $_POST['userans'];
            $test_id= $_POST['myVariable']; // Getting test_id from Stest
@@ -121,7 +121,7 @@ session_start();
           foreach ($selected as $key => $value) {
            //$fetchqry2= "INSERT INTO useranswer (`userans`, `que_id`) VALUES
             //( '$value', (SELECT `que_id` from `question`) )";
-            $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`, `email_FK`, test_id) values ('$value','$que_id', '$email', '$test_id')";
+            $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`, `email_FK`, `test_id`) values ('$value','$que_id', '$email', '$test_id')";
             $result2 = mysqli_query($con,$fetchqry2);
             $que_id += 1;
           }
@@ -149,17 +149,18 @@ session_start();
           array_push($array3, $res['que_id']);
           array_push($array4, $res['que']);
       }
+      $i = 1;
       for ($x=0; $x < $count ; $x++) {?>
         <form class="test-display" action="" method="post">
         <div class="options">
 
 
-            <p><?= $i?>.&nbsp;<?=$array4[$x]?></p>
+            <p><?php echo $i ?>.&nbsp;<?=$array4[$x]?></p>
             <?php if ($array2[$x] != $array1[$x]) {?>
               <p> <span style="background-color: #ff9C9E"><?= $array1[$x]; ?></span> </p>
               <p> <span style="background-color: #ADFFB4"><?= $array2[$x] ?></span> </p>
 
-          <?php $i += 1;  } else {?>
+          <?php   } else {?>
 
             <p> <span style="background-color: #ADFFB4"><?= $array1[$x] ?></span> </p>
             <?php $score = $score + 1; ?>
@@ -167,7 +168,7 @@ session_start();
             <?php  }?>
 
         </div>
-      <?php } ?>
+      <?php $i = $i + 1;} ?>
 <?php
           $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`, `email_FK`) values ('$score', '$test_id', '$email')";
           $result3 = mysqli_query($con,$fetchqry3);
