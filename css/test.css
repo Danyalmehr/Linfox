@@ -15,7 +15,7 @@ form p{font-size:1em; text-align: left; position: relative;left:10%; width: 76%;
 			line-height: 2em;
 
 		}
-			.col-md-8{border:1px solid black; padding: 3%; border-radius:1%; margin: 4%;}
+			.col-md-8{border:1px solid black; padding: 3%; border-radius:1%; margin-top:2%; width: 100%;}
 
 		input , label {
 				  position: relative;
@@ -75,7 +75,7 @@ form p{font-size:1em; text-align: left; position: relative;left:10%; width: 76%;
   transform: translateY(4px);
 }
 
-.result_display{width: 100%;background-color: #E8E1E1;font-size: 1.2em; font-weight: 500;padding: 3%;border-radius: 3%;margin-top:2%; }
+.result_display{width: 100%;background-color: #E8E1E1;font-size: 1.2em; font-weight: 500;padding: 3%;border-radius: 3%;margin-top:%; }
 
 }
 
@@ -91,7 +91,7 @@ form p{font-size:1em; text-align: left; position: relative;left:10%; width: 76%;
 				  position: relative;
 				  left: 17%;
 		}
-	.col-md-8{border:2px solid black; padding: 3%; border-radius:3%; margin: 4%; }
+	.col-md-8{border:2px solid black; padding: 3%; border-radius:3%;}
 
 
 	form p{font-size:0.8em; text-align: left; position: relative;left: 10%;width: 76%;}
