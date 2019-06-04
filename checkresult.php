@@ -19,6 +19,7 @@ session_start();
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
+    <?php include("test.php") ?>
 
     <div class="container-fluid">
       <div class="row">

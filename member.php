@@ -49,10 +49,11 @@ include_once('include/database.php');
                 </div>
             </div>
             <div class="row">
-            	<div class="col">
-                	<label for="password"> * PASSWORD </label>
-                    <input type="password" id="password" name="password" size="30" maxlength="20" placeholder=" ******* "required />
+		<div class="col">
+                	<label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="at least 8 characters" size="30" maxlength="30" onChange="passwordCheck(document)" required />
                     <span id="pwd_msg" class="error_msg"></span>
+					<span id="password_check" class="error_msg" style="color: red"></span>
                 </div>
             </div>
             <div class="row">
@@ -78,4 +79,22 @@ include_once('include/database.php');
     </div>
 	<?php include("include/footer.inc") ?>
 </body>
+
+<script>
+	   
+	   function passwordCheck(document){
+		var password=document.getElementById("password");
+		var error_msg=document.getElementById("password_check");
+		if (password.value.length <= 7) {
+			error_msg.innerHTML="Please enter more than 8 characters";
+			password.focus();
+			return false; }
+		else {
+			password_check.innerHTML=""
+			return true;
+			}
+	}
+	   
+	   </script>
+
 </html>

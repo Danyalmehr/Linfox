@@ -116,6 +116,7 @@ session_start();
                         <div class="content">
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid course">
+					<h1 style="margin: 1em"> Available Courses</h1>
 
 
 	<?php
@@ -164,7 +165,7 @@ session_start();
 
         			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a href='previousresults.php'>See Results</a></button>
          			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
-                <form class=\"test-display\" action=\"stest.php\" method=\"post\">
+                <form class=\"test-display\" action=\"Stest.php\" method=\"post\">
                 <button name=\"test[$test_name]\" type=\"submit\" class=\"btn btn-primary btn-block\" ><i class=\"menu-icon icon-check\"></i>Take test</button>
                 </div>
                 </form>
