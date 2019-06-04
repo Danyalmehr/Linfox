@@ -27,6 +27,8 @@ session_start();
     <title>Dashboard</title>
 
 	<style>
+
+    .span3{margin: 2em;}
 		.btn-course {
 			height: 100px;
 			vertical-align: middle;
@@ -67,8 +69,6 @@ session_start();
     <div class="container-fluid">
     	<div class="row">
             <!-- /navbar -->
-
-
 
                     <div class="span3">
                         <div class="sidebar" style="display: inline">
