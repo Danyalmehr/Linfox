@@ -36,9 +36,9 @@ session_start();
 					$i = 1;
 					 $score = 0;
 					 $selected = $_POST['userans'];
-           $ques_id= $_POST['myVariable']; // Getting test_id from Stest
+           $test_id= $_POST['myVariable']; // Getting test_id from Stest
 				//	print_r($selected); //check to see weather it is retriving the value that user have selected
-					$fetchqry = "SELECT * FROM question where test_id='$ques_id'";
+					$fetchqry = "SELECT * FROM question where test_id='$test_id'";
 					$result = mysqli_query($con,$fetchqry);
           $num=mysqli_num_rows($result);
 				  $row = mysqli_fetch_array($result);
