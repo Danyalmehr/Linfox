@@ -15,11 +15,6 @@ include_once('database.php');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
-
-
-
-    <link type="text/css" href="css/theme.css" rel="stylesheet">
-
     <title> Take test </title>
 </head>
 <body onLoad="run_first()">
@@ -29,17 +24,25 @@ include_once('database.php');
     <div class="container-fluid">
 
       <?php
-      $fetchqry7 = "SELECT *
-      FROM question
-      INNER JOIN test ON question.test_id = test.test_id
-      INNER JOIN courses ON test.course_id = courses.course_id
-      ";
-      $result7=mysqli_query($con,$fetchqry7);
-      $row7 = mysqli_fetch_array($result7);
-      $courseName = $row7['course_name'];
-      $testName = $row7['test_name'];
-      echo "<h1>Course name: $courseName</h1>";
-      echo "<h2>Test name: $testName</h2>";
+    if(isset($_POST['test']))
+      			{
+              $selectedTest = $_POST['test'];
+            foreach ($selectedTest as $key => $value) {
+              echo "<h1>Test name: $key </h1>";
+
+              $fetchqry7 = "SELECT *
+              FROM test
+              INNER JOIN courses ON test.course_id = courses.course_id
+              where test_name = '$key'
+              ";
+              $result7=mysqli_query($con,$fetchqry7);
+              $row7 = mysqli_fetch_array($result7);
+              $courseName = $row7['course_name'];
+              $testName = $row7['test_name'];
+              echo "<h1>Course name: $courseName</h1>";
+            }
+          }
+
 
        ?>
 

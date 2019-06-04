@@ -1,4 +1,3 @@
-
 <?php require 'database.php';
 session_start();
 //echo "successful";?>
@@ -27,8 +26,6 @@ session_start();
     <title>Dashboard</title>
 
 	<style>
-
-    .span3{margin: 2em;}
 		.btn-course {
 			height: 100px;
 			vertical-align: middle;
@@ -54,11 +51,10 @@ session_start();
 		}
     a
     {
-
+      text-decoration: none;
       color: White;
-      font-size: 18px;
-
-    a:hover{
+    }
+    a:hover{text-decoration: none;
     color: White;}
 
 	</style>
@@ -70,6 +66,8 @@ session_start();
     <div class="container-fluid">
     	<div class="row">
             <!-- /navbar -->
+
+
 
                     <div class="span3">
                         <div class="sidebar" style="display: inline">
@@ -122,9 +120,12 @@ session_start();
 
 	<?php
 
-					$courses = "select course_id, course_name, course_desc FROM courses";
+					$courses = "SELECT test.test_name, courses.course_id, courses.course_name, courses.course_desc
+          FROM courses
+          INNER JOIN test ON test.course_id = courses.course_id
+          ";
 					$result = mysqli_query($con,$courses);
-            $num=mysqli_num_rows($result);
+
 
 
 					/*$i=0;*/
@@ -134,14 +135,15 @@ session_start();
 
 	*/
 
-					while ($row=mysqli_fetch_assoc($result))
+					while ($row=mysqli_fetch_array($result))
               {
-
+        $test_name=$row['test_name'];
         $course_name=$row['course_name'];
         $course_id=$row['course_id'];
         $course_desc=$row['course_desc'];
 
-        echo"<button type=\"button\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\" > $course_name </button>";
+        echo"
+              <button name=\"course[$course_name]\" type=\"submit\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\" > $course_name </button>";
 
 
         /*<!-- The Modal -->*/
@@ -161,8 +163,10 @@ session_start();
 
         			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a href='previousresults.php'>See Results</a></button>
          			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
-                <button type=\"button\" class=\"btn btn-primary btn-block\" ><i class=\"menu-icon icon-check\"></i><a href='Stest.php'>Take test</a></button>
+                <form class=\"test-display\" action=\"stest.php\" method=\"post\">
+                <button name=\"test[$test_name]\" type=\"submit\" class=\"btn btn-primary btn-block\" ><i class=\"menu-icon icon-check\"></i>Take test</button>
                 </div>
+                </form>
 
 
                 <div class=\"modal-footer\">
