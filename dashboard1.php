@@ -73,15 +73,14 @@ session_start();
             <!-- /navbar -->
 
                     <div class="span3">
-
                         <div class="sidebar" style="display: inline">
                             <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="dashboard1.php"><i class="menu-icon icon-dashboard"></i><small> DASHBOARD </small>
+                                <li class="active left_icon"><a href="dashboard1.php"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
                                 <!--<li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
                                 </li>-->
 
-                                <li><a href="message.html"><i class="menu-icon icon-inbox"></i><small> INBOX </small> <!--<b class="label green pull-right">
+                                <li class="left_icon"><a href="message.html"><i class="menu-icon icon-inbox"></i>Inbox <!--<b class="label green pull-right">
                                     11</b>--> </a></li>
 
                                 <!--<li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
@@ -91,9 +90,9 @@ session_start();
 
 
 
-                                <li><a href="previousresults.php"><i class="menu-icon icon-file"></i><small> RESULTS </small></a></li>
-								                        <li><a href="certificates.php"><i class="menu-icon icon-certificate"></i><small> CERTIFICATES </small></a></li>
-								                                <li><a href="index.php"><i class="menu-icon icon-signou"></i><small> LOGOUT </small></a></li>
+                                <li class="left_icon"><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
+								                        <li class="left_icon"><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
+								                                <li class="left_icon"><a href="index.php"><i class="menu-icon icon-signou"></i>Logout </a></li>
                                 <!--<li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li>
                                 <li><a href="form.html"><i class="menu-icon icon-paste"></i>Forms </a></li>
                                 <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
@@ -113,6 +112,8 @@ session_start();
                                 <li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
                             </ul>-->
                         </div>
+                        <!--/.sidebar-->
+                    </div>
                         <!--/.sidebar-->
                     </div>
                     <!--/.span3-->
