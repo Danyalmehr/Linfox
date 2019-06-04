@@ -91,6 +91,7 @@ include_once('database.php');
         INNER JOIN test ON test.test_id = attempt.test_id
         INNER JOIN user ON user.email = attempt.email_FK
         INNER JOIN courses ON courses.course_id = test.course_id
+        WHERE email = '$email'
         ";
         $result=mysqli_query($con,$fetchqry);
         while ($row = mysqli_fetch_array($result)) {
@@ -107,7 +108,8 @@ include_once('database.php');
             Last name : <?= $lname ?>
             final score : <?= $final_score ?>
             course name : <?= $courseName ?>
-            Test Name : <?= $testName ?><br> </td>
+            Test Name : <?= $testName ?><br>
+          </td>
         </tr>
     <?php } ?>
     </div>

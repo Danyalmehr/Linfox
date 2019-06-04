@@ -19,10 +19,12 @@ include_once('include/database.php');
         <?php
  					$conn  = db_connect();
  					$user_check = $_SESSION['valid_user'];
- 					$ses_sql = "select fname from user where email='$user_check'";
+ 					$ses_sql = "select fname, email from user where email='$user_check'";
  					$result = $conn -> query($ses_sql);
  					$row = $result -> fetch_assoc();
  					$fname = $row['fname'];
+          $email = $row['email'];
+
         ?>
 
           <div id='cssmenu' class="cssmenu">

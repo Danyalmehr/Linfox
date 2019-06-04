@@ -183,7 +183,7 @@ session_start();
 
           <form>
             <!--<input type="button" class="button" name="back" style="vertical-align:middle" value="Take the test again" onclick="history.go(-1)">-->
-            <a href="dashboard1.php"><input type="button" class="button" name="back" style="vertical-align:middle" value="back to Dashboard" onclick="history.go(-1)"></a>
+            <a href="dashboard1.php"><input type="button" class="button" name="back" style="vertical-align:middle" value="Back to dashboard" onclick="history.go(-1)"></a>
           </form>
 
 
