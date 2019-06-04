@@ -163,7 +163,7 @@ session_start();
 
         			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a href='previousresults.php'>See Results</a></button>
          			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
-                <form class=\"test-display\" action=\"stest.php\" method=\"post\">
+                <form class=\"test-display\" action=\"Stest.php\" method=\"post\">
                 <button name=\"test[$test_name]\" type=\"submit\" class=\"btn btn-primary btn-block\" ><i class=\"menu-icon icon-check\"></i>Take test</button>
                 </div>
                 </form>
