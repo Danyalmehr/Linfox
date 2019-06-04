@@ -150,7 +150,7 @@ session_start();
         </div>
       <?php } ?>
 <?php
-          $fetchqry3 = "INSERT INTO attempt (`final_score`) values ('$score')";
+          $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`) values ('$score', '$test_id')";
           $result3 = mysqli_query($con,$fetchqry3);
           $scorePercentage = ($score/$count)*100; ?>
 
