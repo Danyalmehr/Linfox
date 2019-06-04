@@ -454,6 +454,9 @@ widows:auto; background-size:cover;padding:1%; width:auto;}
 
 
 
+.search_results{ margin:4%; align-content:center; padding:1%; border:1px solid black; background-color:#E8E1E1; color:black; border-radius:9px;}
+#search_table th{padding:3%; margin:5%;width:15em;font-size:24px;alignment-adjust:central;}
+#search_table td{padding:3%; margin:5%; border:2px solid black; resize:both;}
 
 
 

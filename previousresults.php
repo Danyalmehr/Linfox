@@ -27,7 +27,7 @@ include_once('database.php');
     <title>Previous Results</title>
 </head>
 <style>
-
+.table_heading {font-size: 30px;padding: 3%;}
 .result_banner{width: 100%;background-color: #E8E1E1;font-size: 1.2em; font-weight: 500;padding: 3%;border-radius: 3%;margin-top:4%;}
 </style>
 <body onLoad="run_first()">
@@ -84,7 +84,7 @@ include_once('database.php');
     </div>
 
     <div class="col-md-9">
-      <center class="result_banner"><h1>Previous test results</h1><Center>
+
 <?php
         $fetchqry = "SELECT final_score, test_name, fname, lname, course_name
         FROM attempt
@@ -96,25 +96,39 @@ include_once('database.php');
         $result=mysqli_query($con,$fetchqry);
         while ($row = mysqli_fetch_array($result)) {
 
-        $final_score = $row['final_score'];
+        $final_score = $row['final_score']*50;
         $testName = $row['test_name'];
         $fname = $row['fname'];
         $lname = $row['lname'];
         $courseName = $row['course_name'];
     ?>
-        <tr>
-          <td>
-            First name : <?= $fname ?>
-            Last name : <?= $lname ?>
-            final score : <?= $final_score ?>
-            course name : <?= $courseName ?>
-            Test Name : <?= $testName ?><br>
-          </td>
-        </tr>
+    <div class="search_results" id="search_results">
+            <table id="search_table">
+              <tr><center class="table_heading">Test results for  <?php echo" $fname "?> are as following<Center></tr>
+               <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Final score</th>
+                    <th>Course name</th>
+                    <th>Test name</th>
+              </tr>
+      <!-- populate table from mysql database -->
+
+                	<tr><td><?= $fname ?></td>
+                    <td><?= $lname ?></td>
+                    <td><?= $final_score ?><?php echo " % "?></td>
+                    <td><?= $courseName ?></td>
+                    <td><?= $testName ?></td>
+               		</tr>
+
+            </table>
+     </div>
+
+
     <?php } ?>
     </div>
     </div>
-        </div>
+  </div>
 	<?php include("include/footer.inc") ?>
 </body>
 </html>
