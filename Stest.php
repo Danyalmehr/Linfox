@@ -46,8 +46,8 @@ include_once('database.php');
               $courseName = $row7['course_name'];
               $testName = $row7['test_name'];?>
               <center class="result_display">
-            <?php  echo "Test name: $courseName <br>";
-              echo "Course name: $key";?>
+            <?php  echo "<h2>Test name: $courseName </h2><br>";
+              echo " <h2>Course name: $key </h2>";?>
               </center>
 <?php
               $fetchqry = "SELECT *
@@ -87,7 +87,7 @@ include_once('database.php');
            <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[2]?>">&nbsp;<label><?=$ans_array[2]?></label><br>
            <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[3]?>">&nbsp;<label><?=$ans_array[3]?></label><br>
 		   </div>
-       		 <div style="border-bottom: 1px dotted black; margin: 1em; background-color: aqua;"></div>
+       		 <div style="border-bottom: 1px dotted black; margin: 1em; background-color: black;"></div>
          <?php $questionNum += 1; } ?>
 
 
