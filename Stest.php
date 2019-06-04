@@ -34,7 +34,7 @@ include_once('database.php');
       			{
               $selectedTest = $_POST['test'];
               foreach ($selectedTest as $key => $value) {
-              echo "<h1>Test name: $key </h1>";
+
 
               $fetchqry7 = "SELECT *
               FROM test
@@ -44,9 +44,12 @@ include_once('database.php');
               $result7=mysqli_query($con,$fetchqry7);
               $row7 = mysqli_fetch_array($result7);
               $courseName = $row7['course_name'];
-              $testName = $row7['test_name'];
-              echo "<h1>Course name: $courseName</h1>";
-
+              $testName = $row7['test_name'];?>
+              <center class="result_display">
+            <?php  echo "Test name: $courseName <br>";
+              echo "Course name: $key";?>
+              </center>
+<?php
               $fetchqry = "SELECT *
               FROM question
               INNER JOIN test ON question.test_id = test.test_id
