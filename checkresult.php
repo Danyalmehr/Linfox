@@ -1,7 +1,7 @@
 <?php
 require 'database.php';
 session_start();
-//echo " successful";?>
+//echo "successful";?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,22 +15,22 @@ session_start();
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
     <title> Take test </title>
-	
-	
+
+
 	<style>
-		
-		
+
+
 		.results{
 			margin-left: 25em;
 		}
-	
+
 	</style>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
-	
-	
+
+
 	<div class="span3">
                         <div class="sidebar">
                             <ul class="widget widget-menu unstyled">
@@ -73,10 +73,10 @@ session_start();
                         </div>
                         <!--/.sidebar-->
                     </div>
-	
-	
-	
-	<div class="results">	
+
+
+
+	<div class="results">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-2"></div>
