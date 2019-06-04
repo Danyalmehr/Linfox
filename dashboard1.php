@@ -116,6 +116,7 @@ session_start();
                         <div class="content">
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid course">
+					<h1 style="margin: 1em"> Available Courses</h1>
 
 
 	<?php
