@@ -1,7 +1,7 @@
 <?php
 require 'database.php';
 session_start();
-//echo "successful";?>
+//echo " successful";?>
 
 <!DOCTYPE html>
 <html lang="en">
