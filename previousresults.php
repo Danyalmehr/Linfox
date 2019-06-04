@@ -1,7 +1,7 @@
 <?php
 //must appear BEFORE the <html> tag
 session_start();
-include_once('include/database.php');
+include_once('database.php');
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +81,26 @@ include_once('include/database.php');
 
     <div class="col-md-9">
       <center class="result_display"><h1>Previous test results</h1><Center>
+<?php
+        $fetchqry = "SELECT final_score, test_name, fname, lname, course_name
+        FROM attempt
+        INNER JOIN test ON test.test_id = attempt.test_id
+        INNER JOIN user ON user.email = attempt.email_FK
+        INNER JOIN courses ON courses.course_id = test.course_id
+        ";
+        $result=mysqli_query($con,$fetchqry);
+        while ($row = mysqli_fetch_array($result)) {
 
+        $final_score = $row['final_score'];
+        $testName = $row['test_name'];
+        $fname = $row['fname'];
+        $lname = $row['lname'];
+        $courseName = $row['course_name'];
+    ?>
+        <tr>
+          <td><?= $final_score, $testName, $fname, $lname, $courseName ?></td>
+        </tr>
+    <?php } ?>
     </div>
     </div>
         </div>
