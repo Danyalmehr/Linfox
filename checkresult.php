@@ -18,10 +18,11 @@ session_start();
   <script src="js/nav.js"></script>
   <script src="js/read_more.js"></script>
 
-      <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-      <link type="text/css" href="css/theme.css" rel="stylesheet">
-      <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
-      <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+       <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link type="text/css" href="css/theme.css" rel="stylesheet">
+        <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
+        <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
 
 
 
@@ -50,11 +51,11 @@ session_start();
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
-    <div class="container-fluid">
+    
 
-          	<div class="row">
+          	<div class="col-md-3">
 
-              <div class="col-md-3">
+              
                 <div class="span3">
                                      <div class="sidebar" style="display: inline">
                                          <ul class="widget widget-menu unstyled">
@@ -97,9 +98,15 @@ session_start();
                                      </div>
                                      <!--/.sidebar-->
                                  </div>
-              </div>
+              
+		</div>
+	
+	<div class="container-fluid">
+			<div class="row">
 
-          <div class="col-md-8">
+              
+                
+              	<div class="col-md-8">
     <div class="options">
     <?php
 			if(isset($_POST['submit'] , $_POST['myVariable']))
@@ -191,7 +198,7 @@ session_start();
       	</div>
 
     </div>  </div>
-		</div>
+		
 
 
 
