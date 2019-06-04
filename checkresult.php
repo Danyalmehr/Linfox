@@ -64,8 +64,7 @@ session_start();
       $array2 = array();
       $array3 = array();
       $array4 = array();
-      $array5 = array();//i made this
-      $array6 = array();
+
       foreach ($selected as $checkans) {
         array_push($array1, $checkans);
       }
@@ -87,11 +86,9 @@ session_start();
           <?php  } else {?>
 
             <p> <span style="background-color: #ADFFB4"><?= $array1[$x] ?></span> </p>
-            <?php $score = $score + 1;
-              ?>
+            <?php $score = $score + 1; ?>
 
-            <?php  }
-            ?>
+            <?php  }?>
 
         </div>
       <?php } ?>
