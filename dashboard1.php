@@ -54,10 +54,11 @@ session_start();
 		}
     a
     {
-      text-decoration: none;
+
       color: White;
-    }
-    a:hover{text-decoration: none;
+      font-size: 18px;
+
+    a:hover{
     color: White;}
 
 	</style>

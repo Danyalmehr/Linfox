@@ -1,7 +1,7 @@
 <?php
 //define constants for connection info
 define("MYSQLUSER","root");
-define("MYSQLPASS","root");
+define("MYSQLPASS","");
 define("HOSTNAME","localhost");
 define("MYSQLDB","userdashboard");
 

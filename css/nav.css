@@ -8,7 +8,7 @@
   padding: 0;
 }
 #cssmenu {
-  height: 5em;
+  height: 5em; /* this is the height for the  navbar */
   display: block;
   border: 1px solid;
   border-radius: 5px;
@@ -40,6 +40,7 @@
 #cssmenu.align-center ul ul {
   text-align: left;
 }
+
 #cssmenu.align-center > ul > li:first-child > a {
   border-radius: 0;
 }
@@ -51,12 +52,12 @@
   text-decoration: none;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
 
-  font-size: 23px;
+  font-size: 20px;/* this is the fontsize  for the  navbar */
 
-  border-right: 1px solid #080808;
+
   color: #ffffff;
   padding: 17px;
-  margin: px;
+  margin: 3px;
 }
 #cssmenu > ul > li:first-child > a {
   border-radius: 5px 0 0 5px;
@@ -105,11 +106,11 @@
   display: none;
   width: auto;
   position: absolute;
-  top: 38px;
+  top: 58px;
   background: #3f3f3f;
-  border-radius: 0 0 5px 5px;
+  font-size: 15px; /* this is the font size for sub menu */
   z-index: 999;
-  padding: 10px 0;
+  padding: 11px 0;
 }
 #cssmenu ul li > ul {
   width: 200px;
