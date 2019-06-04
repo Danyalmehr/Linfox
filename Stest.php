@@ -44,10 +44,11 @@ include_once('database.php');
               $result7=mysqli_query($con,$fetchqry7);
               $row7 = mysqli_fetch_array($result7);
               $courseName = $row7['course_name'];
-              $testName = $row7['test_name'];?>
+              $testName = $row7['test_name'];
+              ?>
               <center class="result_display">
-            <?php  echo "<h2>Test name: $courseName </h2><br>";
-              echo " <h2>Course name: $key </h2>";?>
+            <?php  echo "<h2>Course name:  $courseName </h2><br>";
+              echo " <h2> Test name : $key </h2>";?>
               </center>
 <?php
               $fetchqry = "SELECT *
@@ -72,9 +73,14 @@ include_once('database.php');
             {
 
 			    $que_id = $row['que_id'];
-              $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4'], $row['ans']);
+              $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4'], $row['ans'],$row['test_id']);
               $ans_array = array($row['option 1'], $row['option 2'], $row['option 3'], $row['option 4']);
               shuffle($ans_array);
+
+
+
+
+
  ?>
 
        <form class="test-display" action="checkresult.php" method="post">
@@ -82,6 +88,10 @@ include_once('database.php');
 
 
            <p><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></p>
+           <?php $myVariable = $row['test_id'];
+           echo '<input type="hidden" name="myVariable" value="'.htmlentities($myVariable).'">'; ?> <!-- Sending test_id from Stest -->
+
+
            <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[0]?>">&nbsp;<label><?=$ans_array[0]?></label><br>
            <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[1]?>">&nbsp;<label><?=$ans_array[1]?></label><br>
            <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[2]?>">&nbsp;<label><?=$ans_array[2]?></label><br>

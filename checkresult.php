@@ -26,7 +26,7 @@ session_start();
           <div class="col-md-8">
     <div class="options">
     <?php
-			if(isset($_POST['submit']))
+			if(isset($_POST['submit'] , $_POST['myVariable']))
 			{
 				if(!empty($_POST['userans']))
 				{
@@ -35,8 +35,9 @@ session_start();
 					$i = 1;
 					 $score = 0;
 					 $selected = $_POST['userans'];
-					//print_r($selected); check to see weather it is retriving the value that user have selected
-					$fetchqry = "SELECT * FROM question";
+           $ques_id= $_POST['myVariable']; // Getting test_id from Stest
+				//	print_r($selected); //check to see weather it is retriving the value that user have selected
+					$fetchqry = "SELECT * FROM question where test_id='$ques_id'";
 					$result = mysqli_query($con,$fetchqry);
           $num=mysqli_num_rows($result);
 				  $row = mysqli_fetch_array($result);
