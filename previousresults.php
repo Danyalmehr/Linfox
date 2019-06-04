@@ -87,6 +87,7 @@ include_once('database.php');
         INNER JOIN test ON test.test_id = attempt.test_id
         INNER JOIN user ON user.email = attempt.email_FK
         INNER JOIN courses ON courses.course_id = test.course_id
+        WHERE email = '$email'
         ";
         $result=mysqli_query($con,$fetchqry);
         while ($row = mysqli_fetch_array($result)) {
