@@ -19,12 +19,10 @@ session_start();
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
-    <?php include("include/nav.inc") ?>
-
-    <div class="container-fluid">
-    <div class="options">
-    <?php
-
+  <?php include("include/nav.inc") ?>
+  <div class="container-fluid">
+  <div class="options">
+  <?php
 			if(isset($_POST['submit']))
 			{
 
@@ -32,13 +30,13 @@ session_start();
 				{
 					$count = count($_POST['userans']);
 
-					echo " <h3> There were ".$count." questions in this test </h3>";
+					echo "<h3> There were ".$count." questions in this test </h3>";
 
 
 					$i = 1;
 
-					 $score = 0;
-					 $selected = $_POST['userans'];
+					$score = 0;
+					$selected = $_POST['userans'];
 					//print_r($selected); check to see weather it is retriving the value that user have selected
 
 					$fetchqry = "SELECT * FROM question";

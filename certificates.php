@@ -21,13 +21,12 @@ include_once('include/database.php');
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
-    <?php include("include/nav.inc") ?>
-
+  <?php include("include/nav.inc") ?>
     <div class="container-fluid">
     	<div class="row">
         	<div class="col">
-                <br>
-            		<h3> THIS IS CERTIFICATES PAGE </h3>
+              <br>
+            	<h3> THIS IS CERTIFICATES PAGE </h3>
           </div>
       </div>
     </div>
