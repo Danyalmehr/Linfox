@@ -41,8 +41,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
-
-    <title>Login</title>
+    <link type="text/css" href="css/theme.css" rel="stylesheet">
+    <title> LOGIN </title>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
@@ -51,17 +51,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     	<form action="index.php" method="post">
 
-        <span class="login_header"><h1>Login</h1><span><br>
+        <span class="login_header"><h1> LOGIN </h1><span><br>
 
             <div class="row">
             	<div class="col">
-                	<label for="email">Email</label>
+                	<label for="email"> EMAIL </label>
                 	<input type="email" id="email" name="email" size="30" maxlength="30" placeholder=" example@abc.com " required />
                 </div>
             </div><br>
             <div class="row">
             	<div class="col">
-                	<label for="password">Password</label>
+                	<label for="password"> PASSWORD </label>
                     <input type="password" id="password" name="password"
                            size="30" maxlength="30" placeholder= " ****** " required />
                 </div>
@@ -70,13 +70,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			<div class="row">
             	<div class="col">
                 	<label>&nbsp;</label>
-                   <button class="button_login" style="vertical-align:middle" value="Submit"><span>Submit </span></button>
+                   <button class="button_login" style="vertical-align:middle" value="Submit"><span> SUBMIT </span></button>
 
 
 
                     <br>
                     <br>
-                    <span class="signupnotice"><a href="member.php"><i>Signup to become a member</i></a></span>
+                    <span class="signupnotice"><a href="member.php"><b> SIGN UP TO BECOME A MEMBER </b></a></span>
                     <?php
                     if(isset($error)) {
                         echo "<span class='error-color'><p style=\"color: red; \">$error</p></span>";

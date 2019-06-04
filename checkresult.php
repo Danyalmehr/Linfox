@@ -14,7 +14,8 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
-    <title> Take test </title>
+    <link type="text/css" href="css/theme.css" rel="stylesheet">
+    <title> TAKE TEST </title>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>

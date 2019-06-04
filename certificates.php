@@ -7,7 +7,7 @@ include_once('include/database.php');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -16,8 +16,8 @@ include_once('include/database.php');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
-
-    <title>Previous Results</title>
+    <link type="text/css" href="css/theme.css" rel="stylesheet">
+    <title> PREVIOUS RESULTS </title>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
@@ -26,13 +26,10 @@ include_once('include/database.php');
     <div class="container-fluid">
     	<div class="row">
         	<div class="col">
-
-            		<h2> THIS IS certificates PAGE</h2>
-
-
-
-            </div>
-        </div>
+                <br>
+            		<h3> THIS IS CERTIFICATES PAGE </h3>
+          </div>
+      </div>
     </div>
 	<?php include("include/footer.inc") ?>
 </body>
