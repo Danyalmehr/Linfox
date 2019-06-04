@@ -84,7 +84,7 @@ include_once('database.php');
     </div>
 
     <div class="col-md-9">
-      <center class="result_banner"><h1>Previous test results</h1><Center>
+
 <?php
         $fetchqry = "SELECT final_score, test_name, fname, lname, course_name
         FROM attempt
@@ -102,19 +102,33 @@ include_once('database.php');
         $lname = $row['lname'];
         $courseName = $row['course_name'];
     ?>
-        <tr>
-          <td>
-            First name : <?= $fname ?>
-            Last name : <?= $lname ?>
-            final score : <?= $final_score ?>
-            course name : <?= $courseName ?>
-            Test Name : <?= $testName ?><br>
-          </td>
-        </tr>
+    <div class="search_results" id="search_results">
+            <table id="search_table">
+              <tr><center><h1> Previous test results for <?php echo" $fname "?> are as following </h1><Center></tr>
+               <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Final score</th>
+                    <th>Course name</th>
+                    <th>Test name</th>
+              </tr>
+      <!-- populate table from mysql database -->
+
+                	<tr><td><?= $fname ?></td>
+                    <td><?= $lname ?></td>
+                    <td><?= $final_score ?></td>
+                    <td><?= $courseName ?></td>
+                    <td><?= $testName ?></td>
+               		</tr>
+
+            </table>
+     </div>
+
+
     <?php } ?>
     </div>
     </div>
-        </div>
+  </div>
 	<?php include("include/footer.inc") ?>
 </body>
 </html>
