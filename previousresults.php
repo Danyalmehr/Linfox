@@ -107,7 +107,8 @@ include_once('database.php');
             Last name : <?= $lname ?>
             final score : <?= $final_score ?>
             course name : <?= $courseName ?>
-            Test Name : <?= $testName ?><br> </td>
+            Test Name : <?= $testName ?><br>
+          </td>
         </tr>
     <?php } ?>
     </div>
