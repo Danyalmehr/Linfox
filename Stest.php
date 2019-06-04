@@ -34,7 +34,7 @@ include_once('database.php');
       			{
               $selectedTest = $_POST['test'];
               foreach ($selectedTest as $key => $value) {
-              echo "<h1>Test name: $key </h1>";
+
 
               $fetchqry7 = "SELECT *
               FROM test
@@ -44,9 +44,12 @@ include_once('database.php');
               $result7=mysqli_query($con,$fetchqry7);
               $row7 = mysqli_fetch_array($result7);
               $courseName = $row7['course_name'];
-              $testName = $row7['test_name'];
-              echo "<h1>Course name: $courseName</h1>";
-
+              $testName = $row7['test_name'];?>
+              <center class="result_display">
+            <?php  echo "<h2>Test name: $courseName </h2><br>";
+              echo " <h2>Course name: $key </h2>";?>
+              </center>
+<?php
               $fetchqry = "SELECT *
               FROM question
               INNER JOIN test ON question.test_id = test.test_id
@@ -84,7 +87,7 @@ include_once('database.php');
            <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[2]?>">&nbsp;<label><?=$ans_array[2]?></label><br>
            <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[3]?>">&nbsp;<label><?=$ans_array[3]?></label><br>
 		   </div>
-       		 <div style="border-bottom: 1px dotted black; margin: 1em; background-color: aqua;"></div>
+       		 <div style="border-bottom: 1px dotted black; margin: 1em; background-color: black;"></div>
          <?php $questionNum += 1; } ?>
 
 

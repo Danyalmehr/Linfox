@@ -75,7 +75,7 @@ form p{font-size:1em; text-align: left; position: relative;left:10%; width: 76%;
   transform: translateY(4px);
 }
 
-.result_display{width: 100%;background-color: #E8E1E1;font-size: 1.2em; font-weight: 500;padding: 3%;border-radius: 3%;}
+.result_display{width: 100%;background-color: #E8E1E1;font-size: 1.2em; font-weight: 500;padding: 3%;border-radius: 3%;margin-top:2%; }
 
 }
 
