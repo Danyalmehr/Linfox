@@ -16,21 +16,21 @@ include_once('include/database.php');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
-    
-    <title>Previous Results</title>
+    <link type="text/css" href="css/theme.css" rel="stylesheet">
+    <title> PREVIOUS RESULTS </title>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
-    
+
     <div class="container-fluid">
     	<div class="row">
         	<div class="col">
-            	
-            		<h2> THIS IS previous results PAGE</h2>
-            
+                <br>
+            		<h3> THIS IS PREVIOUS RESULTS PAGE </h3>
 
-            	
+
+
             </div>
         </div>
     </div>

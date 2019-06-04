@@ -6,12 +6,7 @@ All Rights Reserved.
 
 */
 
-body {
-	font-size: 13px;
-	font-family: 'Open Sans', Arial, sans-serif;
-	background: #fff;
-	color: #777
-}
+
 h1, h2, h3, h4, h5, h6 {
 	color: #333;
 	margin-top: 0
@@ -55,9 +50,9 @@ pre, code {
 blockquote {
 	border-left: 3px solid #dcdddf
 }
-blockquote p {
+/*blockquote p {
 	font-size: 14px
-}
+}*/
 blockquote small::before {
 	content: "# "
 }
@@ -94,13 +89,7 @@ blockquote small::before {
 form {
 	margin: 0
 }
-select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input, label, input, button, select, textarea {
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	font-size: 13px;
-	font-family: 'Open Sans', Tahoma, Arial, sans-serif
-}
+
 .input-append input, .input-prepend input, .input-append select, .input-prepend select, .input-append .uneditable-input, .input-prepend .uneditable-input {
 	-webkit-border-radius: 0 3px 3px 0;
 	-moz-border-radius: 0 3px 3px 0;
@@ -152,36 +141,8 @@ body [class^="icon-"], body [class*=" icon-"] {
 	box-shadow: 0 0 1px rgba(0,0,0,0.2);
 	margin-bottom: 30px
 }
-.align-center {
-	text-align: center
-}
-.align-right {
-	text-align: right!important
-}
-.clear {
-	clear: both
-}
-.none {
-	display: none
-}
-.nav>li>a:hover {
-	background: 0
-}
-.form-horizontal .control-group, .form-vertical .control-group {
-	margin-bottom: 0
-}
-.form-horizontal .control-group+.control-group, .form-vertical .control-group+.control-group {
-	margin-top: 13px;
-	padding-top: 13px;
-	border-top: 1px solid #f5f5f5
-}
-.module-login {
-	margin-bottom: 80px;
-	margin-top: 80px
-}
-.module-login .form-vertical input {
-	margin-bottom: 0!important
-}
+
+
 .alert {
 	background: #fffaef;
 	border-color: #ecdcb6;
@@ -882,7 +843,7 @@ text-decoration: none!important;
 
 
 }
-.widget-usage p {
+.widget-usage  {
 	margin-bottom: 10px;
 	line-height: 1.2
 }

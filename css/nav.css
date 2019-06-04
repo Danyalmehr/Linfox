@@ -57,7 +57,7 @@
 
   color: #ffffff;
   padding: 17px;
-  margin: 3px;
+  margin: 4px;
 }
 #cssmenu > ul > li:first-child > a {
   border-radius: 5px 0 0 5px;
@@ -110,7 +110,7 @@
   background: #3f3f3f;
   font-size: 15px; /* this is the font size for sub menu */
   z-index: 999;
-  padding: 11px 0;
+  padding:7px ;
 }
 #cssmenu ul li > ul {
   width: 200px;

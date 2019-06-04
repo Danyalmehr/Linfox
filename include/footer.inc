@@ -3,19 +3,18 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="footer, address, phone, icons" />
-	<title> Footer with address and phones </title>
+	<title> FOOTER WITH ADDRESS AND PHONES </title>
 	<link rel="stylesheet" href="css/demo.css">
 	<link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-
 <footer class="footer-distributed">
 	<div class="footer-left">
-		<h3><span> U N I Q U E </span></h3>
+		<h2><span> U N I Q U E </span></h2>
 			<p class="footer-links">
-					<a href="dashboard.php"> Home ∙ </a>
+					<a href="dashboard.php"> Home | </a>
 
-					<a href="test.php"> Test ∙ </a>
+					<a href="test.php"> Test | </a>
 
 					<a href="courses.php"> Courses </a>
 			</p>
@@ -25,24 +24,24 @@
 	<div class="footer-center">
 		<div>
 			<i class="fa fa-map-marker"></i>
-			<p><span> 6 Wentworth Parade </span> Balmoral QLD 4171. </p>
+			<p><span><small> 6 Wentworth Parade </span> Balmoral QLD 4171. </small></p>
 		</div>
 
 		<div>
 			<i class="fa fa-phone"></i>
-			<p> +61-87654321 </p>
+			<p><small> +61-87654321 </small></p>
 		</div>
 
 		<div>
 			<i class="fa fa-envelope"></i>
-			<p><a href="mailto:support@unique.com"> support@unique.co.in </a></p>
+			<p><a href="mailto:support@unique.com"><small> support@unique.co.in </a></small></p>
 		</div>
 	</div>
 
 	<div class="footer-right">
 		<p class="footer-company-about">
-		<big><span> About U N I Q U E </span></big>
-		<p><b> WE'RE GEARED FOR YOUR SUCCESS </b></p>
+		<big><span> ABOUT U N I Q U E </span></big>
+		<small><b> WE ARE GEARED FOR YOUR SUCCESS </b></small>
 		<p><small> At our company, we ensure all our staff are well equipped with essential knowledge and skills required to perform role-specific tasks. We deliver certified professionals! </small></p>
 		</p>
 		<div class="footer-icons">
