@@ -143,7 +143,7 @@ session_start();
         $course_desc=$row['course_desc'];
 
         echo"
-              <button name=\"course[$course_name]\" type=\"submit\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\" > $course_name </button>";
+              <button name=\"course[$course_name]\" type=\"submit\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\" > <span style=\"font-size:25px\">$course_name</span></button>";
 
 
         /*<!-- The Modal -->*/
