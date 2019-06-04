@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 	<label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="at least 8 characters" size="30" maxlength="30" onChange="passwordCheck(document)" required />
                     <span id="pwd_msg" class="error_msg"></span>
-					<span id="password_check" class="error_msg"></span> />
+					<span id="password_check" class="error_msg" style="color: red"></span>
                 </div>
            	</div>
            	<br>
