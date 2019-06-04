@@ -1,4 +1,3 @@
-
 <?php require 'database.php';
 session_start();
 //echo "successful";?>
@@ -23,13 +22,10 @@ session_start();
         <link type="text/css" href="css/theme.css" rel="stylesheet">
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
-        <link type="text/css" href="css/theme.css" rel="stylesheet">
 
-    <title> DASHBOARD </title>
+    <title>Dashboard</title>
 
 	<style>
-.span8{margin-top:1%; padding: 3%;border-radius: 2%; border: 1px solid black;}
-    .span3{margin: 2em;}
 		.btn-course {
 			height: 100px;
 			vertical-align: middle;
@@ -55,11 +51,10 @@ session_start();
 		}
     a
     {
-
+      text-decoration: none;
       color: White;
-      font-size: 18px;
-
-    a:hover{
+    }
+    a:hover{text-decoration: none;
     color: White;}
 
 	</style>
@@ -72,15 +67,17 @@ session_start();
     	<div class="row">
             <!-- /navbar -->
 
+
+
                     <div class="span3">
                         <div class="sidebar" style="display: inline">
                             <ul class="widget widget-menu unstyled">
-                                <li class="active left_icon"><a href="dashboard1.php"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                <li class="active"><a href="dashboard1.php"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
                                 <!--<li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
                                 </li>-->
 
-                                <li class="left_icon"><a href="message.html"><i class="menu-icon icon-inbox"></i>Inbox <!--<b class="label green pull-right">
+                                <li><a href="message.html"><i class="menu-icon icon-inbox"></i>Inbox <!--<b class="label green pull-right">
                                     11</b>--> </a></li>
 
                                 <!--<li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
@@ -90,9 +87,9 @@ session_start();
 
 
 
-                                <li class="left_icon"><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
-								                        <li class="left_icon"><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
-								                                <li class="left_icon"><a href="index.php"><i class="menu-icon icon-signou"></i>Logout </a></li>
+                                <li><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
+								                        <li><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
+								                                <li><a href="index.php"><i class="menu-icon icon-signou"></i>Logout </a></li>
                                 <!--<li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li>
                                 <li><a href="form.html"><i class="menu-icon icon-paste"></i>Forms </a></li>
                                 <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
@@ -114,68 +111,74 @@ session_start();
                         </div>
                         <!--/.sidebar-->
                     </div>
-                        <!--/.sidebar-->
-                    </div>
                     <!--/.span3-->
                     <div class="span8">
                         <div class="content">
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid course">
-                                  <center>  <h2>  Available Courses </h2> </center>
-                      	<?php
-                      					$courses = "select course_id, course_name, course_desc FROM courses";
-                      					$result = mysqli_query($con,$courses);
-                                  $num=mysqli_num_rows($result);
 
 
-                      					/*$i=0;*/
-                      				  /*$row_num = mysqli_fetch_array($result,MYSQLI_NUM);
-                      					$row=mysqli_fetch_assoc($result);
-                      					$course_name=$row['course_name'];
+	<?php
 
-                      	*/
-
-                      					while ($row=mysqli_fetch_assoc($result))
-                                    {
-
-                                          $course_name=$row['course_name'];
-                                          $course_id=$row['course_id'];
-                                          $course_desc=$row['course_desc'];
-
-                                          echo"<button type=\"button\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\" > $course_name </button>";
+					$courses = "SELECT test.test_name, courses.course_id, courses.course_name, courses.course_desc
+          FROM courses
+          INNER JOIN test ON test.course_id = courses.course_id
+          ";
+					$result = mysqli_query($con,$courses);
 
 
-                                          /*<!-- The Modal -->*/
-                                            echo"<div class=\"modal\" id=\"$course_name\">
-                                              <div class=\"modal-dialog\">
-                                                <div class=\"modal-content\">
+
+					/*$i=0;*/
+				  /*$row_num = mysqli_fetch_array($result,MYSQLI_NUM);
+					$row=mysqli_fetch_assoc($result);
+					$course_name=$row['course_name'];
+
+	*/
+
+					while ($row=mysqli_fetch_array($result))
+              {
+        $test_name=$row['test_name'];
+        $course_name=$row['course_name'];
+        $course_id=$row['course_id'];
+        $course_desc=$row['course_desc'];
+
+        echo"
+              <button name=\"course[$course_name]\" type=\"submit\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\" > $course_name </button>";
 
 
-                                                  <div class=\"modal-header\">
-                                                    <h4 class=\"modal-title\">$course_name</h4>
-                                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
-                                                  </div>
+        /*<!-- The Modal -->*/
+          echo"<div class=\"modal\" id=\"$course_name\">
+            <div class=\"modal-dialog\">
+              <div class=\"modal-content\">
 
 
-                                                  <div class=\"modal-body\">
-                                          			<p> $course_desc </p>
-
-                                          			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a href='previousresults.php'>See Results</a></button>
-                                           			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
-                                                  <button type=\"button\" class=\"btn btn-primary btn-block\" ><i class=\"menu-icon icon-check\"></i><a href='Stest.php'>Take test</a></button>
-                                                  </div>
+                <div class=\"modal-header\">
+                  <h4 class=\"modal-title\">$course_name</h4>
+                  <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                </div>
 
 
-                                                  <div class=\"modal-footer\">
-                                                    <button type=\"button\" class=\"btn btn-dark\" data-dismiss=\"modal\">Close</button>
-                                                  </div>
+                <div class=\"modal-body\">
+        			<p> $course_desc </p>
 
-                                                </div>
-                                              </div>
-                                            </div>";
-                                          					/*$i=$i+1;*/
-                          }
-                      ?>
+        			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a href='previousresults.php'>See Results</a></button>
+         			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
+                <form class=\"test-display\" action=\"stest.php\" method=\"post\">
+                <button name=\"test[$test_name]\" type=\"submit\" class=\"btn btn-primary btn-block\" ><i class=\"menu-icon icon-check\"></i>Take test</button>
+                </div>
+                </form>
+
+
+                <div class=\"modal-footer\">
+                  <button type=\"button\" class=\"btn btn-dark\" data-dismiss=\"modal\">Close</button>
+                </div>
+
+              </div>
+            </div>
+          </div>";
+        					/*$i=$i+1;*/
+    }
+?>
                                 </div>
                                 <!--<div class="btn-box-row row-fluid">
                                     <div class="span8">
@@ -235,8 +238,8 @@ session_start();
                                         </li>
                                     </ul>
                                 </div>-->
-                   </div>
-					   	</div>
+                            </div>
+						</div>
 					</div>
           </div>
         </div>

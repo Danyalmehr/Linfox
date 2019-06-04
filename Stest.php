@@ -30,17 +30,32 @@ include_once('database.php');
     <div class="container-fluid">
 
       <?php
-      $fetchqry7 = "SELECT *
-      FROM question
-      INNER JOIN test ON question.test_id = test.test_id
-      INNER JOIN courses ON test.course_id = courses.course_id
-      ";
-      $result7=mysqli_query($con,$fetchqry7);
-      $row7 = mysqli_fetch_array($result7);
-      $courseName = $row7['course_name'];
-      $testName = $row7['test_name'];
-      echo "<h1>Course name: $courseName</h1>";
-      echo "<h2>Test name: $testName</h2>";
+    if(isset($_POST['test']))
+      			{
+              $selectedTest = $_POST['test'];
+              foreach ($selectedTest as $key => $value) {
+              echo "<h1>Test name: $key </h1>";
+
+              $fetchqry7 = "SELECT *
+              FROM test
+              INNER JOIN courses ON test.course_id = courses.course_id
+              where test_name = '$key'
+              ";
+              $result7=mysqli_query($con,$fetchqry7);
+              $row7 = mysqli_fetch_array($result7);
+              $courseName = $row7['course_name'];
+              $testName = $row7['test_name'];
+              echo "<h1>Course name: $courseName</h1>";
+
+              $fetchqry = "SELECT *
+              FROM question
+              INNER JOIN test ON question.test_id = test.test_id
+              where test_name = '$key'
+              ";
+              $result=mysqli_query($con,$fetchqry);
+            }
+          }
+
 
        ?>
 
@@ -49,9 +64,6 @@ include_once('database.php');
         	<div class="col-md-8">
 
 <?php
-          $fetchqry = "SELECT * FROM `question` WHERE test_id = 1";
-          $result=mysqli_query($con,$fetchqry);
-          $num=mysqli_num_rows($result);
           $questionNum = 1;
           while ($row = mysqli_fetch_array($result))
             {
