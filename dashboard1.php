@@ -77,7 +77,7 @@ session_start();
                                 <!--<li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
                                 </li>-->
 
-                                <li><a href="message.html"><i class="menu-icon icon-inbox"></i>Test <!--<b class="label green pull-right">
+                                <li><a href="Stest.php"><i class="menu-icon icon-inbox"></i>Test <!--<b class="label green pull-right">
                                     11</b>--> </a></li>
 
                                 <!--<li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
