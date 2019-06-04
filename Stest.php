@@ -33,7 +33,7 @@ include_once('database.php');
     if(isset($_POST['test']))
       			{
               $selectedTest = $_POST['test'];
-            foreach ($selectedTest as $key => $value) {
+              foreach ($selectedTest as $key => $value) {
               echo "<h1>Test name: $key </h1>";
 
               $fetchqry7 = "SELECT *
