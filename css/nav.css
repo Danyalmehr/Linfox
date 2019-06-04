@@ -19,7 +19,7 @@
 }
 #cssmenu > ul {
   list-style: inside none;
-  margin-left: : 40%;
+  margin-left: 40%;
   padding: 0;
 }
 #cssmenu > ul > li {
@@ -86,7 +86,7 @@
   top: 19px;
 }
 #cssmenu > ul > li.has-sub:hover > a {
-  padding-bottom: 14px;
+
   z-index: 999;
   border-color: #3f3f3f;
 }

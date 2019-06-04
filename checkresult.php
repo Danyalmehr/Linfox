@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-
 <?php
-//must appear BEFORE the <html> tag
+require 'database.php';
 session_start();
-include_once('include/database.php');
-?>
+//echo "successful";?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +31,7 @@ include_once('include/database.php');
 				{
 					$count = count($_POST['userans']);
 
-					echo " <h3> Out of All questions you have answred " .$count." options </h3>";
+					echo " <h3> There were ".$count." questions in this test </h3>";
 
 
 					$i = 1;
@@ -44,7 +41,7 @@ include_once('include/database.php');
 					//print_r($selected); check to see weather it is retriving the value that user have selected
 
 					$fetchqry = "SELECT * FROM question";
-					$result = mysqli_query($conn,$fetchqry);
+					$result = mysqli_query($con,$fetchqry);
           $num=mysqli_num_rows($result);
 				  $row = mysqli_fetch_array($result);
 
@@ -56,11 +53,11 @@ include_once('include/database.php');
             //( '$value', (SELECT `que_id` from `question`) )";
 
             $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`) values ('$value','$que_id')";
-            $result2 = mysqli_query($conn,$fetchqry2);
+            $result2 = mysqli_query($con,$fetchqry2);
             $que_id += 1;
           }
           if ($result2) {
-             echo " New record created successfully";
+             echo " Your answers have been submitted!";
           } else {
              echo "Error: " . $fetchqry2 . "" . mysqli_error($con);
           }
@@ -90,7 +87,7 @@ include_once('include/database.php');
           array_push($array4, $res['que']);
       }
 
-      for ($x=0; $x < $num ; $x++) {?>
+      for ($x=0; $x < $count ; $x++) {?>
         <form class="test-display" action="" method="post">
         <div class="options">
 
@@ -103,7 +100,8 @@ include_once('include/database.php');
           <?php  } else {?>
 
             <p> <span style="background-color: #ADFFB4"><?= $array1[$x] ?></span> </p>
-            <?php $score = $score + 1; ?>
+            <?php $score = $score + 1;
+              ?>
 
             <?php  }
 
@@ -113,11 +111,19 @@ include_once('include/database.php');
       <?php }
 
           $fetchqry3 = "INSERT INTO attempt (`final_score`) values ('$score')";
-          $result3 = mysqli_query($conn,$fetchqry3);
+          $result3 = mysqli_query($con,$fetchqry3);
 
-          echo (" Your total score is ".$score." out of ".$count."");
+          $scorePercentage = ($score/$count)*100;
+
+          echo (" <h2>Your have answered ".$scorePercentage."% of all the questions </h2>");
 
           mysqli_free_result($result);?>
+
+          <form>
+            <input type="button" class="button" name="back" style="vertical-align:middle" value="Take the test again" onclick="history.go(-1)">
+            <a href="dashboard1.php"><input type="button" class="button" name="back" style="vertical-align:middle" value="back to Dashboard" onclick="history.go(-1)"></a>
+          </form>
+
 
 			</div>
     </div>

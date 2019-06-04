@@ -1,8 +1,4 @@
-<?php
-//must appear BEFORE the <html> tag
-session_start();
-include_once('include/database.php');
-?>
+
 <?php require 'database.php';
 session_start();
 //echo "successful";?>
@@ -20,8 +16,8 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
-	
-	
+
+
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -31,6 +27,8 @@ session_start();
     <title>Dashboard</title>
 
 	<style>
+
+    .span3{margin: 2em;}
 		.btn-course {
 			height: 100px;
 			vertical-align: middle;
@@ -54,6 +52,13 @@ session_start();
 		.course{
 			margin-left: 1em;
 		}
+    a
+    {
+      text-decoration: none;
+      color: White;
+    }
+    a:hover{text-decoration: none;
+    color: White;}
 
 	</style>
 </head>
@@ -65,17 +70,17 @@ session_start();
     	<div class="row">
             <!-- /navbar -->
 
-
-
                     <div class="span3">
                         <div class="sidebar" style="display: inline">
                             <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="index.html"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                <li class="active"><a href="dashboard1.php"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
                                 <!--<li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
                                 </li>-->
+
                                 <li><a href="message.html"><i class="menu-icon icon-inbox"></i>Inbox <!--<b class="label green pull-right">
                                     11</b>--> </a></li>
+
                                 <!--<li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
                                     19</b> </a></li>-->
 
@@ -83,9 +88,9 @@ session_start();
 
 
 
-                                <li><a href="ui-button-icon.html"><i class="menu-icon icon-file"></i>Results </a></li>
-								<li><a href="ui-button-icon.html"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
-								<li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                                <li><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
+								                        <li><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
+								                                <li><a href="index.php"><i class="menu-icon icon-signou"></i>Logout </a></li>
                                 <!--<li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li>
                                 <li><a href="form.html"><i class="menu-icon icon-paste"></i>Forms </a></li>
                                 <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
@@ -98,7 +103,7 @@ session_start();
                                 </i>More Pages </a>
                                     <ul id="togglePages" class="collapse unstyled">
                                         <li><a href="other-login.html"><i class="icon-inbox"></i>Login </a></li>
-                                        <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
+                                        <li><a href="ot her-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
                                         <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
                                     </ul>
                                 </li>
@@ -132,7 +137,10 @@ session_start();
               {
 
         $course_name=$row['course_name'];
-        echo"<button type=\"button\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\">$course_name</button>";
+        $course_id=$row['course_id'];
+        $course_desc=$row['course_desc'];
+
+        echo"<button type=\"button\" class=\"btn btn-info btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\" > $course_name </button>";
 
 
         /*<!-- The Modal -->*/
@@ -142,16 +150,17 @@ session_start();
 
 
                 <div class=\"modal-header\">
-                  <h4 class=\"modal-title\">Course Description</h4>
+                  <h4 class=\"modal-title\">$course_name</h4>
                   <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
                 </div>
 
 
                 <div class=\"modal-body\">
-        			<p>Description comes here</p>
+        			<p> $course_desc </p>
 
-        			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a>See Results</a></button>
+        			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a href='previousresults.php'>See Results</a></button>
          			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
+                <button type=\"button\" class=\"btn btn-primary btn-block\" ><i class=\"menu-icon icon-check\"></i><a href='Stest.php'>Take test</a></button>
                 </div>
 
 
