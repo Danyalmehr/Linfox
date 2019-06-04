@@ -39,7 +39,7 @@ if(isset($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['password']))
     {
         echo "<div class=\"row\">";
         echo "<div class=\"col-s-12 col-12\">";
-        echo "<h1>Welcome to ABC School</h1>";
+        echo "<h1>Welcome to Unique</h1>";
         echo "<p>Hi <b>$fname</b></p>";
         echo "<p><a href=\"index.php\" id=\"4\"
 				onClick=\"nav_item_selected(4)\"><input type=submit value=login></a></p>";
