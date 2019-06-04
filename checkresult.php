@@ -21,6 +21,9 @@ session_start();
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2"></div>
+          <div class="col-md-8">
     <div class="options">
     <?php
 
@@ -31,7 +34,7 @@ session_start();
 				{
 					$count = count($_POST['userans']);
 
-					echo " <h3> There were ".$count." questions in this test </h3>";
+					//echo " <h3> There were ".$count." questions in this test </h3>";
 
 
 					$i = 1;
@@ -57,7 +60,7 @@ session_start();
             $que_id += 1;
           }
           if ($result2) {
-             echo " Your answers have been submitted!";
+          //   echo " Your answers have been submitted!";
           } else {
              echo "Error: " . $fetchqry2 . "" . mysqli_error($con);
           }
@@ -75,6 +78,8 @@ session_start();
       $array2 = array();
       $array3 = array();
       $array4 = array();
+      $array5 = array();//i made this
+      $array6 = array();
 
 
       foreach ($selected as $checkans) {
@@ -108,16 +113,20 @@ session_start();
             ?>
 
         </div>
-      <?php }
-
+      <?php } ?>
+<?php
           $fetchqry3 = "INSERT INTO attempt (`final_score`) values ('$score')";
           $result3 = mysqli_query($con,$fetchqry3);
 
-          $scorePercentage = ($score/$count)*100;
+          $scorePercentage = ($score/$count)*100; ?>
 
-          echo (" <h2>Your have answered ".$scorePercentage."% of all the questions </h2>");
+            <center class="result_display">
+          <?php echo " Number of questions : ".$count."  <br>";
+          echo " Number of correct questions : ".$score." <br>";
+          echo (" Your score : ".$scorePercentage."% ");?>
+        </center>
 
-          mysqli_free_result($result);?>
+        <?php  mysqli_free_result($result);?>
 
           <form>
             <input type="button" class="button" name="back" style="vertical-align:middle" value="Take the test again" onclick="history.go(-1)">
@@ -126,7 +135,9 @@ session_start();
 
 
 			</div>
-    </div>
+      	</div>
+          <div class="col-md-2"></div>
+    </div>  </div>
 
 
 
