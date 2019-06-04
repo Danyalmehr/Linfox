@@ -8,7 +8,7 @@
   padding: 0;
 }
 #cssmenu {
-  height: 3em;
+  height: 5em;
   display: block;
   border: 1px solid;
   border-radius: 5px;
@@ -50,12 +50,13 @@
   text-align: center;
   text-decoration: none;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
-  font-weight: 700;
-  font-size: 13px;
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 23px;
+
   border-right: 1px solid #080808;
   color: #ffffff;
-  padding: 12px 20px;
+  padding: 17px;
+  margin: px;
 }
 #cssmenu > ul > li:first-child > a {
   border-radius: 5px 0 0 5px;
@@ -132,7 +133,7 @@
   outline: none;
   display: block;
   position: relative;
-  font: 10pt Arial, Helvetica, sans-serif;
+
   color: #ffffff;
   text-decoration: none;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);

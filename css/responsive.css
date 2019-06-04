@@ -242,7 +242,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 /*-------------------------------------------------------------------------------------------- header :---------------------------------------------------------------------------- */
 #banner{align-content:center;color:#000000;
 	background-color:#E8E1E1;
-widows:auto; background-image:url(images/bg.jpg); background-size:cover;padding:4%; width:auto;}
+widows:auto; background-size:cover;padding:1%; width:auto;}
 
 
 
