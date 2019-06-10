@@ -1,6 +1,6 @@
 <?php
-require 'database.php';
 session_start();
+require 'database.php';
 //echo " successful";?>
 
 <!DOCTYPE html>
@@ -82,6 +82,15 @@ session_start();
         <div class="col-md-2"></div>
           <div class="col-md-8">
     <div class="options">
+          <center class="result_display">
+              <?php   echo "<h2>Course name:".  $_SESSION["coursename"] . "</h2><br>";
+                echo " <h2>Test name:".  $_SESSION["testName"] . "</h2>";
+              ?>
+
+                </center>
+
+
+
     <?php
 			if(isset($_POST['submit'] , $_POST['myVariable']))
 			{
