@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 04, 2019 at 05:11 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.4
+-- Host: localhost
+-- Generation Time: Jun 05, 2019 at 02:08 AM
+-- Server version: 5.6.40-84.0-log
+-- PHP Version: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,8 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `userdashboard`
+-- Database: `ictatjcu_quiz`
 --
+CREATE DATABASE IF NOT EXISTS `ictatjcu_quiz` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `ictatjcu_quiz`;
 
 -- --------------------------------------------------------
 
@@ -40,114 +42,15 @@ CREATE TABLE `attempt` (
 --
 
 INSERT INTO `attempt` (`att_id`, `final_score`, `test_id`, `email_FK`) VALUES
-(1, '0', NULL, NULL),
-(2, '0', NULL, NULL),
-(3, '', NULL, NULL),
-(4, '3', NULL, NULL),
-(5, '', NULL, NULL),
-(6, '1', NULL, NULL),
-(7, '', NULL, NULL),
-(8, '1', NULL, NULL),
-(9, '', NULL, NULL),
-(10, '1', NULL, NULL),
-(11, '', NULL, NULL),
-(12, '1', NULL, NULL),
-(13, '1', NULL, NULL),
-(14, '', NULL, NULL),
-(15, '', NULL, NULL),
-(16, '', NULL, NULL),
-(17, '', NULL, NULL),
-(18, '', NULL, NULL),
-(19, '', NULL, NULL),
-(20, '', NULL, NULL),
-(21, '', NULL, NULL),
-(22, '', NULL, NULL),
-(23, '', NULL, NULL),
-(24, '2', NULL, NULL),
-(25, '', NULL, NULL),
-(26, '2', NULL, NULL),
-(27, '', NULL, NULL),
-(28, '0', NULL, NULL),
-(29, '', NULL, NULL),
-(30, '3', NULL, NULL),
-(31, '', NULL, NULL),
-(32, '3', NULL, NULL),
-(33, '', NULL, NULL),
-(34, '0', NULL, NULL),
-(35, '0', NULL, NULL),
-(36, '2', NULL, NULL),
-(37, '2', NULL, NULL),
-(38, '', NULL, NULL),
-(39, '1', NULL, NULL),
-(40, '2', NULL, NULL),
-(41, '2', NULL, NULL),
-(42, '', NULL, NULL),
-(43, '', NULL, NULL),
-(44, '0', NULL, NULL),
-(45, '2', NULL, NULL),
-(46, '', NULL, NULL),
-(47, '0', NULL, NULL),
-(48, '0', NULL, NULL),
-(49, '1', NULL, NULL),
-(50, '1', NULL, NULL),
-(51, '3', NULL, NULL),
-(52, '', NULL, NULL),
-(53, '0', NULL, NULL),
-(54, '2', NULL, NULL),
-(55, '', NULL, NULL),
-(56, '', NULL, NULL),
-(57, '', NULL, NULL),
-(58, '', NULL, NULL),
-(59, '', NULL, NULL),
-(60, '1', NULL, NULL),
-(61, '', NULL, NULL),
-(62, '1', NULL, NULL),
-(63, '1', NULL, NULL),
-(64, '', NULL, NULL),
-(65, '0', NULL, NULL),
-(66, '1', NULL, NULL),
-(67, '0', NULL, NULL),
-(68, '2', NULL, NULL),
-(69, '1', NULL, NULL),
-(70, '1', NULL, NULL),
-(71, '1', NULL, NULL),
-(72, '1', NULL, NULL),
-(73, '1', NULL, NULL),
-(74, '1', NULL, NULL),
-(75, '1', NULL, NULL),
-(76, '1', NULL, NULL),
-(77, '2', NULL, NULL),
-(78, '1', NULL, NULL),
-(79, '1', NULL, NULL),
-(80, '1', NULL, NULL),
-(81, '1', NULL, NULL),
-(82, '1', NULL, NULL),
-(83, '1', NULL, NULL),
-(84, '1', NULL, NULL),
-(85, '1', NULL, NULL),
-(86, '1', NULL, NULL),
-(87, '3', NULL, NULL),
-(88, '0', NULL, NULL),
-(89, '0', NULL, NULL),
-(90, '0', NULL, NULL),
-(91, '0', NULL, NULL),
-(92, '0', NULL, NULL),
-(93, '0', NULL, NULL),
-(94, '0', NULL, NULL),
-(95, '0', NULL, NULL),
-(96, '0', NULL, NULL),
-(97, '0', NULL, NULL),
-(98, '0', NULL, NULL),
-(99, '0', NULL, NULL),
-(100, '1', NULL, NULL),
-(101, '0', NULL, NULL),
-(102, '0', NULL, NULL),
-(103, '0', NULL, NULL),
-(104, '2', NULL, NULL),
-(105, '1', NULL, NULL),
-(106, '2', NULL, NULL),
-(107, '0', NULL, NULL),
-(108, '3', NULL, NULL);
+(252, '16.666666666667', 1, 's@s.s'),
+(253, '40', 2, 'sheshbhushansonar@gmail.com'),
+(254, '50', 1, 'sheshbhushansonar@gmail.com'),
+(255, '33.333333333333', 1, 'r@r'),
+(256, '0.00', 1, 'r@r'),
+(257, '20.00', 2, 'r@r'),
+(258, '66.67', 1, 'abc@abc'),
+(259, '40.00', 3, 'abc@abc'),
+(260, '33.33', 1, 'dan@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -166,8 +69,9 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`course_id`, `course_name`, `course_desc`) VALUES
-(1, 'course1', ''),
-(2, 'course2', '');
+(1, 'PHP', ''),
+(2, 'JavaScript', ''),
+(3, 'Safety', '');
 
 -- --------------------------------------------------------
 
@@ -195,8 +99,18 @@ INSERT INTO `question` (`que_id`, `que`, `option 1`, `option 2`, `option 3`, `op
 (2, 'What will be the value of $var? ', '0', '1', '2', 'NULL', '0', 1),
 (3, ' ____________ function in PHP Returns a list of response headers sent (or ready to send)', 'header', 'headers_list', 'header_sent', 'header_send', 'headers_list', 1),
 (4, 'Which of the following is the Server Side Scripting Language?', 'HTML', 'CSS', 'JS', 'PHP', 'PHP', 1),
-(5, 'What is your name?', 'dan', 'shesh', 'amir', 'murnal', 'dan', 1),
-(6, 'What is the best helmet brand?', 'aqua', 'red', 'mountain', 'glips', 'mountain', 2);
+(5, 'Which of the following function returns the number of characters in a string variable?', 'count($variable)', 'len($variable)', 'strcount($variable)', 'strlen($variable)', 'strlen($variable)', 1),
+(6, 'Which of the following variables is not a predefined variable?', '$get', '$ask', '$request', '$post', '$ask', 1),
+(7, 'Javascript is _________ language.', 'Scripting', 'Programming', 'None of Above', 'Application', 'Scripting', 2),
+(8, 'What is the purpose of \'noscript\' tag in Java Script?', 'Prevents scripts on the page from executing.', 'Enclose text to be displayed by non –JavaScript browsers', 'Suppresses the result to be displayed on the web page.', 'None of the above', 'Enclose text to be displayed by non –JavaScript browsers', 2),
+(9, 'Java Script entities start with ___________and end with _____________', 'Semicolon, colon', 'Semicolon, Ampersand', ' Ampersand, colon', 'Ampersand, semicolon.', 'Ampersand, semicolon.', 2),
+(10, 'Which of the following is a server-side Java Script object?', 'Function', 'File', 'FileUpload', 'Date', 'File', 2),
+(11, 'File is server-side JavaScript object', 'True', 'False', 'Both', 'None of above', 'False', 2),
+(12, 'What are the signals that eye strain may be occuring?', 'Headache', 'Blurry vision', 'dry eyes', 'BOth b and C', 'BOth b and C', 3),
+(13, 'What can you do to help avoid eye strain?', 'Spend 10-15 minutes every hour away from your computer screen', 'Check the brightness of your screen', 'Adjust the font or enlarge all pdf\'s to see more clearly', 'All of the above', 'All of the above', 3),
+(14, 'Does your employer currently offer vision insurance for full time employees?', 'Yes', 'No', '\r\nI haven\'t read my employee handbook', 'None of above', 'Yes', 3),
+(15, 'Can you rub you rub your eyes when your hands are dirty', 'Yes', 'No', 'Maybe', 'None of above', 'No', 3),
+(16, 'What are the signals that eye strain may be occuring and what you should in that case?', 'Wash eye with cold water', 'Wash eye with hot water', 'Both A and B', 'None of above', 'Wash eye with cold water', 3);
 
 -- --------------------------------------------------------
 
@@ -215,8 +129,9 @@ CREATE TABLE `test` (
 --
 
 INSERT INTO `test` (`test_id`, `test_name`, `course_id`) VALUES
-(1, 'Coding Language', 1),
-(2, 'Something else', 2);
+(1, 'Basic PHP', 1),
+(2, 'Front End design and JavaScript', 2),
+(3, 'Safety-computers And Your Vision Quiz', 3);
 
 -- --------------------------------------------------------
 
@@ -236,8 +151,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`fname`, `lname`, `email`, `password`) VALUES
-('dan', 'dan', 'dan@dan', 'dan'),
-('Shesh', 'Sonar', 's@s.s', 'ss');
+('abc', 'abc', 'abc@abc', '12345678'),
+('daniel', 'Mehr', 'dan@gmail.com', '12345678'),
+('ramin', 'ramin', 'r@r', '12345678'),
+('Shesh', 'Sonar', 's@s.s', 'ss'),
+('shesh', 'shesh', 'shesh@s.s', '123456'),
+('Shesh', 'Sonar', 'sheshbhushansonar@gmail.com', 'Ss9422011303');
 
 -- --------------------------------------------------------
 
@@ -249,34 +168,21 @@ CREATE TABLE `useranswer` (
   `ans_id` int(255) NOT NULL,
   `userans` varchar(255) NOT NULL,
   `que_id` int(255) DEFAULT NULL,
-  `email_FK` varchar(100) DEFAULT NULL
+  `email_FK` varchar(100) DEFAULT NULL,
+  `test_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `useranswer`
 --
 
-INSERT INTO `useranswer` (`ans_id`, `userans`, `que_id`, `email_FK`) VALUES
-(851, 'Preprocessed Hypertext Page', 1, NULL),
-(852, 'NULL', 2, NULL),
-(853, 'header', 3, NULL),
-(854, 'PHP', 4, NULL),
-(855, 'murnal', 5, NULL),
-(856, 'Hypertext Preprocessor', 1, NULL),
-(857, '2', 2, NULL),
-(858, 'header', 3, NULL),
-(859, 'PHP', 4, NULL),
-(860, 'murnal', 5, NULL),
-(861, 'Preprocessed Hypertext Page', 1, NULL),
-(862, '2', 2, NULL),
-(863, 'header', 3, NULL),
-(864, 'CSS', 4, NULL),
-(865, 'murnal', 5, NULL),
-(866, 'Hypertext Markup Language', 1, NULL),
-(867, '0', 2, NULL),
-(868, 'headers_list', 3, NULL),
-(869, 'PHP', 4, NULL),
-(870, 'shesh', 5, NULL);
+INSERT INTO `useranswer` (`ans_id`, `userans`, `que_id`, `email_FK`, `test_id`) VALUES
+(1403, 'Preprocessed Hypertext Page', 1, 'dan@gmail.com', 1),
+(1404, 'NULL', 2, 'dan@gmail.com', 1),
+(1405, 'headers_list', 3, 'dan@gmail.com', 1),
+(1406, 'PHP', 4, 'dan@gmail.com', 1),
+(1407, 'len($variable)', 5, 'dan@gmail.com', 1),
+(1408, '$post', 6, 'dan@gmail.com', 1);
 
 --
 -- Indexes for dumped tables
@@ -322,7 +228,8 @@ ALTER TABLE `user`
 ALTER TABLE `useranswer`
   ADD PRIMARY KEY (`ans_id`),
   ADD KEY `que_id` (`que_id`),
-  ADD KEY `email_FK` (`email_FK`) USING BTREE;
+  ADD KEY `email_FK` (`email_FK`) USING BTREE,
+  ADD KEY `test_id_FK` (`test_id`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -332,25 +239,25 @@ ALTER TABLE `useranswer`
 -- AUTO_INCREMENT for table `attempt`
 --
 ALTER TABLE `attempt`
-  MODIFY `att_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `att_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=261;
 
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `que_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `que_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `test`
 --
 ALTER TABLE `test`
-  MODIFY `test_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `test_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `useranswer`
 --
 ALTER TABLE `useranswer`
-  MODIFY `ans_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=871;
+  MODIFY `ans_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1409;
 
 --
 -- Constraints for dumped tables
@@ -380,7 +287,8 @@ ALTER TABLE `test`
 --
 ALTER TABLE `useranswer`
   ADD CONSTRAINT `useranswer_ibfk_1` FOREIGN KEY (`que_id`) REFERENCES `question` (`que_id`),
-  ADD CONSTRAINT `useranswer_ibfk_2` FOREIGN KEY (`email_FK`) REFERENCES `user` (`email`);
+  ADD CONSTRAINT `useranswer_ibfk_2` FOREIGN KEY (`email_FK`) REFERENCES `user` (`email`),
+  ADD CONSTRAINT `useranswer_ibfk_3` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

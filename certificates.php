@@ -10,13 +10,14 @@ include_once('include/database.php');
       <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/test.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/read_more.js"></script>
-	
+
 	 <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -31,9 +32,10 @@ include_once('include/database.php');
 
     <div class="container-fluid">
     	<div class="row">
-        	<div class="col">
-				
-				
+
+              <div class="col-md-3">
+
+
 				<div class="span3">
                         <div class="sidebar" style="display: inline">
                             <ul class="widget widget-menu unstyled">
@@ -75,11 +77,16 @@ include_once('include/database.php');
                             </ul>-->
                         </div>
 
-            		<h2> THIS IS certificates PAGE</h2>
+
 
 
 
             </div>
+            </div>
+
+                <div class="col-md-8">
+                  	<h2> THIS IS certificates PAGE</h2>
+
         </div>
     </div>
 	</div>
