@@ -56,7 +56,7 @@ include_once('database.php');
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
 
-	
+
 	<div class="col-md-3">
 	 <div class="span3">
                         <div class="sidebar" style="display: inline">
@@ -106,8 +106,8 @@ include_once('database.php');
 
           	<div class="row">
 
-              
-                
+
+
               	<div class="col-md-8">
 
       <?php
