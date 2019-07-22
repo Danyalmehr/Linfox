@@ -55,6 +55,7 @@ include_once('database.php');
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
+    <?php include("date.php") ?>
 
 
 	<div class="col-md-3">
@@ -63,42 +64,20 @@ include_once('database.php');
                             <ul class="widget widget-menu unstyled">
                                 <li class="left_icon"><a href="dashboard1.php"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
-                                <!--<li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
-                                </li>-->
 
-                                <li class="active left_icon"><a href="Stest.php"><i class="menu-icon icon-inbox"></i>Test <!--<b class="label green pull-right">
-                                    11</b>--> </a></li>
 
-                                <!--<li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
-                                    19</b> </a></li>-->
-
-                            <!--/.widget-nav-->
+                                <li class="active left_icon"><a href="Stest.php"><i class="menu-icon icon-inbox"></i>Test</a></li>
 
 
 
                                 <li class="left_icon"><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
 								                        <li class="left_icon"><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
 								                                <li class="left_icon"><a href="index.php"><i class="menu-icon icon-signou"></i>Logout </a></li>
-                                <!--<li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li>
-                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Forms </a></li>
-                                <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
-                                <li><a href="charts.html"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>-->
+
 							</ul>
-                            <!--/.widget-nav-->
-                            <!--<ul class="widget widget-menu unstyled">
-                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">
-                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                </i>More Pages </a>
-                                    <ul id="togglePages" class="collapse unstyled">
-                                        <li><a href="other-login.html"><i class="icon-inbox"></i>Login </a></li>
-                                        <li><a href="ot her-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
-                                        <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
-                            </ul>-->
+
                         </div>
-                        <!--/.sidebar-->
+
                     </div>
 	</div>
 
@@ -111,11 +90,33 @@ include_once('database.php');
               	<div class="col-md-8">
 
       <?php
+
+    $user = $_SESSION["userid"];
     if(isset($_POST['test']))
       			{
+              $selectedTestId = $_POST['testid'];
+
+              foreach ($selectedTestId as $test_id => $value) {
+                $fetchqry1 = "SELECT user_id, max(att_number)
+                FROM attempt
+                WHERE user_id = $user AND test_id = $test_id
+                ";
+                $result1=mysqli_query($con,$fetchqry1);
+                $num=mysqli_num_rows($result);
+                if ($num = 0) {
+                  $attemptNumber = 1;
+                }
+
+                else {
+                 while ($row1=mysqli_fetch_array($result1)) {
+                  $attemptNumber =  $row1['max(att_number)'];
+                  $attemptNumber += 1;
+              }
+            }
+
+
               $selectedTest = $_POST['test'];
               foreach ($selectedTest as $key => $value) {
-
 
               $fetchqry7 = "SELECT *
               FROM test
@@ -126,10 +127,12 @@ include_once('database.php');
               $row7 = mysqli_fetch_array($result7);
               $_SESSION["coursename"] = $row7['course_name'];
               $_SESSION["testName"] = $key;
+
               ?>
               <center class="result_display">
             <?php  echo "<h2>Course name:".  $_SESSION["coursename"] . "</h2><br>";
-              echo " <h2>Test name:".  $_SESSION["testName"] . "</h2>"; ?>
+              echo " <h2>Test name:".  $_SESSION["testName"] . "</h2>";
+              ?>
 
               </center>
             <?php  echo " <br> ";?>
@@ -140,47 +143,70 @@ include_once('database.php');
               where test_name = '$key'
               ";
               $result=mysqli_query($con,$fetchqry);
-            }
-          }
+
+              if ($attemptNumber <= 3) {
+              $_SESSION['attemptNumber'] = $attemptNumber;
+              $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`, `user_id`, `att_number`, `att_date`) values (0, '$test_id', '$user' , '$attemptNumber', '$date')";
+              $result3 = mysqli_query($con,$fetchqry3);
+
+              $questionNum = 1;
+              while ($row = mysqli_fetch_array($result))
+                {
+                  $que_id = $row['que_id'];
+                  $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4'], $row['ans'],$row['test_id']);
+                  $ans_array = array($row['option 1'], $row['option 2'], $row['option 3'], $row['option 4']);
+                  shuffle($ans_array);
+
+                  ?>
 
 
-       ?>
+                  <form class="test-display" action="checkresult.php" method="post">
+                  <div class="options">
 
 
-<?php
-          $questionNum = 1;
-          while ($row = mysqli_fetch_array($result))
-            {
-			        $que_id = $row['que_id'];
-              $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4'], $row['ans'],$row['test_id']);
-              $ans_array = array($row['option 1'], $row['option 2'], $row['option 3'], $row['option 4']);
-              shuffle($ans_array);
- ?>
-
-       <form class="test-display" action="checkresult.php" method="post">
-		   <div class="options">
+                      <p><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></p>
+                      <?php $_SESSION['testid'] = $row['test_id'];
+                      echo '<input type="hidden" name="myVariable" value="'.htmlentities($_SESSION['testid']).'">'; ?>
+                      <input type="hidden" name="" value="<?=$attemptNumber?>">
 
 
-           <p><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></p>
-           <?php $myVariable = $row['test_id'];
-           echo '<input type="hidden" name="myVariable" value="'.htmlentities($myVariable).'">'; ?> <!-- Sending test_id from Stest -->
+                      <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[0]?>">&nbsp;<label><?=$ans_array[0]?></label><br>
+                      <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[1]?>">&nbsp;<label><?=$ans_array[1]?></label><br>
+                      <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[2]?>">&nbsp;<label><?=$ans_array[2]?></label><br>
+                      <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[3]?>">&nbsp;<label><?=$ans_array[3]?></label><br>
+                  </div>
+                      <div style="border-bottom: 1px dotted black; margin: 1em; background-color: black;"></div>
+
+                    <?php $questionNum += 1;
+
+                           }  ?>
 
 
-           <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[0]?>">&nbsp;<label><?=$ans_array[0]?></label><br>
-           <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[1]?>">&nbsp;<label><?=$ans_array[1]?></label><br>
-           <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[2]?>">&nbsp;<label><?=$ans_array[2]?></label><br>
-           <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[3]?>">&nbsp;<label><?=$ans_array[3]?></label><br>
-		   </div>
-       		 <div style="border-bottom: 1px dotted black; margin: 1em; background-color: black;"></div>
-         <?php $questionNum += 1; } ?>
+                      <button class="button" name="submit" style="vertical-align:middle"> <span> SUBMIT </span> </button>
+
+                   </form>
+
+                <?php   } else {
+                  echo "you have already attempted 3 times";
+                }}?>
 
 
-           <button class="button" name="submit" style="vertical-align:middle"> <span> SUBMIT </span> </button>
 
-				</form></div>
 
-        </div>
-    </div>
+                 </div>
+
+                   </div>
+               </div>
+
+            <?php   }
+
+          }?>
+
+
+
+
+
+
 
 
 

@@ -18,6 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = $result -> fetch_assoc();
     if ($numOfRows == 1) {
         $_SESSION['valid_user'] = $email;
+        $_SESSION["userid"] = $row['user_id'];
         header("location: dashboard1.php");
     }else {
         $error = 'Your Login Name or Password is invalid';
@@ -93,9 +94,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
 </body>
-	   
+
 	   	   <script>
-	   
+
 	   function passwordCheck(document){
 		var password=document.getElementById("password");
 		var error_msg=document.getElementById("password_check");
@@ -108,6 +109,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			return true;
 			}
 	}
-	   
+
 	   </script>
 </html>

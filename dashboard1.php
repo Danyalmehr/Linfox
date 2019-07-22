@@ -121,11 +121,15 @@ session_start();
 
 	<?php
 
-					$courses = "SELECT test.test_name, courses.course_id, courses.course_name, courses.course_desc
+					$courses = "SELECT test.test_name, test.test_id, courses.course_id, courses.course_name, courses.course_desc
           FROM courses
           INNER JOIN test ON test.course_id = courses.course_id
           ";
 					$result = mysqli_query($con,$courses);
+
+
+
+
 
 
 
@@ -138,10 +142,11 @@ session_start();
 
 					while ($row=mysqli_fetch_array($result))
               {
-        $test_name=$row['test_name'];
-        $course_name=$row['course_name'];
-        $course_id=$row['course_id'];
-        $course_desc=$row['course_desc'];
+                $testid = $row['test_id'];
+                $test_name=$row['test_name'];
+                $course_name=$row['course_name'];
+                $course_id=$row['course_id'];
+                $course_desc=$row['course_desc'];
 
         echo"
               <button type=\"button\" class=\"btn btn-secondary btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\"><span style=\"font-size:25px\">$course_name</span></button>";
@@ -166,6 +171,8 @@ session_start();
         			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a href='previousresults.php'>See Results</a></button>
          			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
                 <form class=\"test-display\" action=\"Stest.php\" method=\"post\">
+
+                <input type=\"hidden\" name=\"testid[$testid]\" value=\"$testid\">
                 <button name=\"test[$test_name]\" type=\"submit\" class=\"btn btn-primary btn-block\" ><i class=\"menu-icon icon-check\"></i>Take test</button>
                 </div>
                 </form>

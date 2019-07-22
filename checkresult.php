@@ -16,7 +16,7 @@ require 'database.php';
     <script src="js/read_more.js"></script>
     <title> Take test </title>
 
-<<<<<<< HEAD
+
   <link rel="stylesheet" href="css/test.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -36,7 +36,6 @@ require 'database.php';
 
 
   <link type="text/css" href="css/theme.css" rel="stylesheet">
-=======
 
 
 	<style>
@@ -51,12 +50,14 @@ require 'database.php';
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
+      <?php include("date.php") ?>
 
-    
+
+
 
           	<div class="col-md-3">
 
-              
+
                 <div class="span3">
                                      <div class="sidebar" style="display: inline">
                                          <ul class="widget widget-menu unstyled">
@@ -99,9 +100,9 @@ require 'database.php';
                                      </div>
                                      <!--/.sidebar-->
                                  </div>
-              
+
 		</div>
-	
+
 
 
 	<div class="results">
@@ -112,8 +113,11 @@ require 'database.php';
 
     <div class="options">
           <center class="result_display">
-              <?php   echo "<h2>Course name:".  $_SESSION["coursename"] . "</h2><br>";
-                echo " <h2>Test name:".  $_SESSION["testName"] . "</h2>";
+              <?php
+                echo "<h2>Course name: ".  $_SESSION["coursename"] . "</h2><br>";
+                echo " <h2>Test name: ".  $_SESSION["testName"] . "</h2><br>";
+                echo "<h4>Submission date: ".  $date . "</h4>";
+
               ?>
 
                 </center>
@@ -121,11 +125,13 @@ require 'database.php';
 
 
     <?php
+      $attemptNumber = $_SESSION['attemptNumber'];
+      $userid = $_SESSION["userid"];
 			if(isset($_POST['submit'] , $_POST['myVariable']))
 			{
 				if(!empty($_POST['userans']))
 				{
-					$count = count($_POST['userans']);
+          $count = count($_POST['userans']);
 					//echo " <h3> There were ".$count." questions in this test </h3>";
 
 					 $score = 0;
@@ -140,7 +146,7 @@ require 'database.php';
           foreach ($selected as $key => $value) {
            //$fetchqry2= "INSERT INTO useranswer (`userans`, `que_id`) VALUES
             //( '$value', (SELECT `que_id` from `question`) )";
-            $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`, `email_FK`, `test_id`) values ('$value','$que_id', '$email', '$test_id')";
+            $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`, `user_id`, `test_id`) values ('$value','$que_id', '$userid', '$test_id')";
             $result2 = mysqli_query($con,$fetchqry2);
             $que_id += 1;
           }
@@ -187,11 +193,11 @@ require 'database.php';
             <?php  }?>
 
         </div>
-      <?php $i = $i + 1;} ?>
-<?php
-          $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`, `email_FK`) values ('$score', '$test_id', '$email')";
-          $result3 = mysqli_query($con,$fetchqry3);
-          $scorePercentage = ($score/$count)*100; ?>
+      <?php $i = $i + 1;}
+        $scorePercentage = ($score/$count)*100;
+        $fetchqry3 = "UPDATE attempt SET final_score='$scorePercentage', att_date='$date' WHERE user_id =$userid AND test_id=$test_id AND att_number=$attemptNumber";
+        $result3 = mysqli_query($con,$fetchqry3);
+?>
 
             <center class="result_display">
           <?php echo " Number of questions : ".$count."  <br>";
@@ -211,7 +217,7 @@ require 'database.php';
       	</div>
           <div class="col-md-2"></div>
     </div>  </div>
-		
+
 
 
 

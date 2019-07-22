@@ -86,39 +86,37 @@ include_once('database.php');
     <div class="col-md-9">
 
 <?php
-        $fetchqry = "SELECT final_score, test_name, fname, lname, course_name
+        $fetchqry = "SELECT final_score, test_name, fname, lname, course_name, att_date
         FROM attempt
         INNER JOIN test ON test.test_id = attempt.test_id
-        INNER JOIN user ON user.email = attempt.email_FK
+        INNER JOIN user ON user.user_id = attempt.user_id
         INNER JOIN courses ON courses.course_id = test.course_id
         WHERE email = '$email'
         ";
         $result=mysqli_query($con,$fetchqry);
         while ($row = mysqli_fetch_array($result)) {
 
-        $final_score = $row['final_score']*50;
+        $final_score = $row['final_score'];
         $testName = $row['test_name'];
-        $fname = $row['fname'];
-        $lname = $row['lname'];
         $courseName = $row['course_name'];
+        $attemptDate = $row['att_date'];
     ?>
     <div class="search_results" id="search_results">
             <table id="search_table">
               <tr><center class="table_heading">Test results for  <?php echo" $fname "?> are as following<Center></tr>
                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
                     <th>Final score</th>
                     <th>Course name</th>
                     <th>Test name</th>
+                    <th>Date</th>
               </tr>
       <!-- populate table from mysql database -->
 
-                	<tr><td><?= $fname ?></td>
-                    <td><?= $lname ?></td>
+                	<tr>
                     <td><?= $final_score ?><?php echo " % "?></td>
                     <td><?= $courseName ?></td>
                     <td><?= $testName ?></td>
+                    <td><?= $attemptDate ?></td>
                		</tr>
 
             </table>
