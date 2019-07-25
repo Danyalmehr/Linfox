@@ -169,8 +169,8 @@ session_start();
         			<p> $course_desc </p>
 
         			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a href='previousresults.php'>See Results</a></button>
-         			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i>See PDF Materials</button>
-                <form class=\"test-display\" action=\"Stest.php\" method=\"post\">
+         			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i><a href='videos.php'>See Video Materials</a></button>
+                
 
                 <input type=\"hidden\" name=\"testid[$testid]\" value=\"$testid\">
                 <button name=\"test[$test_name]\" type=\"submit\" class=\"btn btn-primary btn-block\" ><i class=\"menu-icon icon-check\"></i>Take test</button>
