@@ -144,9 +144,15 @@ session_start();
               {
                 $testid = $row['test_id'];
                 $test_name=$row['test_name'];
-                $course_name=$row['course_name'];
+                $course_name1=$row['course_name'];
                 $course_id=$row['course_id'];
                 $course_desc=$row['course_desc'];
+
+
+
+
+
+$course_name = str_replace(' ','_', $course_name1);
 
         echo"
               <button type=\"button\" class=\"btn btn-secondary btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\"><span style=\"font-size:25px\">$course_name</span></button>";
