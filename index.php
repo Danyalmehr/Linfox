@@ -12,15 +12,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $conn -> real_escape_string($_POST['password']);
 
     //make a query to check if user login successfully
-    $sql = "select * from user where email='$email' and password='$password'";
+    $sql = "select * from user where email='$email' and password='$password' ";
     $result = $conn -> query($sql);
     $numOfRows = $result -> num_rows;
     $row = $result -> fetch_assoc();
-    if ($numOfRows == 1) {
+    $usertype = $row['user_type'];
+    if ($numOfRows == 1 and $usertype == 'employee')
+    {
         $_SESSION['valid_user'] = $email;
         $_SESSION["userid"] = $row['user_id'];
         header("location: dashboard1.php");
-    }else {
+    }
+    elseif ($numOfRows == 1 and $usertype == 'admin')
+    {
+      $_SESSION['valid_user'] = $email;
+      $_SESSION["userid"] = $row['user_id'];
+      header("location: admindashboard.php");
+    }
+    else
+    {
         $error = 'Your Login Name or Password is invalid';
     }
 }
