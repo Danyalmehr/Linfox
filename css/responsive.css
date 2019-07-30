@@ -28,10 +28,6 @@ footer {
 	text-align: center;
 }
 
-[class*="col-"] {
-    width: 100%;
-}
-
 #banner h1 {
 	text-align:center;
 	}
@@ -50,80 +46,226 @@ footer {
 /*-------------------------------------------------------------------------------------------- Login Page ------------------------------------------------------------------------ */
 
 
-.login{ margin:4%;position: relative;left: 27%; align-content:center; padding:4%; border:1px solid #B39019;
 
-color:black; border-radius:4px; width: 35%;}
-.login label {
-    width: 5em;
-    float: left;
 
-     padding:0.2%;
-    padding-right: 0.5em;
+/* For mobile phones: */
 
+	.login_header {background-color: red;}
+	.login_header h1{text-align:center;}
+	.login{ margin:2%;position: relative;display: flex;justify-content: center;align-content:center; padding:4%; border:1px solid #B39019;
+	color:black; border-radius:4px; width:100%;display: inline-block;}
+
+	.button_login {
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: #07D14A;
+	  border: none;
+		position: relative;
+		left: 24%;
+	  color: #FFFFFF;
+	  text-align: center;
+	  font-size: 1em;
+	  padding: 10px;
+	  width: 7em;
+	  transition: all 0.5s;
+	  cursor: pointer;
+
+	}
+	.button_login:hover {
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: #1C8F42;
+	  border: none;
+		position: relative;
+		left: 24%;
+	  color: #FFFFFF;
+	  text-align: center;
+	  font-size: 1em;
+	  padding: 10px;
+	  width: 7em;
+	  transition: all 0.5s;
+	  cursor: pointer;
+
+	}
+
+	.button_login span {
+	  cursor: pointer;
+	  display: inline-block;
+	  position: relative;
+	  transition: 0.5s;
+	}
+
+	.button_login span:after {
+	  content: '\00bb';
+	  position: absolute;
+	  opacity: 0;
+	  top: 0;
+	  right: -20px;
+	  transition: 0.5s;
+	}
+
+	.button_login:hover span {
+	  padding-right: 25px;
+
+	}
+
+	.button_login:hover span:after {
+	  opacity: 1;
+	  right: 0;
+	}
+	.signupnotice a {text-decoration: none;color: black;position: relative; }
+	.signupnotice a:hover {text-decoration: none;color: #B39019;position: relative; }
+
+
+
+
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+  /* -----------------------For tablets: ----------------------------*/
+
+
+	.login_header {background-color: red;}
+	.login_header h1{text-align:center;}
+	.login{ margin:4%;position: relative;display: flex;justify-content: center;align-content:center; padding:4%; border:1px solid #B39019;
+	color:black; border-radius:4px; width:72%;left:14%;display: inline-block;}
+
+	.button_login {
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: #07D14A;
+	  border: none;
+		position: relative;
+		left: 24%;
+	  color: #FFFFFF;
+	  text-align: center;
+	  font-size: 1em;
+	  padding: 10px;
+	  width: 7em;
+	  transition: all 0.5s;
+	  cursor: pointer;
+
+	}
+	.button_login:hover {
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: #1C8F42;
+	  border: none;
+		position: relative;
+		left: 24%;
+	  color: #FFFFFF;
+	  text-align: center;
+	  font-size: 1em;
+	  padding: 10px;
+	  width: 7em;
+	  transition: all 0.5s;
+	  cursor: pointer;
+
+	}
+
+
+	.button_login span {
+	  cursor: pointer;
+	  display: inline-block;
+	  position: relative;
+	  transition: 0.5s;
+	}
+
+	.button_login span:after {
+	  content: '\00bb';
+	  position: absolute;
+	  opacity: 0;
+	  top: 0;
+	  right: -20px;
+	  transition: 0.5s;
+	}
+
+	.button_login:hover span {
+	  padding-right: 25px;
+
+	}
+
+	.button_login:hover span:after {
+	  opacity: 1;
+	  right: 0;
+	}
+	.signupnotice a {text-decoration: none;color: black;position: relative; left: 8%;}
+	.signupnotice a:hover {text-decoration: none;color: #B39019;position: relative; left: 8%;}
 
 }
 
-.button_login {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #07D14A;
-  border: none;
-	position: relative;
-	left: 2%;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 18px;
-  padding: 10px;
-  width: 7em;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-.button_login:hover {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #1C8F42;
-  border: none;
-	position: relative;
-	left: 2%;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 18px;
-  padding: 10px;
-  width: 7em;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
+
+@media only screen and (min-width: 769px) {
+  /* For desktop: */
+  .login_header {background-color: red;}
+	.login_header h1{text-align:center;}
+	.login{ margin:4%;position: relative;display: flex;justify-content: center;align-content:center; padding:4%; border:1px solid #B39019;
+	color:black; border-radius:4px; width:45%;left:26%;}
+
+	.button_login {
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: #07D14A;
+	  border: none;
+		position: relative;
+
+	  color: #FFFFFF;
+	  text-align: center;
+	  font-size: 1em;
+	  padding: 10px;
+	  width: 7em;
+	  transition: all 0.5s;
+	  cursor: pointer;
+
+	}
+	.button_login:hover {
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: #1C8F42;
+	  border: none;
+		position: relative;
+
+	  color: #FFFFFF;
+	  text-align: center;
+	  font-size: 1em;
+	  padding: 10px;
+	  width: 7em;
+	  transition: all 0.5s;
+	  cursor: pointer;
+
+	}
 
 
-.button_login span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
+	.button_login span {
+	  cursor: pointer;
+	  display: inline-block;
+	  position: relative;
+	  transition: 0.5s;
+	}
 
-.button_login span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
+	.button_login span:after {
+	  content: '\00bb';
+		display: inline-block;
+	  position: absolute;
+	  opacity: 0;
+	  top: 0;
+	  right: -20px;
+	  transition: 0.5s;
+	}
 
-.button_login:hover span {
-  padding-right: 25px;
+	.button_login:hover span {
+	  padding-right: 25px;
 
-}
+	}
 
-.button_login:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-.signupnotice a {text-decoration: none;color: black;position: relative; left: 18%;}
-.signupnotice a:hover {text-decoration: none;color: #B39019;position: relative; left: 18%;}
+	.button_login:hover span:after {
+	  opacity: 1;
+	  right: 0;
+	}
+	.signupnotice a {text-decoration: none;color: black;position: relative;  display: inline-block;}
+	.signupnotice a:hover {text-decoration: none;color: #B39019;position: relative;  display: inline-block;;
+	}
+
+	}
+
 
 
 /*-------------------------------------------------------------------------------------------- Signup Page ------------------------------------------------------------------------ */

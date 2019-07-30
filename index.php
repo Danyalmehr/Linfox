@@ -48,22 +48,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
    <div class="container">
+     <div class="banner">
+
+     </div>
     <div class="login">
 
     	<form action="index.php" method="post">
 
-        <span class="login_header"><h1> LOGIN </h1><span><br>
+        <span class="login_header"><h1> LOGIN </h1><br>
 
             <div class="row">
             	<div class="col">
-                	<label for="email"> EMAIL </label>
-                	<input type="email" id="email" name="email" size="30" maxlength="30" placeholder=" example@abc.com " required />
+
+                	<input type="email" id="email" name="email" size="30%" width="auto" maxlength="50" placeholder="Email" required />
                 </div>
             </div><br>
             <div class="row">
             	<div class="col">
-                	<label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="at least 8 characters" size="30" maxlength="30" onChange="passwordCheck(document)" required />
+
+                    <input type="password" id="password" name="password" placeholder="*********" size="30%" maxlength="50" onChange="passwordCheck(document)" required />
                     <span id="pwd_msg" class="error_msg"></span>
 					<span id="password_check" class="error_msg" style="color: red"></span>
                 </div>
@@ -78,7 +81,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <br>
                     <br>
-                    <span class="signupnotice"><a href="member.php"><b> SIGN UP TO BECOME A MEMBER </b></a></span>
+                    <span class="signupnotice"><a href="member.php"><b>SIGN UP TO BECOME A MEMBER</b></a></span>
                     <?php
                     if(isset($error)) {
                         echo "<span class='error-color'><p style=\"color: red; \">$error</p></span>";

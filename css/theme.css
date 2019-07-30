@@ -809,7 +809,7 @@ transition: all .2s ease-in-out;
 }
 .widget-menu>li>a {
 	background-color: #2d2b32;
-	color: #767676;
+	/*color: #767676; Changed here*/
 	-webkit-transition: all .2s ease-in-out;
 -moz-transition: all .2s ease-in-out;
 transition: all .2s ease-in-out;
@@ -827,7 +827,7 @@ transition: all .2s ease-in-out;
 	display: block
 }
 .widget-menu>li>a:hover {
-	background-color: #50CC03;
+	background-color: #ff7733;
 	color: #fafafa;
 }
 
@@ -1596,7 +1596,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', end
 		}
 
 		.widget .active a {
-			background-color: #50CC03
+			background-color: #ff7733
 		}
 
 .span3{
