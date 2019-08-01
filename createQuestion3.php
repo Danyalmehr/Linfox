@@ -80,14 +80,6 @@ include_once('database.php');
 
                     </div>
 	</div>
-<?php
-  $lockqry = "LOCK TABLES question READ";
-  $fetchqry= "SELECT que_id FROM question ORDER BY que_id DESC LIMIT 1";
-  $result = mysqli_query($con,$fetchqry);
-  $row = mysqli_fetch_array($result);
-  $lastQue_id = $row['que_id'];
-  echo "$lastQue_id";
- ?>
 
     <div class="container-fluid">
       <div class="row">
@@ -119,7 +111,43 @@ include_once('database.php');
               </form>
           </div>
            </div>
-           <?php include("insertQuestion.php") ?>
+           <?php include("insertQuestion.php");
+
+           $fetchqry = "SELECT * FROM question
+           where test_id=2";
+           $result=mysqli_query($con,$fetchqry);
+           $num=mysqli_num_rows($result);
+
+
+           while ($row = mysqli_fetch_array($result)){
+             $id = $row['que_id'];
+             $question = $row['que'];
+             $option2 = $row['option 2'];
+             $option3 = $row['option 3'];
+             $option4 = $row['option 4'];
+             $correctAnswer = $row['ans'];
+      ?>
+
+                 <table id="table" border="1">
+
+                     <tr>
+                         <th>Id</th>
+                         <th>Question</th>
+                         <th>option1</th>
+                         <th>option2</th>
+                         <th>option3</th>
+                         <th>Answer</th>
+                     </tr>
+                     <tr>
+                         <td> <?=$id?> </td>
+                         <td> <?=$question?> </td>
+                         <td> <?=$option2?> </td>
+                         <td> <?=$option3?> </td>
+                         <td> <?=$option4?> </td>
+                         <td> <?=$correctAnswer?> </td>
+                         <?php
+                         echo '<td><a href="edit-question.php?id=' . $id . '">Edit</a></td>'; }?>
+
          </div>
 
 
