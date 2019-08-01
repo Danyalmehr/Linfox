@@ -1071,6 +1071,13 @@ ALTER TABLE `useranswer`
   ADD CONSTRAINT `useranswer_ibfk_4` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 COMMIT;
 
+
+--
+-- Adding an attribute `course video` to Course table
+--
+ALTER TABLE `courses`
+ADD `course_video` varchar(255);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
