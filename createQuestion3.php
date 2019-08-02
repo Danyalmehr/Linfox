@@ -147,6 +147,8 @@ include_once('database.php');
                          <td> <?=$correctAnswer?> </td>
                          <?php
                          echo '<td><a href="edit-question.php?id=' . $id . '">Edit</a></td>'; }?>
+                                                
+                         </table>
 
          </div>
 
