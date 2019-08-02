@@ -96,27 +96,36 @@ session_start();
 
 	<?php
 
-					$courses = "SELECT test.test_name, test.test_id, courses.course_id, courses.course_name, courses.course_desc
-          FROM courses
-          INNER JOIN test ON test.course_id = courses.course_id
-          ";
+					$courses = "SELECT *
+          FROM courses";
 					$result = mysqli_query($con,$courses);
 
 
 					while ($row=mysqli_fetch_array($result))
               {
-                $testid = $row['test_id'];
-                $test_name=$row['test_name'];
                 $course_name1=$row['course_name'];
                 $course_id=$row['course_id'];
-                $course_desc=$row['course_desc'];
+                $course_name = str_replace(' ','_', $course_name1);
 
-                
+                ?>
 
 
-    }
-?>
-                                </div>
+                <table id="table" border="1">
+
+                    <tr>
+                        <th>Id</th>
+                        <th>course_name</th>
+
+                    </tr>
+                    <tr>
+                        <td> <?=$course_id?> </td>
+                        <td> <?=$course_name?> </td>
+                        <?php
+                        echo '<td><a href="edit-course.php?id=' . $course_id . '">Edit</a></td>'; }?>
+
+                        </table>
+
+                            </div>
 
                             </div>
 						</div>
