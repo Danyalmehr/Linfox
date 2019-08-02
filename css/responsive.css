@@ -441,11 +441,12 @@ color:black; border-radius:4px; width: 50%;}
 /*-------------------------------------------------------------------------------------------- editMember Page ---------------------------------------------------------------------------- */
 
 
-.edit_member{ margin:4%; align-content:center; padding:0.5%;}
-
-
 /*.edit_member,input{width: 110px; border: 1px solid white;}*/
-
+input {background-color: transparent;
+    border: 0px solid;
+    height: 2em;
+		width: 100%;
+    color: black;}
 
 /*-------------------------------------------------------------------------------------------- Sucess Page :------------------------------------------------------------------------------- */
 .sucess{ margin:4%; align-content:center; padding:1%; border:5px solid black; background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0.6); border-radius:9px;}

@@ -84,7 +84,7 @@ session_start();
     <div class="container-fluid">
     	<div class="row">
             <!-- /navbar -->
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-">
                         <div class="sidebar" style="display: inline">
                             <ul class="widget widget-menu unstyled">
                                 <li class="active left_icon"><a href="admindashboard.php"><i class="menu-icon icon-dashboard"></i>Dashboard
