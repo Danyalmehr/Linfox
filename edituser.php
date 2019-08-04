@@ -128,7 +128,7 @@ session_start();
 
                           <div class="edit_member">
                       			<?php $sql= "select * from user";
-                      			$records = mysqli_query($conn,$sql);
+                      			$records = mysqli_query($con,$sql);
                       			 ?>
                       			<table class="member_table" >
                       			<?php

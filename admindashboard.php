@@ -78,13 +78,13 @@ session_start();
                                 </li>-->
 
 
-                                    <li><a href="edituser.php"><i class="menu-icon icon-inbox"></i>Edit User<!--<b class="label green pull-right">
+                                    <li><a href="edituser.php"><i class="menu-icon icon-inbox"></i>User<!--<b class="label green pull-right">
                                         11</b>--> </a></li>
 
-                                        <li><a href="editcourse.php"><i class="menu-icon icon-inbox"></i>Edit Course <!--<b class="label green pull-right">
+                                        <li><a href="editcourse.php"><i class="menu-icon icon-inbox"></i>Course <!--<b class="label green pull-right">
                                             11</b>--> </a></li>
 
-                                            <li><a href="edittest.php"><i class="menu-icon icon-inbox"></i>Edit test <!--<b class="label green pull-right">
+                                            <li><a href="edittest.php"><i class="menu-icon icon-inbox"></i>Test <!--<b class="label green pull-right">
                                                 11</b>--> </a></li>
 
                                 <!--<li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
