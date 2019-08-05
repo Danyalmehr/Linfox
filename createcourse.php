@@ -64,28 +64,8 @@ session_start();
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
+      <?php include("admin-side-dash.html") ?>
     	<div class="row">
-
-                    <div class="span3">
-                        <div class="sidebar" style="display: inline">
-                            <ul class="widget widget-menu unstyled">
-                                <li class="active left_icon"><a href="dashboard1.php"><i class="menu-icon icon-dashboard"></i>Dashboard
-                                </a></li>
-
-
-                                <li><a href="Stest.php"><i class="menu-icon icon-inbox"></i>Test</b>--> </a></li>
-
-
-
-                                <li><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
-								                        <li><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
-								                                <li><a href="index.php"><i class="menu-icon icon-signou"></i>Logout </a></li>
-
-                                <li><a href="charts.html"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>-->
-							</ul>
-
-                        </div>
-                    </div>
 
                     <div class="span8">
                         <div class="content">

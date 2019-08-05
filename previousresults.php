@@ -35,53 +35,9 @@ include_once('database.php');
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
+      <?php include("user-side-dash.html") ?>
     	<div class="row">
-        <div class="col-md-3">
-				<div class="span3">
 
-
-                        <div class="sidebar" style="display: inline">
-                            <ul class="widget widget-menu unstyled">
-                                <li class="left_icon"><a href="dashboard1.php"><i class="menu-icon icon-dashboard"></i>Dashboard
-                                </a></li>
-                                <!--<li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
-                                </li>-->
-
-                                <li class="left_icon"><a href="Stest.php"><i class="menu-icon icon-inbox"></i>Test <!--<b class="label green pull-right">
-                                    11</b>--> </a></li>
-
-                                <!--<li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
-                                    19</b> </a></li>-->
-
-                            <!--/.widget-nav-->
-
-
-
-                                <li class="active left_icon"><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
-								                        <li class="left_icon"><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
-								                                <li class="left_icon"><a href="index.php"><i class="menu-icon icon-signou"></i>Logout </a></li>
-                                <!--<li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li>
-                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Forms </a></li>
-                                <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
-                                <li><a href="charts.html"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>-->
-							</ul>
-                            <!--/.widget-nav-->
-                            <!--<ul class="widget widget-menu unstyled">
-                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">
-                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                </i>More Pages </a>
-                                    <ul id="togglePages" class="collapse unstyled">
-                                        <li><a href="other-login.html"><i class="icon-inbox"></i>Login </a></li>
-                                        <li><a href="ot her-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
-                                        <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
-                            </ul>-->
-            </div>
-        </div>
-
-    </div>
 
     <div class="col-md-9">
 

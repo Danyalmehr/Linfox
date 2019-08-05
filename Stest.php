@@ -57,32 +57,9 @@ include_once('database.php');
     <?php include("include/nav.inc") ?>
     <?php include("date.php") ?>
 
-
-	<div class="col-md-3">
-	 <div class="span3">
-                        <div class="sidebar" style="display: inline">
-                            <ul class="widget widget-menu unstyled">
-                                <li class="left_icon"><a href="dashboard1.php"><i class="menu-icon icon-dashboard"></i>Dashboard
-                                </a></li>
-
-
-                                <li class="active left_icon"><a href="Stest.php"><i class="menu-icon icon-inbox"></i>Test</a></li>
-
-
-
-                                <li class="left_icon"><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
-								                        <li class="left_icon"><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
-								                                <li class="left_icon"><a href="index.php"><i class="menu-icon icon-signou"></i>Logout </a></li>
-
-							</ul>
-
-                        </div>
-
-                    </div>
-	</div>
-
     <div class="container-fluid">
-
+      <?php include("user-side-dash.html") ?>
+      
           	<div class="row">
 
 
