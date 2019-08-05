@@ -153,11 +153,13 @@ session_start();
 
 
 $course_name = str_replace(' ','_', $course_name1);
+						
+						
 
-        echo"
-              <button type=\"button\" class=\"btn btn-secondary btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\"><span style=\"font-size:25px\">$course_name</span></button>";
+        
+              echo "<button type=\"button\" class=\"btn btn-secondary btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\"><span style=\"font-size:25px\">$course_name</span></button>";
 
-
+							
 
         /*<!-- The Modal -->*/
           echo"<div class=\"modal\" id=\"$course_name\">

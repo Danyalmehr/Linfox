@@ -1,7 +1,7 @@
 <?php
 //must appear BEFORE the <html> tag
 session_start();
-include_once('include/database.php');
+include_once('database.php');
 ?>
 
 <!DOCTYPE html>
@@ -86,10 +86,28 @@ include_once('include/database.php');
 
                 <div class="col-md-8">
                   	<h2> Training Videos</h2>
-					<?php 
+					<?php
+	
+					
+
+
+	
+					$sql = "select * FROM courses";
+					$result = mysqli_query($con,$sql);
+	
+					$row=mysqli_fetch_assoc($result);
+					
+					$course_id=$row['course_id'];
+					$course_video=$row['course_video'];
+	
+					
+	
+	
+	
 						$link="ZdP0KM49IVk";
 	
-					echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$link\" frameborder=\"0\" allow=\"accelerometer\"; \"autoplay\"; \"encrypted-media\"; \"gyroscope\"; \"picture-in-picture\" \"allowfullscreen\"></iframe>";
+					echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$course_video\ frameborder=\"0\" allow=\"accelerometer\"; \"autoplay\"; \"encrypted-media\"; \"gyroscope\"; \"picture-in-picture\" \"allowfullscreen\"></iframe>";
+					
 	
 	?>
 
