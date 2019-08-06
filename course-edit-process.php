@@ -66,7 +66,7 @@ include_once('database.php');
                       WHERE course_id ='$_POST[course_id]'";
                         if(mysqli_query($con,$fetchqry1))
                         {
-                          echo "your new details have been successfully deleted!!";
+                          echo "your new details have been successfully deleted!!". mysqli_error($con);
                         }
                         else
                         {
@@ -80,11 +80,11 @@ include_once('database.php');
                     WHERE course_id ='$_POST[course_id]'";
                       if(mysqli_query($con,$fetchqry))
                       {
-                        echo "your new details have been successfully updated!!";
+                        echo "your new details have been successfully updated!!". mysqli_error($con);
                       }
                       else
                       {
-                        echo "something is wrong with Update";
+                        echo "something is wrong with Update". mysqli_error($con);
                       }
                 }
  ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2019 at 04:55 PM
+-- Generation Time: Aug 06, 2019 at 04:19 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -67,7 +67,14 @@ CREATE TABLE `courses` (
 
 INSERT INTO `courses` (`course_id`, `course_name`, `course_desc`, `course_video`) VALUES
 (2, 'course2', '', NULL),
-(3, 'Finalcheck', 'Nothing much', NULL);
+(3, 'Finalcheck', 'Nothing much', NULL),
+(4, 'Finalcheck', 'asd', NULL),
+(5, 'final', 'Nothing much', NULL),
+(6, 'final', 'Nothing much', NULL),
+(7, 'dasd', 'sdadasd', NULL),
+(8, 'dd', 'ddd', NULL),
+(9, 'dd', 'ddd', NULL),
+(10, 'dd', 'ddd', NULL);
 
 -- --------------------------------------------------------
 
@@ -217,6 +224,12 @@ ALTER TABLE `attempt`
   MODIFY `att_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=262;
 
 --
+-- AUTO_INCREMENT for table `courses`
+--
+ALTER TABLE `courses`
+  MODIFY `course_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
@@ -226,7 +239,7 @@ ALTER TABLE `question`
 -- AUTO_INCREMENT for table `test`
 --
 ALTER TABLE `test`
-  MODIFY `test_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=742;
+  MODIFY `test_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -238,7 +251,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `useranswer`
 --
 ALTER TABLE `useranswer`
-  MODIFY `ans_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1286;
+  MODIFY `ans_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

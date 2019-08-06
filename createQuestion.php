@@ -131,7 +131,9 @@ include_once('database.php');
                   $("#dynamic_field").append('<tr id="row"><td><input required type="text" name="question[]" form="questionform" /></td> <td><input type="text" name="data[option1][]" form="questionform" required/> </td> <td><input type="text" name="data[option2][]" form="questionform" required/></td> <td><input type="text" name="data[option3][]" value="" form="questionform" required/></td> <td><input type="text" name="data[option4][]" value="" form="questionform" required/></td> <td><input type="text" name="data[answer][]" value="" form="questionform" required/></td> <td><button name="remove" id="remove" class="btn btn_remove">Remove</button></td></tr>'
                   );
 
+
                   });
+
                   $(document).on('click', '.btn_remove', function(){
                     var button_id = $(this).attr("id");
                     $('#row').remove();
