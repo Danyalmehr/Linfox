@@ -108,7 +108,7 @@ session_start();
                     			    while($row = mysqli_fetch_array($records)):
                       				{
                       				echo "<tr><form action='course-edit-process.php' method=post>";
-                              echo "<td><input type=text name=course_id value='".$row['course_id']."'</td>"; // This is hidden field
+                              echo "<td><input type=hidden name=course_id value='".$row['course_id']."'</td>"; // This is hidden field
                               echo "<tr>
                                         <td><input type=text name=course_name value='".$row['course_name']."'</td>
                                         <td><input type=text name=course_desc value='".$row['course_desc']."'</td>

@@ -98,7 +98,7 @@ session_start();
                                   </tr>";
                     			    while($row = mysqli_fetch_array($records)):
                       				{
-                      				echo "<tr><form action=Updateuser.php method=post>";
+                      				echo "<tr><form action=edit-user-process.php method=post>";
                               echo "<td><input type=hidden name=user_id value='".$row['user_id']."'</td>"; // This is hidden field
                               echo "<tr>
                                         <td><input type=text name=fname value='".$row['fname']."'</td>

@@ -348,14 +348,16 @@ footer {
 
 /*-------------------------------------------------------------------------------------------- Signup Page ------------------------------------------------------------------------ */
 
+.containermember{align-items: center;text-align: center;}
 
-.member {margin:4%;position: relative;left: 22%; align-content:center; padding:4%; border:1px solid #B39019;
+.member {margin-left:4%; padding:4%; width: 70%;border:1px solid #B39019;position: relative;
 
-color:black; border-radius:4px; width: 50%;}
+color:black; border-radius:1px;}
 
 
 .member label {
-    width: 10em;
+	text-align: left;
+    width: 16em;
     float: left;
 	padding:0.5%;
 
@@ -365,62 +367,62 @@ color:black; border-radius:4px; width: 50%;}
 
 
 
-.button_signup {
+.button_signup_member {
   display: inline-block;
   border-radius: 4px;
   background-color: #07D14A;
   border: none;
+	left: -19%;
 	position: relative;
-	left: 10%;
   color: #FFFFFF;
   text-align: center;
   font-size: 18px;
-  padding: 10px;
-  width: 7em;
+  padding: 1%;
+  width: 9em;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
 }
-.button_signup:hover {
+.button_signup_member:hover {
   display: inline-block;
   border-radius: 4px;
   background-color: #1C8F42;
   border: none;
 	position: relative;
-	left: 10%;
   color: #FFFFFF;
-  text-align: center;
+height: auto;
   font-size: 18px;
-  padding: 10px;
-  width: 7em;
+  padding: 1%;
+  width: 9em;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
 }
 
 
-.button_signup span {
+.button_signup_member span {
   cursor: pointer;
+	position: relative;
   display: inline-block;
-  position: relative;
+  position: inherit;
   transition: 0.5s;
 }
 
-.button_signup span:after {
+.button_signup_member span:after {
   content: '\00bb';
-  position: absolute;
+position: inherit;
   opacity: 0;
   top: 0;
-  right: -20px;
+
   transition: 0.5s;
 }
 
-.button_signup:hover span {
+.button_signup_member:hover span {
   padding-right: 25px;
 
 }
 
-.button_signup:hover span:after {
+.button_signup_member:hover span:after {
   opacity: 1;
   right: 0;
 }
