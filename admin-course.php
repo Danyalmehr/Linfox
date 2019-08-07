@@ -28,6 +28,10 @@ session_start();
 
   <body>
 </head>
+
+<style media="screen">
+  
+</style>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
@@ -45,16 +49,16 @@ session_start();
                     <div class="span9">
 
                       <!-- Container (Services Section) -->
-                      <div id="services" class="container-fluid text-center">
-                        <h1>Courses</h1>
+                      <div id="services" class="container text-center">
+                        <h1>Edit Course Dashboard</h1>
                         <br>
                         <div class="row slideanim">
-                          <div class="col-md-6 center">
+                          <div class="col-md-4 center">
                           <a href="create-course.php">  <span class="glyphicon glyphicon-edit logo-small"></span>
                             <h2>Create Course</h2>
                             <p>Lorem ipsum dolor sit amet..</p></a>
                           </div>
-                          <div class="col-md-6">
+                          <div class="col-md-4">
                           <a href="edit-course.php">  <span class="glyphicon glyphicon-wrench logo-small"></span>
                             <h2>Edit Course</h2>
                             <p>Lorem ipsum dolor sit amet..</p></a>

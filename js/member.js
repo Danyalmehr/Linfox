@@ -1,20 +1,31 @@
 // JavaScript Document
-function checkRePassword(document) {
+function checkRePassword(document)
+{
     var pwd = document.getElementById("password");
     var pwd_msg = document.getElementById('pwd_msg');
+    var error_msg=document.getElementById("password_check");
     var repwd = document.getElementById("rePassword");
-    if (pwd.value != repwd.value) {
-        pwd_msg.innerHTML = "The two passwords are not the same.";
-        repwd.value = "";
-        pwd.focus();
-        return false;
-    }
-    else {
-        pwd_msg.innerHTML = "";
-    }
+
+    if (pwd.value != repwd.value)
+         {
+            pwd_msg.innerHTML = "The two passwords are not the same.";
+            repwd.value = "";
+            pwd.focus();
+
+          else if {
+            (pwd.value.length <= 7)
+
+      			error_msg.innerHTML="Please enter more than 8 characters";
+      			password.focus();
+}
+          return false;
+}
+    else
+        {
+          pwd_msg.innerHTML = "";
+        }
     return true;
 }
-
 function checkZIPCode(document) {
     var zip = document.getElementById("zip");
     var zip_msg = document.getElementById("zip_msg");

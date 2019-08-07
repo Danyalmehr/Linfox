@@ -109,7 +109,7 @@ padding: 3%;
 
             <h2>Edit User Dashboard</h2>
             <div class="container-menu">
-              <a href="">
+              <a href="createuser.php">
               <img src="images/edit-user.png" alt="Avatar" class="image">
               <div class="overlay">
                 <div class="text">Create User</div>
@@ -127,7 +127,7 @@ padding: 3%;
             </div>
 
             <div class="container-menu">
-              <a href="#">
+              <a href="deleteuser.php">
               <img src="images/edit-user.png" alt="Avatar" class="image">
               <div class="overlay">
                 <div class="text">Delete User</div>
