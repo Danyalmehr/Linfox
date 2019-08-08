@@ -56,38 +56,45 @@ include_once('database.php');
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
-    <?php include("admin-side-dash.html") ?>
+
+    <div class="container-fluid">
+      <?php include("admin-side-dash.html") ?>
+      <div class="row">
+          <div class="col-md-offset-2 col-md-8">
+            <?php
+
+            $courses = "SELECT *
+                      FROM courses
+                      ";
+            					$result = mysqli_query($con,$courses);
+                      ?>
+                      <h1 style="float: auto;"> All Courses Available</h1>
 
 
-<?php
-            if (isset($_POST['delete']))
-              {
-                      $fetchqry1 = "DELETE FROM courses
-                      WHERE course_id ='$_POST[course_id]'";
-                        if(mysqli_query($con,$fetchqry1))
-                        {
-                          echo "your new details have been successfully deleted!!". mysqli_error($con);
-                        }
-                        else
-                        {
-                          echo "something is wrong with delete". mysqli_error($con);
-                        }
-                }
 
-          if (isset($_POST['update']))
-              {
-                    $fetchqry = "UPDATE courses SET `course_name`= '$_POST[course_name]', `course_desc`= '$_POST[course_desc]'
-                    WHERE course_id ='$_POST[course_id]'";
-                      if(mysqli_query($con,$fetchqry))
-                      {
-                        echo "your new details have been successfully updated!!". mysqli_error($con);
-                      }
-                      else
-                      {
-                        echo "something is wrong with Update". mysqli_error($con);
-                      }
-                }
- ?>
+                      <?php
+            					while ($row=mysqli_fetch_array($result))
+                          {
+                            $_SESSION["coursename"] = $row['course_name'];
+                            $course_name=$row['course_name'];
+                            $course_id=$row['course_id'];
+                            $course_desc=$row['course_desc'];?>
+
+            <form class="" action="test.php" method="post">
+              <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
+              <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>
+              <button class="btn btn-secondary btn-lg span5 btn-course" name="submit" style="float: auto;"> <span> <?= $course_name ?> </span> </button>
+
+            </form>
+
+              <?php } ?>
+   </div>
+ </div>
+</div>
+
+
+
+
 
 	<?php include("include/footer.inc") ?>
 
