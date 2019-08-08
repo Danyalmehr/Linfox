@@ -68,9 +68,10 @@ include_once('database.php');
                       ";
             					$result = mysqli_query($con,$courses);
                       ?>
-                      <h1 style="float: auto;"> All Courses Available to create question</h1>
-                      <h2>Choose your COURSE</h2>
-                      <h4>If you have not created your desired course yet, you MUST create you course first</h4>
+                      <h1 style="float: auto;"> To create questions you need to choose your course first</h1>
+                      <h3>STEP 1: Choose your COURSE</h3>
+                      <h4>If you have not created your desired course yet, you MUST create you course first at <a href="create-course.php">courses</a> </button>
+ </h4>
 
 
                       <?php

@@ -72,7 +72,7 @@ session_start();
                         <div class="content">
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid course">
-					<h1 style="margin: 1em"> Create Courses</h1>
+					<h1 style="margin: 1em"> Create Course</h1>
 
                           <form class="form-horizontal" action="course-process.php" method="post">
                   <div class="form-group">
