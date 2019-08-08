@@ -46,7 +46,7 @@ include_once('database.php');
     .widget-menu {
     background: #fff;
   -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
+
      border-radius: 3px;
     overflow: hidden;
 }
@@ -62,9 +62,9 @@ include_once('database.php');
       <div class="row">
           <div class="col-md-offset-2 col-md-8">
             <?php
-            if(isset($_POST['submit'])){
+            if(isset($_POST['selectedcourse'])){
               $id = $_POST['course_id'];
-              $course_name = $_POST['course_name'];
+              $_SESSION["coursename"] = $_POST['course_name'];
               $test = "SELECT *
                         FROM test
                         WHERE course_id = $id
@@ -74,7 +74,7 @@ include_once('database.php');
 
                         ?>
 
-                        <h1>Tests for <?= $course_name ?> </h1>
+                        <h1>Tests for <?= $_SESSION["coursename"] ?> </h1>
                         <h4>Choose the test you wanna create your question for:</h4>
 
 
@@ -89,11 +89,11 @@ include_once('database.php');
                         while ($row=mysqli_fetch_array($result))
                             {
                               $test_id=$row['test_id'];
-                              $test_name=$row['test_name'];
+                              $test_name = $row['test_name'];
                                ?>
-              <form class="" action="createquestion3.php" method="post">
-                <input type="hidden" name="test_id" value="<?php $test_id ?>">
-                <button class="btn btn-secondary btn-lg span5 btn-course" name="submit" style="float: auto;"> <span> <?= $test_name ?> </span> </button>
+              <form class="" action="createquestion4.php" method="post">
+                <input type="hidden" name="test_id" value="<?=$test_id?>"><label><?php $test_id?></label>
+                <button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <span> <?= $test_name ?> </span> </button>
               </form>
 
             <?php }

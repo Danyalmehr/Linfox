@@ -68,8 +68,9 @@ include_once('database.php');
                       ";
             					$result = mysqli_query($con,$courses);
                       ?>
-                      <h1 style="float: auto;"> All Courses Available</h1>
-
+                      <h1 style="float: auto;"> All Courses Available to create question</h1>
+                      <h2>Choose your COURSE</h2>
+                      <h4>If you have not created your desired course yet, you MUST create you course first</h4>
 
 
                       <?php
@@ -83,7 +84,7 @@ include_once('database.php');
             <form class="" action="test.php" method="post">
               <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
               <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>
-              <button class="btn btn-secondary btn-lg span5 btn-course" name="submit" style="float: auto;"> <span> <?= $course_name ?> </span> </button>
+              <button class="btn btn-secondary btn-lg span5 btn-course" name="selectedcourse" style="float: auto;"> <span> <?= $course_name ?> </span> </button>
 
             </form>
 
