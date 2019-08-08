@@ -11,21 +11,29 @@ function checkRePassword(document)
             pwd_msg.innerHTML = "The two passwords are not the same.";
             repwd.value = "";
             pwd.focus();
+            return false;
+          }
 
-          else if {
-            (pwd.value.length <= 7)
-
-      			error_msg.innerHTML="Please enter more than 8 characters";
-      			password.focus();
-}
-          return false;
-}
     else
         {
           pwd_msg.innerHTML = "";
         }
     return true;
 }
+function passwordCheck(document){
+ 		var password=document.getElementById("password");
+ 		var error_msg=document.getElementById("password_check");
+ 		if (password.value.length <= 7) {
+ 			error_msg.innerHTML="Please enter more than 8 characters";
+ 			password.focus();
+ 			return false; }
+ 		else {
+ 			password_check.innerHTML=""
+ 			return true;
+ 			}
+ 	}
+    
+
 function checkZIPCode(document) {
     var zip = document.getElementById("zip");
     var zip_msg = document.getElementById("zip_msg");
