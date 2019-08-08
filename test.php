@@ -75,6 +75,7 @@ include_once('database.php');
                         ?>
 
                         <h1>Tests for <?= $_SESSION["coursename"] ?> </h1>
+                        <h3>STEP 3: Choose your test</h3>
                         <h4>Choose the test you wanna create your question for:</h4>
 
 
