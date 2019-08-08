@@ -10,21 +10,26 @@
 	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 <footer class="footer-distributed">
 	<div class="footer-left">
-		<h2><span> U N I Q U E </span></h2>
+		<h2><span> URBAN XTREME </span></h2>
 			<p class="footer-links">
-					<a href="dashboard.php"> Home | </a>
+					<a href="dashboard1.php"> Home | </a>
 
 					<a href="test.php"> Test | </a>
 
 					<a href="courses.php"> Courses </a>
 			</p>
-			<p class="footer-company-name"> U N I Q U E &copy; 2019 </p>
+			<p class="footer-company-name"> URBAN XTREME &copy; 2019 </p>
+			<div class="footer-icons">
+						<a href="https://www.facebook.com/urbanxtremeadventures"><i class="fa fa-facebook"></i></a>
+						<a href="https://www.youtube.com/channel/UCTeatMZqcozWTwczilShOWw"><i class="fa fa-youtube"></i></a>
+						<a href="https://www.instagram.com/urbanxtremeoz/"><i class="fa fa-instagram"></i></a>
+			</div>
 	</div>
 
 	<div class="footer-center">
 		<div>
 			<i class="fa fa-map-marker"></i>
-			<p><span> 6 Wentworth Parade </span> Balmoral QLD 4171. </p>
+			<p> 6 Wentworth Parade , <br> Balmoral QLD 4171. </p>
 		</div>
 
 		<div>
@@ -34,21 +39,22 @@
 
 		<div>
 			<i class="fa fa-envelope"></i>
-			<p><a href="mailto:support@unique.com"> support@unique.co.in </a></p>
+			<p><a href="info@urban-xtreme.com.au"> info@urban-xtreme.com.au </a></p>
 		</div>
 	</div>
 
 	<div class="footer-right">
 		<p class="footer-company-about">
-		<big><span> ABOUT U N I Q U E </span></big>
-		<b> WE ARE GEARED FOR YOUR SUCCESS </b>
-		<p><small> At our company, we ensure all our staff are well equipped with essential knowledge and skills required to perform role-specific tasks. We deliver certified professionals! </small></p>
-		</p>
-		<div class="footer-icons">
-					<a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
-					<a href="www.twitter.com"><i class="fa fa-twitter"></i></a>
-					<a href="www.linkedin.com"><i class="fa fa-linkedin"></i></a>
-					<a href="www.github.com"><i class="fa fa-github"></i></a>
-		</div>
+		<big><p><b>ABOUT URBAN XTREME</b></p></big>
+		<br>
+
+		<b> SKI + ADVENTURE PARK </b>
+		
+			<br>
+
+		<p><small> Urban Xtreme is the vision of Founder, Lindsay Davis supported by her husband Darren Montgomery. After recognising a niche in the market for a snow sport-training centre in Brisbane and the increasing interest and current trend in adventure activities the idea was born.
+Urban Xtreme is officially Australia’s largest ski and adventure park and the only place you can ski and snowboard in Queensland.
+We are a family run start-up business designed to entertain and exercise adults and children while reinforcing good social skills in a group active environment that promotes health and fitness.</p>
+
 	</div>
 </footer>
