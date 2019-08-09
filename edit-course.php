@@ -86,7 +86,7 @@ session_start();
       <?php include("admin-side-dash.html") ?>
     	<div class="row">
 
-                    <div class="col-md-9 col-sm-12">
+                    <div class="col-md-8 table-responsive">
                         <div class="content">
                           <h1>Edit Course Details</h1>
                       			<?php $sql= "select * from courses";
