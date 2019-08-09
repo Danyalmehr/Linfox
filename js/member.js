@@ -20,19 +20,22 @@ function checkRePassword(document)
         }
     return true;
 }
+
 function passwordCheck(document){
- 		var password=document.getElementById("password");
- 		var error_msg=document.getElementById("password_check");
- 		if (password.value.length <= 7) {
- 			error_msg.innerHTML="Please enter more than 8 characters";
- 			password.focus();
- 			return false; }
- 		else {
- 			password_check.innerHTML=""
- 			return true;
- 			}
- 	}
-    
+ var password= document.getElementById("password").value;
+ var error_msg=document.getElementById("password_check");
+ var password1 = password.length;
+  if (password1 <= 7) {
+   error_msg.innerHTML="Please enter more than 8 characters";
+   password.focus();
+     pwd.focus();
+   return false; }
+ else {
+   password_check.innerHTML=""
+   return true;
+   }
+}
+
 
 function checkZIPCode(document) {
     var zip = document.getElementById("zip");
