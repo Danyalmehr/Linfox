@@ -109,7 +109,7 @@ session_start();
                                   </tr>";
                               for ($i=0; $i < $num ; $i++) {
                     			    $row = mysqli_fetch_array($records);
-
+	$records1 = mysqli_query($con,$sql1);
                       				echo "<tr><form action='course-edit-process.php' method=post>";
                               echo "<td><input type=hidden name=test_id value='".$row['test_id']."'</td>"; // This is hidden field
                               echo "<tr>

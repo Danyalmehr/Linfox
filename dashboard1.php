@@ -122,7 +122,12 @@ $course_name = str_replace(' ','_', $course_name1);
         			<p> $course_desc </p>
 
         			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a href='previousresults.php'>See Results</a></button>
-         			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i><a href='videos.php'>See Video Materials</a></button>
+
+                <form class=\"test-display\" action=\"videos.php\" method=\"post\">
+                <td><input type=hidden name=course_id[$course_id] value=\"$course_id\"</td>
+                <button type=\"submit\" name=\"courseid\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i><a href='videos.php'>See Video Materials</a></button>
+
+                </form>
 
  <form class=\"test-display\" action=\"Stest.php\" method=\"post\">
                 <input type=\"hidden\" name=\"testid[$testid]\" value=\"$testid\">
