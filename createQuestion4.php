@@ -59,17 +59,17 @@ include_once('database.php');
     <?php
       if(isset($_POST['selectedtest']))
       {
-        $test_id=$_POST['test_id'];
+        $_SESSION["test_id"]=$_POST['test_id'];
         $fetchqry = "SELECT *
         FROM question
-        where test_id = $test_id
+        where test_id = '$_SESSION[test_id]'
         ";
         $result=mysqli_query($con,$fetchqry);
 
         $courseTestQry = "SELECT courses.course_id, test_name, course_name
         FROM test
         INNER JOIN courses ON courses.course_id = test.course_id
-        WHERE test_id = '$test_id'
+        WHERE test_id = '$_SESSION[test_id]'
         ";
         $result1=mysqli_query($con,$courseTestQry);
         $row1= mysqli_fetch_array($result1);
@@ -90,7 +90,6 @@ include_once('database.php');
                 <h1 style="margin-left: 0.5em"> Create Question</h1>
 
                     <form class="form-horizontal" action="question-process.php" method="post">
-                      <input type="hidden" name="test_id" value="<?=$test_id?>"><label><?php $test_id?></label>
                       <div class="form-group">
                         <div class="col-xs-8">
                           <label for="ex3">Question:</label>
@@ -129,7 +128,7 @@ include_once('database.php');
                         <form class="" action="test.php" method="post">
                             <div class="col-sm-offset-2 col-sm-10">
                             <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
-                            <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>                        
+                            <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>
                             <button type="submit" name="selectedcourse" class="btn btn-danger">Back to test page</button>
                           </div>
                           </div>
@@ -143,6 +142,7 @@ include_once('database.php');
                              <div class="col-md-2">
                                </div>
                              <div class="col-md-8 table-responsive">
+                               <div class="content">
                                <h1>Test: <?= $test_name?> </h1>
                                <h1>From course <?= $course_name ?> </h1>
                                <h4>Choose the test you wanna create your question for:</h4>
@@ -160,7 +160,7 @@ include_once('database.php');
                                  while($row= mysqli_fetch_array($result)):
                                  {
                                  echo "<tr><form action=question-process.php method=post>";
-                                 echo "<input type=hidden name=que_id value='".$row['que_id']."'"; // This is hidden field
+                                 echo "<input type=hidden name=que_id value='".$row['que_id']."'";
                                  echo "<tr>
                                            <td><input type=text name=que value='".$row['que']."'</td>
                                            <td><input type=text name=option1 value='".$row['option 1']."'</td>
@@ -178,6 +178,8 @@ include_once('database.php');
                        <?php } ?>
                              </div>
                            </div>
+                         </div>
+
 
      </div>
 

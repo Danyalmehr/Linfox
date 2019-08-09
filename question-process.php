@@ -3,7 +3,7 @@ session_start();
 include_once('database.php');
 
     if(isset($_POST['submit'])){
-     $test_id = $_POST['test_id'];
+      $test_id = $_SESSION["test_id"];
      $que = $_POST['question'];
      $ans = $_POST['correct_answer'];
      $wans1 = $_POST['wrong_answer1'];
@@ -18,7 +18,6 @@ include_once('database.php');
        <form class="" action="createquestion4.php" method="post">
          <input type="hidden" name="test_id" value="<?=$test_id?>"><label><?php $test_id?></label>
          <button type="submit" name="selectedtest" class="btn btn-default">Submit</button>
-
        </form>
        <?php
 
@@ -32,11 +31,18 @@ include_once('database.php');
 
      if (isset($_POST['update']))
      {
-           $updateqry = "UPDATE question SET que='$_POST[question]', `option 1`= '$_POST[option1]', `option 2`= '$_POST[option2]', `option 3`= '$_POST[option3]', `option 4`= '$_POST[ans]', `ans`= '$_POST[ans]'
+       $test_id = $_SESSION["test_id"];
+           $updateqry = "UPDATE question SET que='$_POST[que]', `option 1`= '$_POST[option1]', `option 2`= '$_POST[option2]', `option 3`= '$_POST[option3]', `option 4`= '$_POST[ans]', `ans`= '$_POST[ans]'
            WHERE que_id ='$_POST[que_id]'";
            if(mysqli_query($con,$updateqry))
            {
-             echo "your new details have been successfully UPDATED!!". mysqli_error($con);;
+             echo "your new details have been successfully UPDATED!!". mysqli_error($con);
+             ?>
+             <form class="" action="createquestion4.php" method="post">
+               <input type="hidden" name="test_id" value="<?=$test_id?>"><label><?php$test_id?></label>
+               <button type="submit" name="selectedtest" class="btn btn-default">Submit</button>
+             </form>
+             <?php
            }
            else
            {
@@ -47,10 +53,17 @@ include_once('database.php');
 
          <?php
          if (isset($_POST['delete'])) {
+           $test_id = $_SESSION["test_id"];
            $deleteqry = "DELETE FROM question WHERE que_id ='$_POST[que_id]'";
            if(mysqli_query($con,$deleteqry))
            {
-             echo "your question has been successfully DELETED!!". mysqli_error($con);;
+             echo "your question has been successfully DELETED!!". mysqli_error($con);
+             ?>
+             <form class="" action="createquestion4.php" method="post">
+               <input type="hidden" name="test_id" value="<?=$test_id?>"><label><?php$test_id?></label>
+               <button type="submit" name="selectedtest" class="btn btn-default">Submit</button>
+             </form>
+             <?php
            }
            else
            {

@@ -83,6 +83,11 @@ include_once('database.php');
 
                         if ($num < 1) {
                           echo "No test available!";
+                          ?>
+                          <a href="create-test.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> create test </span> </button></a>
+
+
+                          <?php
                         }
                         else {
 
@@ -96,6 +101,8 @@ include_once('database.php');
                 <input type="hidden" name="test_id" value="<?=$test_id?>"><label><?php $test_id?></label>
                 <button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <span> <?= $test_name ?> </span> </button>
               </form>
+              <a href="courses.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> Back to course page </span> </button></a>
+
 
             <?php }
           }

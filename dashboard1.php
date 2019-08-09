@@ -129,7 +129,7 @@ $course_name = str_replace(' ','_', $course_name1);
 
                 </form>
 
- <form class=\"test-display\" action=\"Stest.php\" method=\"post\">
+                <form class=\"test-display\" action=\"Stest.php\" method=\"post\">
                 <input type=\"hidden\" name=\"testid[$testid]\" value=\"$testid\">
 
                 <button name=\"test[$test_name]\" type=\"submit\" class=\"btn btn-primary btn-block\" ><i class=\"menu-icon icon-check\"></i>Take test</button>

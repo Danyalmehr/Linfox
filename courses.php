@@ -70,7 +70,9 @@ include_once('database.php');
                       ?>
                       <h1 style="float: auto;"> To create questions you need to choose your course first</h1>
                       <h3>STEP 1: Choose your COURSE</h3>
-                      <h4>If you have not created your desired course yet, you MUST create you course first at <a href="create-course.php">courses</a> </button>
+                      <h4>If you have not created your desired course yet, you MUST create your course first at <a href="create-course.php"> <button class="btn btn-danger btn-md" style="float: auto; .btn"> <span>  course </span> </button></a></h4>
+
+
  </h4>
 
 
