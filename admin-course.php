@@ -1,6 +1,6 @@
 <?php require 'database.php';
 session_start();
-//echo "successful";?>
+//echo "successful i";?>
 
 
 
@@ -25,50 +25,111 @@ session_start();
 
     <title>Dashboard</title>
 
+	<style>
 
-  <body>
+
+.user-admin-menu>h2 {text-align: center;
+/* Black background with 0.5 opacity */
+color: Black;}
+.user-admin-menu{align-items: center;text-align: center;background: rgb(0, 0, 0); /* Fallback color */
+background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+color: ##ff7733;
+padding: 3%;
+}
+
+  .container-menu {
+  position: relative;
+  width: auto;
+  display: inline-block;
+
+}
+
+.image {
+  display: inline-block;
+
+  height: auto;
+  border: 1px dotted black;
+  padding: 1%;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+ background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+ color: #f1f1f1;
+  overflow: hidden;
+  width: inherit;
+  height: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s ease;
+  transition: .3s ease
+  border: 1px dotted black;
+  padding: 1%;
+    display: inline-block;
+}
+
+.container-menu:hover .overlay {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  border: 1px dotted black;
+  padding: 1%;
+    display: inline-block;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+    display: inline-block;
+}
+	</style>
 </head>
-
-<style media="screen">
-  
-</style>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
       <?php include("admin-side-dash.html") ?>
-    	<div class="row">
+          <div class="col-md-9">
+            <div class="user-admin-menu">
 
 
+            <h2>Courses</h2>
+            <div class="container-menu">
+              <a href="create-course.php">
+              <img src="images/edit-user.png" alt="Avatar" class="image">
+              <div class="overlay">
+                <div class="text">Create Course</div>
+              </div>
+              </a>
+            </div>
 
-                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+            <div class="container-menu">
+              <a href="edit-course.php">
+              <img src="images/edit-user.png" alt="Avatar" class="image">
+              <div class="overlay">
+                <div class="text">Edit Course</div>
+              </div>
+              </a>
+            </div>
 
-
-
-                    <div class="span9">
-
-                      <!-- Container (Services Section) -->
-                      <div id="services" class="container text-center">
-                        <h1>Edit Course Dashboard</h1>
-                        <br>
-                        <div class="row slideanim">
-                          <div class="col-md-4 center">
-                          <a href="create-course.php">  <span class="glyphicon glyphicon-edit logo-small"></span>
-                            <h2>Create Course</h2>
-                            <p>Lorem ipsum dolor sit amet..</p></a>
-                          </div>
-                          <div class="col-md-4">
-                          <a href="edit-course.php">  <span class="glyphicon glyphicon-wrench logo-small"></span>
-                            <h2>Edit Course</h2>
-                            <p>Lorem ipsum dolor sit amet..</p></a>
-                          </div>
-                        </div>
-                      </div>
-					</div>
           </div>
-        </div>
 
+            </div>
+        </div>
 	<?php include("include/footer.inc") ?>
 
 </body>

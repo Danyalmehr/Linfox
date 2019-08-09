@@ -78,11 +78,10 @@ session_start();
       <?php include("admin-side-dash.html") ?>
     	<div class="row">
 
-                    <div class="span8">
-                        <div class="content">
+                    <div class="col-md-8 table">
                           <h1>Edit User Details</h1>
 
-                          <div class="edit_member">
+                          <table class="table table-hover" >
                       			<?php $sql= "select * from user";
                       			$records = mysqli_query($con,$sql);
                       			 ?>
@@ -95,21 +94,20 @@ session_start();
                                       <th>Password</th>
                                       <th>User type</th>
                                       <th>Update records</th>
+                                      <th>Delete records</th>
                                   </tr>";
                     			    while($row = mysqli_fetch_array($records)):
                       				{
-                      				echo "<tr><form action=edit-user-process.php method=post>";
+                      				echo "<tr><form action=user-process.php method=post>";
                               echo "<td><input type=hidden name=user_id value='".$row['user_id']."'</td>"; // This is hidden field
                               echo "<tr>
                                         <td><input type=text name=fname value='".$row['fname']."'</td>
                                         <td><input type=text name=lname value='".$row['lname']."'</td>
                                         <td><input type=email name=email value='".$row['email']."'</td>
                                         <td><input type=text name=password value='".$row['password']."'</td>
-
-
-
                                         <td><input type=text name=user_type value='".$row['user_type']."'</td>
-                                        <td><input type=submit value=Update> </td>
+                                        <td><button type=submit name=update ><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
+                                        <td><button type=submit name=delete ><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
                                    </tr>";
                         				echo "</form></tr>";
                       				}
