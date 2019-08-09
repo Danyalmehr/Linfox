@@ -107,7 +107,7 @@ padding: 3%;
             <div class="user-admin-menu">
 
 
-            <h2>Edit User Dashboard</h2>
+            <h2>User</h2>
             <div class="container-menu">
               <a href="createuser.php">
               <img src="images/edit-user.png" alt="Avatar" class="image">
