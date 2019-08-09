@@ -75,7 +75,7 @@ session_start();
                           <?php
                               //create an insert query
                               $sql = "UPDATE user SET fname='$_POST[fname]', lname='$_POST[lname]', email='$_POST[email]', password='$_POST[password]', user_type='$_POST[user_type]'
-                          			WHERE user_id ='$_POST[user_id]'";
+                          		";
                               //execute the query
                               if(mysqli_query($con,$sql))
                           	{

@@ -61,16 +61,38 @@ include_once('database.php');
 
 <?php
 
+              if(isset($_POST['submit'])) {
+                  //make the database connection
+                  $conn  = db_connect();
+                  $fname = $conn -> real_escape_string($_POST['fname']);
+                  $lname = $conn -> real_escape_string($_POST['lname']);
+                  $email = $conn -> real_escape_string($_POST['email']);
+                  $password = $conn -> real_escape_string($_POST['password']);
+                  $user_type= $conn -> real_escape_string($_POST['user_type']);
+                  //create an insert query
+                  $sql = "insert into user (fname, lname, email, password,user_type)
+                    VALUES ('$fname', '$lname', '$email', '$password', '$user_type')";
+                  //execute the query
+                  if($conn -> query($sql))
+                  {
+
+                      echo "Hi <b>$fname</b> is sucessfully created";
+
+                  }
+                  $conn -> close();
+              }
+
+
             if (isset($_POST['delete']))
               {
                       $fetchqry1 = "DELETE FROM user
                       WHERE user_id ='$_POST[user_id]'";
                         if(mysqli_query($con,$fetchqry1))
                         {
-                            echo "your COURSE is successfully DELETED!!". mysqli_error($con);
+                            echo "your USER is successfully DELETED!!". mysqli_error($con);
                           echo "<br>redirecting...";
 
-                          header("refresh:5;  URL=edituser.php");
+                          header("refresh:3;  URL=edituser.php");
                         }
                         else
                         {
@@ -87,7 +109,7 @@ include_once('database.php');
                         echo "your new details have been successfully UPDATED!!". mysqli_error($con);
                         echo "<br>redirecting...";
 
-                        header("refresh:5;  URL=edituser.php");
+                        header("refresh:3;  URL=edituser.php");
                       }
                       else
                       {

@@ -40,7 +40,7 @@ session_start();
 
           <div class="span8">
             <div class="member">
-              <form action="create-user-process.php" method="post">
+              <form action="user-process.php" method="post">
                   <br>
                   <h1>Create New User </h1>
 
@@ -99,7 +99,7 @@ session_start();
                     <div class="row">
                       <div class="col">
                           <label>&nbsp;</label>
-                            <button class="button_signup_member" value="Create"><span> Create User </span></button></a>
+                            <button class="button_signup_member" name="submit" value="Create"><span> Create User </span></button></a>
                         </div>
                     </div>
 
