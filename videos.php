@@ -88,26 +88,8 @@ include_once('database.php');
                   	<h2> Training Videos</h2>
 					<?php
 
-          if(isset($_POST['courseid'])){
-              $course_id = $_POST['course_id'];
-              echo "$course_id";
-              $qry = "SELECT course_name, course_video
-              WHERE course_id=$course_id";
-              if($result=mysqli_query($con,$qry))
-              {
-                $row = mysqli_fetch_array($result);
-                $course_video = $row['course_video'];
-                $course_name = $row['course_name'];
-                ?>
-                  <h1><?= $course_name ?></h1>
-                <?php
-                echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$course_video\ frameborder=\"0\" allow=\"accelerometer\"; \"autoplay\"; \"encrypted-media\"; \"gyroscope\"; \"picture-in-picture\" \"allowfullscreen\"></iframe>";              }
-              else
-              {
-                echo "something is wrong with insert". mysqli_error($con);
-              }
+                echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$course_video\ frameborder=\"0\" allow=\"accelerometer\"; \"autoplay\"; \"encrypted-media\"; \"gyroscope\"; \"picture-in-picture\" \"allowfullscreen\"></iframe>";
 
-            }
 
 
 

@@ -89,15 +89,35 @@ session_start();
                     <div class="col-md-9 col-sm-12">
                         <div class="content">
                           <h1>Edit Test Details</h1>
-                      			<?php $sql= "select * from test";
-                      			$records = mysqli_query($con,$sql);
-                            $num=mysqli_num_rows($records);
+                        <?php   if(isset($_POST['selectedcourse'])){
+                            $id = $_POST['course_id'];
+                            $coursename = $_POST['course_name'];
+                            $test = "SELECT *
+                                      FROM test
+                                      WHERE course_id = $id
+                                      ";
+                                      $result = mysqli_query($con,$test);
+                                      $num=mysqli_num_rows($result);
 
-                            $sql1= "select * from courses";
-                      			$records1 = mysqli_query($con,$sql1);
+                                      ?>
+
+          <h1>Edit Tests for <?= $_POST['course_name'] ?> </h1>
+          <h4 style="float: auto;">If your desired TEST is not here you MUST create your TEST first at <a href="create-test.php"> <button class="btn btn-danger btn-md" style="float: auto; .btn"> <span>  TEST </span> </button></a></h4>
 
 
-                      			 ?>
+
+                                      <?php
+
+                                      if ($num < 1) {
+                                        echo "No test available!";
+                                        ?>
+                                        <a href="create-test.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> create test </span> </button></a>
+
+
+                                        <?php
+                                      }
+                                      else {
+                                             ?>
                       			<table class="table table-hover" >
                       			<?php
                             echo "<tr>
@@ -107,28 +127,25 @@ session_start();
                                       <th>Delete</th>
 
                                   </tr>";
-                              for ($i=0; $i < $num ; $i++) {
-                    			    $row = mysqli_fetch_array($records);
-	$records1 = mysqli_query($con,$sql1);
-                      				echo "<tr><form action='course-edit-process.php' method=post>";
+
+                              while ($row=mysqli_fetch_array($result))
+                              {
+                      				echo "<tr><form action='test-process.php' method=post>";
                               echo "<td><input type=hidden name=test_id value='".$row['test_id']."'</td>"; // This is hidden field
                               echo "<tr>
-                                        <td><input type=text name=course_name value='".$row['test_name']."'</td>";
-                                        ?>
-                                        <td><select class="" name="">
-                                      <?php   while($row1 = mysqli_fetch_assoc($records1))
-                                       {
-                                         echo "<option value= $row1[course_name]>$row1[course_name]</option>";
-                                       }?>
-                                     </select></td>
-                                       <?php
-                                        "<td><button type=submit name=update ><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
+                                        <td><input type=text name=test_name value='".$row['test_name']."'</td>
+                                        <td><input type=text name=course_name value='".$coursename."'</td>
+
+
+                                        <td><button type=submit name=update ><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
                                         <td><button type=submit name=delete ><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
                                    </tr>";
                         				echo "</form></tr>";
 
                               }
-                              ;
+                            }
+
+                        };
 
                 ?>
                       </table>

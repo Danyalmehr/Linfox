@@ -59,7 +59,7 @@ include_once('database.php');
 
     <div class="container-fluid">
       <?php include("user-side-dash.html") ?>
-      
+
           	<div class="row">
 
 
@@ -69,11 +69,11 @@ include_once('database.php');
       <?php
 
     $user = $_SESSION["userid"];
-    if(isset($_POST['test']))
+    if(isset($_POST['selectedtest']))
       			{
-              $selectedTestId = $_POST['testid'];
+              $test_id = $_POST['testid'];
+              $test_name = $_POST['test_name'];
 
-              foreach ($selectedTestId as $test_id => $value) {
                 $fetchqry1 = "SELECT user_id, max(att_number)
                 FROM attempt
                 WHERE user_id = $user AND test_id = $test_id
@@ -92,23 +92,22 @@ include_once('database.php');
             }
 
 
-              $selectedTest = $_POST['test'];
-              foreach ($selectedTest as $key => $value) {
-
               $fetchqry7 = "SELECT *
               FROM test
               INNER JOIN courses ON test.course_id = courses.course_id
-              where test_name = '$key'
+              where test_id = '$test_id'
               ";
               $result7=mysqli_query($con,$fetchqry7);
               $row7 = mysqli_fetch_array($result7);
               $_SESSION["coursename"] = $row7['course_name'];
-              $_SESSION["testName"] = $key;
+              $_SESSION["testName"] = $test_name;
 
               ?>
               <center class="result_display">
             <?php  echo "<h2>Course name:".  $_SESSION["coursename"] . "</h2><br>";
               echo " <h2>Test name:".  $_SESSION["testName"] . "</h2>";
+              echo " <h4>This is your attempt number:".  $attemptNumber . "</h4>";
+
               ?>
 
               </center>
@@ -116,13 +115,11 @@ include_once('database.php');
 <?php
               $fetchqry = "SELECT *
               FROM question
-              INNER JOIN test ON question.test_id = test.test_id
-              where test_name = '$key'
+              where test_id = '$test_id'
               ";
               $result=mysqli_query($con,$fetchqry);
 
-              if ($attemptNumber <= 3) {
-              $_SESSION['attemptNumber'] = $attemptNumber;
+              if ($attemptNumber <= 10) {
               $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`, `user_id`, `att_number`, `att_date`) values (0, '$test_id', '$user' , '$attemptNumber', '$date')";
               $result3 = mysqli_query($con,$fetchqry3);
 
@@ -142,9 +139,9 @@ include_once('database.php');
 
 
                       <p><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></p>
-                      <?php $_SESSION['testid'] = $row['test_id'];
-                      echo '<input type="hidden" name="myVariable" value="'.htmlentities($_SESSION['testid']).'">'; ?>
-                      <input type="hidden" name="" value="<?=$attemptNumber?>">
+                      <?php $test_id = $row['test_id'];
+                      echo '<input type="hidden" name="test_id" value="'.htmlentities($test_id).'">'; ?>
+                      <input type="hidden" name="attemptNumber" value="<?=$attemptNumber?>">
 
 
                       <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[0]?>">&nbsp;<label><?=$ans_array[0]?></label><br>
@@ -165,7 +162,7 @@ include_once('database.php');
 
                 <?php   } else {
                   echo "you have already attempted 3 times";
-                }}?>
+                }?>
 
 
 
@@ -175,7 +172,7 @@ include_once('database.php');
                    </div>
                </div>
 
-            <?php   }
+            <?php
 
           }?>
 

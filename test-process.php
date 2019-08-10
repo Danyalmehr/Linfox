@@ -84,14 +84,14 @@ include_once('database.php');
               }
             if (isset($_POST['delete']))
               {
-                      $fetchqry1 = "DELETE FROM courses
-                      WHERE course_id ='$_POST[course_id]'";
+                      $fetchqry1 = "DELETE FROM test
+                      WHERE test_id='$_POST[test_id]'";
                         if(mysqli_query($con,$fetchqry1))
                         {
-                            echo "your COURSE is successfully DELETED!!". mysqli_error($con);
+                            echo "your TEST is successfully DELETED!!". mysqli_error($con);
                           echo "<br>redirecting...";
 
-                          header("refresh:5;  URL=create-course.php");
+                          header("refresh:5;  URL=edit-test.php");
                         }
                         else
                         {
@@ -101,14 +101,14 @@ include_once('database.php');
 
           if (isset($_POST['update']))
               {
-                    $fetchqry = "UPDATE courses SET `course_name`= '$_POST[course_name]', `course_desc`= '$_POST[course_desc]'
-                    WHERE course_id ='$_POST[course_id]'";
+                    $fetchqry = "UPDATE test SET `test_name`= '$_POST[test_name]'
+                    WHERE test_id ='$_POST[test_id]'";
                       if(mysqli_query($con,$fetchqry))
                       {
                         echo "your new details have been successfully UPDATED!!". mysqli_error($con);
                         echo "<br>redirecting...";
 
-                        header("refresh:5;  URL=create-course.php");
+                        header("refresh:5;  URL=edit-test.php");
                       }
                       else
                       {

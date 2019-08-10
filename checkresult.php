@@ -73,24 +73,29 @@ require 'database.php';
 
 
     <?php
-      $attemptNumber = $_SESSION['attemptNumber'];
+
       $userid = $_SESSION["userid"];
-			if(isset($_POST['submit'] , $_POST['myVariable']))
+			if(isset($_POST['submit']))
 			{
 				if(!empty($_POST['userans']))
 				{
+          $test_id = $_POST['test_id'];
+          $attemptNumber = $_POST['attemptNumber'];
+
           $count = count($_POST['userans']);
 					//echo " <h3> There were ".$count." questions in this test </h3>";
 
 					 $score = 0;
 					 $selected = $_POST['userans'];
-           $test_id= $_POST['myVariable']; // Getting test_id from Stest
+
 				//	print_r($selected); //check to see weather it is retriving the value that user have selected
 					$fetchqry = "SELECT * FROM question where test_id='$test_id'";
 					$result = mysqli_query($con,$fetchqry);
           $num=mysqli_num_rows($result);
 				  $row = mysqli_fetch_array($result);
           $que_id = $row['que_id'];
+
+
           foreach ($selected as $key => $value) {
            //$fetchqry2= "INSERT INTO useranswer (`userans`, `que_id`) VALUES
             //( '$value', (SELECT `que_id` from `question`) )";
@@ -143,8 +148,9 @@ require 'database.php';
         </div>
       <?php $i = $i + 1;}
         $scorePercentage = ($score/$count)*100;
-        $fetchqry3 = "UPDATE attempt SET final_score='$scorePercentage', att_date='$date' WHERE user_id =$userid AND test_id=$test_id AND att_number=$attemptNumber";
-        $result3 = mysqli_query($con,$fetchqry3);
+        $fetchqry3 = "UPDATE attempt SET final_score=$scorePercentage, att_date='$date' WHERE user_id =$userid AND test_id=$test_id AND att_number=$attemptNumber";
+
+        $result3 = mysqli_query($con,$fetchqry3)or die(mysql_error());
 ?>
 
             <center class="result_display">
