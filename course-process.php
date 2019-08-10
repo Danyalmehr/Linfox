@@ -69,7 +69,7 @@ include_once('database.php');
                   echo "your new details have been successfully updated!!". mysqli_error($con);
                   echo "<br>redirecting...";
 
-                  header("refresh:5;  URL=create-course.php");
+                  header("refresh:2;  URL=create-course.php");
                 }
                 else
                 {
@@ -87,7 +87,7 @@ include_once('database.php');
                             echo "your COURSE is successfully DELETED!!". mysqli_error($con);
                           echo "<br>redirecting...";
 
-                          header("refresh:5;  URL=edit-course.php");
+                          header("refresh:2;  URL=edit-course.php");
                         }
                         else
                         {
@@ -104,7 +104,7 @@ include_once('database.php');
                         echo "your new details have been successfully UPDATED!!". mysqli_error($con);
                         echo "<br>redirecting...";
 
-                        header("refresh:5;  URL=edit-course.php");
+                        header("refresh:2;  URL=edit-course.php");
                       }
                       else
                       {

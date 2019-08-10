@@ -36,6 +36,19 @@ include_once('database.php');
 
     	<div class="row">
 
+            <?php   if(isset($_POST['selectedcourse'])){
+                $course_id = $_POST['course_id'];
+                $course_video = $_POST['course_video'];
+                $_SESSION["coursename"] = $_POST['course_name'];
+                $test = "SELECT *
+                          FROM test
+                          WHERE course_id = $course_id
+                          ";
+                          $result = mysqli_query($con,$test);
+                          $num=mysqli_num_rows($result);
+
+                          ?>
+
 
                 <div class="col-md-8">
                   	<h2> Training Videos</h2>
@@ -57,17 +70,6 @@ include_once('database.php');
       </div>
       <div class="col-md-8">
 
-    <?php   if(isset($_POST['selectedcourse'])){
-        $course_id = $_POST['course_id'];
-        $_SESSION["coursename"] = $_POST['course_name'];
-        $test = "SELECT *
-                  FROM test
-                  WHERE course_id = $course_id
-                  ";
-                  $result = mysqli_query($con,$test);
-                  $num=mysqli_num_rows($result);
-
-                  ?>
 
                   <h1>Tests for <?= $_SESSION["coursename"] ?> </h1>
 
@@ -95,11 +97,15 @@ include_once('database.php');
 
                           <button type="submit" class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <span> <?= $test_name ?> </span> </button>
                         </form>
-                        <a href="dashboard3.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> Back to HOME page </span> </button></a>
 
 
                         <?php
                       }
+                      ?>
+                      <a href="dashboard3.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> Back to HOME page </span> </button></a>
+
+
+                      <?php
                       }
                     }
                          ?>

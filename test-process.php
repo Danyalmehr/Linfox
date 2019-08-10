@@ -74,7 +74,7 @@ include_once('database.php');
                   echo "your new details have been successfully INSERTED!! ". mysqli_error($con);
                   echo "<br>redirecting...";
 
-                  header("refresh:5;  URL=create-course.php");
+                  header("refresh:5;  URL=edit-test.php");
                 }
                 else
                 {

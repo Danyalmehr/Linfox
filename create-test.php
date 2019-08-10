@@ -69,9 +69,6 @@ session_start();
 
       $fetchqry = "SELECT course_id, course_name FROM courses";
       $result =  mysqli_query($con,$fetchqry);
-      $row=mysqli_fetch_array($result);
-      $id = $row['course_id'];
-      $course_name = $row['course_name'];
       ?>
     	<div class="row">
 
