@@ -82,7 +82,7 @@ session_start();
                   <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Test name:</label>
                     <div class="col-sm-10">
-                      <input type="text" name="test_name"  class="form-control"  placeholder="Enter course name" required>
+                      <input type="text" name="test_name"  class="form-control"  placeholder="Enter test name" required>
                     </div>
                   </div>
                   <div class="form-group">

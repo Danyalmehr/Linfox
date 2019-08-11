@@ -150,23 +150,25 @@ include_once('database.php');
                                <?php
                                echo "<tr>
                                          <th>Question</th>
+                                         <th>Correct Answer</th>
                                          <th>Wrong Answer 1</th>
                                          <th>Wrong Answer 2</th>
                                          <th>Wrong Answer 3</th>
-                                         <th>Correct Answer</th>
                                          <th>Update records</th>
                                          <th>Delete records</th>
                                      </tr>";
                                  while($row= mysqli_fetch_array($result)):
                                  {
+                                $question = $row['que'];
+
                                  echo "<tr><form action=question-process.php method=post>";
                                  echo "<input type=hidden name=que_id value='".$row['que_id']."'";
                                  echo "<tr>
-                                           <td><input type=text name=que value='".$row['que']."'</td>
-                                           <td><input type=text name=option1 value='".$row['option 1']."'</td>
-                                           <td><input type=text name=option2 value='".$row['option 2']."'</td>
-                                           <td><input type=text name=option3 value='".$row['option 3']."'</td>
-                                           <td><input type=text name=ans value='".$row['ans']."'</td>
+                                           <td><input type=text name=question value='".htmlspecialchars($question, ENT_QUOTES)."'</td>
+                                           <td><input type=text name=correct_answer value='".htmlspecialchars($row['ans'], ENT_QUOTES)."'</td>
+                                           <td><input type=text name=wrong_answer1 value='".htmlspecialchars($row['option 1'], ENT_QUOTES)."'</td>
+                                           <td><input type=text name=wrong_answer2 value='".htmlspecialchars($row['option 2'], ENT_QUOTES)."'</td>
+                                           <td><input type=text name=wrong_answer3 value='".htmlspecialchars($row['option 3'], ENT_QUOTES)."'</td>
                                            <td><button type=submit name=update ><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
                                            <td><button type=submit name=delete ><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
                                       </tr>";

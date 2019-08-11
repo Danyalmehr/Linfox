@@ -99,6 +99,8 @@ session_start();
                                       $result = mysqli_query($con,$test);
                                       $num=mysqli_num_rows($result);
 
+
+
                                       ?>
 
           <h1>Edit Tests for <?= $_POST['course_name'] ?> </h1>
@@ -132,35 +134,46 @@ session_start();
                               {
                       				echo "<tr><form action='test-process.php' method=post>";
                               echo "<td><input type=hidden name=test_id value='".$row['test_id']."'</td>"; // This is hidden field
+                              echo "<td><input type=hidden name=course_id value='".$id."'</td>"; // This is hidden field
+
                               echo "<tr>
-                                        <td><input type=text name=test_name value='".$row['test_name']."'</td>
-                                        <td><input type=text name=course_name value='".$coursename."'</td>
+                                        <td><input type=text name=test_name value='".htmlspecialchars($row['test_name'], ENT_QUOTES)."'</td>
+
+                                        <td>  <a href='edit-course.php'><label> $coursename </label></td></a>
 
 
                                         <td><button type=submit name=update ><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
                                         <td><button type=submit name=delete ><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
                                    </tr>";
                         				echo "</form></tr>";
-
                               }
                             }
-
                         };
-
                 ?>
                       </table>
-                          </div>
+                        </div>
 
 						</div>
 					</div>
           </div>
         </div>
 	<?php include("include/footer.inc") ?>
-<!--!	<script>
-		function(popup){
-			var btn=document.getElementsByClassName("btn-course")
-			var
-		}
-	</script>-->
+<select class="" name="">
+    <option value=""></option>
+</select>
+
+<!––  <script type="text/javascript">
+
+  <!–– <input type=text name=coursename id=t1 onkeyup='aa();' value='".htmlspecialchars($coursename, ENT_QUOTES)."'>
+    function aa(){
+      xmlhttp =new XMLHttpRequest();
+      xmlhttp.open("GET","fetch.php?nm="+document.getElementById("t1").value,false);
+      xmlhttp.send(null);
+
+      document.getElementById("t1").value=xmlhttp.responseText;
+    }
+
+  <!–– </script> ––>
+
 </body>
 </html>

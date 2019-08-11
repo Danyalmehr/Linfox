@@ -4,11 +4,12 @@ include_once('database.php');
 
     if(isset($_POST['submit'])){
       $test_id = $_SESSION["test_id"];
-     $que = $_POST['question'];
-     $ans = $_POST['correct_answer'];
-     $wans1 = $_POST['wrong_answer1'];
-     $wans2 = $_POST['wrong_answer2'];
-     $wans3 = $_POST['wrong_answer3'];
+     $que = mysqli_real_escape_string($con, $_POST['question']);
+     $ans = mysqli_real_escape_string($con, $_POST['correct_answer']);
+     $wans1 = mysqli_real_escape_string($con, $_POST['wrong_answer1']);
+     $wans2 = mysqli_real_escape_string($con, $_POST['wrong_answer2']);
+     $wans3 = mysqli_real_escape_string($con, $_POST['wrong_answer3']);
+
      $insertqry = "INSERT INTO `question`(`que`, `option 1`, `option 2`, `option 3`, `option 4`, `ans`, `test_id`) VALUES ('$que','$wans3',
        '$wans1','$wans2','$ans','$ans','$test_id')";
      if(mysqli_query($con,$insertqry))
@@ -32,7 +33,12 @@ include_once('database.php');
      if (isset($_POST['update']))
      {
        $test_id = $_SESSION["test_id"];
-           $updateqry = "UPDATE question SET que='$_POST[que]', `option 1`= '$_POST[option1]', `option 2`= '$_POST[option2]', `option 3`= '$_POST[option3]', `option 4`= '$_POST[ans]', `ans`= '$_POST[ans]'
+       $que = mysqli_real_escape_string($con, $_POST['question']);
+       $ans = mysqli_real_escape_string($con, $_POST['correct_answer']);
+       $wans1 = mysqli_real_escape_string($con, $_POST['wrong_answer1']);
+       $wans2 = mysqli_real_escape_string($con, $_POST['wrong_answer2']);
+       $wans3 = mysqli_real_escape_string($con, $_POST['wrong_answer3']);
+           $updateqry = "UPDATE question SET que='$que', `option 1`= '$wans1', `option 2`= '$wans2', `option 3`= '$wans3', `option 4`= '$ans', `ans`= '$ans'
            WHERE que_id ='$_POST[que_id]'";
            if(mysqli_query($con,$updateqry))
            {

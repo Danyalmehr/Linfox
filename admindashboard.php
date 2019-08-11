@@ -64,9 +64,11 @@ session_start();
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
-      <?php include("admin-side-dash.html") ?>
+      <?php include("user-side-dash.html") ?>
+
     	<div class="row">
-                    <div class="span8">
+
+                    <div class="col-md-12">
                         <div class="content">
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid course">
@@ -75,150 +77,40 @@ session_start();
 
 	<?php
 
-					$courses = "SELECT test.test_name, test.test_id, courses.course_id, courses.course_name, courses.course_desc
+					$courses = "SELECT *
           FROM courses
-          INNER JOIN test ON test.course_id = courses.course_id
           ";
 					$result = mysqli_query($con,$courses);
 
 
 
-
-
-
-
-					/*$i=0;*/
-				  /*$row_num = mysqli_fetch_array($result,MYSQLI_NUM);
-					$row=mysqli_fetch_assoc($result);
-					$course_name=$row['course_name'];
-
-	*/
-
 					while ($row=mysqli_fetch_array($result))
               {
-                $testid = $row['test_id'];
-                $test_name=$row['test_name'];
-                $course_name1=$row['course_name'];
+                $course_name=$row['course_name'];
                 $course_id=$row['course_id'];
                 $course_desc=$row['course_desc'];
+                $course_video=$row['course_video'];
 
 
 
+?>
+            <form class="" action="user-test.php" method="post">
 
+              <button type="submit" name="selectedcourse" class="btn btn-outline-dark btn-lg span5 btn-course" style="margin-left:0.5em"><span style="font-size:20px"><?= $course_name ?></span></button>
+            </form>
 
-$course_name = str_replace(' ','_', $course_name1);
+<?php
 
-        echo"
-              <button type=\"button\" class=\"btn btn-secondary btn-lg span5 btn-course\" data-toggle=\"modal\" data-target=\"#$course_name\" style=\"margin-left: 1em\"><span style=\"font-size:25px\">$course_name</span></button>";
-
-
-
-        /*<!-- The Modal -->*/
-          echo"<div class=\"modal\" id=\"$course_name\">
-            <div class=\"modal-dialog\">
-              <div class=\"modal-content\">
-
-
-                <div class=\"modal-header\">
-                  <h4 class=\"modal-title\">$course_name</h4>
-                  <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
-                </div>
-
-
-                <div class=\"modal-body\">
-        			<p> $course_desc </p>
-
-        			  <button type=\"button\" class=\"btn btn-info btn-block\"><i class=\"menu-icon icon-file\"></i><a href='previousresults.php'>See Results</a></button>
-         			  <button type=\"button\" class=\"btn btn-danger btn-block\" ><i class=\"menu-icon icon-download\"></i><a href='videos.php'>See Video Materials</a></button>
-
- <form class=\"test-display\" action=\"Stest.php\" method=\"post\">
-                <input type=\"hidden\" name=\"testid[$testid]\" value=\"$testid\">
-
-                <button name=\"test[$test_name]\" type=\"submit\" class=\"btn btn-primary btn-block\" ><i class=\"menu-icon icon-check\"></i>Take test</button>
-                </div>
-                </form>
-
-
-                <div class=\"modal-footer\">
-                  <button type=\"button\" class=\"btn btn-dark\" data-dismiss=\"modal\">Close</button>
-                </div>
-
-              </div>
-            </div>
-          </div>";
-        					/*$i=$i+1;*/
     }
 ?>
                                 </div>
-                                <!--<div class="btn-box-row row-fluid">
-                                    <div class="span8">
-                                        <div class="row-fluid">
-                                            <div class="span12">
-                                                <a href="#" class="btn-box small span4"><i class="icon-envelope"></i><b>Messages</b>
-                                                </a><a href="#" class="btn-box small span4"><i class="icon-group"></i><b>Clients</b>
-                                                </a><a href="#" class="btn-box small span4"><i class="icon-exchange"></i><b>Expenses</b>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="row-fluid">
-                                            <div class="span12">
-                                                <a href="#" class="btn-box small span4"><i class="icon-save"></i><b>Total Sales</b>
-                                                </a><a href="#" class="btn-box small span4"><i class="icon-bullhorn"></i><b>Social Feed</b>
-                                                </a><a href="#" class="btn-box small span4"><i class="icon-sort-down"></i><b>Bounce
-                                                    Rate</b> </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <ul class="widget widget-usage unstyled span4">
-                                        <li>
-                                            <p>
-                                                <strong>Windows 8</strong> <span class="pull-right small muted">78%</span>
-                                            </p>
-                                            <div class="progress tight">
-                                                <div class="bar" style="width: 78%;">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <strong>Mac</strong> <span class="pull-right small muted">56%</span>
-                                            </p>
-                                            <div class="progress tight">
-                                                <div class="bar bar-success" style="width: 56%;">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <strong>Linux</strong> <span class="pull-right small muted">44%</span>
-                                            </p>
-                                            <div class="progress tight">
-                                                <div class="bar bar-warning" style="width: 44%;">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <strong>iPhone</strong> <span class="pull-right small muted">67%</span>
-                                            </p>
-                                            <div class="progress tight">
-                                                <div class="bar bar-danger" style="width: 67%;">
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>-->
+
                             </div>
 						</div>
 					</div>
           </div>
         </div>
 	<?php include("include/footer.inc") ?>
-<!--!	<script>
-		function(popup){
-			var btn=document.getElementsByClassName("btn-course")
-			var
-		}
-	</script>-->
+
 </body>
 </html>
