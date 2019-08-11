@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     {
         $_SESSION['valid_user'] = $email;
         $_SESSION["userid"] = $row['user_id'];
-        header("location: dashboard1.php");
+        header("location: dashboard.php");
     }
     elseif ($numOfRows == 1 and $usertype == 'admin')
     {
