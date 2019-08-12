@@ -121,6 +121,8 @@ footer {
 
 
 
+
+
 /*-------------------------------------------------------------------------------------------- Login Page ------------------------------------------------------------------------ */
 
 
@@ -464,9 +466,38 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 
 
 /*-------------------------------------------------------------------------------------------- header :---------------------------------------------------------------------------- */
-#banner{align-content:center;color:#000000;
-	background-color:#E8E1E1;
-widows:auto; background-size:cover;padding:1%; width:auto;}
+
+
+
+@media only screen and (min-width: 769px) {
+.text-center-banner{font-size:4.5em;font-family: cursive;}
+	.banner{align-content:center;color:#000000;
+		background-color:#E8E1E1;
+	widows:auto; background-size:cover;padding:1%; width:auto;}
+}
+
+@media only screen and (max-width: 768px) and (min-width: 426px)
+ {
+	 .banner{align-content:center;color:#000000;
+	 	background-color:#E8E1E1;
+	 widows:auto; background-size:cover;padding:1%; width:auto;}
+
+	 .text-center-banner{font-size:3em;font-family: cursive;font-family: cursive;}
+ }
+ @media only screen and (max-width: 425px)
+  {
+		.banner{align-content:center;color:#000000;
+			background-color:#E8E1E1;
+		widows:auto; background-size:cover;padding:1%; width:auto;}
+
+ 	 .text-center-banner{font-size:2em;font-family: cursive;}
+  }
+
+
+
+
+
+
 
 
 
@@ -479,7 +510,7 @@ widows:auto; background-size:cover;padding:1%; width:auto;}
 /*------------------------------------------------------
 				Footer
 
--------------------------------------------------- */
+------------for desktop-------------------------------------- */
 
 @media only screen and (min-width: 769px) {
 .footer-distributed{
