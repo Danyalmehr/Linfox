@@ -36,7 +36,7 @@ include_once('include/database.php');
     	<div class="row">
 
 
-                <div class="col-md-8">
+          <div class="span8">
                   	<h2> THIS IS certificates PAGE</h2>
 
         </div>

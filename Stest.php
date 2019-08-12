@@ -175,16 +175,6 @@ include_once('database.php');
                    </div>
                </div>
 
-
-
-
-
-
-
-
-
-
-
 	<?php include("include/footer.inc") ?>
 
 

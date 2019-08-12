@@ -64,7 +64,7 @@ session_start();
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
-      <?php include("user-side-dash.html") ?>
+      <?php include("admin-side-dash.html") ?>
 
     	<div class="row">
 
