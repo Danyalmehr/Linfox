@@ -101,7 +101,7 @@ require 'database.php';
             //( '$value', (SELECT `que_id` from `question`) )";
             $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`, `user_id`, `test_id`) values ('$value','$que_id', '$userid', '$test_id')";
             $result2 = mysqli_query($con,$fetchqry2);
-            $que_id += 1;
+
           }
           if ($result2) {
           //   echo " Your answers have been submitted!";
