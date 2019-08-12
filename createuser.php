@@ -38,7 +38,7 @@ session_start();
       <?php include("admin-side-dash.html") ?>
     	<div class="row containermember">
 
-          <div class="span8">
+          <div class="col-md-9">
             <div class="member">
               <form action="user-process.php" method="post">
                   <br>

@@ -63,9 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
    <div class="container">
-     <div class="banner">
 
-     </div>
     <div class="login">
 
     	<form action="index.php" method="post">
@@ -91,12 +89,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             	<div class="col">
                 	<label>&nbsp;</label>
                    <button class="button_login" style="vertical-align:middle" value="Submit"><span> SUBMIT </span></button>
-
-
-
-                    <br>
-                    <br>
-                    <span class="signupnotice"><a href="member.php"><b>SIGN UP TO BECOME A MEMBER</b></a></span>
                     <?php
                     if(isset($error)) {
                         echo "<span class='error-color'><p style=\"color: red; \">$error</p></span>";
@@ -113,20 +105,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 
-	   	   <script>
-
-	   function passwordCheck(document){
-		var password=document.getElementById("password");
-		var error_msg=document.getElementById("password_check");
-		if (password.value.length <= 7) {
-			error_msg.innerHTML="Please enter more than 8 characters";
-			password.focus();
-			return false; }
-		else {
-			password_check.innerHTML=""
-			return true;
-			}
-	}
-
-	   </script>
+	   	  
 </html>

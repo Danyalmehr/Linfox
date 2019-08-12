@@ -348,86 +348,243 @@ footer {
 
 
 
-/*-------------------------------------------------------------------------------------------- Signup Page ------------------------------------------------------------------------ */
+/*-------------------------------------------------------------------------------------------- Create user START------------------------------------------------------------------------ */
+@media only screen and (max-width: 429px) {
+input {
+  width: 100%;
+}
+	.containermember{align-items: center;text-align: center;}
+
+		.member {margin-left:%; padding:%; width:100%;border:1px solid #B39019;position: relative;
+		color:black; border-radius:1px;}
+
+		.member label {
+			text-align: left;
+				width: 7em;
+				font-size: 0.7em;
+				margin-right:2%;
+				float: left;
+		}
+
+		.button_signup_member {
+			display: inline-block;
+			border-radius: 4px;
+			background-color: #07D14A;
+			border: none;
+			left: -19%;
+			position: relative;
+			color: #FFFFFF;
+			text-align: center;
+			font-size: 18px;
+			padding: 1%;
+			width: 9em;
+			transition: all 0.5s;
+			cursor: pointer;
+			margin: 5px;
+		}
+		.button_signup_member:hover {
+			display: inline-block;
+			border-radius: 4px;
+			background-color: #1C8F42;
+			border: none;
+			position: relative;
+			color: #FFFFFF;
+		height: auto;
+			font-size: 18px;
+			padding: 1%;
+			width: 9em;
+			transition: all 0.5s;
+			cursor: pointer;
+			margin: 5px;
+		}
+
+		.button_signup_member span {
+			cursor: pointer;
+			position: relative;
+			display: inline-block;
+			position: inherit;
+			transition: 0.5s;
+		}
+
+		.button_signup_member span:after {
+			content: '\00bb';
+		position: inherit;
+			opacity: 0;
+			top: 0;
+
+			transition: 0.5s;
+		}
+
+		.button_signup_member:hover span {
+			padding-right: 25px;
+
+		}
+
+		.button_signup_member:hover span:after {
+			opacity: 1;
+			right: 0;
+		}
+
+}
+/*--------------------------------------------------------------------------------------------Tablet ------------------------------------------------------------------------ */
+
+@media only screen and (max-width: 771px) and (min-width: 426px) {
+	.containermember{align-items: center;text-align: center;}
+
+		.member {margin-left:2%; padding:3%; width:90%;border:1px solid #B39019;position: relative;
+		color:black; border-radius:1px;}
+
+		.member label {
+			text-align: left;
+				width: 7em;
+				float: left;
+			padding:0.5%;
+			padding-right: 0.5em;
+
+		}
+
+		.button_signup_member {
+			display: inline-block;
+			border-radius: 4px;
+			background-color: #07D14A;
+			border: none;
+			left: -19%;
+			position: relative;
+			color: #FFFFFF;
+			text-align: center;
+			font-size: 18px;
+			padding: 1%;
+			width: 9em;
+			transition: all 0.5s;
+			cursor: pointer;
+			margin: 5px;
+		}
+		.button_signup_member:hover {
+			display: inline-block;
+			border-radius: 4px;
+			background-color: #1C8F42;
+			border: none;
+			position: relative;
+			color: #FFFFFF;
+		height: auto;
+			font-size: 18px;
+			padding: 1%;
+			width: 9em;
+			transition: all 0.5s;
+			cursor: pointer;
+			margin: 5px;
+		}
+
+		.button_signup_member span {
+			cursor: pointer;
+			position: relative;
+			display: inline-block;
+			position: inherit;
+			transition: 0.5s;
+		}
+
+		.button_signup_member span:after {
+			content: '\00bb';
+		position: inherit;
+			opacity: 0;
+			top: 0;
+
+			transition: 0.5s;
+		}
+
+		.button_signup_member:hover span {
+			padding-right: 25px;
+
+		}
+
+		.button_signup_member:hover span:after {
+			opacity: 1;
+			right: 0;
+		}
+	}
+
+
+/*--------------------------------------------------------------------------------------------Desktop ------------------------------------------------------------------------ */
+
+@media only screen and (min-width: 770px) {
 
 .containermember{align-items: center;text-align: center;}
 
-.member {margin-left:4%; padding:4%; width: 70%;border:1px solid #B39019;position: relative;
+	.member {margin-left:4%; padding:6%; width:90%;border:1px solid #B39019;position: relative;
+	color:black; border-radius:1px;}
 
-color:black; border-radius:1px;}
+	.member label {
+		text-align: left;
+			width: 7em;
+			float: left;
+		padding:0.5%;
+		padding-right: 0.5em;
 
+	}
 
-.member label {
-	text-align: left;
-    width: 16em;
-    float: left;
-	padding:0.5%;
+	.button_signup_member {
+		display: inline-block;
+		border-radius: 4px;
+		background-color: #07D14A;
+		border: none;
+		left: -19%;
+		position: relative;
+		color: #FFFFFF;
+		text-align: center;
+		font-size: 18px;
+		padding: 1%;
+		width: 9em;
+		transition: all 0.5s;
+		cursor: pointer;
+		margin: 5px;
+	}
+	.button_signup_member:hover {
+		display: inline-block;
+		border-radius: 4px;
+		background-color: #1C8F42;
+		border: none;
+		position: relative;
+		color: #FFFFFF;
+	height: auto;
+		font-size: 18px;
+		padding: 1%;
+		width: 9em;
+		transition: all 0.5s;
+		cursor: pointer;
+		margin: 5px;
+	}
 
-    padding-right: 0.5em;
+	.button_signup_member span {
+		cursor: pointer;
+		position: relative;
+		display: inline-block;
+		position: inherit;
+		transition: 0.5s;
+	}
 
+	.button_signup_member span:after {
+		content: '\00bb';
+	position: inherit;
+		opacity: 0;
+		top: 0;
+
+		transition: 0.5s;
+	}
+
+	.button_signup_member:hover span {
+		padding-right: 25px;
+
+	}
+
+	.button_signup_member:hover span:after {
+		opacity: 1;
+		right: 0;
+	}
 }
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
+/*-------------------------------------------------------------------------------------------- Create user END ------------------------------------------------------------------------ */
 
-
-.button_signup_member {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #07D14A;
-  border: none;
-	left: -19%;
-	position: relative;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 18px;
-  padding: 1%;
-  width: 9em;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-.button_signup_member:hover {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #1C8F42;
-  border: none;
-	position: relative;
-  color: #FFFFFF;
-height: auto;
-  font-size: 18px;
-  padding: 1%;
-  width: 9em;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-
-
-.button_signup_member span {
-  cursor: pointer;
-	position: relative;
-  display: inline-block;
-  position: inherit;
-  transition: 0.5s;
-}
-
-.button_signup_member span:after {
-  content: '\00bb';
-position: inherit;
-  opacity: 0;
-  top: 0;
-
-  transition: 0.5s;
-}
-
-.button_signup_member:hover span {
-  padding-right: 25px;
-
-}
-
-.button_signup_member:hover span:after {
-  opacity: 1;
-  right: 0;
-}
 
 
 
@@ -779,7 +936,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 	/*---------------------------------------------------------------------------------------------------------- */
 
 
-	/*----------------------------------------------------------Footer Right */
+	/*----------------------------------------------------------Footer Right----------------------------------- */
 
 	.footer-distributed .footer-right{
 		width: 90%;
@@ -834,12 +991,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 
 }
 
-
-
-
-
-
-/* for Mobile */
+/* --------------------------------------------for Mobile---------------------------------------------- */
 @media only screen and (max-width: 429px) {
 
 	.footer-distributed{
@@ -953,7 +1105,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 	/*---------------------------------------------------------------------------------------------------------- */
 
 
-	/*----------------------------------------------------------Footer Right */
+	/*----------------------------------------------------------Footer Right -----------------------------------------*/
 
 	.footer-distributed .footer-right{
 		width: 100%;
@@ -1009,7 +1161,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 
 
 
-
+/* -------------------------------------------------------Preevious result tablets-----------------------------------------------*/
 
 @media only screen and (max-width: 429px) {
 	.table_heading{font-size: 1.3em;}
@@ -1033,9 +1185,10 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 #search_table td{padding:3%; margin:5%; border:2px solid black; resize:both;}
 }
 
+/* ---------------------------------------------------------------------------------------------------------------------------------*/
+
 /* For tablets: */
 @media only screen and (min-width:600px){
-
 
 h1 {
 	font-size:32px;
