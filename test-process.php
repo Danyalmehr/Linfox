@@ -63,10 +63,8 @@ include_once('database.php');
 
             if(isset($_POST['submit'])){
 
-                $test_name = $_POST['test_name'];
-                echo "$test_name";
+                $test_name = mysqli_real_escape_string($con, $_POST['test_name']);
                 $course_id = $_POST['course_id'];
-                echo "$course_id";
 
                 $qry = "INSERT INTO `test`(`test_name`, `course_id`) VALUES ('$test_name','$course_id')";
                 if($result=mysqli_query($con,$qry))
@@ -91,7 +89,7 @@ include_once('database.php');
                             echo "your TEST is successfully DELETED!!". mysqli_error($con);
                           echo "<br>redirecting...";
 
-                          header("refresh:5;  URL=edit-test.php");
+                          header("refresh:5;  URL=create-test.php");
                         }
                         else
                         {
@@ -101,7 +99,11 @@ include_once('database.php');
 
           if (isset($_POST['update']))
               {
-                    $fetchqry = "UPDATE test SET `test_name`= '$_POST[test_name]'
+                    $test_name = mysqli_real_escape_string($con, $_POST['test_name']);
+                    echo $_POST['course_id'];
+                    $id = $_POST['course_id'];
+
+                    $fetchqry = "UPDATE test SET `test_name`= '$test_name', `course_id`= '$id'
                     WHERE test_id ='$_POST[test_id]'";
                       if(mysqli_query($con,$fetchqry))
                       {

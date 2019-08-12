@@ -88,6 +88,12 @@ session_start();
                     </div>
                   </div>
                   <div class="form-group">
+                    <label class="control-label col-sm-2" for="name">Course Video:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="course_video" class="form-control" placeholder="Copy the video code from youtube and paste here">
+                    </div>
+                  </div>
+                  <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                       <button type="submit" name="submit" class="btn btn-default">Submit</button>
                     </div>
