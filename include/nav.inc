@@ -29,7 +29,7 @@ include_once('include/database.php');
 
           <div id='cssmenu' class="cssmenu">
           <ul>
-            <li><a href='dashboard1.php'><span> Home </span></a></li>
+            <li><a href='dashboard.php'><span> Home </span></a></li>
           <!-- <li class='has-sub'><a href=''><span> Test </span></a>
               <ul>
                 <li class='last'><a href='Stest.php'><span> Take test </span></a></li>

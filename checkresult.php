@@ -148,7 +148,13 @@ require 'database.php';
         </div>
       <?php $i = $i + 1;}
         $scorePercentage = ($score/$count)*100;
-        $fetchqry3 = "UPDATE attempt SET final_score=$scorePercentage, att_date='$date' WHERE user_id =$userid AND test_id=$test_id AND att_number=$attemptNumber";
+        if ($scorePercentage>49) {
+          $att_status = "PASS";
+        }
+        else {
+          $att_status = "FAIL";
+        }
+        $fetchqry3 = "UPDATE attempt SET final_score=$scorePercentage, att_date='$date', att_status='$att_status' WHERE user_id =$userid AND test_id=$test_id AND att_number=$attemptNumber";
 
         $result3 = mysqli_query($con,$fetchqry3)or die(mysql_error());
 ?>

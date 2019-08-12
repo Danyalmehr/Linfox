@@ -42,7 +42,7 @@ include_once('database.php');
     <div class="col-md-9">
 
 <?php
-        $fetchqry = "SELECT final_score, test_name, fname, lname, course_name, att_date
+        $fetchqry = "SELECT final_score, test_name, fname, lname, course_name, att_date, att_status, att_number
         FROM attempt
         INNER JOIN test ON test.test_id = attempt.test_id
         INNER JOIN user ON user.user_id = attempt.user_id
@@ -56,21 +56,28 @@ include_once('database.php');
         $testName = $row['test_name'];
         $courseName = $row['course_name'];
         $attemptDate = $row['att_date'];
-    ?>
-    <div class="search_results" id="search_results">
-            <table id="search_table">
-              <tr><center class="table_heading">Test results for  <?php echo" $fname "?> are as following<Center></tr>
-               <tr>
-                    <th>Final score</th>
-                    <th>Course name</th>
-                    <th>Test name</th>
-                    <th>Date</th>
-              </tr>
-      <!-- populate table from mysql database -->
+        $att_status = $row['att_status'];
+        $att_number = $row['att_number'];
+
+        ?>
+        <div class="search_results" id="search_results">
+                <table id="search_table">
+                  <tr><center class="table_heading">Test results for  <?php echo" $fname "?> are as following<Center></tr>
+                   <tr>
+                        <th>Final score</th>
+                        <th>Course name</th>
+                        <th>Status</th>
+                        <th>Attempt number</th>
+                        <th>Test name</th>
+                        <th>Date</th>
+                  </tr>
+
 
                 	<tr>
                     <td><?= $final_score ?><?php echo " % "?></td>
                     <td><?= $courseName ?></td>
+                    <td><?= $att_status ?></td>
+                    <td><?= $att_number ?></td>
                     <td><?= $testName ?></td>
                     <td><?= $attemptDate ?></td>
                		</tr>

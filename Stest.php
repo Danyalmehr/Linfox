@@ -66,7 +66,7 @@ include_once('database.php');
 
               	<div class="col-md-8">
 
-      <?php
+  <?php
 
     $user = $_SESSION["userid"];
     if(isset($_POST['selectedtest']))
@@ -120,7 +120,7 @@ include_once('database.php');
               $result=mysqli_query($con,$fetchqry);
 
               if ($attemptNumber <= 10) {
-              $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`, `user_id`, `att_number`, `att_date`) values (0, '$test_id', '$user' , '$attemptNumber', '$date')";
+              $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`, `user_id`, `att_number`, `att_date`, `att_status`) values (0, '$test_id', '$user' , '$attemptNumber', '$date', 'Fail')";
               $result3 = mysqli_query($con,$fetchqry3);
 
               $questionNum = 1;
