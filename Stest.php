@@ -164,6 +164,9 @@ include_once('database.php');
                   echo "you have already attempted 3 times";
                 }?>
 
+                <?php
+
+              }?>
 
 
 
@@ -172,9 +175,6 @@ include_once('database.php');
                    </div>
                </div>
 
-            <?php
-
-          }?>
 
 
 
