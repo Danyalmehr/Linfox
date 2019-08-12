@@ -38,7 +38,7 @@
 		</div>
 
 		<div>
-			<i class="fa fa-envelope"></i>
+			<i class="fa fa-envelope-open"></i>
 			<p><a href="info@urban-xtreme.com.au"> info@urban-xtreme.com.au </a></p>
 		</div>
 	</div>
@@ -47,14 +47,15 @@
 		<p class="footer-company-about">
 		<big><p><b>ABOUT URBAN XTREME</b></p></big>
 		<br>
-
 		<b> SKI + ADVENTURE PARK </b>
-		
-			<br>
+			<br>	<br>
 
-		<p><small> Urban Xtreme is the vision of Founder, Lindsay Davis supported by her husband Darren Montgomery. After recognising a niche in the market for a snow sport-training centre in Brisbane and the increasing interest and current trend in adventure activities the idea was born.
-Urban Xtreme is officially Australia’s largest ski and adventure park and the only place you can ski and snowboard in Queensland.
-We are a family run start-up business designed to entertain and exercise adults and children while reinforcing good social skills in a group active environment that promotes health and fitness.</p>
+		<p style="text-align:justify;"><small> Urban Xtreme is the vision of Founder, Lindsay Davis supported by her husband Darren Montgomery.
+			 After recognising a niche in the market for a snow sport-training centre in Brisbane and the increasing
+			 interest and current trend in adventure activities the idea was born.Urban Xtreme is officially Australia’s
+			 largest ski and adventure park and the only place you can ski and snowboard in Queensland.We are a family
+			  run start-up business designed to entertain and exercise adults and children while reinforcing good social
+					skills in a group active environment that promotes health and fitness.</p>
 
 	</div>
 </footer>
