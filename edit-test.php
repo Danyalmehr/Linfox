@@ -142,8 +142,8 @@ session_start();
                                         <td>  <a href='edit-course.php'><label> $coursename </label></td></a>
 
 
-                                        <td><button type=submit name=update ><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
-                                        <td><button type=submit name=delete ><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
+                                        <td><button type=submit name=update onclick='return ask2()'><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
+                                        <td><button type=submit name=delete onclick='return ask()'><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
                                    </tr>";
                         				echo "</form></tr>";
                               }
@@ -158,9 +158,8 @@ session_start();
           </div>
         </div>
 	<?php include("include/footer.inc") ?>
-<select class="" name="">
-    <option value=""></option>
-</select>
+  <script type="text/javascript" src="js/confirmation.js"></script>
+
 
 <!––  <script type="text/javascript">
 

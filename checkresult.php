@@ -162,7 +162,9 @@ require 'database.php';
             <center class="result_display">
           <?php echo " Number of questions : ".$count."  <br>";
           echo " Number of correct questions : ".$score." <br>";
-          echo (" Your score : ".$scorePercentage."% ");?>
+          echo (" Your score : ".$scorePercentage."% <br>");
+          echo (" Status : ".$att_status."");
+          ?>
         </center>
 
         <?php  mysqli_free_result($result);?>

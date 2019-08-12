@@ -106,8 +106,8 @@ session_start();
                                         <td><input type=email name=email value='".$row['email']."'</td>
                                         <td><input type=text name=password value='".$row['password']."'</td>
                                         <td><input type=text name=user_type value='".$row['user_type']."'</td>
-                                        <td><button type=submit name=update ><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
-                                        <td><button type=submit name=delete ><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
+                                        <td><button type=submit name=update onclick='return ask2()'><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
+                                        <td><button type=submit name=delete onclick='return ask()'><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
                                    </tr>";
                         				echo "</form></tr>";
                       				}
@@ -121,6 +121,8 @@ session_start();
           </div>
         </div>
 	<?php include("include/footer.inc") ?>
+  <script type="text/javascript" src="js/confirmation.js"></script>
+
 <!--!	<script>
 		function(popup){
 			var btn=document.getElementsByClassName("btn-course")
