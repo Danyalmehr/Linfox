@@ -87,13 +87,21 @@ include_once('database.php');
 
           <div class="row">
               <div class="col-md-8">
-                <h1 style="margin-left: 0.5em"> Create Question</h1>
+                <center class="table_heading">
+
+                  <h3>Course name: <?= $course_name ?> </h3>
+                  <h3>Test name: <?= $test_name?> </h3>
+                  <h1> Create Question</h1>
+
+                </center>
+
+
 
                     <form class="form-horizontal" action="question-process.php" method="post">
                       <div class="form-group">
                         <div class="col-xs-8">
                           <label for="ex3">Question:</label>
-                          <input type="text" class="form-control" id="question" name="question" placeholder="Enter your question here" Required>
+                          <input type="text" class="form-control" id="q" name="question" placeholder="Enter your question here" Required>
                         </div>
                       </div>
                       <div class="form-group">
@@ -120,18 +128,24 @@ include_once('database.php');
                           <input type="text" class="form-control" id="wrong_answer3" name="wrong_answer3" placeholder="Wrong answer 3" Required>
                         </div>
                       </div>
+                      <center class="table_heading">
                         <div class="btn-group">
                           <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" name="submit" class="btn btn-default">Submit</button>
+                            <center class="table_heading">
+
+                              <button type="submit" name="submit" onclick='return ask3()' class="button_signup_member">Submit</button>
+
                           </div>
+
                       </form>
                         <form class="" action="test.php" method="post">
                             <div class="col-sm-offset-2 col-sm-10">
                             <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
                             <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>
-                            <button type="submit" name="selectedcourse" class="btn btn-danger">Back to test page</button>
+                            <button type="submit" name="selectedcourse" class="btn-danger button_signup_member">Back to test page</button>
                           </div>
                           </div>
+                          </center>
 
                           </form>
 
@@ -143,9 +157,10 @@ include_once('database.php');
                                </div>
                              <div class="col-md-8 table-responsive">
                                <div class="content">
-                               <h1>Test: <?= $test_name?> </h1>
-                               <h1>From course <?= $course_name ?> </h1>
-                               <h4>Choose the test you wanna create your question for:</h4>
+                                <center class="table_heading">
+                               <h3>Edit question for:</h3>
+                               <h2> <?= $test_name ?></h2>
+                             </center>
                                <table class="table table-hover" >
                                <?php
                                echo "<tr>
@@ -164,13 +179,13 @@ include_once('database.php');
                                  echo "<tr><form action=question-process.php method=post>";
                                  echo "<input type=hidden name=que_id value='".$row['que_id']."'";
                                  echo "<tr>
-                                           <td><input type=text name=question value='".htmlspecialchars($question, ENT_QUOTES)."'</td>
+                                           <td><input type=text name=question id=q value='".htmlspecialchars($question, ENT_QUOTES)."'</td>
                                            <td><input type=text name=correct_answer value='".htmlspecialchars($row['ans'], ENT_QUOTES)."'</td>
                                            <td><input type=text name=wrong_answer1 value='".htmlspecialchars($row['option 1'], ENT_QUOTES)."'</td>
                                            <td><input type=text name=wrong_answer2 value='".htmlspecialchars($row['option 2'], ENT_QUOTES)."'</td>
                                            <td><input type=text name=wrong_answer3 value='".htmlspecialchars($row['option 3'], ENT_QUOTES)."'</td>
-                                           <td><button type=submit name=update ><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
-                                           <td><button type=submit name=delete ><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
+                                           <td><button type=submit name=update onclick='return ask2()' ><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
+                                           <td><button type=submit name=delete onclick='return ask()' ><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
                                       </tr>";
                                    echo "</form></tr>";
                                  }
@@ -187,6 +202,8 @@ include_once('database.php');
 
 
 	<?php include("include/footer.inc") ?>
+<script type="text/javascript" src="js/confirmation.js"></script>
+
 
 
   </body>

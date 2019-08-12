@@ -113,8 +113,8 @@ session_start();
                                         <td><input type=text name=course_name value='".htmlspecialchars($row['course_name'], ENT_QUOTES)."'</td>
                                         <td><input type=text name=course_desc value='".htmlspecialchars($row['course_desc'], ENT_QUOTES)."'</td>
                                         <td><input type=text name=course_video value='".htmlspecialchars($row['course_video'], ENT_QUOTES)."'</td>
-                                        <td><button type=submit name=update ><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
-                                        <td><button type=submit name=delete ><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
+                                        <td><button type=submit name=update onclick='return ask2()' ><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
+                                        <td><button type=submit name=delete onclick='return ask()' ><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
                                    </tr>";
                         				echo "</form></tr>";
                       				}
@@ -134,6 +134,8 @@ session_start();
           </div>
         </div>
 	<?php include("include/footer.inc") ?>
+  <script type="text/javascript" src="js/confirmation.js"></script>
+  
 <!--!	<script>
 		function(popup){
 			var btn=document.getElementsByClassName("btn-course")

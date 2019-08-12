@@ -78,26 +78,28 @@ session_start();
                   <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Course name:</label>
                     <div class="col-sm-10">
-                      <input type="text" name="course_name"  class="form-control"  placeholder="Enter course name" required>
+                      <input type="text" name="course_name"  class="form-control" id="course_name"  placeholder="Enter course name" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Course description:</label>
                     <div class="col-sm-10">
-                      <input type="text" name="course_desc" class="form-control" placeholder="Enter course description">
+                      <input type="text" name="course_desc" class="form-control" id="course_desc" placeholder="Enter course description">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Course Video:</label>
                     <div class="col-sm-10">
-                      <input type="text" name="course_video" class="form-control" placeholder="Copy the video code from youtube and paste here">
+                      <input type="text" name="course_video" class="form-control" id="course_video" placeholder="Copy the video code from youtube and paste here">
                     </div>
                   </div>
+                  <center class="table_heading">
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" name="submit" class="btn btn-default">Submit</button>
+                      <button type="submit" name="submit" onclick='return ask5()' class="button_signup_member">Submit</button>
                     </div>
                   </div>
+                </center>
                 </form>
 
                             </div>
@@ -108,6 +110,8 @@ session_start();
           </div>
         </div>
 	<?php include("include/footer.inc") ?>
+  <script type="text/javascript" src="js/confirmation.js"></script>
+
 
 </body>
 </html>

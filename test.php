@@ -75,7 +75,7 @@ include_once('database.php');
                         ?>
 
                         <h1>Tests for <?= $_SESSION["coursename"] ?> </h1>
-                        <h3>STEP 3: Choose your test</h3>
+                        <h3>STEP 2: Choose your test</h3>
                         <h4>Choose the test you wanna create your question for:</h4>
 
 
@@ -101,12 +101,11 @@ include_once('database.php');
                 <input type="hidden" name="test_id" value="<?=$test_id?>"><label><?php $test_id?></label>
                 <button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <span> <?= $test_name ?> </span> </button>
               </form>
-              <a href="courses.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> Back to course page </span> </button></a>
-
-
             <?php }
           }
             } ?>
+            <a href="courses.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> Back to course page </span> </button></a>
+
 
 
 
