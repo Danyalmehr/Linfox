@@ -56,6 +56,23 @@ session_start();
     }
     a:hover{text-decoration: none;
     color: White;}
+		
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	h1 {
+		font-size: 0.5px;
+	}
+
+}
 
 	</style>
 </head>
@@ -94,11 +111,11 @@ session_start();
 
 
 ?>
-            <form class="" action="user-test.php" method="post">
+            <form class="test" action="user-test.php" method="post">
               <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
               <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>
               <input type="hidden" name="course_video" value="<?=$course_video?>"><label for=""><?php $course_video?></label>
-              <button type="submit" name="selectedcourse" class="btn btn-outline-dark btn-lg span5 btn-course" style="margin-left:0.5em"><span style="font-size:20px"><?= $course_name ?></span></button>
+              <button type="submit" name="selectedcourse" class="btn btn-outline-dark btn-lg span5 btn-course test" style="margin-left:0.5em"><span style="font-size:20px"><?= $course_name ?></span></button>
             </form>
 
 <?php

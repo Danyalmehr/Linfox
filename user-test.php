@@ -25,6 +25,45 @@ include_once('database.php');
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
 
     <title>Training Videos</title>
+	
+	
+	<style>
+	
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+
+	.btn-course {
+		width: 500%;
+	}
+	
+	body {
+		font-size: 4px;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	h1 {
+		font-size: 0.5px;
+	}
+
+}
+		
+		
+		.video {
+			
+		}
+	
+	
+	</style>
+	
+	
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
@@ -54,7 +93,7 @@ include_once('database.php');
                   	<h2> Training Videos</h2>
 					<?php
 
-                echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$course_video\ frameborder=\"0\" allow=\"accelerometer\"; \"autoplay\"; \"encrypted-media\"; \"gyroscope\"; \"picture-in-picture\" \"allowfullscreen\"></iframe>";
+                echo "<iframe class=\"video\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$course_video\ frameborder=\"0\" allow=\"accelerometer\"; \"autoplay\"; \"encrypted-media\"; \"gyroscope\"; \"picture-in-picture\" \"allowfullscreen\"></iframe>";
 
 
 
