@@ -86,8 +86,8 @@ session_start();
                       <div class="col">
                           <label for="User type">USER TYPE </label>
                           <select name="user_type" class="inputwidthforvreateuser">
-                           <option value="Employee">Employee</option>
-                           <option value="Admin">Admin</option>
+                           <option value="employee">Employee</option>
+                           <option value="admin">Admin</option>
                             </select>
                         </div>
                     </div>
