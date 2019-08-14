@@ -45,7 +45,7 @@ include_once('database.php');
 		@media only screen and (max-width: 768px) and (min-width: 428px) {
 			
 			.test {
-			margin-left: 5%;
+			margin-left: 1%;
 		}
 
 	
@@ -65,10 +65,11 @@ include_once('database.php');
 				font-size: 14px;
 			}
 			
-			.test .btn {
+			.test, button {
 				
 				width: 100%;
-			}	
+			}
+			
 }
 		
 		@media only screen and (max-width: 428px) {
@@ -86,9 +87,13 @@ include_once('database.php');
 				
 				font-size: 12px;
 			}
-			.test .btn {
+			.test, button {
 				
-				width: 90%;
+				width: 100%;
+			}
+			
+			.test {
+				margin-left: 1%;
 			}
 			
 		}	
