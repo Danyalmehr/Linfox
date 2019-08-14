@@ -1,4 +1,5 @@
-<?php require 'database.php';
+<?php
+ require 'database.php';
 session_start();
 //echo "successful i";?>
 
@@ -85,9 +86,9 @@ session_start();
                     <div class="row">
                       <div class="col">
                           <label for="User type">USER TYPE </label>
-                          <select name="user_type" class="inputwidthforvreateuser">
-                           <option value="employee">Employee</option>
-                           <option value="admin">Admin</option>
+                          <select name="user_type" class="inputwidthforcreateuser">
+                           <option value="Employee">Employee</option>
+                           <option value="Admin">Admin</option>
                             </select>
                         </div>
                     </div>

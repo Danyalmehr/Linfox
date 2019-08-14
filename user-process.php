@@ -1,5 +1,5 @@
-
 <?php
+
 //must appear BEFORE the <html> tag
 session_start();
 include_once('database.php');

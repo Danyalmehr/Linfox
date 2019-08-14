@@ -1,9 +1,11 @@
-
 <?php
 //must appear BEFORE the <html> tag
 session_start();
 include_once('database.php');
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +38,10 @@ include_once('database.php');
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
+  <?php if ($_SESSION['usertype'] != 'admin') {
+      echo "You are not allowed";
+      die();
+    } ?>
     <?php include("include/nav.inc") ?>
     <?php
       if(isset($_POST['selectedtest']))
@@ -132,6 +138,8 @@ include_once('database.php');
                   </div>
                     </div>
                            <div class="row">
+                             <div class="col-md-2">
+                             </div>
 
                              <div class="col-md-11 col-md-7">
 <br>

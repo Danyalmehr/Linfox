@@ -1,4 +1,5 @@
 <?php
+
 //must appear BEFORE the <html> tag
 session_start();
 include_once('database.php');
@@ -47,52 +48,52 @@ include_once('database.php');
      border-radius: 3px;
     overflow: hidden;
 }
-		
-		
+
+
 				@media only screen and (max-width: 768px) and (min-width: 428px) {
-			
-			
+
+
 			center h2{
 				font-size: 18px;
 			}
-			
+
 			center h4{
-				
+
 				font-size: 16px;
 			}
-					
+
 					.options p {
 						font-size: 14px;
-					} 		
+					}
 					.options label{
 						font-size: 12px;
 					}
 }
-		
+
 		@media only screen and (max-width: 428px) {
 			center h2{
 				font-size: 16px;
 			}
-			
+
 			center h4{
-				
+
 				font-size: 14px;
 			}
-					
+
 					.options p {
 						font-size: 12px;
-					} 		
+					}
 					.options label{
 						font-size: 10px;
 					}
-			
-			
-		}	
-		
-		
-		
-		
-		
+
+
+		}
+
+
+
+
+
 	</style>
 </head>
 <body onLoad="run_first()">
@@ -207,8 +208,8 @@ include_once('database.php');
                </div>
 
 	<?php include("include/footer.inc") ?>
-	
-	
+
+
 
 
 

@@ -1,4 +1,6 @@
-<?php require 'database.php';
+<?php
+
+require 'database.php';
 session_start();
 //echo "successful i";?>
 
