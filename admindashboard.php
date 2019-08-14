@@ -92,7 +92,7 @@ session_start();
 		
 	}
 			
-			.course h1, .videos h2{
+			. h1, .videos h2{
 				font-size: 16px;
 			}
 			
@@ -148,7 +148,7 @@ session_start();
 ?>
             <form class="" action="user-test.php" method="post">
 
-              <button type="submit" name="selectedcourse" class="btn btn-outline-dark btn-lg span5 btn-course" style="margin-left:0.5em"><span style="font-size:20px"><?= $course_name ?></span></button>
+              <button type="submit" name="selectedcourse" class="btn btn-outline-dark btn-lg span5 btn-course" style="margin-left:0.5em"><span><?= $course_name ?></span></button>
             </form>
 
 <?php

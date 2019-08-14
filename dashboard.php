@@ -157,7 +157,7 @@ session_start();
               <input type="hidden" name="course_video" value="<?=$course_video?>"><label for=""><?php $course_video?></label>
 				
 				
-              <button type="submit" name="selectedcourse" class="btn btn-outline-dark btn-lg span5 btn-course test" style="margin-left:0.5em"><span class="course_name" style="font-size:20px"><?= $course_name ?></span></button>
+              <button type="submit" name="selectedcourse" class="btn btn-outline-dark btn-lg span5 btn-course test" style="margin-left:0.5em"><span class="course_name"><?= $course_name ?></span></button>
             </form>
 
 <?php
