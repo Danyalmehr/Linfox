@@ -17,13 +17,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $numOfRows = $result -> num_rows;
     $row = $result -> fetch_assoc();
     $usertype = $row['user_type'];
-    if ($usertype == 'employee')
+    if ($numOfRows == 1 and $usertype == 'Employee')
     {
         $_SESSION['valid_user'] = $email;
         $_SESSION["userid"] = $row['user_id'];
         header("location: dashboard.php");
     }
-    elseif ($numOfRows == 1 and $usertype == 'admin')
+    elseif ($numOfRows == 1 and $usertype == 'Admin')
     {
       $_SESSION['valid_user'] = $email;
       $_SESSION["userid"] = $row['user_id'];
