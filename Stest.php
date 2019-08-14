@@ -1,15 +1,4 @@
 <?php
-if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
-    /*
-       Up to you which header to send, some prefer 404 even if
-       the files does exist for security
-    */
-    header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
-
-    /* choose the appropriate page to redirect users */
-    die( header( 'location: /error.php' ) );
-
-}
 
 //must appear BEFORE the <html> tag
 session_start();
@@ -59,52 +48,52 @@ include_once('database.php');
      border-radius: 3px;
     overflow: hidden;
 }
-		
-		
+
+
 				@media only screen and (max-width: 768px) and (min-width: 428px) {
-			
-			
+
+
 			center h2{
 				font-size: 18px;
 			}
-			
+
 			center h4{
-				
+
 				font-size: 16px;
 			}
-					
+
 					.options p {
 						font-size: 14px;
-					} 		
+					}
 					.options label{
 						font-size: 12px;
 					}
 }
-		
+
 		@media only screen and (max-width: 428px) {
 			center h2{
 				font-size: 16px;
 			}
-			
+
 			center h4{
-				
+
 				font-size: 14px;
 			}
-					
+
 					.options p {
 						font-size: 12px;
-					} 		
+					}
 					.options label{
 						font-size: 10px;
 					}
-			
-			
-		}	
-		
-		
-		
-		
-		
+
+
+		}
+
+
+
+
+
 	</style>
 </head>
 <body onLoad="run_first()">
@@ -219,8 +208,8 @@ include_once('database.php');
                </div>
 
 	<?php include("include/footer.inc") ?>
-	
-	
+
+
 
 
 

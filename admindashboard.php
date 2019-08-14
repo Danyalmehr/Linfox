@@ -1,19 +1,8 @@
 <?php
-if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
-    /*
-       Up to you which header to send, some prefer 404 even if
-       the files does exist for security
-    */
-    header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
-
-    /* choose the appropriate page to redirect users */
-    die( header( 'location: /error.php' ) );
-
-}
-
 require 'database.php';
 session_start();
 //echo "successful";
+
 
 ?>
 
@@ -127,10 +116,7 @@ session_start();
 	</style>
 </head>
 <body onLoad="run_first()">
-  <?php if ($_SESSION['usertype'] != 'admin') {
-      echo "You are not allowed";
-      die();
-    }
+
 
        ?>
 	<?php include("include/banner.inc") ?>
