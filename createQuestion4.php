@@ -33,25 +33,6 @@ include_once('database.php');
 
     <title> Take test </title>
 
-	<style>
-
-  ul.unstyled, ol.unstyled {
-     margin-left: 0;
-     list-style: none;
-}
-		.span3 {
-
-			margin-right: 4em;
-		}
-    .widget-menu {
-    background: #fff;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-     border-radius: 3px;
-    overflow: hidden;
-}
-
-	</style>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
@@ -153,15 +134,16 @@ include_once('database.php');
                   </div>
 
                            <div class="row">
-                             <div class="col-md-2">
-                               </div>
-                             <div class="col-md-8 table-responsive">
-                               <div class="content">
+
+                             <div class="col-md-11 col-md-7">
+
                                 <center class="table_heading">
                                <h3>Edit question for:</h3>
                                <h2> <?= $test_name ?></h2>
                              </center>
-                               <table class="table table-hover" >
+                             <div class="search_results" id="search_results">
+
+                           <table class="search_table" id="search_table" >
                                <?php
                                echo "<tr>
                                          <th>Question</th>
@@ -179,23 +161,24 @@ include_once('database.php');
                                  echo "<tr><form action=question-process.php method=post>";
                                  echo "<input type=hidden name=que_id value='".$row['que_id']."'";
                                  echo "<tr>
-                                           <td><input type=text name=question id=q value='".htmlspecialchars($question, ENT_QUOTES)."'</td>
-                                           <td><input type=text name=correct_answer value='".htmlspecialchars($row['ans'], ENT_QUOTES)."'</td>
-                                           <td><input type=text name=wrong_answer1 value='".htmlspecialchars($row['option 1'], ENT_QUOTES)."'</td>
-                                           <td><input type=text name=wrong_answer2 value='".htmlspecialchars($row['option 2'], ENT_QUOTES)."'</td>
-                                           <td><input type=text name=wrong_answer3 value='".htmlspecialchars($row['option 3'], ENT_QUOTES)."'</td>
-                                           <td><button type=submit name=update onclick='return ask2()' ><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
-                                           <td><button type=submit name=delete onclick='return ask()' ><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
+                                           <td><input class='inputwidthforemailandotherinputintable' type=text name=question id=q value='".htmlspecialchars($question, ENT_QUOTES)."'</td>
+                                           <td><input class='inputwidthforemailandotherinputintable' type=text name=correct_answer value='".htmlspecialchars($row['ans'], ENT_QUOTES)."'</td>
+                                           <td><input class='inputwidthforemailandotherinputintable' type=text name=wrong_answer1 value='".htmlspecialchars($row['option 1'], ENT_QUOTES)."'</td>
+                                           <td><input class='inputwidthforemailandotherinputintable' type=text name=wrong_answer2 value='".htmlspecialchars($row['option 2'], ENT_QUOTES)."'</td>
+                                           <td><input class='inputwidthforemailandotherinputintable' type=text name=wrong_answer3 value='".htmlspecialchars($row['option 3'], ENT_QUOTES)."'</td>
+                                           <td><button class='delete' type=submit name=update onclick='return ask2()' ><span class='glyphicon glyphicon-wrench logo-small'></span></button></td>
+                                           <td><button class='delete' type=submit name=delete onclick='return ask()' ><span class='glyphicon glyphicon-trash logo-small'></span></button></td>
                                       </tr>";
                                    echo "</form></tr>";
                                  }
                                          ?>
                                          <?php endwhile;?>
                          </table>
+                          </div>
                        <?php } ?>
                              </div>
                            </div>
-                         </div>
+
 
 
      </div>

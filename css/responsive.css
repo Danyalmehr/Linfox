@@ -1199,8 +1199,8 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 @media only screen and (min-width: 769px) {
 	/* -----------------for desktop-------------------------------*/
 .table_heading{font-size: 2em;}
-.search_results{ margin:1%; align-content:center; padding:1%; color:black; border-radius:5px;}
-#search_table th{padding:2%; margin:3%;font-size:1em;alignment-adjust:central; border:2px solid black;  text-align: center;}
+.search_results{ margin:3%; align-content:left; padding:1%; color:black; border-radius:5px;}
+#search_table th{padding:2%; margin:3%;font-size:1em;alignment-adjust:left; border:2px solid black;}
 #search_table td{padding:2%; margin:3%; border:2px solid black; resize:both;}
 .inputwidthforemailandotherinputintable{color:black;}
 .glyphicon{font-size: 1.5em; width: 2em;color:black;}
@@ -1249,24 +1249,15 @@ p {
 /*-------------------------------------------------------------------------------------------- Dashboard ----------------------------  --------------- */
 
 
-
-
 @media only screen and (max-width: 768px) and (min-width: 426px) {
 
-	
-	
-	
-	
-	
-	
+	.test {
+		width: 90%;
+	}
 
-}
-
-
-
-
-=======
->>>>>>> ced4ce65b9d736d36c2e687db0b5fac80d98861e
+	body {
+		font-size: 4px;
+	}
 
 
 
