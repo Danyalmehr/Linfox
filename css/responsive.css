@@ -1250,31 +1250,10 @@ p {
 
 
 
-.video {
-	
-	
-	margin-left: 4em;
-}
-
 
 @media only screen and (max-width: 768px) and (min-width: 426px) {
 
-	.test {
-		width: 90%;
-	}
-
-	body {
-		font-size: 4px;
-	}
-<<<<<<< HEAD
 	
-	
-	
-	.videos {
-		
-		margin-left: 5em;
-		
-	}
 	
 	
 	
