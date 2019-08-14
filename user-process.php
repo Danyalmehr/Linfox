@@ -76,7 +76,7 @@ include_once('database.php');
                   if($conn -> query($sql))
                   {
 
-                      echo "Hi <b>$fname</b> is sucessfully created";
+                      header("location: index.php");
 
                   }
                   $conn -> close();

@@ -73,13 +73,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="row">
             	<div class="col">
 
-                	<input type="email" id="email" name="email" size="30%" width="auto" maxlength="50" style="text-align: center" placeholder="Email" required />
+                	<input type="email" id="email" class='inputwidthforemailandotherinputintable3' name="email" size="30%" width="auto" maxlength="50" style="text-align: center" placeholder="Email" required />
                 </div>
             </div><br>
             <div class="row">
             	<div class="col">
 
-                    <input type="password" id="password" name="password" placeholder="*********" size="30%" maxlength="50" style="text-align: center" onChange="passwordCheck(document)" required />
+                    <input type="password" class='inputwidthforemailandotherinputintable3' id="password" name="password" placeholder="*********" size="30%" maxlength="50" style="text-align: center" onChange="passwordCheck(document)" required />
                     <span id="pwd_msg" class="error_msg"></span>
 					<span id="password_check" class="error_msg" style="color: red"></span>
                 </div>

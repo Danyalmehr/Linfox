@@ -132,7 +132,7 @@ footer {
 
 	.login_header {background-color: red;}
 	.login_header h1{text-align:center;}
-	.login{ margin:2%;position: relative;display: flex;justify-content: center;align-content:center; padding:4%; border:1px solid #B39019;
+	.login{ margin:2%;position: relative;display: flex;justify-content: center;align-content:center; padding:4%;  border:1px solid black;
 	color:black; border-radius:4px; width:100%;display: inline-block;}
 
 	.button_login {
@@ -205,7 +205,7 @@ footer {
 
 	.login_header {background-color: red;}
 	.login_header h1{text-align:center;}
-	.login{ margin:4%;position: relative;display: flex;justify-content: center;align-content:center; padding:4%; border:1px solid #B39019;
+	.login{ margin:4%;position: relative;display: flex;justify-content: center;align-content:center; padding:4%;  border:1px solid black;
 	color:black; border-radius:4px; width:72%;left:14%;display: inline-block;}
 
 	.button_login {
@@ -277,7 +277,7 @@ footer {
   /* For desktop: */
   .login_header {background-color: red;}
 	.login_header h1{text-align:center;}
-	.login{ margin:4%;position: relative;display: flex;justify-content: center;align-content:center; padding:4%; border:1px solid #B39019;
+	.login{ margin:4%;position: relative;display: flex;justify-content: center;align-content:center; padding:4%; border:1px solid black;
 	color:black; border-radius:4px; width:45%;left:26%;}
 
 	.button_login {
@@ -818,11 +818,18 @@ height: auto;
 
 
 /*.edit_member,input{width: 110px; border: 1px solid white;}*/
-input {background-color: transparent;
-    border: 0px solid;
+.inputwidthforemailandotherinputintable3 {
+	 background-color: transparent;
+    border-bottom:2px solid #ff7733;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-radius: 9px;
+		padding: 8px;
     height: 2em;
 		width: 100%;
-    color: black;}
+    color: #ff7733;
+	}
 
 /*-------------------------------------------------------------------------------------------- Sucess Page :------------------------------------------------------------------------------- */
 .sucess{ margin:4%; align-content:center; padding:1%; border:5px solid black; background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0.6); border-radius:9px;}

@@ -70,7 +70,6 @@ session_start();
 .course .btn-course:active {
   background-color: #3e8e41;
 
-  ;
 }
 
 		.course{
@@ -122,9 +121,6 @@ session_start();
 	</style>
 </head>
 <body onLoad="run_first()">
-
-
-       ?>
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
 
