@@ -20,6 +20,22 @@
 	
 	
 	<style>
+		
+		/*.span3{
+			
+			 overflow: hidden;
+			position: fixed;
+		
+  z-index: 1;
+			display: block;
+			margin: 5em;
+ 
+		}
+		
+		.span a {
+			
+			display: block;
+		}*/
 	
 	@media only screen and (max-width: 768px) and (min-width: 428px) {
 	
@@ -58,6 +74,8 @@
 </head>
 <body onLoad="run_first()">
 
+	
+	<div class="sticky-top">
                       <div class="span3">
                           <div class="sidebar" style="display: inline">
                               <ul class="widget widget-menu unstyled">
@@ -79,6 +97,29 @@
                           </div>
                           <!--/.sidebar-->
                       </div>
+	
+	</div>
+	<script>
+	
+	// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementsByClassName("span3");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+	
+	</script>
 
 </body>
 </html>
