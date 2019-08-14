@@ -1222,6 +1222,14 @@ p {
 /*-------------------------------------------------------------------------------------------- Dashboard ----------------------------  --------------- */
 
 
+
+.video {
+	
+	
+	margin-left: 4em;
+}
+
+
 @media only screen and (max-width: 768px) and (min-width: 426px) {
 
 	.test {
@@ -1234,9 +1242,13 @@ p {
 	
 	
 	
-	.video {
-		margin-left: 500px;
+	.videos {
+		
+		margin-left: 5em;
+		
 	}
+	
+	
 	
 	
 	
