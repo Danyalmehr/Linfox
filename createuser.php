@@ -26,9 +26,6 @@ session_start();
 
     <title>Dashboard</title>
 
-	<style>
-
-	</style>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
@@ -49,21 +46,21 @@ session_start();
                     <div class="row">
                       <div class="col">
                           <label for="fname">FIRST NAME</label>
-                            <input type="text" id="fname" name="fname" size="30" maxlength="50" placeholder=" John " required />
+                            <input type="text" class="inputwidthforvreateuser" id="fname" name="fname" size="30" maxlength="50" placeholder=" John " required />
                         </div>
                     </div>
 
                     <div class="row">
                       <div class="col">
                           <label for="lname">LAST NAME</label>
-                            <input type="text" id="lname" name="lname" size="30" maxlength="50" placeholder=" Cena " required />
+                            <input type="text" id="lname" class="inputwidthforvreateuser" name="lname" size="30" maxlength="50" placeholder=" Cena " required />
                         </div>
                     </div>
 
                     <div class="row">
                       <div class="col">
                           <label for="email">EMAIL</label>
-                          <input type="email" id="email" name="email" size="30" maxlength="50" placeholder=" abc@abc.com " required />
+                          <input type="email" id="email" class="inputwidthforvreateuser" name="email" size="30" maxlength="50" placeholder=" abc@abc.com " required />
                         </div>
                     </div>
 
@@ -71,7 +68,7 @@ session_start();
                               <div class="row">
                       <div class="col">
                           <label for="password">PASSWORD</label>
-                            <input type="password" id="password" class="password" name="password" size="30" maxlength="20" required  onChange="passwordCheck(document)"/>
+                            <input type="password" id="password" class="inputwidthforvreateuser" class="password" name="password" size="30" maxlength="20" required  onChange="passwordCheck(document)"/>
                             <span id="pwd_msg" class="error_msg"></span>
                             <span id="password_check" class="error_msg" style="color: red"></span>
 
@@ -80,7 +77,7 @@ session_start();
                     <div class="row">
                       <div class="col">
                           <label for="rePassword">RE-TRY:</label>
-                            <input type="password" id="rePassword" size="30" maxlength="20"
+                            <input type="password" id="rePassword" class="inputwidthforvreateuser" size="30" maxlength="20"
                                        onChange="checkRePassword(document)" />
 
                         </div>
@@ -88,7 +85,7 @@ session_start();
                     <div class="row">
                       <div class="col">
                           <label for="User type">USER TYPE </label>
-                          <select name="user_type">
+                          <select name="user_type" class="inputwidthforvreateuser">
                            <option value="Employee">Employee</option>
                            <option value="Admin">Admin</option>
                             </select>

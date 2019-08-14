@@ -698,35 +698,6 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@topColor', end
 .progress .bar-danger, .progress-danger .bar {
 	border-color: #a62821
 }
-.table {
-	margin-bottom: 0
-}
-.table th, .table td {
-	border-color: #d5d5d5!important
-}
-.table.valign-middle td, .table.valign-middle th {
-	vertical-align: middle
-}
-.table-bordered thead:first-child tr:first-child>th:first-child, .table-bordered tbody:first-child tr:first-child>td:first-child {
-	-webkit-border-top-left-radius: 2px;
-	-moz-border-radius-topleft: 2px;
-	border-top-left-radius: 2px
-}
-.table-bordered thead:first-child tr:first-child>th:last-child, .table-bordered tbody:first-child tr:first-child>td:last-child {
-	-webkit-border-top-right-radius: 2px;
-	-moz-border-radius-topright: 2px;
-	border-top-right-radius: 2px
-}
-.table-bordered thead:last-child tr:last-child>th:first-child, .table-bordered tbody:last-child tr:last-child>td:first-child, .table-bordered tfoot:last-child tr:last-child>td:first-child {
-	-webkit-border-bottom-left-radius: 2px;
-	-moz-border-radius-bottomleft: 2px;
-	border-bottom-left-radius: 2px
-}
-.table-bordered thead:last-child tr:last-child>th:last-child, .table-bordered tbody:last-child tr:last-child>td:last-child, .table-bordered tfoot:last-child tr:last-child>td:last-child {
-	-webkit-border-bottom-right-radius: 2px;
-	-moz-border-radius-bottomright: 2px;
-	border-bottom-right-radius: 2px
-}
 .sidebar-user .user-avatar {
 	background: #fff;
 	border: 1px solid #ccc;

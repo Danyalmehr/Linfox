@@ -26,39 +26,6 @@ session_start();
 
     <title>Dashboard</title>
 
-	<style>
-		.btn-course {
-			height: 100px;
-			vertical-align: middle;
-		}
-		.course-btn:hover{
-
-			color: #3E4FD7;
-		}
-		.course-txt{
-			vertical-align:middle;
-		}
-
-		.btn-lg{
-			height: 10em;
-		}
-
-		.btn-course{
-			margin-top: 2em;
-			margin-left: 1em;
-		}
-		.course{
-			margin-left: 1em;
-		}
-    a
-    {
-      text-decoration: none;
-      color: White;
-    }
-    a:hover{text-decoration: none;
-    color: White;}
-
-	</style>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
@@ -66,13 +33,11 @@ session_start();
 
     <div class="container-fluid">
       <?php include("admin-side-dash.html") ?>
-    	<div class="row">
+    	<div class="row containermember">
 
-                    <div class="span8">
-                        <div class="content">
-                            <div class="btn-controls">
-                                <div class="btn-box-row row-fluid course">
-					<h1 style="margin: 1em"> Create Course</h1>
+        <div class="col-md-9">
+          <div class="member">
+					                 <h1 style="margin: 1em"> Create Course</h1>
 
                           <form class="form-horizontal" action="course-process.php" method="post">
                   <div class="form-group">
@@ -107,8 +72,7 @@ session_start();
                             </div>
 						</div>
 					</div>
-          </div>
-        </div>
+
 	<?php include("include/footer.inc") ?>
   <script type="text/javascript" src="js/confirmation.js"></script>
 
