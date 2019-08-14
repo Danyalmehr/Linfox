@@ -46,6 +46,23 @@ session_start();
 			margin-top: 2em;
 			margin-left: 1em;
 		}
+		
+		.course .btn-course:hover {background-color: #4E4E4E;
+		box-shadow: 0 5px #666;
+			transform: translateY(4px);
+			cursor: pointer;
+			opacity: 2;
+			transition: 0.3s;
+			padding-right: 100px;
+		
+		}
+
+.course .btn-course:active {
+  background-color: #3e8e41;
+  
+  ;
+}
+		
 		.course{
 			margin-left: 1em;
 		}
@@ -56,6 +73,41 @@ session_start();
     }
     a:hover{text-decoration: none;
     color: White;}
+		
+		
+			@media only screen and (max-width: 768px) and (min-width: 428px) {
+	
+			
+			.course h1{
+				font-size: 18px;
+			}
+			
+				
+}
+		
+		@media only screen and (max-width: 428px) {
+			.videos {
+		
+		margin-left: 0em;
+		
+	}
+			
+			. h1, .videos h2{
+				font-size: 16px;
+			}
+			
+			.test .test_name{
+				
+				font-size: 12px;
+			}
+			.test .btn {
+				
+				width: 100%;
+			}
+			
+		}
+		
+		
 
 	</style>
 </head>
@@ -96,7 +148,7 @@ session_start();
 ?>
             <form class="" action="user-test.php" method="post">
 
-              <button type="submit" name="selectedcourse" class="btn btn-outline-dark btn-lg span5 btn-course" style="margin-left:0.5em"><span style="font-size:20px"><?= $course_name ?></span></button>
+              <button type="submit" name="selectedcourse" class="btn btn-outline-dark btn-lg span5 btn-course" style="margin-left:0.5em"><span><?= $course_name ?></span></button>
             </form>
 
 <?php

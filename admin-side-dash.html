@@ -17,10 +17,49 @@
         <link type="text/css" href="css/theme.css" rel="stylesheet">
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+	
+	
+	
+	<style>
+		
+		
+	
+	@media only screen and (max-width: 768px) and (min-width: 428px) {
+	
+		
+		body {
+			font-size: 14px;
+		}
+			
+		body .admin-side{
+			width: 100%;
+			display: inline;
+		}
+			
+				
+}
+		
+		@media only screen and (max-width: 428px) {
+		
+			
+			body {
+			font-size: 12px;
+		}
+			
+		body .admin-side{
+			width: 100%;
+			display: inline;
+		}
+			
+			
+		}
+	
+	</style>
 
 </head>
 <body onLoad="run_first()">
-                    <div class="col-md-3 col-sm-3">
+	<div class="sticky-top">
+                    <div class="col-md-3 col-sm-3 admin-side">
                         <div class="sidebar" style="display: inline">
                             <ul class="widget widget-menu unstyled">
                                 <li class="active left_icon"><a href="admindashboard.php"><i class="menu-icon icon-dashboard"></i>Dashboard
@@ -48,6 +87,7 @@
                         </div>
                         <!--/.sidebar-->
                     </div>
+	</div>
 
 </body>
 </html>
