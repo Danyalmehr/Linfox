@@ -38,11 +38,15 @@ include_once('database.php');
 			margin-bottom: 2em;
 		}
 		.test {
-			margin: auto;
+			margin-left: 20%;
 		}
 	
 
 		@media only screen and (max-width: 768px) and (min-width: 428px) {
+			
+			.test {
+			margin-left: 5%;
+		}
 
 	
 	.videos {
@@ -84,7 +88,7 @@ include_once('database.php');
 			}
 			.test .btn {
 				
-				width: 100%;
+				width: 90%;
 			}
 			
 		}	
@@ -124,7 +128,7 @@ include_once('database.php');
                   	<h2> Training Videos</h2>
 					<?php
 
-                echo "<iframe class=\"iframe\" width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/$course_video\ frameborder=\"0\" allow=\"accelerometer\"; \"autoplay\"; \"encrypted-media\"; \"gyroscope\"; \"allowfullscreen\"></iframe>";
+                echo "<iframe class=\"iframe\" width=\"90%\" height=\"415\" src=\"https://www.youtube.com/embed/$course_video\ frameborder=\"0\" allow=\"accelerometer\"; \"autoplay\"; \"encrypted-media\"; \"gyroscope\"; \"allowfullscreen\"></iframe>";
 				
 
 
