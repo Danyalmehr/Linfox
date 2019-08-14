@@ -28,37 +28,68 @@ include_once('database.php');
 	
 	
 	<style>
+		.test .btn {
+				
+				width: 100%;
+			}
+		
+		.videos {
+			margin-left: 2em;
+			margin-bottom: 2em;
+		}
+		.test {
+			margin: auto;
+		}
 	
-@media only screen and (max-width: 768px) and (min-width: 426px) {
 
-	.btn-course {
-		width: 500%;
-	}
-	
-	body {
-		font-size: 4px;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	h1 {
-		font-size: 0.5px;
-	}
+		@media only screen and (max-width: 768px) and (min-width: 428px) {
 
+	
+	.videos {
+		
+		margin-left: 0em;
+		
+	}
+			
+			
+			.test h1, .videos h2{
+				font-size: 18px;
+			}
+			
+			.test .test_name{
+				
+				font-size: 14px;
+			}
+			
+			.test .btn {
+				
+				width: 100%;
+			}	
 }
 		
+		@media only screen and (max-width: 428px) {
+			.videos {
 		
-		.video {
+		margin-left: 0em;
+		
+	}
 			
-		}
+			.test h1, .videos h2{
+				font-size: 16px;
+			}
+			
+			.test .test_name{
+				
+				font-size: 12px;
+			}
+			.test .btn {
+				
+				width: 100%;
+			}
+			
+		}	
+		
+	
 	
 	
 	</style>
@@ -73,7 +104,7 @@ include_once('database.php');
       <?php include("user-side-dash.html") ?>
 
 
-    	<div class="row">
+    	<div class="row video">
 
             <?php   if(isset($_POST['selectedcourse'])){
                 $course_id = $_POST['course_id'];
@@ -89,11 +120,12 @@ include_once('database.php');
                           ?>
 
 
-                <div class="col-md-8">
+                <div class="col-md-8 videos">
                   	<h2> Training Videos</h2>
 					<?php
 
-                echo "<iframe class=\"video\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$course_video\ frameborder=\"0\" allow=\"accelerometer\"; \"autoplay\"; \"encrypted-media\"; \"gyroscope\"; \"picture-in-picture\" \"allowfullscreen\"></iframe>";
+                echo "<iframe class=\"iframe\" width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/$course_video\ frameborder=\"0\" allow=\"accelerometer\"; \"autoplay\"; \"encrypted-media\"; \"gyroscope\"; \"allowfullscreen\"></iframe>";
+				
 
 
 
@@ -107,7 +139,7 @@ include_once('database.php');
       <div class="col-md-2">
 
       </div>
-      <div class="col-md-8">
+      <div class=test>
 
 
                   <h1>Tests for <?= $_SESSION["coursename"] ?> </h1>
@@ -130,18 +162,18 @@ include_once('database.php');
                         $test_id=$row['test_id'];
                         $test_name = $row['test_name'];
                         ?>
-                        <form class="" action="stest.php" method="post">
+                        <form class="test_name" action="stest.php" method="post">
                           <input type="hidden" name="testid" value="<?=$test_id?>"><label><?php $test_id?></label>
                           <input type="hidden" name="test_name" value="<?=$test_name?>"><label><?php $test_name?></label>
 
-                          <button type="submit" class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <span> <?= $test_name ?> </span> </button>
+                          <button type="submit" class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto; margin-left: -2px;"> <span class="test_name"> <?= $test_name ?> </span> </button>
                         </form>
 
 
                         <?php
                       }
                       ?>
-                      <a href="dashboard3.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> Back to HOME page </span> </button></a>
+                      <a href="dashboard3.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span class="test_name"> Back to HOME page </span> </button></a>
 
 
                       <?php
@@ -153,6 +185,7 @@ include_once('database.php');
                        </div>
 
 	</div>
+	
 	<?php include("include/footer.inc") ?>
 </body>
 </html>

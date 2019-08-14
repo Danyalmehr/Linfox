@@ -1249,6 +1249,14 @@ p {
 /*-------------------------------------------------------------------------------------------- Dashboard ----------------------------  --------------- */
 
 
+
+.video {
+	
+	
+	margin-left: 4em;
+}
+
+
 @media only screen and (max-width: 768px) and (min-width: 426px) {
 
 	.test {
@@ -1258,6 +1266,28 @@ p {
 	body {
 		font-size: 4px;
 	}
+<<<<<<< HEAD
+	
+	
+	
+	.videos {
+		
+		margin-left: 5em;
+		
+	}
+	
+	
+	
+	
+	
+
+}
+
+
+
+
+=======
+>>>>>>> ced4ce65b9d736d36c2e687db0b5fac80d98861e
 
 
 
