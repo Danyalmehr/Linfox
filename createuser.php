@@ -26,9 +26,6 @@ session_start();
 
     <title>Dashboard</title>
 
-	<style>
-
-	</style>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
