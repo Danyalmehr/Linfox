@@ -39,3 +39,9 @@ var course_video = document.getElementById("course_video").value;
 //var amount = document.getElementById("amount").value;
 return confirm('Are you sure you want to CREATE: \nCourse name: ' + course_name + '\nCourse description: ' + course_desc + '\nCourse video: ' + course_video);
 }
+
+function ask6() {
+var test_name = document.getElementById("test_name").value;
+//var amount = document.getElementById("amount").value;
+return confirm('Are you sure you want to take this TEST?');
+}

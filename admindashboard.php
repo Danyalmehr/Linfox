@@ -1,6 +1,21 @@
-<?php require 'database.php';
+<?php
+if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
+    /*
+       Up to you which header to send, some prefer 404 even if
+       the files does exist for security
+    */
+    header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
+
+    /* choose the appropriate page to redirect users */
+    die( header( 'location: /error.php' ) );
+
+}
+
+require 'database.php';
 session_start();
-//echo "successful";?>
+//echo "successful";
+
+?>
 
 
 
@@ -46,7 +61,7 @@ session_start();
 			margin-top: 2em;
 			margin-left: 1em;
 		}
-		
+
 		.course .btn-course:hover {background-color: #4E4E4E;
 		box-shadow: 0 5px #666;
 			transform: translateY(4px);
@@ -54,15 +69,15 @@ session_start();
 			opacity: 2;
 			transition: 0.3s;
 			padding-right: 100px;
-		
+
 		}
 
 .course .btn-course:active {
   background-color: #3e8e41;
-  
+
   ;
 }
-		
+
 		.course{
 			margin-left: 1em;
 		}
@@ -73,45 +88,51 @@ session_start();
     }
     a:hover{text-decoration: none;
     color: White;}
-		
-		
+
+
 			@media only screen and (max-width: 768px) and (min-width: 428px) {
-	
-			
+
+
 			.course h1{
 				font-size: 18px;
 			}
-			
-				
+
+
 }
-		
+
 		@media only screen and (max-width: 428px) {
 			.videos {
-		
+
 		margin-left: 0em;
-		
+
 	}
-			
+
 			. h1, .videos h2{
 				font-size: 16px;
 			}
-			
+
 			.test .test_name{
-				
+
 				font-size: 12px;
 			}
 			.test .btn {
-				
+
 				width: 100%;
 			}
-			
+
 		}
-		
-		
+
+
 
 	</style>
 </head>
 <body onLoad="run_first()">
+  <?php if ($_SESSION['usertype'] != 'admin') {
+      echo "You are not allowed";
+      die();
+    }
+
+       ?>
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
 
@@ -128,6 +149,7 @@ session_start();
 
 
 	<?php
+
 
 					$courses = "SELECT *
           FROM courses
@@ -162,7 +184,7 @@ session_start();
 					</div>
           </div>
         </div>
-	<?php include("include/footer.inc") ?>
+	<?php  include("include/footer.inc") ?>
 
 </body>
 </html>

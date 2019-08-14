@@ -1,9 +1,22 @@
-
 <?php
+if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
+    /*
+       Up to you which header to send, some prefer 404 even if
+       the files does exist for security
+    */
+    header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
+
+    /* choose the appropriate page to redirect users */
+    die( header( 'location: /error.php' ) );
+
+}
 //must appear BEFORE the <html> tag
 session_start();
 include_once('database.php');
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +49,10 @@ include_once('database.php');
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
+  <?php if ($_SESSION['usertype'] != 'admin') {
+      echo "You are not allowed";
+      die();
+    } ?>
     <?php include("include/nav.inc") ?>
     <?php
       if(isset($_POST['selectedtest']))
@@ -67,6 +84,9 @@ include_once('database.php');
 
 
           <div class="row">
+            <div class="col-md-1">
+
+            </div>
               <div class="col-md-8">
                 <center class="table_heading">
 
@@ -134,8 +154,10 @@ include_once('database.php');
                   </div>
 
                            <div class="row">
+                             <div class="col-md-2">
+                             </div>
 
-                             <div class="col-md-11 col-md-7">
+                             <div class="col-md-10 col-md-7">
 
                                 <center class="table_heading">
                                <h3>Edit question for:</h3>

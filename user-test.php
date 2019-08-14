@@ -1,4 +1,16 @@
 <?php
+if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
+    /*
+       Up to you which header to send, some prefer 404 even if
+       the files does exist for security
+    */
+    header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
+
+    /* choose the appropriate page to redirect users */
+    die( header( 'location: /error.php' ) );
+
+}
+
 //must appear BEFORE the <html> tag
 session_start();
 include_once('database.php');
@@ -25,14 +37,14 @@ include_once('database.php');
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
 
     <title>Training Videos</title>
-	
-	
+
+
 	<style>
 		.test .btn {
-				
+
 				width: 100%;
 			}
-		
+
 		.videos {
 			margin-left: 2em;
 			margin-bottom: 2em;
@@ -40,67 +52,72 @@ include_once('database.php');
 		.test {
 			margin-left: 20%;
 		}
-	
+
 
 		@media only screen and (max-width: 768px) and (min-width: 428px) {
-			
+
 			.test {
 			margin-left: 5%;
 		}
 
-	
+
 	.videos {
-		
+
 		margin-left: 0em;
-		
+
 	}
-			
-			
+
+
 			.test h1, .videos h2{
 				font-size: 18px;
 			}
-			
+
 			.test .test_name{
-				
+
 				font-size: 14px;
 			}
-			
+
 			.test .btn {
-				
+
 				width: 100%;
-			}	
+			}
 }
-		
+
 		@media only screen and (max-width: 428px) {
 			.videos {
-		
+
 		margin-left: 0em;
-		
+
 	}
-			
+
 			.test h1, .videos h2{
 				font-size: 16px;
 			}
-			
+
 			.test .test_name{
-				
+
 				font-size: 12px;
 			}
 			.test .btn {
-				
+
 				width: 90%;
 			}
-			
-		}	
-		
-	
-	
-	
+
+		}
+
+
+
+
 	</style>
-	
-	
+
+
 </head>
 <body onLoad="run_first()">
+  <?php   if ($_SESSION['usertype'] != 'admin') {
+      echo "You are not allowed";
+      die();
+    }
+       ?>
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
 
@@ -129,7 +146,7 @@ include_once('database.php');
 					<?php
 
                 echo "<iframe class=\"iframe\" width=\"90%\" height=\"415\" src=\"https://www.youtube.com/embed/$course_video\ frameborder=\"0\" allow=\"accelerometer\"; \"autoplay\"; \"encrypted-media\"; \"gyroscope\"; \"allowfullscreen\"></iframe>";
-				
+
 
 
 
@@ -153,7 +170,7 @@ include_once('database.php');
                   if ($num < 1) {
                     echo "No test available!";
                     ?>
-                    <a href="dashboard3.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> Back to home page </span> </button></a>
+                    <a href="dashboard.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> Back to home page </span> </button></a>
 
 
                     <?php
@@ -168,16 +185,16 @@ include_once('database.php');
                         ?>
                         <form class="test_name" action="stest.php" method="post">
                           <input type="hidden" name="testid" value="<?=$test_id?>"><label><?php $test_id?></label>
-                          <input type="hidden" name="test_name" value="<?=$test_name?>"><label><?php $test_name?></label>
+                          <input type="hidden"  name="test_name" value="<?=$test_name?>"><label><?php $test_name?></label>
 
-                          <button type="submit" class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto; margin-left: -2px;"> <span class="test_name"> <?= $test_name ?> </span> </button>
+                          <button onclick='return ask6()' id="test_name" type="submit" class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto; margin-left: -2px;"> <span class="test_name"> <?= $test_name ?> </span> </button>
                         </form>
 
 
                         <?php
                       }
                       ?>
-                      <a href="dashboard3.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span class="test_name"> Back to HOME page </span> </button></a>
+                      <a href="dashboard.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span class="test_name"> Back to HOME page </span> </button></a>
 
 
                       <?php
@@ -189,7 +206,9 @@ include_once('database.php');
                        </div>
 
 	</div>
-	
-	<?php include("include/footer.inc") ?>
+
+<?php include("include/footer.inc") ?>
+  <script type="text/javascript" src="js/confirmation.js"></script>
+
 </body>
 </html>

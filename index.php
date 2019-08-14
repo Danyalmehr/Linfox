@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $numOfRows = $result -> num_rows;
     $row = $result -> fetch_assoc();
     $usertype = $row['user_type'];
-    if ($numOfRows == 1 and $usertype == 'employee')
+    if ($usertype == 'employee')
     {
         $_SESSION['valid_user'] = $email;
         $_SESSION["userid"] = $row['user_id'];
@@ -105,5 +105,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 
-	   	  
+
 </html>
