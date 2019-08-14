@@ -25,50 +25,6 @@ session_start();
 
     <title>Dashboard</title>
 
-	<style>
-  .member_table {
-    border-collapse: collapse;
-  }
-  th, td
-   {
-    text-align: left;
-    padding: 8px;
-  }
-
-  tr:nth-child(odd) {background-color: #f2f2f2;}
-
-		.btn-course {
-			height: 100px;
-			vertical-align: middle;
-		}
-		.course-btn:hover{
-
-			color: #3E4FD7;
-		}
-		.course-txt{
-			vertical-align:middle;
-		}
-
-		.btn-lg{
-			height: 10em;
-		}
-
-		.btn-course{
-			margin-top: 2em;
-			margin-left: 1em;
-		}
-		.course{
-			margin-left: 1em;
-		}
-    a
-    {
-      text-decoration: none;
-      color: White;
-    }
-    a:hover{text-decoration: none;
-    color: White;}
-
-	</style>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
@@ -78,42 +34,44 @@ session_start();
       <?php include("admin-side-dash.html") ?>
     	<div class="row">
 
-                    <div class="col-md-8 table">
+                    <div class="col-md-11 col-md-7">
                           <h1>Edit User Details</h1>
 
-                          <table class="table table-hover" >
                       			<?php $sql= "select * from user";
                       			$records = mysqli_query($con,$sql);
                       			 ?>
-                      			<table class="member_table" >
+                             <div class="search_results" id="search_results">
+
+                          	<table class="search_table" id="search_table" >
                       			<?php
                             echo "<tr>
-                                      <th>First name</th>
-                                      <th>Last name</th>
-                                      <th>Email</th>
-                                      <th>Password</th>
-                                      <th>User type</th>
-                                      <th>Update records</th>
-                                      <th>Delete records</th>
+                                      <th> First name </th>
+                                      <th> Last name</th>
+                                      <th> Email </th>
+                                      <th> Password </th>
+                                      <th> User type</th>
+                                      <th> Update </th>
+                                      <th> Delete </th>
                                   </tr>";
                     			    while($row = mysqli_fetch_array($records)):
                       				{
                       				echo "<tr><form action=user-process.php method=post>";
-                              echo "<td><input type=hidden name=user_id value='".$row['user_id']."'</td>"; // This is hidden field
+                              echo "<input type=hidden name=user_id value='".$row['user_id']."'>"; // This is hidden field
                               echo "<tr>
-                                        <td><input type=text name=fname value='".$row['fname']."'</td>
-                                        <td><input type=text name=lname value='".$row['lname']."'</td>
-                                        <td><input type=email name=email value='".$row['email']."'</td>
-                                        <td><input type=text name=password value='".$row['password']."'</td>
-                                        <td><input type=text name=user_type value='".$row['user_type']."'</td>
-                                        <td><button type=submit name=update onclick='return ask2()'><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
-                                        <td><button type=submit name=delete onclick='return ask()'><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
+                                        <td><input class='inputwidthforemailandotherinputintable' type=text name=fname value='".$row['fname']."'</td>
+                                        <td><input class='inputwidthforemailandotherinputintable' type=text name=lname value='".$row['lname']."'</td>
+                                        <td><input class='inputwidthforemailandotherinputintable' type=email name=email value='".$row['email']."'</td>
+                                        <td><input class='inputwidthforemailandotherinputintable'type=text name=password value='".$row['password']."'</td>
+                                        <td><input class='inputwidthforemailandotherinputintable'type=text name=user_type value='".$row['user_type']."'</td>
+                                        <td><button class='delete' type=submit name=update onclick='return ask2()'><span class='glyphicon glyphicon-wrench logo-small'></span></button></td>
+                                        <td><button class='delete'type=submit name=delete onclick='return ask()'><span class='glyphicon glyphicon-trash logo-small'></span></button></td>
                                    </tr>";
                         				echo "</form></tr>";
                       				}
                                       ?>
                                       <?php endwhile;?>
                       </table>
+                         </div>
                           </div>
 
 						</div>
