@@ -350,9 +350,10 @@ footer {
 
 /*-------------------------------------------------------------------------------------------- Create user START------------------------------------------------------------------------ */
 @media only screen and (max-width: 429px) {
-input {
-  width: 100%;
-}
+
+	.inputwidthforvreateuser{width:10em; border: 1px solid gray;}
+
+
 	.containermember{align-items: center;text-align: center;}
 
 		.member {margin-left:%; padding:%; width:100%;border:1px solid #B39019;position: relative;
@@ -429,9 +430,12 @@ input {
 /*--------------------------------------------------------------------------------------------Tablet ------------------------------------------------------------------------ */
 
 @media only screen and (max-width: 771px) and (min-width: 426px) {
+
+	.inputwidthforvreateuser{width: 15.5em; border: 1px solid gray;}
+
 	.containermember{align-items: center;text-align: center;}
 
-		.member {margin-left:2%; padding:3%; width:90%;border:1px solid #B39019;position: relative;
+		.member {margin-left:; padding:3%; width:auto;border:1px solid #B39019;position: relative;
 		color:black; border-radius:1px;}
 
 		.member label {
@@ -508,6 +512,7 @@ input {
 
 @media only screen and (min-width: 770px) {
 
+.inputwidthforvreateuser{width: 15.5em; border: 1px solid gray;}
 .containermember{align-items: center;text-align: center;}
 
 	.member {margin-left:4%; padding:6%; width:90%;border:1px solid #B39019;position: relative;
@@ -527,7 +532,7 @@ input {
 		border-radius: 4px;
 		background-color: #07D14A;
 		border: none;
-		left: -19%;
+		left: -10%;
 		position: relative;
 		color: #FFFFFF;
 		text-align: center;
