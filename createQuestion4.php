@@ -65,9 +65,10 @@ include_once('database.php');
         <div class="container-fluid">
           <?php include("admin-side-dash.html") ?>
 
+	<div class="row containermember">
 
-          <div class="row">
-              <div class="col-md-8">
+          <div class="col-md-9">
+            <div class="member">
                 <center class="table_heading">
 
                   <h3>Course name: <?= $course_name ?> </h3>
@@ -78,68 +79,66 @@ include_once('database.php');
 
 
 
-                    <form class="form-horizontal" action="question-process.php" method="post">
-                      <div class="form-group">
-                        <div class="col-xs-8">
+                    <form action="question-process.php" method="post">
+                      <div class="row">
+                        <div class="col">
                           <label for="ex3">Question:</label>
-                          <input type="text" class="form-control" id="q" name="question" placeholder="Enter your question here" Required>
+                          <input type="text" class="inputwidthforvreateuser"  id="q" name="question" placeholder="Enter your question here" Required>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <div class="col-xs-8">
+                      <div class="row">
+                        <div class="col">
                           <label for="ex3">Correct answer</label>
-                          <input type="text" class="form-control" id="correct_answer" name="correct_answer" placeholder="Enter the correct answer here" Required>
+                          <input type="text" class="inputwidthforvreateuser" id="correct_answer" name="correct_answer" placeholder="Enter the correct answer here" Required>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <div class="col-xs-8">
+                      <div class="row">
+                        <div class="col">
                           <label for="ex3">Wrong Answers:</label>
-                          <input type="text" class="form-control" id="wrong_answer1" name="wrong_answer1" placeholder="Wrong answer 1" Required>
+                          <input type="text" class="inputwidthforvreateuser" id="wrong_answer1" name="wrong_answer1" placeholder="Wrong answer 1" Required>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <div class="col-xs-8">
+                      <div class="row">
+                        <div class="col">
                           <label for="ex3">Wrong Answer 2:</label>
-                          <input type="text" class="form-control" id="wrong_answer2" name="wrong_answer2" placeholder="Wrong answer 2" Required>
+                          <input type="text" class="inputwidthforvreateuser" id="wrong_answer2" name="wrong_answer2" placeholder="Wrong answer 2" Required>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <div class="col-xs-8">
+                      <div class="row">
+                        <div class="col">
                           <label for="ex3">Wrong Answer 3:</label>
-                          <input type="text" class="form-control" id="wrong_answer3" name="wrong_answer3" placeholder="Wrong answer 3" Required>
+                          <input type="text" class="inputwidthforvreateuser" id="wrong_answer3" name="wrong_answer3" placeholder="Wrong answer 3" Required>
                         </div>
                       </div>
                       <center class="table_heading">
                         <div class="btn-group">
-                          <div class="col-sm-offset-2 col-sm-10">
-                            <center class="table_heading">
-
-                              <button type="submit" name="submit" onclick='return ask3()' class="button_signup_member">Submit</button>
-
-                          </div>
+                            <div class="row">
+                              <div class="col">
+                              <button type="submit" name="submit" onclick='return ask3()' class="button_signup_member_1">Submit</button>
+                                  <form class="" action="test.php" method="post">
+                                  <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
+                                  <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>
+                                  <button type="submit" name="selectedcourse" class="button_signup_member_2">Back to test page</button>
+                              </form>
+                                  </div>
+                            </div>
 
                       </form>
-                        <form class="" action="test.php" method="post">
-                            <div class="col-sm-offset-2 col-sm-10">
-                            <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
-                            <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>
-                            <button type="submit" name="selectedcourse" class="btn-danger button_signup_member">Back to test page</button>
-                          </div>
-                          </div>
-                          </center>
 
-                          </form>
+                    </center>
 
                     </div>
-                  </div>
 
+                  </div>
+                    </div>
                            <div class="row">
 
                              <div class="col-md-11 col-md-7">
-
+<br>
+<br>
+<br>
                                 <center class="table_heading">
-                               <h3>Edit question for:</h3>
-                               <h2> <?= $test_name ?></h2>
+                               <h3>Edit question for <?= $test_name ?></h3>
                              </center>
                              <div class="search_results" id="search_results">
 
@@ -183,11 +182,9 @@ include_once('database.php');
 
      </div>
 
-
+  </div>
+    </div>
 	<?php include("include/footer.inc") ?>
 <script type="text/javascript" src="js/confirmation.js"></script>
-
-
-
-  </body>
+</body>
 </html>

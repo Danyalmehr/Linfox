@@ -350,8 +350,10 @@ footer {
 
 /*-------------------------------------------------------------------------------------------- Create user START------------------------------------------------------------------------ */
 @media only screen and (max-width: 429px) {
+	/*--------------------------------------------for Mobile----------------------------------------------------------- */
 
-	.inputwidthforvreateuser{width:10em; border: 1px solid gray;}
+
+	.inputwidthforvreateuser{width:10em; border: 1px solid gray;border-radius: 2px;}
 
 
 	.containermember{align-items: center;text-align: center;}
@@ -361,11 +363,78 @@ footer {
 
 		.member label {
 			text-align: left;
-				width: 7em;
-				font-size: 0.7em;
-				margin-right:2%;
+				width: 4em;
+				font-size: 0.9em;
 				float: left;
 		}
+
+
+					.button_signup_member_2
+					{
+						display: inline-block;
+						border-radius: 4px;
+						background-color: #ff9977;
+						border: none;
+						position: relative;
+						color: White;
+						text-align: center;
+						font-size: 18px;
+						padding: 1%;
+						width: 8em;
+						transition: all 0.5s;
+						cursor: pointer;
+						margin: 5px;
+					}
+
+					.button_signup_member_2:hover {
+						display: inline-block;
+						border-radius: 4px;
+						background-color: #ff7733;
+						border: none;
+						position: relative;
+						color: black;
+					height: auto;
+						font-size: 18px;
+						padding: 1%;
+						width: 8em;
+						transition: all 0.5s;
+						cursor: pointer;
+						margin: 5px;
+					}
+
+				.button_signup_member_1
+				{
+					display: inline-block;
+					border-radius: 4px;
+					background-color: #07D14A;
+					border: none;
+					position: relative;
+					color: #FFFFFF;
+					text-align: center;
+					font-size: 18px;
+					padding: 1%;
+					width: 4em;
+					transition: all 0.5s;
+					cursor: pointer;
+					margin: 5px;
+				}
+
+				.button_signup_member_1:hover {
+					display: inline-block;
+					border-radius: 4px;
+					background-color: #1C8F42;
+					border: none;
+					position: relative;
+					color: #FFFFFF;
+			  	height: auto;
+					font-size: 18px;
+					padding: 1%;
+					width: 4em;
+					transition: all 0.5s;
+					cursor: pointer;
+					margin: 5px;
+				}
+
 
 		.button_signup_member {
 			display: inline-block;
@@ -431,21 +500,91 @@ footer {
 
 @media only screen and (max-width: 771px) and (min-width: 426px) {
 
-	.inputwidthforvreateuser{width: 15.5em; border: 1px solid gray;}
-
+	.inputwidthforvreateuser{width: 15.5em; border: 1px solid gray;border-radius: 2px;}
 	.containermember{align-items: center;text-align: center;}
 
-		.member {margin-left:; padding:3%; width:auto;border:1px solid #B39019;position: relative;
+		.member {margin-left:; padding:2%; width:auto;border:1px solid #B39019;position: relative;
 		color:black; border-radius:1px;}
 
 		.member label {
 			text-align: left;
-				width: 7em;
+				width: 4em;
 				float: left;
 			padding:0.5%;
 			padding-right: 0.5em;
 
 		}
+
+			.button_signup_member_2
+			{
+				display: inline-block;
+				border-radius: 4px;
+				background-color: #ff9977;
+				border: none;
+				left: -32%;
+				position: relative;
+				color: White;
+				text-align: center;
+				font-size: 18px;
+				padding: 1%;
+				width: 8em;
+				transition: all 0.5s;
+				cursor: pointer;
+				margin: 5px;
+			}
+
+			.button_signup_member_2:hover {
+				display: inline-block;
+				border-radius: 4px;
+				background-color: #ff7733;
+				border: none;
+				position: relative;
+				color: black;
+			height: auto;
+				font-size: 18px;
+				padding: 1%;
+				width: 8em;
+				transition: all 0.5s;
+				cursor: pointer;
+				margin: 5px;
+			}
+
+		.button_signup_member_1
+		{
+			display: inline-block;
+			border-radius: 4px;
+			background-color: #07D14A;
+			border: none;
+			left: -34%;
+			position: relative;
+			color: #FFFFFF;
+			text-align: center;
+			font-size: 18px;
+			padding: 1%;
+			width: 4em;
+			transition: all 0.5s;
+			cursor: pointer;
+			margin: 5px;
+		}
+
+		.button_signup_member_1:hover {
+			display: inline-block;
+			border-radius: 4px;
+			background-color: #1C8F42;
+			border: none;
+			position: relative;
+			color: #FFFFFF;
+		height: auto;
+			font-size: 18px;
+			padding: 1%;
+			width: 4em;
+			transition: all 0.5s;
+			cursor: pointer;
+			margin: 5px;
+		}
+
+
+
 
 		.button_signup_member {
 			display: inline-block;
@@ -512,7 +651,7 @@ footer {
 
 @media only screen and (min-width: 770px) {
 
-.inputwidthforvreateuser{width: 15.5em; border: 1px solid gray;}
+.inputwidthforvreateuser{width: 15.5em; border: 1px solid gray;border-radius: 2px;}
 .containermember{align-items: center;text-align: center;}
 
 	.member {margin-left:4%; padding:6%; width:90%;border:1px solid #B39019;position: relative;
@@ -520,12 +659,83 @@ footer {
 
 	.member label {
 		text-align: left;
-			width: 7em;
+			width: 9em;
 			float: left;
 		padding:0.5%;
 		padding-right: 0.5em;
 
 	}
+
+
+
+
+	.button_signup_member_2
+	{
+		display: inline-block;
+		border-radius: 4px;
+		background-color: #ff9977;
+		border: none;
+		left: -32%;
+		position: relative;
+		color: White;
+		text-align: center;
+		font-size: 18px;
+		padding: 1%;
+		width: 8em;
+		transition: all 0.5s;
+		cursor: pointer;
+		margin: 5px;
+	}
+
+	.button_signup_member_2:hover {
+		display: inline-block;
+		border-radius: 4px;
+		background-color: #ff7733;
+		border: none;
+		position: relative;
+		color: black;
+	height: auto;
+		font-size: 18px;
+		padding: 1%;
+		width: 8em;
+		transition: all 0.5s;
+		cursor: pointer;
+		margin: 5px;
+	}
+
+.button_signup_member_1
+{
+	display: inline-block;
+	border-radius: 4px;
+	background-color: #07D14A;
+	border: none;
+	left: -34%;
+	position: relative;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 18px;
+	padding: 1%;
+	width: 4em;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.button_signup_member_1:hover {
+	display: inline-block;
+	border-radius: 4px;
+	background-color: #1C8F42;
+	border: none;
+	position: relative;
+	color: #FFFFFF;
+height: auto;
+	font-size: 18px;
+	padding: 1%;
+	width: 4em;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+}
 
 	.button_signup_member {
 		display: inline-block;

@@ -17,10 +17,10 @@ form p{font-size:1em; text-align: left; position: relative;left:10%; width: 76%;
 		}
 			.col-md-8{border:1px solid black; padding: 3%; border-radius:1%; margin-top:2%; width: 100%;}
 
-		input , label {
+	/*input , label {
 				  position: relative;
 				  left: 17%;
-		}
+		}*/
 
 	.procedure-button{margin: auto;}
 
