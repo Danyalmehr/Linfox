@@ -40,7 +40,7 @@ include_once('include/database.php');
             <li class='has-sub'><a href=''><span> <?php echo " Welcome $fname ! "; ?></span></a>
 
               <ul>
-                <li class='last'><a href='index.php'><span> Sign Out </span></a></li>
+                <li class='last'><a href='signout.php'><span> Sign Out </span></a></li>
               </ul>
             </li>
           </ul>

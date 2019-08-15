@@ -1,12 +1,18 @@
 <?php
+session_start();
 if(!isset($_SERVER['HTTP_REFERER'])){
     // redirect them to your desired location
     header('location: index.php');
     exit;
 }
+elseif ($_SESSION['usertype'] == '') {
+    // code...
+    header('location: index.php');
+    exit;
+  }
 
 require 'database.php';
-session_start();
+
 //echo "successful";
 
 
@@ -133,38 +139,12 @@ session_start();
                         <div class="content">
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid course">
-					<h1 style="margin: 1em"> Available Courses</h1>
-
-
-	<?php
-
-
-					$courses = "SELECT *
-          FROM courses
-          ";
-					$result = mysqli_query($con,$courses);
+					<h1 style="margin: 1em"> Admin Dashboard</h1>
 
 
 
-					while ($row=mysqli_fetch_array($result))
-              {
-                $course_name=$row['course_name'];
-                $course_id=$row['course_id'];
-                $course_desc=$row['course_desc'];
-                $course_video=$row['course_video'];
 
 
-
-?>
-            <form class="" action="user-test.php" method="post">
-
-              <button type="submit" name="selectedcourse" class="btn btn-outline-dark btn-lg span5 btn-course" style="margin-left:0.5em"><span><?= $course_name ?></span></button>
-            </form>
-
-<?php
-
-    }
-?>
                                 </div>
 
                             </div>

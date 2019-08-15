@@ -106,11 +106,7 @@ include_once('database.php');
 
 </head>
 <body onLoad="run_first()">
-  <?php   if ($_SESSION['usertype'] != 'admin') {
-      echo "You are not allowed";
-      die();
-    }
-       ?>
+
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
 

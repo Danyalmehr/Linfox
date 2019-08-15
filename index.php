@@ -16,7 +16,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $conn -> query($sql);
     $numOfRows = $result -> num_rows;
     $row = $result -> fetch_assoc();
-    $usertype = $row['user_type'];
+    $_SESSION['usertype'] = $row['user_type'];
+    $usertype = $_SESSION['usertype'];
     if ($numOfRows == 1 and $usertype == 'Employee')
     {
         $_SESSION['valid_user'] = $email;
