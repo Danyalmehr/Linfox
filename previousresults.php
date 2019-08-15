@@ -29,15 +29,121 @@ include_once('database.php');
     <title>Previous Results</title>
 </head>
 <style>
+	
+	
+	
 .table_heading {font-size: 30px;padding: 3%;}
 .result_banner{width: 100%;background-color: #E8E1E1;font-size: 1.2em; font-weight: 500;padding: 3%;border-radius: 3%;margin-top:4%;}
+	
+	
+	@media only screen and (max-width: 768px) and (min-width: 428px) {
+		
+		h1, h2{
+				font-size: 18px;
+			}
+		
+		body .admin-side{
+			width: 100%;
+			display: inline;
+		}
+					
+					
+					.sidebar {
+    width: 10%;
+    height: 90%;
+    position: relative;
+			display: inline;
+			
+			
+  }
+ li a {float:left;
+	height: 1%;
+	 border-width: 0;
+		
+	  margin-left: 0.15em;
+	 font-size: 9px;
+		}
+		
+		i {
+			float:left;
+			
+		}
+
+
+
+		.results{
+			margin-left: 25em;
+		}
+		
+		
+		}
+		
+		@media only screen and (max-width: 428px) {
+			
+			h1, h2{
+				font-size: 18px;
+			}
+		
+		body .admin-side{
+			width: 100%;
+			display: inline;
+		}
+			
+		.sidebar {
+    width: 10%;
+    height: 90%;
+    position: relative;
+			display: inline;
+			
+			
+  }
+ li a {float:left;
+	height: 1%;
+	 border-width: 0;
+		
+	  margin-left: 0.05em;
+	 font-size: 7px;
+		}
+		
+		i {
+			float:left;
+			
+		}
+		}
+	
+	
 </style>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
-      <?php include("user-side-dash.html") ?>
+      
+		<div class="sticky-top">
+                      <div class="span3">
+                          <div class="sidebar" style="display: inline">
+                              <ul class="widget widget-menu unstyled">
+                                  <li class="left_icon"><a href="dashboard.php"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                  </a></li>
+                                  <!--<li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
+                                  </li>-->
+
+                                  <li><a href="Stest.php"><i class="menu-icon icon-inbox"></i>Test <!--<b class="label green pull-right">
+                                      11</b>--> </a></li>
+
+
+                                  <li class="active"><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
+                                          <li><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
+                                                  <li><a href="index.php"><i class="menu-icon icon-signou"></i>Logout </a></li>
+
+                </ul>
+
+                          </div>
+                          <!--/.sidebar-->
+                      </div>
+	
+	</div>
+		
     	<div class="row">
 
 

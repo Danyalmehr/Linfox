@@ -9,8 +9,10 @@ include_once('database.php');
 <head>
       <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/responsive.css">
+    
         <link rel="stylesheet" href="css/test.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -69,6 +71,32 @@ include_once('database.php');
 
 				width: 100%;
 			}
+			
+			body .admin-side{
+			width: 100%;
+			display: inline;
+		}
+		
+		.sidebar {
+    width: 10%;
+    height: 90%;
+    position: relative;
+			display: inline;
+			
+			
+  }
+ li a {float:left;
+	height: 1%;
+	 border-width: 0;
+		
+	  margin-left: 0.15em;
+	 font-size: 9px;
+		}
+		
+		i {
+			float:left;
+			
+		}
 
 }
 
@@ -95,6 +123,33 @@ include_once('database.php');
 			.test {
 				margin-left: 1%;
 			}
+			
+			
+			body .admin-side{
+			width: 100%;
+			display: inline;
+		}
+			
+		.sidebar {
+    width: 10%;
+    height: 90%;
+    position: relative;
+			display: inline;
+			
+			
+  }
+ li a {float:left;
+	height: 1%;
+	 border-width: 0;
+		
+	  margin-left: 0.05em;
+	 font-size: 7px;
+		}
+		
+		i {
+			float:left;
+			
+		}	
 
 		}
 
@@ -111,7 +166,30 @@ include_once('database.php');
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
-      <?php include("user-side-dash.html") ?>
+     <div class="sticky-top">
+                      <div class="span3">
+                          <div class="sidebar" style="display: inline">
+                              <ul class="widget widget-menu unstyled">
+                                  <li class="left_icon"><a href="dashboard.php"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                  </a></li>
+                                  <!--<li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
+                                  </li>-->
+
+                                  <li class="active"><a href="Stest.php"><i class="menu-icon icon-inbox"></i>Test <!--<b class="label green pull-right">
+                                      11</b>--> </a></li>
+
+
+                                  <li><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
+                                          <li><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
+                                                  <li><a href="index.php"><i class="menu-icon icon-signou"></i>Logout </a></li>
+
+                </ul>
+
+                          </div>
+                          <!--/.sidebar-->
+                      </div>
+	
+	</div>
 
 
     	<div class="row video">
