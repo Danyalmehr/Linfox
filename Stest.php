@@ -156,7 +156,7 @@ include_once('database.php');
               ";
               $result=mysqli_query($con,$fetchqry);
               if ($attemptNumber <= 10) {
-              $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`, `user_id`, `att_number`, `att_date`, `att_status`) values (0, '$test_id', '$user' , '$attemptNumber', '$date', 'Fail')";
+              $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`, `user_id`, `att_number`, `att_date`, `att_status`) values (0, '$test_id', '$user' , '$attemptNumber', '$date', 'FAIL')";
               $result3 = mysqli_query($con,$fetchqry3);
               $questionNum = 1;
               while ($row = mysqli_fetch_array($result))
