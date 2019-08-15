@@ -128,8 +128,8 @@ include_once('include/database.php');
                                       11</b>--> </a></li>
 
 
-                                  <li class="active"><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
-                                          <li><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
+                                  <li><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
+                                          <li class="active"><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
                                                   <li><a href="index.php"><i class="menu-icon icon-signou"></i>Logout </a></li>
 
                 </ul>
