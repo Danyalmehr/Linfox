@@ -68,34 +68,6 @@ include_once('database.php');
 					.options label{
 						font-size: 12px;
 					}
-					
-					body .admin-side{
-			width: 100%;
-			display: inline;
-		}
-					
-					
-					.sidebar {
-    width: 10%;
-    height: 90%;
-    position: relative;
-			display: inline;
-			
-			
-  }
- li a {float:left;
-	height: 1%;
-	 border-width: 0;
-		
-	  margin-left: 0.15em;
-	 font-size: 9px;
-		}
-		
-		i {
-			float:left;
-			
-		}
-
 }
 
 		@media only screen and (max-width: 428px) {
@@ -114,33 +86,6 @@ include_once('database.php');
 					.options label{
 						font-size: 10px;
 					}
-			
-			
-			body .admin-side{
-			width: 100%;
-			display: inline;
-		}
-			
-		.sidebar {
-    width: 10%;
-    height: 90%;
-    position: relative;
-			display: inline;
-			
-			
-  }
- li a {float:left;
-	height: 1%;
-	 border-width: 0;
-		
-	  margin-left: 0.05em;
-	 font-size: 7px;
-		}
-		
-		i {
-			float:left;
-			
-		}	
 
 
 		}
@@ -157,31 +102,7 @@ include_once('database.php');
     <?php include("date.php") ?>
 
     <div class="container-fluid">
-    <div class="sticky-top">
-                      <div class="span3">
-                          <div class="sidebar" style="display: inline">
-                              <ul class="widget widget-menu unstyled">
-                                  <li class="left_icon"><a href="dashboard.php"><i class="menu-icon icon-dashboard"></i>Dashboard
-                                  </a></li>
-                                  <!--<li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
-                                  </li>-->
-
-                                  <li class="active"><a href="Stest.php"><i class="menu-icon icon-inbox"></i>Test <!--<b class="label green pull-right">
-                                      11</b>--> </a></li>
-
-
-                                  <li><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
-                                          <li><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
-                                                  <li><a href="index.php"><i class="menu-icon icon-signou"></i>Logout </a></li>
-
-                </ul>
-
-                          </div>
-                          <!--/.sidebar-->
-                      </div>
-	
-	</div>
-
+      <?php include("user-side-dash.html") ?>
 
           	<div class="row">
 
