@@ -1,2 +1,0 @@
-# Linfox
-ICT 1

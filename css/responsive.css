@@ -818,6 +818,8 @@ height: auto;
 
 
 /*.edit_member,input{width: 110px; border: 1px solid white;}*/
+
+
 .inputwidthforemailandotherinputintable3 {
 	 background-color: transparent;
     border-bottom:2px solid #ff7733;
@@ -827,7 +829,6 @@ height: auto;
 		border-radius: 9px;
 		padding: 8px;
     height: 2em;
-		width: 100%;
     color: #ff7733;
 	}
 
@@ -1395,7 +1396,8 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 	.delete{background-color: transparent;border: none;}
 	.delete:hover{background-color:transparent; border-bottom:1px dotted #ff7733;}
 	.glyphicon:hover{font-size: 1em;color: #ff7733;}
-	.inputwidthforemailandotherinputintable{color:black;}
+	.inputwidthforemailandotherinputintable{color:black;background-color: transparent;
+	    border: 0px solid;width:3em;font-size: 10px;}
 	.inputwidthforemailandotherinputintable:hover{color: #ff7733;border: 1px dotted #ff7733;}
 }
 
@@ -1407,7 +1409,8 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 	#search_table th{padding:1%; margin:1%;font-size:1em;alignment-adjust:central; border:2px solid black;  text-align: center;}
 	#search_table td{padding:1%; margin:1%; border:2px solid black; resize:both;}
 	.glyphicon{font-size: 1.5em; width: 2em;color:black;}
-	.inputwidthforemailandotherinputintable{color:black;}
+	.inputwidthforemailandotherinputintable{color:black;background-color: transparent;
+	    border: 0px solid;width:4em;}
 	.delete{background-color: transparent;border: none;}
 	.delete:hover{background-color:transparent; border-bottom:2px dotted #ff7733;}
 	.glyphicon:hover{font-size: 1.5em;color: #ff7733;}
@@ -1419,7 +1422,8 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 .search_results{ margin:3%; align-content:left; padding:1%; color:black; border-radius:5px;}
 #search_table th{padding:2%; margin:3%;font-size:1em;alignment-adjust:left; border:2px solid black;}
 #search_table td{padding:2%; margin:3%; border:2px solid black; resize:both;}
-.inputwidthforemailandotherinputintable{color:black;}
+.inputwidthforemailandotherinputintable{color:black;background-color: transparent;
+		border: 0px solid;width:7em;}
 .glyphicon{font-size: 1.5em; width: 2em;color:black;}
 .delete{background-color: transparent;border: none;}
 .delete:hover{background-color:transparent; border-bottom:2px dotted #ff7733;}
@@ -1479,78 +1483,77 @@ p {
 
 
 @media only screen and (max-width: 768px) and (min-width: 428px) {
-	
-		
+
+
 		body {
 			font-size: 14px;
 		}
-			
+
 		body .admin-side{
 			width: 100%;
 			display: inline;
 		}
-		
+
 		.sidebar {
     width: 10%;
     height: 90%;
     position: relative;
 			display: inline;
-			
-			
+
+
   }
  li a {float:left;
 	height: 1%;
 	 border-width: 0;
-		
+
 	  margin-left: 0.15em;
 	 font-size: 9px;
 		}
-		
+
 		i {
 			float:left;
-			
+
 		}
-		
-		
-		
- 
-			
-				
+
+
+
+
+
+
 }
-		
+
 		@media only screen and (max-width: 428px) {
-		
-			
+
+
 			body {
 			font-size: 12px;
 		}
-			
+
 		body .admin-side{
 			width: 100%;
 			display: inline;
 		}
-			
+
 		.sidebar {
     width: 10%;
     height: 90%;
     position: relative;
 			display: inline;
-			
-			
+
+
   }
  li a {float:left;
 	height: 1%;
 	 border-width: 0;
-		
+
 	  margin-left: 0.05em;
 	 font-size: 7px;
 		}
-		
+
 		i {
 			float:left;
-			
-		}	
-			
-			
+
 		}
-	
+
+
+		}

@@ -38,7 +38,7 @@
 		</div>
 
 		<div>
-			<i class="fa fa-envelope-open"></i>
+			<i class="fa fa-envelope-o"></i>
 			<p><a href="info@urban-xtreme.com.au"> info@urban-xtreme.com.au </a></p>
 		</div>
 	</div>
