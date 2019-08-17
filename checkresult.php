@@ -63,7 +63,7 @@ require 'database.php';
           <center class="result_display">
               <?php
                 echo "<h2>Course name: ".  $_SESSION["coursename"] . "</h2><br>";
-                echo " <h2>Test name: ".  $_SESSION["testName"] . "</h2><br>";
+                echo " <h2>Test name: ".  $_SESSION['testname'] . "</h2><br>";
                 echo "<h4>Submission date: ".  $date . "</h4>";
 
               ?>
