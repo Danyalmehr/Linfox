@@ -24,84 +24,10 @@ include_once('database.php');
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
 
-    <title>Training Videos</title>
-
-
-	<style>
-		.test .btn {
-
-				width: 100%;
-			}
-
-		.videos {
-			margin-left: 2em;
-			margin-bottom: 2em;
-		}
-		.test {
-			margin-left: 20%;
-		}
-
-
-		@media only screen and (max-width: 768px) and (min-width: 428px) {
-
-			.test {
-			margin-left: 1%;
-		}
-
-
-	.videos {
-
-		margin-left: 0em;
-
-	}
-
-
-			.test h1, .videos h2{
-				font-size: 18px;
-			}
-
-			.test .test_name{
-
-				font-size: 14px;
-			}
-
-			.test, button {
-
-				width: 100%;
-			}
-
-}
-
-		@media only screen and (max-width: 428px) {
-			.videos {
-
-		margin-left: 0em;
-
-	}
-
-			.test h1, .videos h2{
-				font-size: 16px;
-			}
-
-			.test .test_name{
-
-				font-size: 12px;
-			}
-			.test, button {
-
-				width: 100%;
-			}
-
-			.test {
-				margin-left: 1%;
-			}
-
-		}
+    <title>Test options</title>
 
 
 
-
-	</style>
 
 
 </head>
@@ -113,43 +39,23 @@ include_once('database.php');
     <div class="container-fluid">
       <?php include("user-side-dash.html") ?>
 
+      <?php   if(isset($_POST['selectedcourse'])){
+          $course_id = $_POST['course_id'];
+          $_SESSION["coursename"] = $_POST['course_name'];
+          $test = "SELECT *
+                    FROM test
+                    WHERE course_id = $course_id
+                    ";
+                    $result = mysqli_query($con,$test);
+                    $num=mysqli_num_rows($result);
 
-    	<div class="row video">
+                    ?>
 
-            <?php   if(isset($_POST['selectedcourse'])){
-                $course_id = $_POST['course_id'];
-                $course_video = $_POST['course_video'];
-                $_SESSION["coursename"] = $_POST['course_name'];
-                $test = "SELECT *
-                          FROM test
-                          WHERE course_id = $course_id
-                          ";
-                          $result = mysqli_query($con,$test);
-                          $num=mysqli_num_rows($result);
-
-                          ?>
-
-
-                <div class="col-md-8 videos">
-                  	<h2> Training Videos</h2>
-					<?php
-
-                echo "<iframe class=\"iframe\" width=\"90%\" height=\"415\" src=\"https://www.youtube.com/embed/$course_video\ frameborder=\"0\" allow=\"accelerometer\"; \"autoplay\"; \"encrypted-media\"; \"gyroscope\"; \"allowfullscreen\"></iframe>";
-
-
-
-
-
-	?>
-
-        </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-2">
-
-      </div>
-      <div class=test>
+    	<div class="row">
+      <div class="col-md-12">
+          <div class="content">
+              <div class="btn-controls">
+                  <div class="btn-box-row row-fluid course">
 
 
                   <h1>Tests for <?= $_SESSION["coursename"] ?> </h1>
@@ -160,8 +66,6 @@ include_once('database.php');
                     echo "No test available!";
                     ?>
                     <a href="dashboard.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> Back to home page </span> </button></a>
-
-
                     <?php
                   }
                   else {
@@ -172,11 +76,12 @@ include_once('database.php');
                         $test_id=$row['test_id'];
                         $test_name = $row['test_name'];
                         ?>
-                        <form class="test_name" action="stest.php" method="post">
-                          <input type="hidden" name="testid" value="<?=$test_id?>"><label><?php $test_id?></label>
-                          <input type="hidden"  name="test_name" value="<?=$test_name?>"><label><?php $test_name?></label>
+                        <form class="test" action="test-video.php" method="post">
+                          <input type="hidden" name="test_id" value="<?=$test_id?>"><label for=""><?php $test_id?></label>
+                          <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
+                          <input type="hidden" name="test_name" value="<?=$test_name?>"><label for=""><?php $test_name?></label>
 
-                          <button onclick='return ask6()' id="test_name" type="submit" class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto; margin-left: -2px;"> <span class="test_name"> <?= $test_name ?> </span> </button>
+                          <button type="submit" name="selectedtest" class="btn btn-outline-dark btn-lg span5 btn-course test" style="margin-left:0.5em"><span class="course_name"><?= $test_name ?></span></button>
                         </form>
 
 
@@ -193,8 +98,10 @@ include_once('database.php');
 
                        </div>
                        </div>
-
-	</div>
+                     </div>
+                   </div>
+                 </div>
+              	</div>
 
 <?php include("include/footer.inc") ?>
   <script type="text/javascript" src="js/confirmation.js"></script>

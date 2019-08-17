@@ -46,8 +46,8 @@ session_start();
 			margin-top: 2em;
 			margin-left: 1em;
 		}
-		
-		
+
+
 		.course .btn-course:hover {background-color: #4E4E4E;
 		box-shadow: 0 5px #666;
 			transform: translateY(4px);
@@ -55,17 +55,17 @@ session_start();
 			opacity: 2;
 			transition: 0.3s;
 			padding-right: 100px;
-		
+
 		}
 
 .course .btn-course:active {
   background-color: #3e8e41;
-  
+
   ;
 }
-		
-		
-		
+
+
+
 		.course{
 			margin-left: 1em;
 		}
@@ -76,40 +76,40 @@ session_start();
     }
     a:hover{text-decoration: none;
     color: White;}
-		
-		
-		
+
+
+
 
 	@media only screen and (max-width: 768px) and (min-width: 428px) {
-	
-			
+
+
 			.course h1{
 				font-size: 18px;
 			}
-			
-				
+
+
 }
-		
+
 		@media only screen and (max-width: 428px) {
 			.videos {
-		
+
 		margin-left: 0em;
-		
+
 	}
-			
+
 			.test h1, .videos h2{
 				font-size: 16px;
 			}
-			
+
 			.test .test_name{
-				
+
 				font-size: 12px;
 			}
 			.test .btn {
-				
+
 				width: 100%;
 			}
-			
+
 		}
 
 }
@@ -146,17 +146,13 @@ session_start();
                 $course_name=$row['course_name'];
                 $course_id=$row['course_id'];
                 $course_desc=$row['course_desc'];
-                $course_video=$row['course_video'];
-
 
 
 ?>
             <form class="test" action="user-test.php" method="post">
               <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
               <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>
-              <input type="hidden" name="course_video" value="<?=$course_video?>"><label for=""><?php $course_video?></label>
-				
-				
+
               <button type="submit" name="selectedcourse" class="btn btn-outline-dark btn-lg span5 btn-course test" style="margin-left:0.5em"><span class="course_name"><?= $course_name ?></span></button>
             </form>
 

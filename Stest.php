@@ -114,8 +114,8 @@ include_once('database.php');
     $user = $_SESSION["userid"];
     if(isset($_POST['selectedtest']))
       			{
-              $test_id = $_POST['testid'];
-              $test_name = $_POST['test_name'];
+              $test_id = $_POST['test_id'];
+
                 $fetchqry1 = "SELECT user_id, max(att_number)
                 FROM attempt
                 WHERE user_id = $user AND test_id = $test_id
@@ -139,11 +139,11 @@ include_once('database.php');
               $result7=mysqli_query($con,$fetchqry7);
               $row7 = mysqli_fetch_array($result7);
               $_SESSION["coursename"] = $row7['course_name'];
-              $_SESSION["testName"] = $test_name;
+
               ?>
               <center class="result_display">
-            <?php  echo "<h2>Course name:".  $_SESSION["coursename"] . "</h2><br>";
-              echo " <h2>Test name:".  $_SESSION["testName"] . "</h2>";
+            <?php  echo "<h2>Course name: ".  $_SESSION["coursename"] . "</h2><br>";
+              echo " <h2>Test name: ".  $_SESSION['testname'] . "</h2>";
               echo " <h4>This is your attempt number:".  $attemptNumber . "</h4>";
               ?>
 
