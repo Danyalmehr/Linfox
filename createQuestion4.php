@@ -72,6 +72,7 @@ include_once('database.php');
           <div class="row">
             <div class="col-md-1">
 
+
             </div>
               <div class="col-md-8">
                 <center class="table_heading">
@@ -80,11 +81,38 @@ include_once('database.php');
                   <h3>Test name: <?= $test_name?> </h3>
                   <h1> Create Question</h1>
 
+                  <button type="button" name="button" onclick="showmcqform();" value="">Multiple Choice Questions</button>
+                  <button type="button" name="button" onclick="hidemcqform();" value="">Short Answer Questions</button>
+
+
                 </center>
 
 
+                                      <form class="form-horizontal" action="question-process.php" id="shortanswerform" method="post" style="display:none;">
+                                        <div class="form-group">
+                                          <div class="col-xs-8">
+                                            <label for="ex3">Question:</label>
+                                            <input type="text" class="form-control" id="q" name="question" placeholder="Enter your question here" Required>
+                                          </div>
+                                        </div>
 
-                    <form class="form-horizontal" action="question-process.php" method="post">
+
+
+                                          <div class="btn-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                              <center class="table_heading">
+
+                                                <button type="submit" name="submit" onclick='return ask3()' class="button_signup_member">Submit</button>
+
+                                              </div>
+                                            </div>
+
+                                        </form>
+
+
+
+
+                    <form class="form-horizontal" action="question-process.php" id="mcqform" method="post" style="display:none;">
                       <div class="form-group">
                         <div class="col-xs-8">
                           <label for="ex3">Question:</label>
@@ -115,16 +143,21 @@ include_once('database.php');
                           <input type="text" class="form-control" id="wrong_answer3" name="wrong_answer3" placeholder="Wrong answer 3" Required>
                         </div>
                       </div>
-                      <center class="table_heading">
+
+
                         <div class="btn-group">
                           <div class="col-sm-offset-2 col-sm-10">
-                            <center class="table_heading">
 
-                              <button type="submit" name="submit" onclick='return ask3()' class="button_signup_member">Submit</button>
+                            <button type="submit" name="submit" onclick='return ask3()' class="button_signup_member">Submit</button>
 
                           </div>
 
                       </form>
+
+
+
+
+
                         <form class="" action="test.php" method="post">
                             <div class="col-sm-offset-2 col-sm-10">
                             <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
@@ -132,7 +165,6 @@ include_once('database.php');
                             <button type="submit" name="selectedcourse" class="btn-danger button_signup_member">Back to test page</button>
                           </div>
                           </div>
-                          </center>
 
                           </form>
 
@@ -195,7 +227,35 @@ include_once('database.php');
 	<?php include("include/footer.inc") ?>
 <script type="text/javascript" src="js/confirmation.js"></script>
 
+<script type="text/javascript">
+/*$(document).ready(function(){
 
+    $("#mcq").click(function(e) {
+        $("#mcqform").show();
+
+        e.preventDefault();
+
+    });
+});*/
+
+var mcqform = document.getElementById("mcqform");
+var shortanswerform = document.getElementById("shortanswerform");
+
+
+function showmcqform(){
+    mcqform.style.display = "block";
+    shortanswerform.style.display = "none";
+
+
+}
+
+function hidemcqform() {
+      shortanswerform.style.display = "block";
+      mcqform.style.display = "none";
+
+}
+
+</script>
 
   </body>
 </html>
