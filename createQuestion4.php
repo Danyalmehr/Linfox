@@ -97,15 +97,18 @@ include_once('database.php');
                                         </div>
 
 
+                                        <center class="table_heading">
 
                                           <div class="btn-group">
                                             <div class="col-sm-offset-2 col-sm-10">
-                                              <center class="table_heading">
 
                                                 <button type="submit" name="submit" onclick='return ask3()' class="button_signup_member">Submit</button>
 
+
                                               </div>
                                             </div>
+                                          </center>
+                                            
 
                                         </form>
 
@@ -144,6 +147,7 @@ include_once('database.php');
                         </div>
                       </div>
 
+                      <center>
 
                         <div class="btn-group">
                           <div class="col-sm-offset-2 col-sm-10">
@@ -167,6 +171,7 @@ include_once('database.php');
                           </div>
 
                           </form>
+                        </center>
 
                     </div>
                   </div>
