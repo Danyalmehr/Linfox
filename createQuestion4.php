@@ -97,18 +97,17 @@ include_once('database.php');
                                         </div>
 
 
-                                        <center class="table_heading">
 
                                           <div class="btn-group">
                                             <div class="col-sm-offset-2 col-sm-10">
 
-                                                <button type="submit" name="submit" onclick='return ask3()' class="button_signup_member">Submit</button>
+                                                <button type="submit" name="submit" onclick='return ask3()' class="btn-sm btn-primary">Submit</button>
 
 
                                               </div>
                                             </div>
-                                          </center>
-                                            
+
+
 
                                         </form>
 
@@ -147,12 +146,12 @@ include_once('database.php');
                         </div>
                       </div>
 
-                      <center>
+
 
                         <div class="btn-group">
                           <div class="col-sm-offset-2 col-sm-10">
 
-                            <button type="submit" name="submit" onclick='return ask3()' class="button_signup_member">Submit</button>
+                            <button type="submit" name="submit" onclick='return ask3()' class="btn-sm btn-primary">Submit</button>
 
                           </div>
 
@@ -166,12 +165,11 @@ include_once('database.php');
                             <div class="col-sm-offset-2 col-sm-10">
                             <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
                             <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>
-                            <button type="submit" name="selectedcourse" class="btn-danger button_signup_member">Back to test page</button>
+                            <button type="submit" name="selectedcourse" class="btn-sm btn-secondary">Back to test page</button>
                           </div>
                           </div>
 
                           </form>
-                        </center>
 
                     </div>
                   </div>
