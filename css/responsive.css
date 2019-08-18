@@ -18,19 +18,13 @@ h2 {
 
 p {
 	font-size:11px;
-	color:black;
 	/*text-align:justify;*/
 	word-spacing:0.5px;}
 
-footer {
-	clear: both;
-	margin-top: 10px;
-	background-color: #cccccc;
-	text-align: center;
-}
 
 #banner h1 {
 	text-align:center;
+	ba
 	}
 
 #slide {
@@ -894,15 +888,15 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 
 @media only screen and (min-width: 769px) {
 .footer-distributed{
-	background-color:#E8E1E1;
+	background-color:black;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
 	font:16px;
-	padding: 55px 50px;
+	padding:2%;
 	margin-top: 80px;
-	border-top: 2px solid black;
+	border-top: 2px solid #ff7733;
 }
 
 .footer-distributed .footer-left,
@@ -915,26 +909,27 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 /* Footer left */
 
 .footer-distributed .footer-left{
-	width: 25%;
+	width: 40%;
+	margin-left: 15%;
 }
 
 /* The company logo */
 
 .footer-distributed h3{
-	color:  #ffffff;
+	color:#ff7733;
 	font: normal 36px 'Cookie', cursive;
 	margin: 0;
 }
 
 .footer-distributed h3 span{
-	color:black; /* U N I Q U E Logo */
+	color:#ff7733; /* U N I Q U E Logo */
 	font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, DejaVu Sans, Verdana," sans-serif";
 }
 
 /* Footer links */
 
 .footer-distributed .footer-links{
-	color:black;
+	color:#ff7733;
 	margin: 20px 0 12px;
 	padding: 0;
 }
@@ -956,14 +951,14 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 /*-------------------------------------------------Footer Center------------------------------------------ */
 
 .footer-distributed .footer-center{
-	width: 30%;
+	width: 40%;
 }
 
 .footer-distributed .footer-center i{
-	background-color:  #E8E1E1;
-	color: black;
-	font-size: 22px;
-	width: 38px;
+	background-color:Black;
+	color: #ff7733;
+	font-size: 29px;
+	width: 36px;
 	height: 38px;
 	border-radius: 50%;
 	text-align: center;
@@ -979,7 +974,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 
 .footer-distributed .footer-center p{
 	display: inline-block;
-	color: black;
+		color: #ff7733;
 	vertical-align: middle;
 	margin:0;
 }
@@ -992,34 +987,9 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 }
 
 .footer-distributed .footer-center p a{
-	color:  black;
+	color:  #ff7733;
 	text-decoration: none;;
 }
-/*---------------------------------------------------------------------------------------------------------- */
-
-
-/*----------------------------------------------------------Footer Right */
-
-.footer-distributed .footer-right{
-	width: 40%;
-}
-
-.footer-distributed .footer-company-about{
-	line-height: 20px;
-	color:  #92999f;
-	font-size: 13px;
-	font-weight: normal;
-	margin: 0;
-}
-
-.footer-distributed .footer-company-about span{
-	display: block;
-	color:  black;
-	font-size: 14px;
-	font-weight: bold;
-	margin-bottom: 20px;
-}
-
 .footer-distributed .footer-icons{
 	margin-top: 25px;
 }
@@ -1029,11 +999,11 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
-	background-color:  #E8E1E1;
+	background-color:black;
 	border-radius: 2px;
 
 	font-size: 20px;
-	color: black;
+	color: #ff7733;
 	text-align: center;
 	line-height: 35px;
 
@@ -1042,6 +1012,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 }
 
 }
+/*---------------------------------------------------------------------------------------------------------- */
 
 /*-------------------------------
 		NAVBAR
@@ -1053,7 +1024,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 
 @media only screen and (max-width: 768px) and (min-width: 426px) {
 	.footer-distributed{
-		background-color:#E8E1E1;
+		background-color:black;
 		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 		box-sizing: border-box;
 		width: 100%;
@@ -1061,7 +1032,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 		font:16px;
 		padding: 55px 50px;
 		margin-top: 80px;
-		border-top: 2px solid black;
+		border-top: 2px solid #ff7733;
 	}
 
 	.footer-distributed .footer-left,
@@ -1075,13 +1046,13 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 
 	.footer-distributed .footer-left{
 		width: 40%;
-
+		margin-left: 6%;
 	}
 
 	/* The company logo */
 
 	.footer-distributed h3{
-		color:  #ffffff;
+		color:  #ff7733;
 		font: normal 36px 'Cookie', cursive;
 		margin: 0;
 	}
@@ -1107,7 +1078,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 	}
 
 	.footer-distributed .footer-company-name{
-		color:  #8f9296;
+		color:  #ff7733;
 		font-size: 14px;
 		font-weight: normal;
 		margin: 0;
@@ -1115,82 +1086,52 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 
 	/*-------------------------------------------------Footer Center------------------------------------------ */
 
-	.footer-distributed .footer-center{
-		width: 45%;
-		text-align: justify;
+	.footer-center{
+		width: 50%;
+		}
+
+	.footer-center i{
+    /* background-color: #E8E1E1; */
+     color: #ff7733;
+    font-size: 22px;
+    width: 38px;
+		left: 10px;
+    /* height: 38px; */
+    border-radius: 50%;
+    /* text-align: center; */
+    /* line-height: 42px; */
+    /* margin: 10px 15px; */
+    vertical-align: middle;
 	}
 
-	.footer-distributed .footer-center i{
-		background-color:  #E8E1E1;
-		color: black;
-		font-size: 22px;
-		width: 38px;
-		height: 38px;
-		border-radius: 50%;
-		text-align: justify;
-		line-height: 42px;
-		margin: 10px 15px;
-		vertical-align: middle;
-	}
-
-	.footer-distributed .footer-center i.fa-envelope{
+.footer-center i.fa-envelope{
 		font-size: 1px;
 		line-height: 38px;
+		color: #ff7733;
 	}
 
-	.footer-distributed .footer-center p{
+	.footer-distributed .footer-center.footer-p{
 		display: inline-block;
-		color: black;
-		vertical-align: middle;
-		margin:0;
-	}
+		color: #ff7733;
+		vertical-align: right;
+		margin: 20px;
 
-	.footer-distributed .footer-center p span{
+	}
+	.footer-p{color: #ff7733;}
+
+	.footer-distributed .footer-center .footer-p span{
 		display:block;
 		font-weight: normal;
 		font-size:14px;
 		line-height:2;
 	}
 
-	.footer-distributed .footer-center p a{
-		color:  black;
+	.footer-distributed .footer-center .footer-p a{
+		color:#ff7733;
 		text-decoration: none;;
 	}
-	/*---------------------------------------------------------------------------------------------------------- */
-
-
-	/*----------------------------------------------------------Footer Right----------------------------------- */
-
-	.footer-distributed .footer-right{
-		width: 90%;
-		text-align: center;
-		align-items:center;
-		margin-top: 5%;
-
-
-	}
-
-	.footer-distributed .footer-company-about{
-		line-height: 20px;
-		color:  #92999f;
-		font-size: 13px;
-		font-weight: normal;
-		margin: 0;
-		text-align: center;
-	}
-
-	.footer-distributed .footer-company-about span{
-		display: block;
-		color:  black;
-		font-size: 14px;
-		font-weight: bold;
-		margin-bottom: 20px;
-			text-align: center;
-	}
-
 	.footer-distributed .footer-icons{
 		margin-top: 25px;
-			text-align: center;
 	}
 
 	.footer-distributed .footer-icons a{
@@ -1198,27 +1139,25 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 		width: 35px;
 		height: 35px;
 		cursor: pointer;
-		background-color:  #E8E1E1;
+		background-color:black;
 		border-radius: 2px;
 
 		font-size: 20px;
-		color: black;
+		color:#ff7733;
 		text-align: center;
 		line-height: 35px;
 
-		margin-right: 3px;
-		margin-bottom: 5px;
-			text-align: center;
+	margin-bottom: 5px;
 	}
 
-
 }
+/*---------------------------------------------------------------------------------------------------------- */
 
 /* --------------------------------------------for Mobile---------------------------------------------- */
 @media only screen and (max-width: 429px) {
 
 	.footer-distributed{
-		background-color:#E8E1E1;
+		background-color:black;
 		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 		box-sizing: border-box;
 		width: 100%;
@@ -1226,7 +1165,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 		font:16px;
 		padding: 55px 50px;
 		margin-top: 80px;
-		border-top: 2px solid black;
+		border-top: 2px solid #ff7733;
 	}
 
 	.footer-distributed .footer-left,
@@ -1240,19 +1179,19 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 
 	.footer-distributed .footer-left{
 		width: 100%;
-		border-bottom: 2px solid black;
+		border-bottom: 1px solid #ff7733;
 	}
 
 	/* The company logo */
 
 	.footer-distributed h3{
-		color:  #ffffff;
+		color: #ff7733;
 		font: normal 36px 'Cookie', cursive;
 		margin: 0;
 	}
 
 	.footer-distributed h3 span{
-		color:black; /* U N I Q U E Logo */
+		color:#ff7733; /* U N I Q U E Logo */
 		font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, DejaVu Sans, Verdana," sans-serif";
 	}
 
@@ -1272,7 +1211,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 	}
 
 	.footer-distributed .footer-company-name{
-		color:  #8f9296;
+		color:#ff7733;
 		font-size: 14px;
 		font-weight: normal;
 		margin: 0;
@@ -1284,34 +1223,32 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 		width: 100%;
 		text-align: justify;
 		margin-top: 10%;
-		border-bottom: 2px solid black;
+		border-bottom: 1px solid #ff7733;
 	}
 
 	.footer-distributed .footer-center i{
-		background-color:  #E8E1E1;
-		color: black;
-		font-size: 22px;
-		width: 38px;
-		height: 38px;
-		border-radius: 50%;
-		text-align: justify;
-		line-height: 42px;
-		margin: 10px 15px;
-		vertical-align: middle;
-		width: 20%;
+		background-color: black;
+color: #ff7733;
+font-size: 22px;
+width: 38px;
+height: 38px;
+border-radius: 269px;
+text-align: justify;
+/* line-height: 42px; */
+text-align: -webkit-center;
+width: 18%;
+/* padding: 5px; */
+margin-left: 40px;
+margin-right: 20px;
 
 	}
 
-	.footer-distributed .footer-center i.fa-envelope{
-		font-size: 1px;
-		line-height: 38px;
-	}
 
 	.footer-distributed .footer-center p{
 		display: inline-block;
-		color: black;
+		color: #ff7733;
 		vertical-align: middle;
-		margin:0;
+
 	}
 
 	.footer-distributed .footer-center p span{
@@ -1319,11 +1256,11 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 		font-weight: normal;
 		font-size:14px;
 		line-height:2;
+		color: #ff7733;
 	}
 
 	.footer-distributed .footer-center p a{
-		color:  black;
-		text-decoration: none;;
+color: #ff7733;		text-decoration: none;;
 	}
 	/*---------------------------------------------------------------------------------------------------------- */
 
@@ -1334,13 +1271,13 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 		width: 100%;
 		text-align: center;
 		align-items:center;
-		margin-top: 5%;
+		margin-: 5%;
 
 	}
 
 	.footer-distributed .footer-company-about{
 		line-height: 20px;
-		color:  #92999f;
+		color:  #ff7733;
 		font-size: 13px;
 		font-weight: normal;
 		margin: 0;
@@ -1349,7 +1286,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 
 	.footer-distributed .footer-company-about span{
 		display: block;
-		color:  black;
+		color:  red;
 		font-size: 14px;
 		font-weight: bold;
 		margin-bottom: 20px;
@@ -1357,7 +1294,7 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 	}
 
 	.footer-distributed .footer-icons{
-		margin-top: 25px;
+			margin-top: 25px;
 			text-align: center;
 	}
 
@@ -1366,17 +1303,17 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 		width: 35px;
 		height: 35px;
 		cursor: pointer;
-		background-color:  #E8E1E1;
+		background-color: black;
 		border-radius: 2px;
 
 		font-size: 20px;
-		color: black;
+		color: #ff7733;
 		text-align: center;
 		line-height: 35px;
 
 		margin-right: 3px;
 		margin-bottom: 5px;
-			text-align: center;
+		text-align: center;
 	}
 
 }

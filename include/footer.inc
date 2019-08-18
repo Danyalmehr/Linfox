@@ -10,7 +10,7 @@
 	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 <footer class="footer-distributed">
 	<div class="footer-left">
-		<h2><span> URBAN XTREME </span></h2>
+		<h2><span style="color:#ff7733;"> URBAN XTREME </span></h2>
 			<p class="footer-links">
 					<a href="dashboard1.php"> Home | </a>
 
@@ -18,7 +18,7 @@
 
 					<a href="courses.php"> Courses </a>
 			</p>
-			<p class="footer-company-name"> URBAN XTREME &copy; 2019 </p>
+			<p class="footer-company-name" style="color:#ff7733;"> URBAN XTREME &copy; 2019 </p>
 			<div class="footer-icons">
 						<a href="https://www.facebook.com/urbanxtremeadventures"><i class="fa fa-facebook"></i></a>
 						<a href="https://www.youtube.com/channel/UCTeatMZqcozWTwczilShOWw"><i class="fa fa-youtube"></i></a>
@@ -29,33 +29,18 @@
 	<div class="footer-center">
 		<div>
 			<i class="fa fa-map-marker"></i>
-			<p> 6 Wentworth Parade , <br> Balmoral QLD 4171. </p>
+			<p class="footer-p" > 6 Wentworth Parade , <br> Balmoral QLD 4171. </p>
 		</div>
-
+			<br>
 		<div>
 			<i class="fa fa-phone"></i>
-			<p> +61-87654321 </p>
+			<p class="footer-p"> +61-87654321 </p>
 		</div>
-
-		<div>
-			<i class="fa fa-envelope-o"></i>
-			<p><a href="info@urban-xtreme.com.au"> info@urban-xtreme.com.au </a></p>
-		</div>
-	</div>
-
-	<div class="footer-right">
-		<p class="footer-company-about">
-		<big><p><b>ABOUT URBAN XTREME</b></p></big>
 		<br>
-		<b> SKI + ADVENTURE PARK </b>
-			<br>	<br>
-
-		<p style="text-align:justify;"><small> Urban Xtreme is the vision of Founder, Lindsay Davis supported by her husband Darren Montgomery.
-			 After recognising a niche in the market for a snow sport-training centre in Brisbane and the increasing
-			 interest and current trend in adventure activities the idea was born.Urban Xtreme is officially Australia’s
-			 largest ski and adventure park and the only place you can ski and snowboard in Queensland.We are a family
-			  run start-up business designed to entertain and exercise adults and children while reinforcing good social
-					skills in a group active environment that promotes health and fitness.</p>
-
+		<div>
+		<i class="fa fa-envelope-o"></i>
+			<p class="footer-p"><a href="info@urban-xtreme.com.au"> info@urban-xtreme.com.au </a></p>
+		</div>
+			<br>
 	</div>
 </footer>
