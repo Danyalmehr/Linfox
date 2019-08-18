@@ -37,7 +37,7 @@ include_once('include/database.php');
               </ul>
             </li>-->
 
-            <li class='has-sub'><a href=''><span> <?php echo " Welcome $fname ! "; ?></span></a>
+            <li class='has-sub'><a href=''><span> <?php echo " Welcome $fname! "; ?></span></a>
 
               <ul>
                 <li class='last'><a href='signout.php'><span> Sign Out </span></a></li>

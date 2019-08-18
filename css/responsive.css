@@ -3,9 +3,11 @@
 /* For mobile phones: */
 
 body {
-	margin: 0;
-	padding: 0;
-	font-family: Helvetica, Arial, sans-serif;
+	background-image: url("https://www.vactualpapers.com/web/wallpapers/abstract-hd-wallpaper-blur-effects-no-039/2560x1440.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+
 }
 
 h1 {
@@ -55,7 +57,8 @@ p {
 		margin-bottom: 30px;
 	}
 	.container-fluid {
-		padding: 60px 50px;
+		padding: 30px;
+		background-image: image();
 	}
 	.bg-grey {
 		background-color: #f6f6f6;
