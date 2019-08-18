@@ -1335,7 +1335,7 @@ color: #ff7733;		text-decoration: none;;
 	/* -----------------for mobile-------------------------------*/
 	table_heading{font-size: 2em;}
 	.search_results{align-content:center; color:black; border-radius:5px;}
-	#search_table th{font-size:10px;alignment-adjust:central; border:1px solid black;  text-align: center;}
+	#search_table th{color: black; background-color: #ff7733;font-size:10px;alignment-adjust:central; border:1px solid black;  text-align: center;}
 	#search_table td{border:1px solid black;}
 	.glyphicon{font-size: 1em;color:black;}
 	.delete{background-color: transparent;border: none;}
@@ -1351,7 +1351,7 @@ color: #ff7733;		text-decoration: none;;
 
 	.table_heading{font-size: 2em;}
 	.search_results{ margin:1%; align-content:center;color:black; border-radius:5px;}
-	#search_table th{padding:0.4%;font-size:1em;alignment-adjust:central; border:2px solid black;  text-align: center;}
+	#search_table th{color: black; background-color: #ff7733;padding:0.4%;font-size:1em;alignment-adjust:central; border:2px solid black;  text-align: center;}
 	#search_table td{padding:0.2%;border:2px solid black; resize:both;}
 	.glyphicon{font-size: 1.5em; width: 2em;color:black;}
 	.inputwidthforemailandotherinputintable{color:black;background-color: transparent;
