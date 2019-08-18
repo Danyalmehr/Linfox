@@ -11,6 +11,8 @@
   display: block;
   border: 1px solid #080808;
   width: auto;
+  border-bottom: 1px solid #ff7733;
+
 
 }
 
@@ -103,7 +105,7 @@
 #cssmenu > ul > li.has-sub:hover > a {
 
   z-index: 999;
-  border-color: #3f3f3f;
+  border-color: black;
 }
 #cssmenu ul li.has-sub:hover > ul,
 #cssmenu ul li.has-sub:hover > div {
@@ -129,7 +131,7 @@ border-bottom: 2px solid #ff7733;
   margin: 3%;
   position: absolute;
   top: 58px;
-  background: #3f3f3f;
+  background: black;
   font-size: 15px; /* this is the font size for sub menu */
   z-index: 999;
   padding:1%;
