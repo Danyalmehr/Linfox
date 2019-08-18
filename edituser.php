@@ -37,7 +37,7 @@ session_start();
       <?php include("admin-side-dash.html") ?>
     	<div class="row">
 
-                    <div class="col-md-11 col-md-7">
+                    <div class="col-md-12 col-md-9">
                           <h1>Edit User Details</h1>
 
                       			<?php $sql= "select * from user";

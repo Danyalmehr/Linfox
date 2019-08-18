@@ -846,23 +846,31 @@ submit{ background-color:transparent; color:#8E8E8E; background: rgba(0, 0, 0, 0
 @media only screen and (min-width: 769px) {
 .text-center-banner{font-size:4.5em;font-family: cursive;}
 	.banner{align-content:center;color:#000000;
-		background-color:#E8E1E1;
-	widows:auto; background-size:cover;padding:1%; width:auto;}
+		background-color:black;
+	widows:auto; background-size:cover;padding:1%; width:auto;
+	 border-bottom: 1px solid #ff7733;
+
+}
 }
 
 @media only screen and (max-width: 768px) and (min-width: 426px)
  {
 	 .banner{align-content:center;color:#000000;
-	 	background-color:#E8E1E1;
-	 widows:auto; background-size:cover;padding:1%; width:auto;}
+		 background-color:black;
+	 widows:auto; background-size:cover;padding:1%; width:auto;
+	 border-bottom: 1px solid #ff7733;
+ }
 
 	 .text-center-banner{font-size:3em;font-family: cursive;font-family: cursive;}
  }
  @media only screen and (max-width: 425px)
   {
 		.banner{align-content:center;color:#000000;
-			background-color:#E8E1E1;
-		widows:auto; background-size:cover;padding:1%; width:auto;}
+			background-color:black;
+		widows:auto; background-size:cover;padding:1%; width:auto;
+		border-bottom: 1px solid #ff7733;
+
+	}
 
  	 .text-center-banner{font-size:2em;font-family: cursive;}
   }
@@ -1334,7 +1342,7 @@ color: #ff7733;		text-decoration: none;;
 	.delete:hover{background-color:transparent; border-bottom:1px dotted #ff7733;}
 	.glyphicon:hover{font-size: 1em;color: #ff7733;}
 	.inputwidthforemailandotherinputintable{color:black;background-color: transparent;
-	    border: 0px solid;width:3em;font-size: 10px;}
+	    border: 0px solid;width:100%;font-size: 10px;}
 	.inputwidthforemailandotherinputintable:hover{color: #ff7733;border: 1px dotted #ff7733;}
 }
 
@@ -1342,12 +1350,12 @@ color: #ff7733;		text-decoration: none;;
 	/* -----------------for tablets-------------------------------*/
 
 	.table_heading{font-size: 2em;}
-	.search_results{ margin:1%; align-content:center; padding:1%; color:black; border-radius:5px;}
-	#search_table th{padding:1%; margin:1%;font-size:1em;alignment-adjust:central; border:2px solid black;  text-align: center;}
-	#search_table td{padding:1%; margin:1%; border:2px solid black; resize:both;}
+	.search_results{ margin:1%; align-content:center;color:black; border-radius:5px;}
+	#search_table th{padding:0.4%;font-size:1em;alignment-adjust:central; border:2px solid black;  text-align: center;}
+	#search_table td{padding:0.2%;border:2px solid black; resize:both;}
 	.glyphicon{font-size: 1.5em; width: 2em;color:black;}
 	.inputwidthforemailandotherinputintable{color:black;background-color: transparent;
-	    border: 0px solid;width:4em;}
+	    border: 0px solid;width:100%;}
 	.delete{background-color: transparent;border: none;}
 	.delete:hover{background-color:transparent; border-bottom:2px dotted #ff7733;}
 	.glyphicon:hover{font-size: 1.5em;color: #ff7733;}
@@ -1356,12 +1364,12 @@ color: #ff7733;		text-decoration: none;;
 @media only screen and (min-width: 769px) {
 	/* -----------------for desktop-------------------------------*/
 .table_heading{font-size: 2em;}
-.search_results{ margin:3%; align-content:left; padding:1%; color:black; border-radius:5px;}
-#search_table th{padding:2%; margin:3%;font-size:1em;alignment-adjust:left; border:2px solid black;}
-#search_table td{padding:2%; margin:3%; border:2px solid black; resize:both;}
-.inputwidthforemailandotherinputintable{color:black;background-color: transparent;
-		border: 0px solid;width:7em;}
-.glyphicon{font-size: 1.5em; width: 2em;color:black;}
+.search_results{width:60;align-content:left;color:black;}
+#search_table th{padding:1%; resize:both;color: black; background-color: #ff7733;font-size:1em;alignment-adjust:left; border:2px solid black;}
+#search_table td{padding:1%; border:2px solid black; resize:both;}
+.inputwidthforemailandotherinputintable{color:black;background-color: transparent;border: 0px solid;width:100%;}
+
+.glyphicon{font-size: 1.5em; width:2em;color:black;}
 .delete{background-color: transparent;border: none;}
 .delete:hover{background-color:transparent; border-bottom:2px dotted #ff7733;}
 .glyphicon:hover{font-size: 1.5em;color: #ff7733;}
