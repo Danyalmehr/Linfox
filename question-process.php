@@ -11,8 +11,8 @@ include_once('database.php');
      $wans2 = mysqli_real_escape_string($con, $_POST['wrong_answer2']);
      $wans3 = mysqli_real_escape_string($con, $_POST['wrong_answer3']);
 
-     $insertqry = "INSERT INTO `question`(`que`, `option 1`, `option 2`, `option 3`, `option 4`, `ans`, `test_id`) VALUES ('$que','$wans3',
-       '$wans1','$wans2','$ans','$ans','$test_id')";
+     $insertqry = "INSERT INTO `question`(`que`, `option 1`, `option 2`, `option 3`, `option 4`, `ans`, `test_id`, `que_type`) VALUES ('$que','$wans3',
+       '$wans1','$wans2','$ans','$ans','$test_id','MCQ' )";
      if(mysqli_query($con,$insertqry))
      {
        echo "your new details have been successfully INSERTED!!". mysqli_error($con);
@@ -29,6 +29,27 @@ include_once('database.php');
        echo "something is wrong". mysqli_error($con);;
      }
    }
+
+   if(isset($_POST['shortanswer'])){
+     $test_id = $_SESSION["test_id"];
+
+    $que = mysqli_real_escape_string($con, $_POST['question']);
+
+
+    $insertqry = "INSERT INTO `question`(`que`, `que_type`, `test_id`) VALUES ('$que','shortAns', '$test_id')";
+    if(mysqli_query($con,$insertqry))
+    {
+      echo "your new details have been successfully INSERTED!!". mysqli_error($con);
+      ?>
+
+      <?php
+
+    }
+    else
+    {
+      echo "something is wrong". mysqli_error($con);;
+    }
+  }
 
 
      if (isset($_POST['update']))
@@ -83,3 +104,8 @@ include_once('database.php');
        <td><a href="createquestion3.php?delete=' <? echo $id; ?>'" onclick="return confirm('Are you sure?');">Delete</a></td>
    </tr>
 </table>
+
+          <form class="" action="createquestion4.php" method="post">
+            <input type="hidden" name="test_id" value="<?=$test_id?>"><label><?php $test_id?></label>
+            <button type="submit" name="selectedtest" class="btn btn-default">Submit</button>
+          </form>

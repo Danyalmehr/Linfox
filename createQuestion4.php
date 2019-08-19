@@ -101,7 +101,7 @@ include_once('database.php');
                                           <div class="btn-group">
                                             <div class="col-sm-offset-2 col-sm-10">
 
-                                                <button type="submit" name="submit" onclick='return ask3()' class="btn-sm btn-primary">Submit</button>
+                                                <button type="submit" name="shortanswer" onclick='return ask3()' class="btn-sm btn-primary">Submit</button>
 
 
                                               </div>

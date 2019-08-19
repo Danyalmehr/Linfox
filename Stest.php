@@ -155,13 +155,18 @@ include_once('database.php');
               where test_id = '$test_id'
               ";
               $result=mysqli_query($con,$fetchqry);
-              if ($attemptNumber <= 10) {
+
+              if ($attemptNumber <= 100) {
               $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`, `user_id`, `att_number`, `att_date`, `att_status`) values (0, '$test_id', '$user' , '$attemptNumber', '$date', 'FAIL')";
               $result3 = mysqli_query($con,$fetchqry3);
               $questionNum = 1;
               while ($row = mysqli_fetch_array($result))
-                {
+                { $que_type = $row['que_type'];
                   $que_id = $row['que_id'];
+
+                  if ($que_type=1) {
+                    echo "$que_type";
+
                   $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4'], $row['ans'],$row['test_id']);
                   $ans_array = array($row['option 1'], $row['option 2'], $row['option 3'], $row['option 4']);
                   shuffle($ans_array);
@@ -182,15 +187,22 @@ include_once('database.php');
                       <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[1]?>">&nbsp;<label><?=$ans_array[1]?></label><br>
                       <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[2]?>">&nbsp;<label><?=$ans_array[2]?></label><br>
                       <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[3]?>">&nbsp;<label><?=$ans_array[3]?></label><br>
-                  </div>
+
+
                       <div style="border-bottom: 1px dotted black; margin: 1em; background-color: black;"></div>
 
-                    <?php $questionNum += 1;
-                           }  ?>
+                    <?php
+                           }
+                           elseif ($que_type=2) {?>
+                             <p><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></p>
+                             <input type="text" name="userans[<?=$que_id?>]" value="">&nbsp;<br>
+
+                          <?php } $questionNum += 1; }  ?>
 
 
                       <button class="button" name="submit" style="vertical-align:middle"> <span> SUBMIT </span> </button>
 
+                    </div>
                    </form>
 
                 <?php   } else {
