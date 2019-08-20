@@ -188,6 +188,7 @@ include_once('database.php');
                       <?php $test_id = $row['test_id'];
                       echo '<input type="hidden" name="test_id" value="'.htmlentities($test_id).'">'; ?>
                       <input type="hidden" name="attemptNumber" value="<?=$attemptNumber?>">
+                      <input type="hidden" name="que_id[<?=$que_id?>]" value="<?=$que_id?>">                    
 
 
                       <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[0]?>">&nbsp;<label><?=$ans_array[0]?></label><br>
@@ -203,7 +204,7 @@ include_once('database.php');
                     elseif ($que_type == "2") {?>
                       <div class="form-group">
                         <label for="comment"><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></label>
-                      <textarea class="form-control" name="userans[<?=$que_id?>]" rows="5" id="comment"></textarea>
+                      <textarea class="form-control" name="shortuserans[<?=$que_id?>]" rows="5" id="comment"></textarea>
                     </div>
 
 

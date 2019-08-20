@@ -81,32 +81,53 @@ require 'database.php';
 				{
           $test_id = $_POST['test_id'];
           $attemptNumber = $_POST['attemptNumber'];
+          $id = $_POST['que_id'];
+
 
           $count = count($_POST['userans']);
 					//echo " <h3> There were ".$count." questions in this test </h3>";
 
 					 $score = 0;
 					 $selected = $_POST['userans'];
+           $selectedShortanswer = $_POST['shortuserans'];
 
 				//	print_r($selected); //check to see weather it is retriving the value that user have selected
 					$fetchqry = "SELECT * FROM question where test_id='$test_id'";
 					$result = mysqli_query($con,$fetchqry);
           $num=mysqli_num_rows($result);
 				  $row = mysqli_fetch_array($result);
-          $que_id = $row['que_id'];
+
 
 
           foreach ($selected as $key => $value) {
+            foreach ($id as $ques => $que_id) {
+              echo "$que_id";
            //$fetchqry2= "INSERT INTO useranswer (`userans`, `que_id`) VALUES
             //( '$value', (SELECT `que_id` from `question`) )";
             $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`, `user_id`, `test_id`) values ('$value','$que_id', '$userid', '$test_id')";
             $result2 = mysqli_query($con,$fetchqry2);
 
           }
+          foreach ($selectedShortanswer as $key => $value) {
+           //$fetchqry2= "INSERT INTO useranswer (`userans`, `que_id`) VALUES
+            //( '$value', (SELECT `que_id` from `question`) )";
+            $fetchqry3 = "INSERT INTO useranswer(`userans`, `que_id`, `user_id`, `test_id`) values ('$value','$que_id', '$userid', '$test_id')";
+            $result3 = mysqli_query($con,$fetchqry3);
+
+          }
+
+        }
+
           if ($result2) {
           //   echo " Your answers have been submitted!";
           } else {
              echo "Error: " . $fetchqry2 . "" . mysqli_error($con);
+          }
+
+          if ($result3) {
+          //   echo " Your answers have been submitted!";
+          } else {
+             echo "Error: " . $fetchqry3 . "" . mysqli_error($con);
           }
 				}
 				// If unable to fetch the value
