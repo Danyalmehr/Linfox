@@ -1,12 +1,11 @@
-body {background-image:url(../images/imageedit_1_8803947616.jpg); background-size:cover;
-background-repeat:no-repeat;
+body {background-color: orange;
 }
 .member_frm label {
     width: 6em;
     float: left;
     text-align: right;
     padding-right: 0.5em;
-	
+
 }
 #reset {
     margin-left: 1em;
@@ -43,5 +42,5 @@ background-repeat:no-repeat;
 
 .container-fluid login { background-color:#2C9CE3;padding:3px;
 		border:2px solid black;}
-		
-.footer h2 a{text-decoration:none; color:#F4EEEE;}	
+
+.footer h2 a{text-decoration:none; color:#F4EEEE;}
