@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2019 at 02:58 PM
+-- Generation Time: Aug 21, 2019 at 10:22 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -43,27 +43,13 @@ CREATE TABLE `attempt` (
 --
 
 INSERT INTO `attempt` (`att_id`, `final_score`, `att_number`, `test_id`, `user_id`, `att_date`, `att_status`) VALUES
-(34, '25', 1, 2, 2, '2019-08-12 07:36:03pm', 'FAIL'),
-(35, '100', 2, 2, 2, '2019-08-12 07:36:23pm', 'PASS'),
-(36, '100', 3, 2, 2, '2019-08-12 07:57:00pm', 'PASS'),
-(37, '50', 4, 2, 2, '2019-08-12 07:59:12pm', 'PASS'),
-(38, '0', 5, 2, 2, '2019-08-12 08:01:33pm', 'Fail'),
-(39, '0', 6, 2, 2, '2019-08-12 08:04:11pm', 'FAIL'),
-(40, '50', 7, 2, 2, '2019-08-12 08:05:52pm', 'PASS'),
-(41, '0', 1, 11, 2, '2019-08-12 08:10:18pm', 'FAIL'),
-(42, '33.333333333333', 8, 2, 2, '2019-08-12 08:12:14pm', 'FAIL'),
-(43, '0', 9, 2, 2, '2019-08-12 08:12:27pm', 'FAIL'),
-(44, '33.333333333333', 10, 2, 2, '2019-08-12 08:20:08pm', 'FAIL'),
-(45, '0', 1, 3, 2, '2019-08-14 09:12:37pm', 'Fail'),
-(46, '0', 1, 13, 2, '2019-08-14 09:17:41pm', 'Fail'),
-(47, '0', 2, 13, 2, '2019-08-14 09:30:00pm', 'Fail'),
-(48, '0', 3, 13, 2, '2019-08-14 09:43:26pm', 'Fail'),
-(49, '0', 1, 2, 8, '2019-08-17 09:04:48pm', 'FAIL'),
-(51, '0', 2, 2, 8, '2019-08-17 10:25:01pm', 'FAIL'),
-(52, '0', 3, 2, 8, '2019-08-17 10:25:21pm', 'FAIL'),
-(53, '0', 4, 2, 8, '2019-08-17 10:26:16pm', 'FAIL'),
-(54, '33.333333333333', 5, 2, 8, '2019-08-17 10:34:10pm', 'FAIL'),
-(55, '33.333333333333', 6, 2, 8, '2019-08-17 10:53:31pm', 'FAIL');
+(130, '0', 1, 2, 8, '2019-08-20 10:05:27pm', 'FAIL'),
+(131, '0', 2, 2, 8, '2019-08-20 10:06:42pm', 'FAIL'),
+(132, '0', 3, 2, 8, '2019-08-20 10:07:00pm', 'FAIL'),
+(133, '33.333333333333', 4, 2, 8, '2019-08-20 10:36:04pm', 'FAIL'),
+(134, '33.333333333333', 5, 2, 8, '2019-08-20 10:43:35pm', 'FAIL'),
+(135, '0', 6, 2, 8, '2019-08-20 11:11:52pm', 'FAIL'),
+(136, '66.666666666667', 7, 2, 8, '2019-08-20 11:58:01pm', 'PASS');
 
 -- --------------------------------------------------------
 
@@ -99,18 +85,20 @@ CREATE TABLE `question` (
   `option 3` varchar(222) NOT NULL,
   `option 4` varchar(222) NOT NULL,
   `ans` varchar(222) NOT NULL,
-  `test_id` int(255) UNSIGNED DEFAULT NULL
+  `test_id` int(255) UNSIGNED DEFAULT NULL,
+  `que_type` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `question`
 --
 
-INSERT INTO `question` (`que_id`, `que`, `option 1`, `option 2`, `option 3`, `option 4`, `ans`, `test_id`) VALUES
-(6, 'What is the best helmet brand?', 'aqua', 'red', 'mountain', 'glips', 'mountain', 2),
-(917, 'd', ' asd asd ', 'asd', 'tyutyuert', 'ddds', 'ddds', 11),
-(926, 'what\'s your name?', ' asd asd ', 'shesh', 'how\'r', 'dan', 'dan', 2),
-(927, 'waht\'s', ' asd asd ', 'asd', 'tyutyuert', 'ddds', 'ddds', 2);
+INSERT INTO `question` (`que_id`, `que`, `option 1`, `option 2`, `option 3`, `option 4`, `ans`, `test_id`, `que_type`) VALUES
+(6, 'What is the best helmet brand?', 'aqua', 'red', 'mountain', 'glips', 'mountain', 2, '1'),
+(917, 'd', ' asd asd ', 'asd', 'tyutyuert', 'ddds', 'ddds', 11, '1'),
+(926, 'what\'s your?', ' asd asd ', 'shesh', 'how\'r', 'dan', 'dan', 2, '1'),
+(927, 'waht\'s', ' asd asd ', 'asd', 'tyutyuert', 'ddds', 'ddds', 2, '1'),
+(934, 'what\'s your name?', '', '', '', '', '', 2, '2');
 
 -- --------------------------------------------------------
 
@@ -176,27 +164,6 @@ CREATE TABLE `useranswer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `useranswer`
---
-
-INSERT INTO `useranswer` (`ans_id`, `userans`, `que_id`, `user_id`, `test_id`) VALUES
-(109, 'mountain', 6, 2, 2),
-(110, 'orange', 6, 2, 2),
-(111, 'dd', 6, 2, 2),
-(112, 'glips', 6, 8, 2),
-(113, ' asd asd ', 6, 8, 2),
-(114, 'tyutyuert', 6, 8, 2),
-(115, 'red', 6, 8, 2),
-(116, ' asd asd ', 6, 8, 2),
-(117, 'ddds', 6, 8, 2),
-(118, 'red', 6, 8, 2),
-(119, ' asd asd ', 6, 8, 2),
-(120, 'ddds', 6, 8, 2),
-(121, 'aqua', 6, 8, 2),
-(122, 'dan', 6, 8, 2),
-(123, 'tyutyuert', 6, 8, 2);
-
---
 -- Indexes for dumped tables
 --
 
@@ -252,19 +219,19 @@ ALTER TABLE `useranswer`
 -- AUTO_INCREMENT for table `attempt`
 --
 ALTER TABLE `attempt`
-  MODIFY `att_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `att_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
 
 --
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `course_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `course_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `que_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=928;
+  MODIFY `que_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=935;
 
 --
 -- AUTO_INCREMENT for table `test`
@@ -282,7 +249,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `useranswer`
 --
 ALTER TABLE `useranswer`
-  MODIFY `ans_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+  MODIFY `ans_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
