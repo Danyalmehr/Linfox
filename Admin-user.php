@@ -61,7 +61,7 @@ padding: 3%;
   left: 0;
   right: 0;
   background: rgb(0, 0, 0); /* Fallback color */
- background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+ background: rgba(0, 0, 0, 0.9); /* Black background with 0.5 opacity */
  color: #f1f1f1;
   overflow: hidden;
   width: inherit;
@@ -86,8 +86,8 @@ padding: 3%;
 }
 
 .text {
-  color: white;
-  font-size: 20px;
+  color: Orange;
+  font-size: 22px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -112,7 +112,7 @@ padding: 3%;
             <h2>User</h2>
             <div class="container-menu">
               <a href="createuser.php">
-              <img src="images/edit-user.png" alt="Avatar" class="image">
+              <img src="images/images.png" style="background-color:white;"width="192px;" alt="Avatar" class="image">
               <div class="overlay">
                 <div class="text">Create User</div>
               </div>
@@ -121,9 +121,17 @@ padding: 3%;
 
             <div class="container-menu">
               <a href="edituser.php">
-              <img src="images/edit-user.png" alt="Avatar" class="image">
+              <img src="images/default-challenges.png" alt="Avatar"style="background-color:white;" width="192px;"class="image">
               <div class="overlay">
                 <div class="text">Edit User</div>
+              </div>
+              </a>
+            </div>
+            <div class="container-menu">
+              <a href="edituser.php">
+              <img src="images/download.jpg" alt="Avatar"style="background-color:white;" width="192px;"class="image">
+              <div class="overlay">
+                <div class="text">User progress</div>
               </div>
               </a>
             </div>

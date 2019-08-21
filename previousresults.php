@@ -47,8 +47,13 @@ session_start();
                               INNER JOIN courses ON courses.course_id = test.course_id
                               WHERE email = '$email'";
                                 $result=mysqli_query($con,$fetchqry);
+
+
                       			 ?>
+
+
                              <div class="search_results" id="search_results">
+
 
                           	<table class="search_table" id="search_table" >
                               <tr><center class="table_heading">Test results for  <?php echo" $fname "?> are as following<Center></tr><br><br>
@@ -56,25 +61,37 @@ session_start();
                       			<?php
 
                             echo "<tr>
-                                    <th>Final score</th>
+
                                     <th>Course name</th>
-                                    <th>Status</th>
-                                    <th>Attempt number</th>
                                     <th>Test name</th>
+                                    <th>Attempt number</th>
+                                    <th>Time Taken</th>
+
+                                    <th>Status</th>
+
                                     <th>Date</th>
+                                    <th>Score</th>
                                   </tr>";
                     			    while($row = mysqli_fetch_array($result)):
                       				{
+                                $att_status = $row['att_status'];
+                                checkstatus($att_status);
+
+
                       				echo "<tr><form action=user-process.php method=post>";
                               echo "<tr>
-                                        <td><input class='inputwidthforemailandotherinputintable' type=text name=fname value='".$row['final_score']."' </td>
+
                                         <td><input class='inputwidthforemailandotherinputintable' type=text name=lname value='".$row['course_name']."'</td>
-                                        <td><input class='inputwidthforemailandotherinputintable' type=email name=email value='".$row['att_status']."'</td>
-                                        <td><input class='inputwidthforemailandotherinputintable'type=text name=password value='".$row['att_number']."'</td>
                                         <td><input class='inputwidthforemailandotherinputintable'type=text name=user_type value='".$row['test_name']."'</td>
+                                        <td><input class='inputwidthforemailandotherinputintable'type=text name=password value='".$row['att_number']."'</td>
+                                        <td><input class='inputwidthforemailandotherinputintable'type=text name=password value='".$row['att_number']."'</td>
+                                        <td id ='att_status'><input class='inputwidthforemailandotherinputintable' type=text name=email value='".$row['att_status']."'</td>
+                                        checkstatus();
                                         <td><input class='inputwidthforemailandotherinputintable'type=text name=user_type value='".$row['att_date']."'</td>
+                                        <td><input class='inputwidthforemailandotherinputintable' type=text name=fname value='".$row['final_score']."' </td>
                                     </tr>";
                         				echo "</form></tr>";
+
                       				}
                                       ?>
                                       <?php endwhile;?>
@@ -95,5 +112,33 @@ session_start();
 			var
 		}
 	</script>-->
+
+<?php
+function checkstatus($att_status)
+ {
+   if ($att_status != "PASS")
+          {
+            echo "string_FAIL <br>";
+            echo '<style type="text/css">
+                 #att_status {
+                     background-color:Green;
+                 }
+                 </style>';
+             return false;
+           }
+    elseif     }($att_status == "PASS")
+         {  echo "string_PASS <br>";
+            echo '<style type="text/css">
+                #att_status {
+                    background-color:Blue;
+                }
+                </style>';
+         }
+
+ return true;
+
+ }
+ ?>
+
 </body>
 </html>
