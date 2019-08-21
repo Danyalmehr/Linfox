@@ -126,7 +126,7 @@ function checkstatus($att_status)
                  </style>';
              return false;
            }
-    elseif     }($att_status == "PASS")
+    elseif($att_status == "PASS")
          {  echo "string_PASS <br>";
             echo '<style type="text/css">
                 #att_status {
