@@ -27,76 +27,74 @@ session_start();
     <title>Dashboard</title>
 
 	<style>
+  .user-admin-menu>h2 {text-align: center;
+  /* Black background with 0.5 opacity */
+  color: Black;}
+  .user-admin-menu{align-items: center;text-align: center;background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+  color: ##ff7733;
+  padding: 3%;
+  }
 
-
-.user-admin-menu>h2 {text-align: center;
-/* Black background with 0.5 opacity */
-color: Black;}
-.user-admin-menu{align-items: center;text-align: center;background: rgb(0, 0, 0); /* Fallback color */
-background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
-color: ##ff7733;
-padding: 3%;
-}
-
-  .container-menu {
-  position: relative;
-  width: auto;
-  display: inline-block;
-
-}
-
-.image {
-  display: inline-block;
-
-  height: auto;
-  border: 1px dotted black;
-  padding: 1%;
-  display: inline-block;
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgb(0, 0, 0); /* Fallback color */
- background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
- color: #f1f1f1;
-  overflow: hidden;
-  width: inherit;
-  height: 100%;
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: .3s ease;
-  transition: .3s ease
-  border: 1px dotted black;
-  padding: 1%;
+    .container-menu {
+    position: relative;
+    width: auto;
     display: inline-block;
-}
 
-.container-menu:hover .overlay {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  border: 1px dotted black;
-  padding: 1%;
-    display: inline-block;
-}
+  }
 
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+  .image {
     display: inline-block;
-}
-	</style>
+
+    height: auto;
+    border: 1px dotted black;
+    padding: 1%;
+    display: inline-block;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0, 0, 0); /* Fallback color */
+   background: rgba(0, 0, 0, 0.9); /* Black background with 0.5 opacity */
+   color: #f1f1f1;
+    overflow: hidden;
+    width: inherit;
+    height: 100%;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: .3s ease;
+    transition: .3s ease
+    border: 1px dotted black;
+    padding: 1%;
+      display: inline-block;
+  }
+
+  .container-menu:hover .overlay {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    border: 1px dotted black;
+    padding: 1%;
+      display: inline-block;
+  }
+
+  .text {
+    color: Orange;
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+      display: inline-block;
+  }
+  	</style>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
@@ -111,7 +109,7 @@ padding: 3%;
             <h2> Test </h2>
             <div class="container-menu">
               <a href="create-test.php">
-              <img src="images/edit-user.png" alt="Avatar" class="image">
+                <img src="images/11-512.png" alt="Avatar"style="background-color:white;" width="192px;"class="image">
               <div class="overlay">
                 <div class="text">Create Test</div>
               </div>
@@ -120,7 +118,7 @@ padding: 3%;
 
             <div class="container-menu">
               <a href="edit-test-course.php">
-              <img src="images/edit-user.png" alt="Avatar" class="image">
+                <img src="images/default-challenges.png" alt="Avatar"style="background-color:white;" width="192px;"class="image">
               <div class="overlay">
                 <div class="text">Edit Test</div>
               </div>
