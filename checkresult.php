@@ -97,26 +97,29 @@ require 'database.php';
           $num=mysqli_num_rows($result);
 				  $row = mysqli_fetch_array($result);
 
+          $array1 = array();
+          $array2 = array();
+          $array3 = array();
+          $array4 = array();
+          $array5 = array();
 
+          foreach ($result as $res) {
+              array_push($array2, $res['ans']);
+              array_push($array3, $res['que_id']);
+              array_push($array4, $res['que']);
+          }
+          foreach ($selected as $checkans) {
+            array_push($array1, $checkans);
+          }
+          foreach ($selectedShortanswer as $shortans) {
+            array_push($array5, $shortans);
+          }
 
-          foreach ($selected as $key => $value) {
-            foreach ($id as $ques => $que_id) {
-              echo "$que_id";
-           //$fetchqry2= "INSERT INTO useranswer (`userans`, `que_id`) VALUES
-            //( '$value', (SELECT `que_id` from `question`) )";
-            $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`, `user_id`, `test_id`) values ('$value','$que_id', '$userid', '$test_id')";
+          for ($i=0; $i < $count ; $i++){
+
+            $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`, `user_id`, `test_id`) values ('$array1[$i]','$array3[$i]', '$userid', '$test_id')";
             $result2 = mysqli_query($con,$fetchqry2);
-
-          }
-          foreach ($selectedShortanswer as $key => $value) {
-           //$fetchqry2= "INSERT INTO useranswer (`userans`, `que_id`) VALUES
-            //( '$value', (SELECT `que_id` from `question`) )";
-            $fetchqry3 = "INSERT INTO useranswer(`userans`, `que_id`, `user_id`, `test_id`) values ('$value','$que_id', '$userid', '$test_id')";
-            $result3 = mysqli_query($con,$fetchqry3);
-
-          }
-
-        }
+                  }
 
           if ($result2) {
           //   echo " Your answers have been submitted!";
@@ -124,11 +127,7 @@ require 'database.php';
              echo "Error: " . $fetchqry2 . "" . mysqli_error($con);
           }
 
-          if ($result3) {
-          //   echo " Your answers have been submitted!";
-          } else {
-             echo "Error: " . $fetchqry3 . "" . mysqli_error($con);
-          }
+
 				}
 				// If unable to fetch the value
 				else
@@ -136,18 +135,7 @@ require 'database.php';
 					echo("Failed to retrive the data");
 				}
 			}
-      $array1 = array();
-      $array2 = array();
-      $array3 = array();
-      $array4 = array();
-      foreach ($selected as $checkans) {
-        array_push($array1, $checkans);
-      }
-      foreach ($result as $res) {
-          array_push($array2, $res['ans']);
-          array_push($array3, $res['que_id']);
-          array_push($array4, $res['que']);
-      }
+
       $i = 1;
       for ($x=0; $x < $count ; $x++) {?>
         <form class="test-display" action="" method="post">
