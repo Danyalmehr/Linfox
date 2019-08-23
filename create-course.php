@@ -55,12 +55,6 @@ session_start();
                       <input type="text" name="course_desc" class="form-control" id="course_desc" placeholder="Enter course description">
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="control-label col-sm-2" for="name">Course Video:</label>
-                    <div class="col-sm-10">
-                      <input type="text" name="course_video" class="form-control" id="course_video" placeholder="Copy the video code from youtube and paste here">
-                    </div>
-                  </div>
                   <center class="table_heading">
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">

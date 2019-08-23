@@ -64,9 +64,11 @@ include_once('database.php');
             if(isset($_POST['submit'])){
 
                 $test_name = mysqli_real_escape_string($con, $_POST['test_name']);
+                $test_video = mysqli_real_escape_string($con, $_POST['test_video']);
+
                 $course_id = $_POST['course_id'];
 
-                $qry = "INSERT INTO `test`(`test_name`, `course_id`) VALUES ('$test_name','$course_id')";
+                $qry = "INSERT INTO `test`(`test_name`, `course_id`, `test_video`) VALUES ('$test_name','$course_id','$test_video')";
                 if($result=mysqli_query($con,$qry))
                 {
                   echo "your new details have been successfully INSERTED!! ". mysqli_error($con);
@@ -100,10 +102,11 @@ include_once('database.php');
           if (isset($_POST['update']))
               {
                     $test_name = mysqli_real_escape_string($con, $_POST['test_name']);
-                    echo $_POST['course_id'];
+                    $test_video = mysqli_real_escape_string($con, $_POST['test_video']);
+
                     $id = $_POST['course_id'];
 
-                    $fetchqry = "UPDATE test SET `test_name`= '$test_name', `course_id`= '$id'
+                    $fetchqry = "UPDATE test SET `test_name`= '$test_name', `course_id`= '$id', `test_video`= '$test_video'
                     WHERE test_id ='$_POST[test_id]'";
                       if(mysqli_query($con,$fetchqry))
                       {

@@ -64,9 +64,8 @@ include_once('database.php');
             if(isset($_POST['submit'])){
               $course_name = mysqli_real_escape_string($con, $_POST['course_name']);
               $course_desc = mysqli_real_escape_string($con, $_POST['course_desc']);
-              $course_video = mysqli_real_escape_string($con, $_POST['course_video']);
 
-                $qry = "INSERT INTO `courses`(`course_name`, `course_desc`, `course_video`) VALUES ('$course_name','$course_desc','$course_video')";
+                $qry = "INSERT INTO `courses`(`course_name`, `course_desc`) VALUES ('$course_name','$course_desc')";
                 if($result=mysqli_query($con,$qry))
                 {
                   echo "your new details have been successfully updated!!". mysqli_error($con);
@@ -102,9 +101,8 @@ include_once('database.php');
               {
                     $course_name = mysqli_real_escape_string($con, $_POST['course_name']);
                     $course_desc = mysqli_real_escape_string($con, $_POST['course_desc']);
-                    $course_video = mysqli_real_escape_string($con, $_POST['course_video']);
 
-                    $fetchqry = "UPDATE courses SET `course_name`= '$course_name', `course_desc`= '$course_desc', `course_video`= '$course_video'
+                    $fetchqry = "UPDATE courses SET `course_name`= '$course_name', `course_desc`= '$course_desc'
                     WHERE course_id ='$_POST[course_id]'";
                       if(mysqli_query($con,$fetchqry))
                       {

@@ -53,7 +53,6 @@ session_start();
                             echo "<tr>
                                       <th>Course Name</th>
                                       <th>Course Description</th>
-                                      <th>Course Video</th>
                                       <th>Update</th>
                                       <th>Delete</th>
                                   </tr>";
@@ -64,7 +63,6 @@ session_start();
                               echo "<tr>
                                         <td><input class='inputwidthforemailandotherinputintable' type=text name=course_name value='".htmlspecialchars($row['course_name'], ENT_QUOTES)."'</td>
                                         <td><input class='inputwidthforemailandotherinputintable' type=text name=course_desc value='".htmlspecialchars($row['course_desc'], ENT_QUOTES)."'</td>
-                                        <td><input class='inputwidthforemailandotherinputintable' type=text name=course_video value='".htmlspecialchars($row['course_video'], ENT_QUOTES)."'</td>
                                         <td><button class='delete' type=submit name=update onclick='return ask2()' ><span class='glyphicon glyphicon-wrench logo-small' ></span></button></td>
                                         <td><button class='delete' type=submit name=delete onclick='return ask()' ><span class='glyphicon glyphicon-trash logo-small'></span></button></td>
                                    </tr>";

@@ -127,6 +127,7 @@ session_start();
                             echo "<tr>
                                       <th>Test Name</th>
                                       <th>Course Name</th>
+                                      <th>Video</th>
                                       <th>Update</th>
                                       <th>Delete</th>
 
@@ -142,6 +143,8 @@ session_start();
                                         <td><input type=text name=test_name value='".htmlspecialchars($row['test_name'], ENT_QUOTES)."'</td>
 
                                         <td>  <a href='edit-course.php'><label> $coursename </label></td></a>
+
+                                        <td><input type=text name=test_video value='".htmlspecialchars($row['test_video'], ENT_QUOTES)."'</td>
 
 
                                         <td><button type=submit name=update onclick='return ask2()'><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
