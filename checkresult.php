@@ -89,7 +89,6 @@ require 'database.php';
 
 					 $score = 0;
 					 $selected = $_POST['userans'];
-           $selectedShortanswer = $_POST['shortuserans'];
 
 				//	print_r($selected); //check to see weather it is retriving the value that user have selected
 					$fetchqry = "SELECT * FROM question where test_id='$test_id'";
@@ -101,7 +100,7 @@ require 'database.php';
           $array2 = array();
           $array3 = array();
           $array4 = array();
-          $array5 = array();
+
 
           foreach ($result as $res) {
               array_push($array2, $res['ans']);
@@ -111,9 +110,7 @@ require 'database.php';
           foreach ($selected as $checkans) {
             array_push($array1, $checkans);
           }
-          foreach ($selectedShortanswer as $shortans) {
-            array_push($array5, $shortans);
-          }
+
 
           for ($i=0; $i < $count ; $i++){
 
@@ -157,31 +154,27 @@ require 'database.php';
         </div>
       <?php $i = $i + 1;}
         $scorePercentage = ($score/$count)*100;
-        if ($scorePercentage>49) {
-          $att_status = "PASS";
-        }
-        else {
-          $att_status = "FAIL";
-        }
+        $att_status = "Completed";
         $fetchqry3 = "UPDATE attempt SET final_score=$scorePercentage, att_date='$date', att_status='$att_status' WHERE user_id =$userid AND test_id=$test_id AND att_number=$attemptNumber";
 
         $result3 = mysqli_query($con,$fetchqry3)or die(mysql_error());
 ?>
 
-            <center class="result_display">
-          <?php echo " Number of questions : ".$count."  <br>";
-          echo " Number of correct questions : ".$score." <br>";
-          echo (" Your score : ".$scorePercentage."% <br>");
-          echo (" Status : ".$att_status."");
-          ?>
-        </center>
+
+            <div class="result_display">
+
+            <p style="text-align: left;">Your 'short answer' questions will be marked and seen by you supervisor!!</p>
+            <h3 style="text-align: center;"> Number of questions :<?= $count ?> </h3>
+            <h3 style="text-align: center;"> Number of correct MCQ answers : <?=$score ?> </h3>
+            <h3 style="text-align: center;">Status : <?= $att_status ?> </h3>
+
+        </div>
 
         <?php  mysqli_free_result($result);?>
 
-          <form>
             <!--<input type="button" class="button" name="back" style="vertical-align:middle" value="Take the test again" onclick="history.go(-1)">-->
-            <a href="dashboard.php"><input type="button" class="button" name="back" style="vertical-align:middle" value="back to Dashboard" onclick="history.go(-1)"></a>
-          </form>
+            <a href="dashboard.php"><button type="button" class="btn btn-danger"   style=" text-decoration: underline;  display: block; max-width: 300px; margin: auto;"> back to Dashboard </button> </a>
+
 
 
 			</div>
@@ -195,5 +188,5 @@ require 'database.php';
 	<?php include("include/footer.inc") ?>
 
 
+  </html>
   </body>
-</html>

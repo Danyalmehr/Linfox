@@ -164,7 +164,7 @@ include_once('database.php');
               ";
               $result=mysqli_query($con,$fetchqry);
               if ($attemptNumber <= 1000) {
-              $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`, `user_id`, `att_number`, `att_date`, `att_status`) values (0, '$test_id', '$user' , '$attemptNumber', '$date', 'FAIL')";
+              $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`, `user_id`, `att_number`, `att_date`, `att_status`) values (0, '$test_id', '$user' , '$attemptNumber', '$date', 'Not completed')";
               $result3 = mysqli_query($con,$fetchqry3);
               $questionNum = 1;
               while ($row = mysqli_fetch_array($result))
@@ -188,7 +188,7 @@ include_once('database.php');
                       <?php $test_id = $row['test_id'];
                       echo '<input type="hidden" name="test_id" value="'.htmlentities($test_id).'">'; ?>
                       <input type="hidden" name="attemptNumber" value="<?=$attemptNumber?>">
-                      <input type="hidden" name="que_id[<?=$que_id?>]" value="<?=$que_id?>">                    
+                      <input type="hidden" name="que_id[<?=$que_id?>]" value="<?=$que_id?>">
 
 
                       <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[0]?>">&nbsp;<label><?=$ans_array[0]?></label><br>
@@ -204,7 +204,7 @@ include_once('database.php');
                     elseif ($que_type == "2") {?>
                       <div class="form-group">
                         <label for="comment"><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></label>
-                      <textarea class="form-control" name="shortuserans[<?=$que_id?>]" rows="5" id="comment"></textarea>
+                      <textarea class="form-control" name="userans[<?=$que_id?>]" rows="5" id="comment"></textarea>
                     </div>
 
 
@@ -221,7 +221,7 @@ include_once('database.php');
                    </form>
 
                 <?php   } else {
-                  echo "you have already attempted 3 times";
+                  echo "you have already attempted 1000 times";
                 }?>
 
                 <?php
