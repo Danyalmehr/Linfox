@@ -128,7 +128,7 @@ padding: 3%;
               </a>
             </div>
             <div class="container-menu">
-              <a href="edituser.php">
+              <a href="check-on-user.php">
               <img src="images/download.jpg" alt="Avatar"style="background-color:white;" width="192px;"class="image">
               <div class="overlay">
                 <div class="text">User progress</div>
