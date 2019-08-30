@@ -111,7 +111,7 @@ padding: 3%;
 
             <h2>Check progress</h2>
             <div class="container-menu">
-              <a href="createuser.php">
+              <a href="check-user-course.php">
               <img src="images/images.png" style="background-color:white;"width="192px;" alt="Avatar" class="image">
               <div class="overlay">
                 <div class="text">By Course/Test</div>
