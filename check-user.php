@@ -73,9 +73,10 @@ include_once('database.php');
                         $user_id = $row['user_id'];
                         $first_name = $row['fname'];
                         $last_name = $row['lname'];
+                        $name = "{$first_name} {$last_name}"
                         ?>
 
-        <a href="check-user.php?id=<?=$user_id?>&fname= <?= htmlentities($fname) ?>&lname= <?= htmlentities($lname) ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= "{$first_name} {$last_name}" ?></button></a>
+      <a href="user-static.php?id=<?=$user_id?>&name= <?= htmlentities($name) ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $name  ?></button></a>
       </center>
                         <?php
                       }
