@@ -150,21 +150,31 @@ include_once('database.php');
 
               ?>
               <center class="result_display">
-            <?php  echo "<h2>Course name: ".  $_SESSION["coursename"] . "</h2><br>";
+            <?php
+              $date_bebore = " ";
+              $date_bebore = getcurrentdate($date_bebore);
+              $_SESSION["datebefore"] = $date_bebore;
+
+
+              echo " <h2>Course name: ".  $_SESSION["coursename"] . "</h2><br>";
               echo " <h2>Test name: ".  $_SESSION['testname'] . "</h2>";
               echo " <h4>This is your attempt number:".  $attemptNumber . "</h4>";
+              echo " <h4>This is date before :".   $_SESSION["datebefore"] . "</h4>";
+
+
               ?>
 
               </center>
             <?php  echo " <br> ";?>
 <?php
+
               $fetchqry = "SELECT *
               FROM question
               where test_id = '$test_id'
               ";
               $result=mysqli_query($con,$fetchqry);
               if ($attemptNumber <= 1000) {
-              $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`, `user_id`, `att_number`, `att_date`, `att_status`) values (0, '$test_id', '$user' , '$attemptNumber', '$date', 'Not completed')";
+              $fetchqry3 = "INSERT INTO attempt (`final_score`, `test_id`, `user_id`, `att_number`, `att_date`, `att_status` ,`time_taken`) values (0, '$test_id', '$user' , '$attemptNumber', '$date_bebore', 'Not completed', '0')";
               $result3 = mysqli_query($con,$fetchqry3);
               $questionNum = 1;
               while ($row = mysqli_fetch_array($result))
@@ -216,7 +226,7 @@ include_once('database.php');
                          }  ?>
 
 
-                      <button class="button" name="submit" style="vertical-align:middle"> <span> SUBMIT </span> </button>
+                      <button class="button" name="submit" style="vertical-align:middle" onclick="get_date();"> <span> SUBMIT </span> </button>
 
                    </form>
 
@@ -237,7 +247,15 @@ include_once('database.php');
 	<?php include("include/footer.inc") ?>
 
 
+<?php
+function get_date()
+{
+     date_default_timezone_set("Australia/Brisbane");
+     $date_after_submit = date("Y-m-d h:i:sa");
+     echo "$date_after_submit";
+   }
 
+ ?>
 
 
   </body>
