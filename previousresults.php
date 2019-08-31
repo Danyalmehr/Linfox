@@ -40,7 +40,7 @@ session_start();
                     <div class="col-md-12 col-md-9">
                           <center> <h1>Edit User Details</h1></center>
 
-                      			<?php $fetchqry = "SELECT final_score, test_name, fname, lname, course_name, att_date, att_status, att_number
+                      			<?php $fetchqry = "SELECT final_score, test_name, fname, lname, course_name, att_date, att_status, att_number,time_taken
                               FROM attempt
                               INNER JOIN test ON test.test_id = attempt.test_id
                               INNER JOIN user ON user.user_id = attempt.user_id
@@ -60,6 +60,7 @@ session_start();
 
                       			<?php
 
+
                             echo "<tr>
 
                                     <th>Course name</th>
@@ -75,7 +76,15 @@ session_start();
                     			    while($row = mysqli_fetch_array($result)):
                       				{
                                 $att_status = $row['att_status'];
+                                $time_taken =  $row['time_taken'];
+                                $days = floor($time_taken / 86400);
+                                $hour = floor($time_taken / 3600);
+                                $min =floor($time_taken / 60);
+                                $secs = ($time_taken - ($min * 60));
+
                                 checkstatus($att_status);
+
+
 
 
                       				echo "<tr><form action=user-process.php method=post>";
@@ -84,7 +93,7 @@ session_start();
                                         <td><input class='inputwidthforemailandotherinputintable' type=text name=lname value='".$row['course_name']."'</td>
                                         <td><input class='inputwidthforemailandotherinputintable'type=text name=user_type value='".$row['test_name']."'</td>
                                         <td><input class='inputwidthforemailandotherinputintable'type=text name=password value='".$row['att_number']."'</td>
-                                        <td><input class='inputwidthforemailandotherinputintable'type=text name=password value='".$row['att_number']."'</td>
+                                        <td><input class='inputwidthforemailandotherinputintable'type=text name=password value='$min:$secs'</td>
                                         <td id ='att_status'><input class='inputwidthforemailandotherinputintable' type=text name=email value='".$row['att_status']."'</td>
                                         checkstatus();
                                         <td><input class='inputwidthforemailandotherinputintable'type=text name=user_type value='".$row['att_date']."'</td>

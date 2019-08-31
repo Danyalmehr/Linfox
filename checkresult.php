@@ -62,9 +62,20 @@ require 'database.php';
     <div class="options">
           <center class="result_display">
               <?php
+
+
+                $date_after = "";
+                $date_after =strtotime(getcurrentdate($date_after));
+
+                $date_bebore = $_SESSION["datebefore"];
+                $date_bebore1 = strtotime($_SESSION["datebefore"]);
+                $time_taken = $date_after-$date_bebore1;
+                $_SESSION["time_taken"] = $time_taken;
+
+
                 echo "<h2>Course name: ".  $_SESSION["coursename"] . "</h2><br>";
                 echo " <h2>Test name: ".  $_SESSION['testname'] . "</h2><br>";
-                echo "<h4>Submission date: ".  $date . "</h4>";
+                echo "<h4>Submission date: ". $time_taken. "</h4>";
 
               ?>
 
@@ -77,7 +88,8 @@ require 'database.php';
       $userid = $_SESSION["userid"];
 			if(isset($_POST['submit']))
 			{
-				if(!empty($_POST['userans']))
+
+      if(!empty($_POST['userans']))
 				{
           $test_id = $_POST['test_id'];
           $attemptNumber = $_POST['attemptNumber'];
@@ -155,7 +167,7 @@ require 'database.php';
       <?php $i = $i + 1;}
         $scorePercentage = ($score/$count)*100;
         $att_status = "Completed";
-        $fetchqry3 = "UPDATE attempt SET final_score=$scorePercentage, att_date='$date', att_status='$att_status' WHERE user_id =$userid AND test_id=$test_id AND att_number=$attemptNumber";
+        $fetchqry3 = "UPDATE attempt SET final_score=$scorePercentage, att_date='$date_after', att_status='$att_status', time_taken='$time_taken' WHERE user_id =$userid AND test_id=$test_id AND att_number=$attemptNumber";
 
         $result3 = mysqli_query($con,$fetchqry3)or die(mysql_error());
 ?>
