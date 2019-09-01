@@ -159,7 +159,7 @@ include_once('database.php');
               echo " <h2>Course name: ".  $_SESSION["coursename"] . "</h2><br>";
               echo " <h2>Test name: ".  $_SESSION['testname'] . "</h2>";
               echo " <h4>This is your attempt number:".  $attemptNumber . "</h4>";
-              echo " <h4>This is date before :".   $_SESSION["datebefore"] . "</h4>";
+              //echo " <h4>This is date before :".   $_SESSION["datebefore"] . "</h4>";
 
 
               ?>
