@@ -108,8 +108,15 @@ include_once('database.php');
                       {
                         echo "your new details have been successfully UPDATED!!". mysqli_error($con);
                         echo "<br>redirecting...";
+                        $user_type = $_POST['user_type'];
 
-                        header("refresh:3;  URL=edituser.php");
+                        if ($user_type == 'Admin') {
+                            header("refresh:3;  URL=edituser.php");
+                          }
+                          else {
+                              header("refresh:3;  URL=edit_user_employee.php");
+                          }
+
                       }
                       else
                       {

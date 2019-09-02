@@ -17,110 +17,110 @@
         <link type="text/css" href="css/theme.css" rel="stylesheet">
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
-	
-	
+
+
 	<style>
-		
+
 		/*.span3{
-			
+
 			 overflow: hidden;
 			position: fixed;
-		
+
   z-index: 1;
 			display: block;
 			margin: 5em;
- 
+
 		}
-		
+
 		.span a {
-			
+
 			display: block;
 		}*/
-	
+
 	@media only screen and (max-width: 768px) and (min-width: 428px) {
-	
-		
+
+
 		body {
 			font-size: 14px;
 		}
-			
+
 		body .admin-side{
 			width: 100%;
 			display: inline;
 		}
-		
+
 		.sidebar {
     width: 10%;
     height: 90%;
     position: relative;
 			display: inline;
-			
-			
+
+
   }
  li a {float:left;
 	height: 1%;
 	 border-width: 0;
-		
+
 	  margin-left: 0.15em;
 	 font-size: 9px;
 		}
-		
+
 		i {
 			float:left;
-			
+
 		}
-		
-		
-		
- 
-			
-				
+
+
+
+
+
+
 }
-		
+
 		@media only screen and (max-width: 428px) {
-		
-			
+
+
 			body {
 			font-size: 12px;
 		}
-			
+
 		body .admin-side{
 			width: 100%;
 			display: inline;
 		}
-			
+
 		.sidebar {
     width: 10%;
     height: 90%;
     position: relative;
 			display: inline;
-			
-			
+
+
   }
  li a {float:left;
 	height: 1%;
 	 border-width: 0;
-		
+
 	  margin-left: 0.05em;
 	 font-size: 7px;
 		}
-		
+
 		i {
 			float:left;
-			
-		}	
-			
-			
+
 		}
-	
+
+
+		}
+
 	</style>
 
-	
+
 
 </head>
 <body onLoad="run_first()">
 
-	
+
 	<div class="sticky-top">
                       <div class="span3">
                           <div class="sidebar" style="display: inline">
@@ -136,17 +136,19 @@
 
                                   <li id="2" onClick="nav_item_selected(2)"><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
                                           <li id="3" onClick="nav_item_selected(3)"><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
-                                                  <li id="4" onClick="nav_item_selected(4)"><a href="index.php"><i class="menu-icon icon-signou"></i>Logout </a></li>
+                                                  <li id="4" onClick="nav_item_selected(4)"><a href="edit_user_employee.php"><i class="menu-icon icon-edit"></i>Edit user </a></li>
+                                                  <li id="5" onClick="nav_item_selected(5)"><a href="index.php"><i class="menu-icon icon-signout"></i>Logout </a></li>
+
 
                 </ul>
 
                           </div>
                           <!--/.sidebar-->
                       </div>
-	
+
 	</div>
 	<script>
-	
+
 	// When the user scrolls the page, execute myFunction
 window.onscroll = function() {myFunction()};
 
@@ -164,7 +166,7 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
-	
+
 	</script>
 
 </body>
