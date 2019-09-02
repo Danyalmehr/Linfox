@@ -69,9 +69,7 @@ session_start();
                                     <th>Test name</th>
                                     <th>Attempt number</th>
                                     <th>Time Taken</th>
-
                                     <th>Status</th>
-
                                     <th>Date</th>
                                     <th>Score</th>
                                   </tr>";
@@ -85,9 +83,6 @@ session_start();
                                 $secs = ($time_taken - ($min * 60));
 
                                 $array1 = array();
-                                $array2 = array();
-                                $array3 = array();
-                                $array4 = array();
 
                                 foreach ($att_status as $Status) {
                                   array_push($array1, $Status);
@@ -98,33 +93,33 @@ session_start();
                                 for ($x=0; $x < sizeof($num); $x++) {
                                         if ($array1[$x] != 'Completed') {?>
                                           <?php
-                                              echo "<tr><form action=user-process.php method=post>";
                                               echo "<tr>
-                                              <td><input class='inputwidthforemailandotherinputintable' type=text name=lname value='".$row['course_name']."'</td>
-                                              <td><input class='inputwidthforemailandotherinputintable'type=text name=user_type value='".$row['test_name']."'</td>
-                                              <td><input class='inputwidthforemailandotherinputintable'type=text name=password value='".$row['att_number']."'</td>
-                                              <td><input class='inputwidthforemailandotherinputintable'type=text name=password value='$min:$secs'</td> " ?>
+                                              <td><lable>".$row['course_name']."</label></td>
+                                              <td><lable>".$row['test_name']."</label></td>
+                                              <td> <label>".$row['att_number']." </label> </td>
+                                              <td> <label>$min:$secs </label> </td>" ?>
 
-                                              <td style="background-color: #ff9C9E"><input class='inputwidthforemailandotherinputintable' type=text name=email value='<?= $array1[$x];?>'</td>
+                                              <td style="background-color: #ff9C9E"><lable> <?= $array1[$x];?> </label> </td>
 
-                                              <?php echo "  <td><input class='inputwidthforemailandotherinputintable'type=text name=user_type value='".$row['att_date']."'</td>
-                                              <td><input class='inputwidthforemailandotherinputintable' type=text name=fname value='".$row['final_score']."' </td>
+                                              <?php echo "
+                                              <td><lable>".$row['att_date']."</label></td>
+                                              <td><lable>".$row['final_score']."</label></td>
                                               </tr>";
                                               echo "</form></tr>"; ?>
                                           <?php   } else {?>
                                               <?php
-                                            echo "<tr><form action=user-process.php method=post>";
                                             echo "<tr>
-                                              <td><input class='inputwidthforemailandotherinputintable' type=text name=lname value='".$row['course_name']."'</td>
-                                              <td><input class='inputwidthforemailandotherinputintable'type=text name=user_type value='".$row['test_name']."'</td>
-                                              <td><input class='inputwidthforemailandotherinputintable'type=text name=password value='".$row['att_number']."'</td>
-                                              <td><input class='inputwidthforemailandotherinputintable'type=text name=password value='$min:$secs'</td> " ?>
+                                              <td><lable>".$row['course_name']."</label></td>
+                                              <td><lable>".$row['test_name']."</label></td>
+                                              <td> <label>".$row['att_number']." </label> </td>
+                                              <td> <label>$min:$secs </label> </td>" ?>
 
-                                              <td style="background-color: #ADFFB4"><input class='inputwidthforemailandotherinputintable' type=text name=email value='<?= $array1[$x];?>'</td>
-                                            <?php echo "  <td><input class='inputwidthforemailandotherinputintable'type=text name=user_type value='".$row['att_date']."'</td>
-                                              <td><input class='inputwidthforemailandotherinputintable' type=text name=fname value='".$row['final_score']."' </td>
+                                              <td style="background-color: #ADFFB4"><lable> <?= $array1[$x];?> </label> </td>
+                                            <?php echo "
+                                              <td><lable>".$row['att_date']."</label></td>
+                                              <td><lable>".$row['final_score']."</label></td>
                                               </tr>";
-                                              echo "</form></tr>"; ?>
+                                              echo "</tr>"; ?>
 
 
                                       <?php  }
@@ -138,8 +133,8 @@ session_start();
 
 						</div>
 					</div>
-          </div>
-        </div>
+
+
 	<?php include("include/footer.inc") ?>
   <script type="text/javascript" src="js/confirmation.js"></script>
 
