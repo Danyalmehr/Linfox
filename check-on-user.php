@@ -120,7 +120,7 @@ padding: 3%;
             </div>
 
             <div class="container-menu">
-              <a href="edituser.php">
+              <a href="byuser-check-user.php">
               <img src="images/default-challenges.png" alt="Avatar"style="background-color:white;" width="192px;"class="image">
               <div class="overlay">
                 <div class="text">By User</div>
