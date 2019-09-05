@@ -43,7 +43,7 @@ session_start();
         <div class="member">
 					<h1> Create Test</h1>
 
-            <formaction="test-process.php" method="post">
+            <form action="test-process.php" method="post">
             <div class="row">
               <div class="col">
                     <label class="control-label col-sm-2" for="name">Test name:</label>
