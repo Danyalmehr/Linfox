@@ -53,6 +53,15 @@ session_start();
                   </div>
                     </div>
 
+                    <div class="row">
+                      <div class="col">
+                            <label class="control-label col-sm-2" for="name">Test video:</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="inputwidthforvreateuser" name="test_video" id="test_name"  class="form-control"  placeholder="Enter test video" required>
+                            </div>
+                          </div>
+                            </div>
+
 
                     <div class="row">
                       <div class="col">
@@ -71,14 +80,7 @@ session_start();
                   <?php   } ?>
                 </select>
 
-                <div class="row">
-                  <div class="col">
-                        <label class="control-label col-sm-2" for="name">Test video:</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="inputwidthforvreateuser" name="test_video" id="test_name"  class="form-control"  placeholder="Enter test video" required>
-                        </div>
-                      </div>
-                        </div>
+
 
                 <br>
                 <br>
