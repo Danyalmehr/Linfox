@@ -67,12 +67,13 @@ include_once('database.php');
           <div class="col-md-offset-2 col-md-8">
             <?php
 
+            $user_id = $_GET['id'];
             $courses = "SELECT *
                       FROM courses
                       ";
             					$result = mysqli_query($con,$courses);
                       ?>
-                      <h1 style="float: auto;"> To check on user you need to choose the course first </h1>
+                      <h1 style="float: auto;">choose the course first </h1>
                       <h3>STEP 1: Choose your COURSE</h3>
 
 
@@ -82,9 +83,9 @@ include_once('database.php');
                           {
                             $course_name=$row['course_name'];
                             $course_id=$row['course_id'];
-                            $course_desc=$row['course_desc'];?>
+                            ?>
 
-      <a href="check-user.php?id=<?=$course_id?>&name= <?= htmlentities($course_name) ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $course_name  ?></button></a>
+      <a href="byuser-user-static.php?course_id=<?=$course_id?>&user_id= <?= $user_id ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $course_name  ?></button></a>
 
 
               <?php } ?>
