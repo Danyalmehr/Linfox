@@ -66,10 +66,20 @@ session_start();
                       <option type="text" class="form-control"  value= <?= $id?>><?php echo "$course_name"?></option>
                     </div>
                   </div>
-                      </div>
+                </div>
 
                   <?php   } ?>
                 </select>
+
+                <div class="row">
+                  <div class="col">
+                        <label class="control-label col-sm-2" for="name">Test video:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="inputwidthforvreateuser" name="test_video" id="test_name"  class="form-control"  placeholder="Enter test video" required>
+                        </div>
+                      </div>
+                        </div>
+
                 <br>
                 <br>
                 <center class="table_heading">
