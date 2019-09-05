@@ -89,7 +89,7 @@ include_once('database.php');
         echo "$num3";
 
         $completed = $num3/$count_test;
-        $percentage_completed = $completed*100; 
+        $percentage_completed = $completed*100;
 
         if ($num < 1) {
           echo "The test has not been completed!";
@@ -104,9 +104,9 @@ include_once('database.php');
             <div class="col-md-2">
 
             </div>
-            <div class="search_results" id="search_results">
-            <table class="search_table" id="search_table" >
-                <tr><center class="table_heading">Course name: <?= $course_name ?> <br> <br>   Name: <?= $name ?> <br> <br> Percentage of course completed: <?= "$percentage_completed%" ?> <Center></tr><br><br>
+            <div class="col-md-8 search_results" id="search_results">
+            <center> <table class="search_table" id="search_table" >
+                <tr><center class="table_heading">Course name: <?= $course_name ?> <br> <br>   Name: <?= $name ?> <br> <br> Percentage of course completed: <?= "$percentage_completed%" ?> </Center></tr><br><br>
             <?php
             echo "<tr>
                     <th>Test name</th>
@@ -170,7 +170,7 @@ include_once('database.php');
               }
             }
               ?>
-      </table>
+      </table></Center>
          </div>
           </div>
 
