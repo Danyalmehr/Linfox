@@ -47,14 +47,23 @@ include_once('database.php');
         $course_id = $_GET['course_id'];
 
 
-        $fetchqry = "SELECT DISTINCT attempt.test_id, att_status, att_number, time_taken, att_date, final_score, test_name
+        $fetchqry = "SELECT DISTINCT att_status, att_number, time_taken, att_date, final_score, test_name
+                     FROM courses
+                     INNER JOIN test ON courses.course_id = test.course_id
+                     INNER JOIN attempt ON attempt.test_id = test.test_id
+                     WHERE user_id = $user_id AND courses.course_id = $course_id
+                      ";
+        $result=mysqli_query($con,$fetchqry);
+        $num=array(mysqli_num_rows($result));
+
+        $fetchqry3 = "SELECT DISTINCT attempt.test_id
                      FROM courses
                      INNER JOIN test ON courses.course_id = test.course_id
                      INNER JOIN attempt ON attempt.test_id = test.test_id
                      WHERE user_id = $user_id AND att_status = 'Completed' AND courses.course_id = $course_id
                       ";
-        $result=mysqli_query($con,$fetchqry);
-        $num=mysqli_num_rows($result);
+        $result3=mysqli_query($con,$fetchqry3);
+        $num3=mysqli_num_rows($result3);
 
         $fetchqry1 = "SELECT count(test_id) AS countOfTestId
                      FROM test
@@ -77,8 +86,10 @@ include_once('database.php');
 
         $count_test = $row1['countOfTestId'];
         echo "$count_test";
+        echo "$num3";
 
-        $percentage_completed = floor(($count_test/$num)*100);
+        $completed = $num3/$count_test;
+        $percentage_completed = $completed*100; 
 
         if ($num < 1) {
           echo "The test has not been completed!";
@@ -108,34 +119,53 @@ include_once('database.php');
 
               while ($row=mysqli_fetch_array($result))
               {
-
-                $test_name =$row['test_name'];
                 $att_status =array($row['att_status']);
-                $att_status = $row['att_status'];
-                $att_date = $row['att_date'];
-                $att_number = $row['att_number'];
-                $final_score = $row['final_score'];
-
                 $time_taken =  $row['time_taken'];
                 $days = floor($time_taken / 86400);
                 $hour = floor($time_taken / 3600);
                 $min =floor($time_taken / 60);
                 $secs = ($time_taken - ($min * 60));
-                ?>
-                <tr>
-                  <td> <label> <?= $test_name ?> </label> </td>
-                  <td> <label> <?= $att_number ?> </label> </td>
-                  <td> <label> <?= "$min:$secs" ?> </label> </td>
-                  <td> <label> <?= $att_status ?> </label> </td>
-                  <td> <label> <?= $att_date ?> </label> </td>
-                  <td> <label> <?= $final_score ?> </label> </td>
 
-                </tr>
+                $array1 = array();
 
-                <?php
+                foreach ($att_status as $Status) {
+                  array_push($array1, $Status);
+             }
+
+                //checkstatus($att_status,$num);
+
+                for ($x=0; $x < sizeof($num); $x++) {
+                        if ($array1[$x] != 'Completed') {?>
+                          <?php
+                              echo "<tr>
+                              <td><lable>".$row['test_name']."</label></td>
+                              <td> <label>".$row['att_number']." </label> </td>
+                              <td> <label>$min:$secs </label> </td>" ?>
+
+                              <td style="background-color: #ff9C9E"><lable> <?= $array1[$x];?> </label> </td>
+
+                              <?php echo "
+                              <td><lable>".$row['att_date']."</label></td>
+                              <td><lable>".$row['final_score']."</label></td>
+                              </tr>";
+                              echo "</form></tr>"; ?>
+                          <?php   } else {?>
+                              <?php
+                            echo "<tr>
+                              <td><lable>".$row['test_name']."</label></td>
+                              <td> <label>".$row['att_number']." </label> </td>
+                              <td> <label>$min:$secs </label> </td>" ?>
+
+                              <td style="background-color: #ADFFB4"><lable> <?= $array1[$x];?> </label> </td>
+                            <?php echo "
+                              <td><lable>".$row['att_date']."</label></td>
+                              <td><lable>".$row['final_score']."</label></td>
+                              </tr>";
+                              echo "</tr>"; ?>
 
 
-
+                      <?php  }
+                    }
                 }
               }
             }

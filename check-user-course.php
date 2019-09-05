@@ -84,7 +84,7 @@ include_once('database.php');
                             $course_id=$row['course_id'];
                             $course_desc=$row['course_desc'];?>
 
-      <a href="check-user-test.php?id=<?=$course_id?>&name= <?= htmlentities($course_name) ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $course_name  ?></button></a>
+      <a href="check-user.php?id=<?=$course_id?>&name= <?= htmlentities($course_name) ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $course_name  ?></button></a>
 
 
               <?php } ?>

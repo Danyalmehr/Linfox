@@ -44,12 +44,13 @@ include_once('database.php');
       if(!empty($_GET['id'] && $_GET['name']))
       {
         $id=$_GET['id'];
-        $test_name=$_GET['name'];
 
         $fetchqry = "SELECT DISTINCT attempt.user_id, user.fname, user.lname
         FROM attempt
         INNER JOIN user ON user.user_id = attempt.user_id
-        WHERE test_id = '$id'
+        INNER JOIN test ON test.test_id = attempt.test_id
+        INNER JOIN courses ON courses.course_id = test.course_id
+        WHERE courses.course_id = '$id'
         ";
         $result=mysqli_query($con,$fetchqry);
 
@@ -76,7 +77,7 @@ include_once('database.php');
                         $name = "{$first_name} {$last_name}"
                         ?>
 
-      <a href="user-static.php?id=<?=$user_id?>&test_id=<?=$id?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $name  ?></button></a>
+      <a href="user-static.php?user_id=<?=$user_id?>&course_id=<?=$id?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $name  ?></button></a>
       </center>
                         <?php
                       }
