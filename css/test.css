@@ -7,11 +7,12 @@
 
 
 @media screen and (min-width: 601px) {
-form p{font-size:1em; text-align: left; position: relative;left:10%; width: 76%;}
+form p{font-size:1em; text-align: left; position: relative; width: 76%;}
 		.options {
 
 			font-size:1.2em;
 			text-align: left;
+			margin-left: 1.2em;
 			line-height: 2em;
 
 		}

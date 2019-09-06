@@ -34,74 +34,9 @@ include_once('database.php');
     <title> Take test </title>
 
 	<style>
-  ul.unstyled, ol.unstyled {
-     margin-left: 0;
-     list-style: none;
-}
-		.span3 {
+	.span3 {
 			margin-right: 4em;
 		}
-    .widget-menu {
-    background: #fff;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-     border-radius: 3px;
-    overflow: hidden;
-}
-
-
-				@media only screen and (max-width: 768px) and (min-width: 428px) {
-
-
-			center h2{
-				font-size: 18px;
-			}
-
-			center h4{
-
-				font-size: 16px;
-			}
-
-					.options p {
-						font-size: 14px;
-					}
-					.options label{
-						font-size: 12px;
-					}
-}
-
-		@media only screen and (max-width: 428px) {
-			center h2{
-				font-size: 16px;
-			}
-
-			center h4{
-
-				font-size: 14px;
-			}
-
-					.options p {
-						font-size: 12px;
-					}
-					.options label{
-						font-size: 10px;
-					}
-
-
-		}
-
-    label {
-        display: block;
-        font: 1rem 'Fira Sans', sans-serif;
-    }
-
-    input,
-    label {
-        margin: .4rem 0;
-    }
-
-
-
 	</style>
 </head>
 <body onLoad="run_first()">
@@ -116,7 +51,7 @@ include_once('database.php');
 
 
 
-              	<div class="col-md-12">
+                <div class="col-md-8">
 
   <?php
     $user = $_SESSION["userid"];
@@ -191,8 +126,7 @@ include_once('database.php');
 
 
                   <form class="test-display" action="checkresult.php" method="post">
-                  <div class="options">
-
+                    <div class="options">
 
                       <p><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></p>
                       <?php $test_id = $row['test_id'];
@@ -200,11 +134,10 @@ include_once('database.php');
                       <input type="hidden" name="attemptNumber" value="<?=$attemptNumber?>">
                       <input type="hidden" name="que_id[<?=$que_id?>]" value="<?=$que_id?>">
 
-
-                      <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[0]?>">&nbsp;<label><?=$ans_array[0]?></label><br>
-                      <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[1]?>">&nbsp;<label><?=$ans_array[1]?></label><br>
-                      <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[2]?>">&nbsp;<label><?=$ans_array[2]?></label><br>
-                      <input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[3]?>">&nbsp;<label><?=$ans_array[3]?></label><br>
+                      <p><input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[0]?>">&nbsp;<?=$ans_array[0]?></p>
+                      <p><input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[1]?>">&nbsp;<?=$ans_array[1]?></p>
+                      <p><input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[2]?>">&nbsp;<?=$ans_array[2]?></p>
+                      <p><input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[3]?>">&nbsp;<?=$ans_array[3]?></p>
                   </div>
 
 
@@ -212,8 +145,8 @@ include_once('database.php');
 
                     <?php }
                     elseif ($que_type == "2") {?>
-                      <div class="form-group">
-                        <label for="comment"><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></label>
+                      <div class="">
+                        <p><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></p>
                       <textarea class="form-control" name="userans[<?=$que_id?>]" rows="5" id="comment"></textarea>
                     </div>
 
