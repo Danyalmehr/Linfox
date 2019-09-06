@@ -53,8 +53,8 @@ session_start();
 
                       			 ?>
 
-
                              <div class="search_results" id="search_results">
+                               <center>
 
 
                           	<table class="search_table" id="search_table" >
@@ -128,6 +128,8 @@ session_start();
 
                                       endwhile;?>
                       </table>
+                    </center>
+
                          </div>
                           </div>
 
