@@ -85,8 +85,6 @@ include_once('database.php');
 
 
         $count_test = $row1['countOfTestId'];
-        echo "$count_test";
-        echo "$num3";
 
         $completed = $num3/$count_test;
         $percentage_completed = $completed*100;

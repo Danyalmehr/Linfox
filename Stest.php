@@ -116,7 +116,7 @@ include_once('database.php');
                 {
                   $que_id = $row['que_id'];
                   $que_type = $row['que_type'];
-                  if ($que_type == "1") {
+                  if ($que_type == "mcq") {
 
 
                   $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4'], $row['ans'],$row['test_id']);
@@ -144,7 +144,7 @@ include_once('database.php');
                       <div style="border-bottom: 1px dotted black; margin: 1em; background-color: black;"></div>
 
                     <?php }
-                    elseif ($que_type == "2") {?>
+                    else{?>
                       <div class="">
                         <p><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></p>
                       <textarea class="form-control" name="userans[<?=$que_id?>]" rows="5" id="comment"></textarea>

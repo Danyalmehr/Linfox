@@ -25,7 +25,7 @@
 
 
 	@media only screen and (min-width: 768px){
-			
+
 			.navbar{
 				display: none;
 			}
@@ -46,11 +46,11 @@
 
 			display: block;
 		}*/
-		
+
 		.navbar {
-			
+
 		}
-	
+
 
 	@media only screen and (max-width: 768px) and (min-width: 428px) {
 
@@ -84,20 +84,20 @@
 			float:left;
 
 		}*/
-		
-	
+
+
 		.sticky-top {
 			display: none;
 		}
-		
+
 		.navbar-collapse {
 		height: initial;
 		}
-		
-		
 
-		
-		
+
+
+
+
 
 
 
@@ -135,11 +135,11 @@
 			float:left;
 
 		}*/
-			
+
 			.sticky-top {
 			display: none;
 		}
-			
+
 
 
 
@@ -170,6 +170,9 @@
                               <li id="4" onClick="nav_item_selected(4)"><a href="courses.php"><i class="menu-icon icon-inbox"></i>Question <!--<b class="label green pull-right">
                                                                   11</b>--> </a></li>
 
+                              <li id="5" onClick="nav_item_selected(5)"><a href="mark-answers-course.php"><i class="menu-icon icon-inbox"></i>Mark answers <!--<b class="label green pull-right">
+                            11</b>--> </a></li>
+
                                               <li><a href="index.php"><i class="menu-icon icon-signou"></i>Log out </a></li>
 
 							</ul>
@@ -178,9 +181,9 @@
                         <!--/.sidebar-->
                     </div>
 	</div>
-	
-	
-	
+
+
+
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <a class="navbar-brand" href="#">Menu</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -199,23 +202,26 @@
       </li>
 		<li class="nav-item">
         <a class="nav-link" href="admin-test.php"><i class="menu-icon icon-file"></i>Test</a>
-      </li> 
+      </li>
 		<li class="nav-item">
         <a class="nav-link" href="courses.php"><i class="menu-icon icon-file"></i>Questions</a>
-      </li> 
+      </li>
+    <li class="nav-item">
+        <a class="nav-link" href="mark-answers-course.php"><i class="menu-icon icon-file"></i>Mark answers</a>
+    </li>
 		<li class="nav-item">
         <a class="nav-link" href="index.php"><i class="menu-icon icon-file"></i>Log out</a>
-      </li> 
-		
+      </li>
+
     </ul>
-  </div>  
+  </div>
 </nav>
-	
+
 
 </body>
-	
+
 <script>
-	
+
 		function run_first() {
     if(sessionStorage.item_id) {
         document.getElementById(sessionStorage.item_id.toString()).classList.add("active");
@@ -234,7 +240,7 @@ function nav_item_selected(item_id) {
     //store item_id in sessionStorage
     sessionStorage.item_id = item_id;
 }
-	
+
 	</script>
-	
+
 </html>
