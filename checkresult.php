@@ -120,7 +120,7 @@ require 'database.php';
               array_push($array4, $res['que']);
           }
           foreach ($selected as $checkans) {
-            array_push($array1, $checkans);
+            array_push($array1, mysqli_real_escape_string($con, $checkans));
           }
 
 

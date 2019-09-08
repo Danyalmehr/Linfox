@@ -67,8 +67,10 @@ include_once('database.php');
           <div class="col-md-offset-2 col-md-8">
             <?php
 
-            $course_id = $_GET['id'];
-            $courses = "SELECT userans, que, fname, lname
+            $course_id = $_GET['course_id'];
+            $user_id = $_GET['user_id'];
+
+            $courses = "SELECT userans, que
                       FROM useranswer
                       INNER JOIN question ON question.que_id = useranswer.que_id
                       INNER JOIN user ON user.user_id = useranswer.user_id
@@ -85,17 +87,13 @@ include_once('database.php');
                       <?php
             					while ($row=mysqli_fetch_array($result))
                           {
-                            $userans=$row['userans'];
-                            $que=$row['que'];
-                            $fname=$row['fname'];
-                            $lname=$row['lname'];
+
+                            $que = $row['que'];
+                            $user_ans = $row['userans'];
 
                             ?>
-
-                            <p><?= "$fname " ?><?= $lname ?></p> <br>
-
-                            <p><?= $que ?></p> <br>
-                            <p><?= $userans ?></p> <br>
+                            <p> <?= $que ?> </p>
+                            <p> <?= $user_ans ?> </p><br>
 
 
               <?php } ?>

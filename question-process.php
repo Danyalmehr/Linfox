@@ -36,7 +36,7 @@ include_once('database.php');
     $que = mysqli_real_escape_string($con, $_POST['question']);
 
 
-    $insertqry = "INSERT INTO `question`(`que`, `que_type`, `test_id`) VALUES ('$que','shortAns', '$test_id')";
+    $insertqry = "INSERT INTO `question`(`que`, `que_type`, `test_id`) VALUES ('$que','shortans', '$test_id')";
     if(mysqli_query($con,$insertqry))
     {
       echo "your new details have been successfully INSERTED!!". mysqli_error($con);

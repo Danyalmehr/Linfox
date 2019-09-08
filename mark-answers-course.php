@@ -72,7 +72,7 @@ include_once('database.php');
                       ";
             					$result = mysqli_query($con,$courses);
                       ?>
-                      <h1 style="float: auto;"> To check on user you need to choose the course first </h1>
+                      <h1 style="float: auto;"> To mark the "Short answer" questions choose the course</h1>
                       <h3>STEP 1: Choose your COURSE</h3>
 
 
@@ -84,7 +84,7 @@ include_once('database.php');
                             $course_id=$row['course_id'];
                             $course_desc=$row['course_desc'];?>
 
-      <a href="mark-answers.php?id=<?=$course_id?>&name= <?= htmlentities($course_name) ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $course_name  ?></button></a>
+      <a href="mark-answers-user.php?id=<?=$course_id?>&name= <?= htmlentities($course_name) ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $course_name  ?></button></a>
 
 
               <?php } ?>
