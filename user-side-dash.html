@@ -209,22 +209,23 @@
 	
 	<script>
 
-	// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+	function run_first() {
+    if(sessionStorage.item_id) {
+        document.getElementById(sessionStorage.item_id.toString()).classList.add("active");
+    }
+    else {
+        document.getElementById("0").classList.add("active");
+    }
+}
 
-// Get the navbar
-var navbar = document.getElementsByClassName("span3");
+function nav_item_selected(item_id) {
+    for(i = 0; i < 5; i++) {
+        document.getElementById(i.toString()).classList.remove("active");
+    }
+    document.getElementById(item_id.toString()).classList.add("active");
 
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
+    //store item_id in sessionStorage
+    sessionStorage.item_id = item_id;
 }
 
 	</script>
