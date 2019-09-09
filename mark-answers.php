@@ -67,20 +67,31 @@ include_once('database.php');
           <div class="col-md-offset-2 col-md-8">
             <?php
 
-            $course_id = $_GET['course_id'];
-            $user_id = $_GET['user_id'];
+            $test_name = $_GET['test_name'];
+            $test_id = $_GET['test_id'];
 
             $courses = "SELECT userans, que
                       FROM useranswer
                       INNER JOIN question ON question.que_id = useranswer.que_id
                       INNER JOIN user ON user.user_id = useranswer.user_id
                       INNER JOIN test ON test.test_id = useranswer.test_id
-                      where que_type = 'shortans' AND course_id = $course_id
+                      where que_type = 'shortans' AND course_id = ".$_SESSION["course_id"]." AND useranswer.test_id = $test_id AND useranswer.user_id = ".$_SESSION["user_id"]." 
+                      ORDER BY userans DESC
                       ";
-            					$result = mysqli_query($con,$courses);
+            					$result = mysqli_query($con,$courses) or mysql_error($con,$courses);
+                      //where que_type = 'shortans' AND course_id = ".$_SESSION["course_id"]." AND useranswer.test_id = $test_id AND useranswer.user_id = ".$_SESSION["user_id"]."
+                      //INNER JOIN question ON question.que_id = useranswer.que_id
+                      //INNER JOIN user ON user.user_id = useranswer.user_id
+                    //  INNER JOIN test ON test.test_id = useranswer.test_id
+                      //ORDER BY userans DES
+
+
                       ?>
-                      <h1 style="float: auto;"> To check on user you need to choose the course first </h1>
-                      <h3>STEP 1: Choose your COURSE</h3>
+                    <center>
+                      <h1>Course name: <?= $_SESSION['course_name'] ?></h1>
+                      <h1>Test name: <?= $test_name ?></h1>
+                      <h1>User name: <?= $_SESSION['name'] ?></h1>
+                    </center>
 
 
 
@@ -93,13 +104,25 @@ include_once('database.php');
 
                             ?>
                             <p> <?= $que ?> </p>
-                            <p> <?= $user_ans ?> </p><br>
-
+                            <p> <?= $user_ans ?> </p>
+                            <center>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                              <label class="btn btn-secondary active">
+                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Excellent
+                              </label>
+                              <label class="btn btn-secondary">
+                                <input type="radio" name="options" id="option2" autocomplete="off"> Average
+                              </label>
+                              <label class="btn btn-secondary">
+                                <input type="radio" name="options" id="option3" autocomplete="off"> Bad
+                              </label>
+                            </div><br><br>
+                          </center>
 
               <?php } ?>
-   </div>
- </div>
-</div>
+             </div>
+           </div>
+          </div>
 
 
 
