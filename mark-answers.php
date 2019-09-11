@@ -67,16 +67,17 @@ include_once('database.php');
           <div class="col-md-offset-2 col-md-8">
             <?php
 
-            $test_name = $_GET['test_name'];
-            $test_id = $_GET['test_id'];
+            $que = $_GET['que'];
+            $que_id = $_GET['que_id'];
 
-            $courses = "SELECT userans, que
+            $courses = "SELECT MAX(ans_id) as ans_id, userans, que
                       FROM useranswer
-                      INNER JOIN question ON question.que_id = useranswer.que_id
+                      INNER JOIN question ON useranswer.que_id = question.que_id
                       INNER JOIN user ON user.user_id = useranswer.user_id
                       INNER JOIN test ON test.test_id = useranswer.test_id
-                      where que_type = 'shortans' AND course_id = ".$_SESSION["course_id"]." AND useranswer.test_id = $test_id AND useranswer.user_id = ".$_SESSION["user_id"]." 
-                      ORDER BY userans DESC
+                      where que_type = 'shortans' AND course_id = ".$_SESSION["course_id"]." AND useranswer.test_id = ".$_SESSION['test_id']." AND useranswer.user_id = ".$_SESSION["user_id"]." AND useranswer.que_id = $que_id
+                      group by userans
+                      limit 1
                       ";
             					$result = mysqli_query($con,$courses) or mysql_error($con,$courses);
                       //where que_type = 'shortans' AND course_id = ".$_SESSION["course_id"]." AND useranswer.test_id = $test_id AND useranswer.user_id = ".$_SESSION["user_id"]."
@@ -85,14 +86,15 @@ include_once('database.php');
                     //  INNER JOIN test ON test.test_id = useranswer.test_id
                       //ORDER BY userans DES
 
-
+                      $user_id = $_SESSION["user_id"];
+                      $test_id = $_SESSION['test_id'];
                       ?>
-                    <center>
-                      <h1>Course name: <?= $_SESSION['course_name'] ?></h1>
-                      <h1>Test name: <?= $test_name ?></h1>
-                      <h1>User name: <?= $_SESSION['name'] ?></h1>
-                    </center>
-
+                      <center>
+                        <h1>Course name: <?= $_SESSION['course_name'] ?></h1>
+                        <h1>Test name: <?= $_SESSION['test_name'] ?></h1>
+                        <h1>User name: <?= $_SESSION['name'] ?></h1>
+                      </center>
+                      <h3>Choose the question you want to mark <?= $_SESSION['name'] ?> answer:</h3>
 
 
                       <?php
@@ -101,31 +103,45 @@ include_once('database.php');
 
                             $que = $row['que'];
                             $user_ans = $row['userans'];
+                            $ans_id = $row['ans_id'];
+
 
                             ?>
                             <p> <?= $que ?> </p>
                             <p> <?= $user_ans ?> </p>
+
+
+                            <form id="frmbox" action="mark-process.php" method="post" onsubmit="return formSubmit();">
                             <center>
+                              <input type="hidden" name="que_id" value="<?= $que_id ?>">
+                              <input type="hidden" name="user_id" value="<?=  $user_id?>">
+                              <input type="hidden" name="test_id" value="<?=  $test_id?>">
+                              <input type="hidden" name="ans_id" value="<?=  $ans_id?>">
+
+
+
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                               <label class="btn btn-secondary active">
-                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Excellent
+                                <input type="radio" name="options" id="option1" autocomplete="off" value="Excellent" checked> Excellent
                               </label>
                               <label class="btn btn-secondary">
-                                <input type="radio" name="options" id="option2" autocomplete="off"> Average
+                                <input type="radio" name="options" id="option2" autocomplete="off" value="Average"> Average
                               </label>
                               <label class="btn btn-secondary">
-                                <input type="radio" name="options" id="option3" autocomplete="off"> Bad
+                                <input type="radio" name="options" id="option3" autocomplete="off" value="Bad"> Bad
                               </label>
                             </div><br><br>
+                            <h3 id="success"></h3>
                           </center>
 
+
               <?php } ?>
+              <button type="submit" class="btn btn-outline-success">Success</button>
+            </form>
+
              </div>
            </div>
           </div>
-
-
-
 
 
 	<?php include("include/footer.inc") ?>
