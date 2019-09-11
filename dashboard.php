@@ -149,12 +149,8 @@ session_start();
 
 
 ?>
-            <form class="test" action="user-test.php" method="post">
-              <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
-              <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>
+<a href="user-test.php?id=<?=$course_id?>&name= <?= htmlentities($course_name) ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $course_name  ?></button></a>
 
-              <button type="submit" name="selectedcourse" class="btn btn-outline-dark btn-lg span5 btn-course test" style="margin-left:0.5em"><span class="course_name"><?= $course_name ?></span></button>
-            </form>
 
 <?php
 

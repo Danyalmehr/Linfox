@@ -143,9 +143,11 @@ include_once('database.php');
            </div>
           </div>
 
-
 	<?php include("include/footer.inc") ?>
 
+<script type="text/javascript" src="formjs.js">
+
+</script>
 
   </body>
 </html>

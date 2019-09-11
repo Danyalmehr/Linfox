@@ -39,9 +39,11 @@ include_once('database.php');
     <div class="container-fluid">
       <?php include("user-side-dash.html") ?>
 
-      <?php   if(isset($_POST['selectedcourse'])){
-          $course_id = $_POST['course_id'];
-          $_SESSION["coursename"] = $_POST['course_name'];
+      <?php
+
+      $_SESSION['coursename'] = $_GET['name'];
+      $course_id = $_GET['id'];
+
           $test = "SELECT *
                     FROM test
                     WHERE course_id = $course_id
@@ -76,14 +78,7 @@ include_once('database.php');
                         $test_id=$row['test_id'];
                         $test_name = $row['test_name'];
                         ?>
-                        <form class="test" action="test-video.php" method="post">
-                          <input type="hidden" name="test_id" value="<?=$test_id?>"><label for=""><?php $test_id?></label>
-                          <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
-                          <input type="hidden" name="test_name" value="<?=$test_name?>"><label for=""><?php $test_name?></label>
-
-                          <button type="submit" name="selectedtest" class="btn btn-outline-dark btn-lg span5 btn-course test" style="margin-left:0.5em"><span class="course_name"><?= $test_name ?></span></button>
-                        </form>
-
+                        <a href="test-video.php?test_id=<?=$test_id?>&name= <?= htmlentities($test_name) ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $test_name  ?></button></a>
 
                         <?php
                       }
@@ -93,7 +88,7 @@ include_once('database.php');
 
                       <?php
                       }
-                    }
+
                          ?>
 
                        </div>

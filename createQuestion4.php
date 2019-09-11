@@ -41,26 +41,16 @@ include_once('database.php');
 
     <?php include("include/nav.inc") ?>
     <?php
-      if(isset($_POST['selectedtest']))
-      {
-        $_SESSION["test_id"]=$_POST['test_id'];
+
+
+        $test_id=$_GET['test_id'];
+        $test_name=$_GET['name'];
+
         $fetchqry = "SELECT *
         FROM question
-        where test_id = '$_SESSION[test_id]'
+        where test_id = $test_id
         ";
         $result=mysqli_query($con,$fetchqry);
-
-        $courseTestQry = "SELECT courses.course_id, test_name, course_name
-        FROM test
-        INNER JOIN courses ON courses.course_id = test.course_id
-        WHERE test_id = '$_SESSION[test_id]'
-        ";
-        $result1=mysqli_query($con,$courseTestQry);
-        $row1= mysqli_fetch_array($result1);
-        $test_name = $row1['test_name'];
-        $course_name = $row1['course_name'];
-        $course_id = $row1['course_id'];
-
 
 
      ?>
@@ -77,7 +67,7 @@ include_once('database.php');
               <div class="col-md-8">
                 <center class="table_heading">
 
-                  <h3>Course name: <?= $course_name ?> </h3>
+                  <h3>Course name: <?= $_SESSION['coursename'] ?> </h3>
                   <h3>Test name: <?= $test_name?> </h3>
                   <h1> Create Question</h1>
 
@@ -158,18 +148,8 @@ include_once('database.php');
                       </form>
 
 
-
-
-
-                        <form class="" action="test.php" method="post">
-                            <div class="col-sm-offset-2 col-sm-10">
-                            <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
-                            <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>
-                            <button type="submit" name="selectedcourse" class="btn-sm btn-secondary">Back to test page</button>
-                          </div>
                           </div>
 
-                          </form>
 
                     </div>
                   </div>
@@ -218,7 +198,6 @@ include_once('database.php');
                                          <?php endwhile;?>
                          </table>
                           </div>
-                       <?php } ?>
                              </div>
                            </div>
 

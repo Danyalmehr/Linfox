@@ -120,9 +120,10 @@ include_once('database.php');
                 <div class="btn-controls">
                     <div class="btn-box-row row-fluid course">
 
-            <?php   if(isset($_POST['selectedtest'])){
-                $test_id = $_POST['test_id'];
-                $course_id = $_POST['course_id'];
+            <?php
+                $test_id = $_GET['test_id'];
+                $test_name = $_GET['name'];
+
                 $course_name = $_SESSION["coursename"];
 
                 $test = "SELECT *
@@ -139,6 +140,7 @@ include_once('database.php');
                                $test_name = $_SESSION['testname'];
 
                           ?>
+                          <center>
 
                   <h1>course: <?=  $course_name  ?></h1>
                   	<h2> Training Videos for test: <?= $test_name  ?>  </h2>
@@ -147,15 +149,8 @@ include_once('database.php');
                 echo "<iframe class=\"iframe\" width=\"90%\" height=\"415\" src=\"https://www.youtube.com/embed/$test_video\ frameborder=\"0\" allow=\"accelerometer\"; \"autoplay\"; \"encrypted-media\"; \"gyroscope\"; \"allowfullscreen\"></iframe>";
 
                 }
-              }?>
+              ?>
 
-              <form class="" action="user-test.php" method="post">
-                <input type="hidden" name="test_id" value="<?=$test_id?>"><label for=""><?php $test_id?></label>
-                <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
-                <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>
-                <button type="submit" name="selectedcourse" class="btn btn-danger btn-lg" style="float: auto;"> <span> < Back to previous page </span> </button>
-              </form>
-              <a href="dashboard.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> << Back to home page </span> </button></a>
 
               <form class="test" action="stest.php" method="post">
                 <input type="hidden" name="test_id" value="<?=$test_id?>"><label for=""><?php $test_id?></label>
@@ -163,6 +158,12 @@ include_once('database.php');
                 <button type="submit" name="selectedtest" class="btn btn-outline-dark btn-lg span5 btn-course test" style="margin-left:0.5em"><span class="course_name"> Take the test </span></button>
               </form>
 
+                  <div class="row row">
+                    <a href="user-test.php">  <button class="btn btn-danger btn-lg" style="float: auto;"> <span> < Back to previous page </span> </button></a>
+                    <a href="dashboard.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> << Back to home page </span> </button></a>
+                  </div>
+
+                        </center>
 
 
 
