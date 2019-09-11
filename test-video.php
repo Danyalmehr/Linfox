@@ -140,6 +140,7 @@ include_once('database.php');
                                $test_name = $_SESSION['testname'];
 
                           ?>
+                          
                           <center>
 
                   <h1>course: <?=  $course_name  ?></h1>
@@ -158,11 +159,9 @@ include_once('database.php');
                 <button type="submit" name="selectedtest" class="btn btn-outline-dark btn-lg span5 btn-course test" style="margin-left:0.5em"><span class="course_name"> Take the test </span></button>
               </form>
 
-                  <div class="row row">
-                    <a href="user-test.php">  <button class="btn btn-danger btn-lg" style="float: auto;"> <span> < Back to previous page </span> </button></a>
-                    <a href="dashboard.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> << Back to home page </span> </button></a>
-                  </div>
 
+                            <a href="user-test.php">  <button class="btn btn-danger btn-lg" style="float: auto;"> <span> < Back to previous page </span> </button></a>
+                            <a href="dashboard.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> << Back to home page </span> </button></a>
                         </center>
 
 
