@@ -29,18 +29,24 @@ session_start();
     <title>Dashboard</title>
 
 </head>
+<style>
+.user_image{ border: 1px solid black;
+  border-radius: 50px;
+height: 100px;}
+</style>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
+
       <?php include("user-side-dash.html") ?>
     	<div class="row">
 
                     <div class="col-md-12 col-md-9">
                           <center> <h1>Edit User Details</h1></center>
 
-                      			<?php $fetchqry = "SELECT final_score, test_name, fname, lname, course_name, att_date, att_status, att_number,time_taken
+                      			<?php $fetchqry = "SELECT final_score, test_name, fname, lname, course_name, att_date, att_status, att_number,time_taken,image_name
                               FROM attempt
                               INNER JOIN test ON test.test_id = attempt.test_id
                               INNER JOIN user ON user.user_id = attempt.user_id
@@ -51,6 +57,8 @@ session_start();
 
 
 
+
+
                       			 ?>
 
                              <div class="search_results" id="search_results">
@@ -58,7 +66,17 @@ session_start();
 
 
                           	<table class="search_table" id="search_table" >
-                              <tr><center class="table_heading">Test results for  <?php echo" $fname "?> are as following<Center></tr><br><br>
+
+                              <tr >
+                                <div class="row">
+                                                                  <div class="col-md-12">
+                                  <?php echo " <img class='user_image' src='images/".$_SESSION['image_name']."' width='100p' height='auto'>";?></center>
+                                </div>
+                                <div class="col-md-12">
+                                <h3>Test results for  <?php echo" $fname "?> are as following </h3><br><br>
+                               </div>
+                               </div>
+                               </tr>
 
                       			<?php
 
@@ -75,6 +93,10 @@ session_start();
                                   </tr>";
                     			    while($row = mysqli_fetch_array($result)):
                       				{
+                                $image_name =  $row['image_name'];
+                                $_SESSION['image_name'] = "$image_name";
+
+
                                 $att_status =array($row['att_status']);
                                 $time_taken =  $row['time_taken'];
                                 $days = floor($time_taken / 86400);

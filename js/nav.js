@@ -8,7 +8,7 @@ function run_first() {
 }
 
 function nav_item_selected(item_id) {
-    for(i = 0; i < 5; i++) {
+    for(i = 0; i < 7; i++) {
         document.getElementById(i.toString()).classList.remove("active");
     }
     document.getElementById(item_id.toString()).classList.add("active");

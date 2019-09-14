@@ -29,6 +29,13 @@ session_start();
     <title>Dashboard</title>
 
 </head>
+
+<style>
+.user_image{ border: 1px solid black;
+  border-radius: 50px;
+height: 40px;}
+</style>
+
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
@@ -48,6 +55,7 @@ session_start();
                           	<table class="search_table" id="search_table" >
                       			<?php
                             echo "<tr>
+                                      <th> Image </th>
                                       <th> First name </th>
                                       <th> Last name</th>
                                       <th> Email </th>
@@ -61,7 +69,14 @@ session_start();
                       				echo "<tr><form action=user-process.php method=post>";
                               echo "<input type=hidden name=user_id value='".$row['user_id']."'>"; // This is hidden field
                               echo "<tr>
-                                        <td><input class='inputwidthforemailandotherinputintable' type=text name=fname value='".$row['fname']."'</td>
+                                        <td>
+                                        <img id='btnfile' class='user_image' id='btnfile' src='images/".$row['image_name']."' width='70px;'></td>
+
+                                        <div class='image_select_div' style='display:none'>
+                                               <input type=file id=imagename name=imagename />
+                                          </div>
+
+                                        <td><input class='inputwidthforemailandotherinputintable' type=text name=fname value='".$row['fname']."' </td>
                                         <td><input class='inputwidthforemailandotherinputintable' type=text name=lname value='".$row['lname']."'</td>
                                         <td><input class='inputwidthforemailandotherinputintable' type=email name=email value='".$row['email']."'</td>
                                         <td><input class='inputwidthforemailandotherinputintable'type=text name=password value='".$row['password']."'</td>
@@ -82,13 +97,12 @@ session_start();
           </div>
         </div>
 	<?php include("include/footer.inc") ?>
-  <script type="text/javascript" src="js/confirmation.js"></script>
 
-<!--!	<script>
-		function(popup){
-			var btn=document.getElementsByClassName("btn-course")
-			var
-		}
-	</script>-->
+  <script type="text/javascript">
+  $("#btnfile").click(function () {
+      $("#imagename").click();
+  });
+  </script>
+
 </body>
 </html>

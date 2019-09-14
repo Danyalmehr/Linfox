@@ -36,6 +36,13 @@ include_once('database.php');
     <title> Take test </title>
 
 </head>
+
+<style>
+.user_image{ border: 1px solid black;
+  border-radius: 50px;
+height: 100px;}
+</style>
+
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
 
@@ -72,13 +79,14 @@ include_once('database.php');
         $result1=mysqli_query($con,$fetchqry1);
         $row1=mysqli_fetch_array($result1);
 
-        $fetchqry2 = "SELECT fname, lname, course_name
+        $fetchqry2 = "SELECT fname, lname, course_name ,image_name
                      FROM user, courses
                      WHERE course_id = $course_id AND user_id = $user_id
                       ";
         $result2=mysqli_query($con,$fetchqry2);
         $row2=mysqli_fetch_array($result2);
         $fname = $row2['fname'];
+        $image_name = $row2['image_name'];
         $lname = $row2['lname'];
         $course_name = $row2['course_name'];
         $name = "{$fname} {$lname}";
@@ -104,7 +112,13 @@ include_once('database.php');
             </div>
             <div class="col-md-8 search_results" id="search_results">
             <center> <table class="search_table" id="search_table" >
-                <tr><center class="table_heading">Course name: <?= $course_name ?> <br> <br>   Name: <?= $name ?> <br> <br> Percentage of course completed: <?= "$percentage_completed%" ?> </Center></tr><br><br>
+                <tr><center class="table_heading">
+                  Course name: <?= $course_name ?> <br> <br>
+                  Name: <?= $name ?> <br> <br>
+                  <div class="col-md-12">
+                  <?php echo " <img class='user_image' src='images/".  $image_name."' width='100p' height='auto'>";?></center>
+                  </div> <br> <br> <br> <br>
+                  Percentage of course completed: <?= "$percentage_completed%" ?> </Center></tr><br><br>
             <?php
             echo "<tr>
                     <th>Test name</th>

@@ -60,7 +60,6 @@ include_once('database.php');
 
 
 <?php
-
               if(isset($_POST['submit'])) {
                   //make the database connection
                   $conn  = db_connect();
@@ -68,22 +67,26 @@ include_once('database.php');
                   $lname = $conn -> real_escape_string($_POST['lname']);
                   $email = $conn -> real_escape_string($_POST['email']);
                   $password = $conn -> real_escape_string($_POST['password']);
-                  $user_type= $conn -> real_escape_string($_POST['user_type']);
+                  $user_type = $conn -> real_escape_string($_POST['user_type']);
+                  $image_name = $conn -> real_escape_string($_POST['selected_image']);
+
                   //create an insert query
                   $sql = "insert into user (fname, lname, email, password,user_type)
                     VALUES ('$fname', '$lname', '$email', '$password', '$user_type')";
+
                   //execute the query
                   if($conn -> query($sql))
                   {
-
                       header("location: index.php");
 
                   }
                   $conn -> close();
-              }
 
 
-            if (isset($_POST['delete']))
+      }
+
+
+        if (isset($_POST['delete']))
               {
                       $fetchqry1 = "DELETE FROM user
                       WHERE user_id ='$_POST[user_id]'";
@@ -101,8 +104,15 @@ include_once('database.php');
                 }
 
           if (isset($_POST['update']))
+
               {
-                    $fetchqry = "UPDATE user SET `fname`= '$_POST[fname]', `lname`= '$_POST[lname]', `email`= '$_POST[email]', `password`= '$_POST[password]', `user_type`= '$_POST[user_type]'
+                $name = $_FILES['imagename']['name'];
+                $temp_name  = $_FILES['imagename']['tmp_name'];
+
+
+
+                    $fetchqry = "UPDATE user SET `fname`= '$_POST[fname]', `lname`= '$_POST[lname]', `email`= '$_POST[email]',
+                     `password`= '$_POST[password]', `user_type`= '$_POST[user_type]' , `image_name` = '$name'
                     WHERE user_id ='$_POST[user_id]'";
                       if(mysqli_query($con,$fetchqry))
                       {
@@ -110,7 +120,7 @@ include_once('database.php');
                         echo "<br>redirecting...";
                         $user_type = $_POST['user_type'];
 
-                        if ($user_type == 'Admin') {
+                       if ($user_type == 'Admin') {
                             header("refresh:3;  URL=edituser.php");
                           }
                           else {
@@ -122,7 +132,20 @@ include_once('database.php');
                       {
                         echo "something is wrong with Update". mysqli_error($con);
                       }
+
+
+                      if(isset($name)){
+                          if(!empty($name)){
+                              $location = 'images/';
+                              if(move_uploaded_file($temp_name, $location.$name)){
+                                  echo 'File uploaded successfully';
+                              }
+                          }
+                            }  else {
+                                echo 'You should select a file to upload !!';
+                            }
                 }
+
  ?>
 
 	<?php include("include/footer.inc") ?>

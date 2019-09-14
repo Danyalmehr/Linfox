@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 13, 2019 at 12:40 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.4
+-- Host: 127.0.0.1:3306
+-- Generation Time: Sep 14, 2019 at 04:42 AM
+-- Server version: 5.7.26
+-- PHP Version: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,16 +28,20 @@ SET time_zone = "+00:00";
 -- Table structure for table `attempt`
 --
 
-CREATE TABLE `attempt` (
-  `att_id` int(255) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `attempt`;
+CREATE TABLE IF NOT EXISTS `attempt` (
+  `att_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
   `final_score` varchar(255) DEFAULT NULL,
   `att_number` int(10) NOT NULL,
   `test_id` int(255) UNSIGNED DEFAULT NULL,
   `user_id` int(255) UNSIGNED DEFAULT NULL,
   `att_date` varchar(30) NOT NULL,
   `att_status` text,
-  `time_taken` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `time_taken` int(255) NOT NULL,
+  PRIMARY KEY (`att_id`),
+  KEY `test_id` (`test_id`),
+  KEY `email_FK` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=288 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `attempt`
@@ -69,7 +73,9 @@ INSERT INTO `attempt` (`att_id`, `final_score`, `att_number`, `test_id`, `user_i
 (282, '40', 12, 2, 8, '2019-09-10 10:59:39am', 'Completed', 22),
 (283, '40', 13, 2, 8, '2019-09-10 11:00:06am', 'Completed', 18),
 (284, '60', 2, 2, 11, '2019-09-10 02:15:24pm', 'Completed', 33),
-(285, '0', 14, 2, 8, '2019-09-11 11:26:29pm', 'Not completed', 0);
+(285, '0', 14, 2, 8, '2019-09-11 11:26:29pm', 'Not completed', 0),
+(286, '20', 15, 2, 8, '2019-09-14 12:51:52pm', 'Completed', 11),
+(287, '20', 16, 2, 8, '2019-09-14 02:39:01pm', 'Completed', 17);
 
 -- --------------------------------------------------------
 
@@ -77,11 +83,13 @@ INSERT INTO `attempt` (`att_id`, `final_score`, `att_number`, `test_id`, `user_i
 -- Table structure for table `courses`
 --
 
-CREATE TABLE `courses` (
-  `course_id` int(255) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `courses`;
+CREATE TABLE IF NOT EXISTS `courses` (
+  `course_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
   `course_name` text NOT NULL,
-  `course_desc` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `course_desc` text NOT NULL,
+  PRIMARY KEY (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `courses`
@@ -98,8 +106,9 @@ INSERT INTO `courses` (`course_id`, `course_name`, `course_desc`) VALUES
 -- Table structure for table `question`
 --
 
-CREATE TABLE `question` (
-  `que_id` int(255) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `question`;
+CREATE TABLE IF NOT EXISTS `question` (
+  `que_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
   `que` text NOT NULL,
   `option 1` varchar(222) NOT NULL,
   `option 2` varchar(222) NOT NULL,
@@ -107,8 +116,10 @@ CREATE TABLE `question` (
   `option 4` varchar(222) NOT NULL,
   `ans` varchar(222) NOT NULL,
   `test_id` int(255) UNSIGNED DEFAULT NULL,
-  `que_type` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `que_type` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`que_id`),
+  KEY `test_id` (`test_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=939 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `question`
@@ -131,12 +142,15 @@ INSERT INTO `question` (`que_id`, `que`, `option 1`, `option 2`, `option 3`, `op
 -- Table structure for table `test`
 --
 
-CREATE TABLE `test` (
-  `test_id` int(255) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `test`;
+CREATE TABLE IF NOT EXISTS `test` (
+  `test_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
   `test_name` varchar(255) NOT NULL,
   `course_id` int(255) UNSIGNED DEFAULT NULL,
-  `test_video` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `test_video` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`test_id`),
+  KEY `course_id` (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `test`
@@ -157,25 +171,29 @@ INSERT INTO `test` (`test_id`, `test_name`, `course_id`, `test_video`) VALUES
 -- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
-  `user_id` int(255) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `user_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
   `fname` text NOT NULL,
   `lname` text NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `user_type` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `user_type` varchar(100) NOT NULL,
+  `image_name` varchar(255) NOT NULL DEFAULT 'no-image.jpg',
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `fname`, `lname`, `password`, `email`, `user_type`) VALUES
-(2, 's', 's', '12345678', 's@s.s', 'Admin'),
-(3, 'shesh', 'sonar', 'sheshbhushan', 'shesh@s.s', 'Admin'),
-(7, 'dan', 'wqe', '12345678', 'abc@sad', 'Employee'),
-(8, 'dan', 'dan', '123456789', 'dan@dan', 'Employee'),
-(11, 'f', 'f', '12345678', 'f@f', 'Employee');
+INSERT INTO `user` (`user_id`, `fname`, `lname`, `password`, `email`, `user_type`, `image_name`) VALUES
+(2, 's', 's', '12345678', 's@s.s', 'Admin', 'no-image.jpg'),
+(3, 'shesh', 'sonar', 'sheshbhushan', 'shesh@s.s', 'Admin', 'no-image.jpg'),
+(7, 'dan', 'wqe', '12345678', 'abc@sad', 'Employee', 'no-image.jpg'),
+(8, 'dan', 'dan', '123456789', 'dan@dan', 'Employee', 'the-joker-joaquin-phoenix-art-new-sm-1920x1080.jpg'),
+(11, 'f', 'f', '12345678', 'f@f', 'Employee', 'no-image.jpg');
 
 -- --------------------------------------------------------
 
@@ -183,15 +201,20 @@ INSERT INTO `user` (`user_id`, `fname`, `lname`, `password`, `email`, `user_type
 -- Table structure for table `useranswer`
 --
 
-CREATE TABLE `useranswer` (
-  `ans_id` int(255) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `useranswer`;
+CREATE TABLE IF NOT EXISTS `useranswer` (
+  `ans_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
   `userans` varchar(255) NOT NULL,
   `que_id` int(255) UNSIGNED DEFAULT NULL,
   `user_id` int(255) UNSIGNED DEFAULT NULL,
   `test_id` int(255) UNSIGNED DEFAULT NULL,
   `ans_status` varchar(255) DEFAULT NULL,
-  `userans_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `userans_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ans_id`),
+  KEY `que_id` (`que_id`),
+  KEY `email_FK` (`user_id`) USING BTREE,
+  KEY `test_id` (`test_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `useranswer`
@@ -216,95 +239,17 @@ INSERT INTO `useranswer` (`ans_id`, `userans`, `que_id`, `user_id`, `test_id`, `
 (123, 'dan', 926, 11, 2, NULL, '2019-09-10 04:15:57'),
 (124, 'ddds', 927, 11, 2, NULL, '2019-09-10 04:15:57'),
 (125, 'Funny', 934, 11, 2, NULL, '2019-09-10 04:15:57'),
-(126, 'Fabulous', 938, 11, 2, NULL, '2019-09-10 04:15:57');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `attempt`
---
-ALTER TABLE `attempt`
-  ADD PRIMARY KEY (`att_id`),
-  ADD KEY `test_id` (`test_id`),
-  ADD KEY `email_FK` (`user_id`);
-
---
--- Indexes for table `courses`
---
-ALTER TABLE `courses`
-  ADD PRIMARY KEY (`course_id`);
-
---
--- Indexes for table `question`
---
-ALTER TABLE `question`
-  ADD PRIMARY KEY (`que_id`),
-  ADD KEY `test_id` (`test_id`);
-
---
--- Indexes for table `test`
---
-ALTER TABLE `test`
-  ADD PRIMARY KEY (`test_id`),
-  ADD KEY `course_id` (`course_id`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
--- Indexes for table `useranswer`
---
-ALTER TABLE `useranswer`
-  ADD PRIMARY KEY (`ans_id`),
-  ADD KEY `que_id` (`que_id`),
-  ADD KEY `email_FK` (`user_id`) USING BTREE,
-  ADD KEY `test_id` (`test_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `attempt`
---
-ALTER TABLE `attempt`
-  MODIFY `att_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=286;
-
---
--- AUTO_INCREMENT for table `courses`
---
-ALTER TABLE `courses`
-  MODIFY `course_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `question`
---
-ALTER TABLE `question`
-  MODIFY `que_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=939;
-
---
--- AUTO_INCREMENT for table `test`
---
-ALTER TABLE `test`
-  MODIFY `test_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `user_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `useranswer`
---
-ALTER TABLE `useranswer`
-  MODIFY `ans_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
+(126, 'Fabulous', 938, 11, 2, NULL, '2019-09-10 04:15:57'),
+(127, 'glips', 6, 8, 2, NULL, '2019-09-14 02:52:03'),
+(128, 'dan', 926, 8, 2, NULL, '2019-09-14 02:52:03'),
+(129, 'tyutyuert', 927, 8, 2, NULL, '2019-09-14 02:52:03'),
+(130, 'asd', 934, 8, 2, 'Excellent', '2019-09-14 02:52:03'),
+(131, 'asd', 938, 8, 2, NULL, '2019-09-14 02:52:03'),
+(132, 'mountain', 6, 8, 2, NULL, '2019-09-14 04:39:18'),
+(133, 'shesh', 926, 8, 2, NULL, '2019-09-14 04:39:18'),
+(134, 'tyutyuert', 927, 8, 2, NULL, '2019-09-14 04:39:18'),
+(135, 'asd', 934, 8, 2, NULL, '2019-09-14 04:39:18'),
+(136, 'asd', 938, 8, 2, NULL, '2019-09-14 04:39:18');
 
 --
 -- Constraints for dumped tables

@@ -7,8 +7,9 @@
 
 }
 #cssmenu {
-  height: 5em; /* this is the height for the  navbar */
+  height: 6em; /* this is the height for the  navbar */
   display: block;
+  padding: 10px;
   border: 1px solid #080808;
   width: auto;
   border-bottom: 1px solid #ff7733;
@@ -24,33 +25,8 @@
  {
   list-style: inside none;
   font-size:8px;
-  
+
 }
-
-@media only screen and (max-width: 768px) and (min-width: 426px) {
-  /* -----------------------For tablets: ----------------------------*/
-
-  #cssmenu > ul
-   {
-    list-style: inside none;
-    margin-left: 20%;
-  }
-}
-
-
-@media only screen and (min-width: 769px) {
-  /* For desktop: */
-  #cssmenu > ul
-   {
-    list-style: inside none;
-    margin-left: 40%;
-  }
-
-	}
-
-
-
-/*---------------------------------------------------------------------------*/
 
 #cssmenu > ul > li {
   list-style: inside none;
@@ -76,7 +52,7 @@
   text-align: center;
   text-decoration: none;
   text-shadow: 2px 1px 0 rgba(0, 0, 0, 0.4);
-  font-size: 20px;/* this is the fontsize  for the  navbar */
+  font-size: 16px;/* this is the fontsize  for the  navbar */
   color: #ffffff;
   padding: 17px;
   margin: 4px;
@@ -193,3 +169,313 @@ border-bottom: 2px solid #ff7733;
 }
 
 /* --------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+  /* -----------------------For tablets: ----------------------------*/
+
+  #cssmenu > ul
+   {
+    list-style: inside none;
+    margin-left: 20%;
+  }
+
+
+  #cssmenu > ul > li {
+    list-style: inside none;
+    float: left;
+    display: inline-block;
+    position: relative;
+
+  }
+  #cssmenu.align-center > ul {
+    text-align: center;
+  }
+
+  #cssmenu.align-center ul ul {
+    text-align: left;
+  }
+
+  #cssmenu.align-center > ul > li:first-child > a {
+    border-radius: 0;
+  }
+  #cssmenu > ul > li > a {
+    outline: none;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 1px 0 rgba(0, 0, 0, 0.4);
+    font-size: 20px;/* this is the fontsize  for the  navbar */
+    color: #ffffff;
+    padding: 17px;
+    margin: 4px;
+  }
+
+  #cssmenu > ul > li:first-child > a {
+  }
+
+
+  /*--------------------------------Side border------------------------------------*/
+
+  #cssmenu > ul > li > a:after {
+    content: "";
+    position: absolute;
+    border-right: 1px solid;
+    top: -1px;
+    bottom: -1px;
+    right: -2px;
+    z-index: 99;
+    border-color: black;
+  }
+  /*---------------------------------------------------------------------------*/
+
+  #cssmenu > ul > li.has-sub:hover > a:before {
+    top: 19px;
+  }
+  #cssmenu > ul > li.has-sub:hover > a {
+
+    z-index: 999;
+    border-color: black;
+  }
+  #cssmenu ul li.has-sub:hover > ul,
+  #cssmenu ul li.has-sub:hover > div {
+    display: block;
+  }
+
+
+
+  /*--------------------------------Welcome button hover------------------------------------*/
+
+
+  #cssmenu > ul > li.has-sub > a:hover,
+  #cssmenu > ul > li.has-sub:hover > a {
+  border-bottom: 2px solid #ff7733;
+  }
+  /*----------------------------------------------------------------------------------*/
+
+  /*--------------------------------signout button------------------------------------*/
+  #cssmenu ul li > ul,
+  #cssmenu ul li > div {
+    display: none;
+    padding: 17px;
+    margin: 3%;
+    position: absolute;
+    top: 58px;
+    background: black;
+    font-size: 15px; /* this is the font size for sub menu */
+    z-index: 999;
+    padding:1%;
+    border-bottom: 2px solid #ff7733;
+  }
+  /*----------------------------------------------------------------------------------*/
+
+  #cssmenu ul li > ul {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+    width: 11em;
+  }
+  #cssmenu ul ul ul {
+    position: absolute;
+  }
+  #cssmenu ul ul li:hover > ul {
+    left: 100%;
+    top: -10px;
+
+  }
+  #cssmenu ul li > ul li {
+    display: block;
+    list-style: inside none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ---------------------------------------------------Signout button style----------------------------------------*/
+
+  #cssmenu ul li > ul li a {
+    outline: none;
+    display: block;
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 18px 20px;
+    width: 11em;
+  }
+  /* -------------------------------------------------------------------------------------------*/
+
+  #cssmenu,#cssmenu ul ul > li:hover > a,#cssmenu ul ul li a:hover {
+    background: black;
+    background: -moz-linear-gradient(top, black 0%, #222222 100%);
+    background: -o-linear-gradient(top, black 0%, #222222 100%);
+    background: -ms-linear-gradient(top, black 0%, #222222 100%);
+    background: linear-gradient(top, black 0%, #222222 100%);
+  }
+
+
+
+
+  /* ---------------------------------------------------HOVER----------------------------------------*/
+  #cssmenu > ul > li > a:hover {
+
+    border-bottom: 2px solid #ff7733;
+  }
+
+  /* --------------------------------------------------------------------------------------*/
+}
+
+
+@media only screen and (min-width: 769px) {
+  /* For desktop: */
+  #cssmenu > ul
+   {
+    list-style: inside none;
+    margin-left: 40%;
+  }
+
+  #cssmenu > ul > li {
+    list-style: inside none;
+    float: left;
+    display: inline-block;
+    position: relative;
+
+  }
+  #cssmenu.align-center > ul {
+    text-align: center;
+  }
+
+  #cssmenu.align-center ul ul {
+    text-align: left;
+  }
+
+  #cssmenu.align-center > ul > li:first-child > a {
+    border-radius: 0;
+  }
+  #cssmenu > ul > li > a {
+    outline: none;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 1px 0 rgba(0, 0, 0, 0.4);
+    font-size: 20px;/* this is the fontsize  for the  navbar */
+    color: #ffffff;
+    padding: 17px;
+    margin: 4px;
+  }
+
+  #cssmenu > ul > li:first-child > a {
+  }
+
+
+  /*--------------------------------Side border------------------------------------*/
+
+  #cssmenu > ul > li > a:after {
+    content: "";
+    position: absolute;
+    border-right: 1px solid;
+    top: -1px;
+    bottom: -1px;
+    right: -2px;
+    z-index: 99;
+    border-color: black;
+  }
+  /*---------------------------------------------------------------------------*/
+
+  #cssmenu > ul > li.has-sub:hover > a:before {
+    top: 19px;
+  }
+  #cssmenu > ul > li.has-sub:hover > a {
+
+    z-index: 999;
+    border-color: black;
+  }
+  #cssmenu ul li.has-sub:hover > ul,
+  #cssmenu ul li.has-sub:hover > div {
+    display: block;
+  }
+
+
+
+  /*--------------------------------Welcome button hover------------------------------------*/
+
+
+  #cssmenu > ul > li.has-sub > a:hover,
+  #cssmenu > ul > li.has-sub:hover > a {
+  border-bottom: 2px solid #ff7733;
+  }
+  /*----------------------------------------------------------------------------------*/
+
+  /*--------------------------------signout button------------------------------------*/
+  #cssmenu ul li > ul,
+  #cssmenu ul li > div {
+    display: none;
+    padding: 17px;
+    margin: 3%;
+    position: absolute;
+    top: 58px;
+    background: black;
+    font-size: 15px; /* this is the font size for sub menu */
+    z-index: 999;
+    padding:1%;
+    border-bottom: 2px solid #ff7733;
+  }
+  /*----------------------------------------------------------------------------------*/
+
+  #cssmenu ul li > ul {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+    width: 11em;
+  }
+  #cssmenu ul ul ul {
+    position: absolute;
+  }
+  #cssmenu ul ul li:hover > ul {
+    left: 100%;
+    top: -10px;
+
+  }
+  #cssmenu ul li > ul li {
+    display: block;
+    list-style: inside none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ---------------------------------------------------Signout button style----------------------------------------*/
+
+  #cssmenu ul li > ul li a {
+    outline: none;
+    display: block;
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 18px 20px;
+    width: 11em;
+  }
+  /* -------------------------------------------------------------------------------------------*/
+
+  #cssmenu,#cssmenu ul ul > li:hover > a,#cssmenu ul ul li a:hover {
+    background: black;
+    background: -moz-linear-gradient(top, black 0%, #222222 100%);
+    background: -o-linear-gradient(top, black 0%, #222222 100%);
+    background: -ms-linear-gradient(top, black 0%, #222222 100%);
+    background: linear-gradient(top, black 0%, #222222 100%);
+  }
+
+
+
+
+  /* ---------------------------------------------------HOVER----------------------------------------*/
+  #cssmenu > ul > li > a:hover {
+
+    border-bottom: 2px solid #ff7733;
+  }
+
+  /* --------------------------------------------------------------------------------------*/
+
+	}
+
+
+
+/*---------------------------------------------------------------------------*/

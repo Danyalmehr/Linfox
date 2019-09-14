@@ -28,56 +28,7 @@ session_start();
 
     <title>Dashboard</title>
 
-	<style>
-  .member_table {
-    border-collapse: collapse;
-  }
-  th, td
-   {
-    text-align: left;
-    padding: 8px;
-  }
 
-  tr:nth-child(odd) {background-color: #f2f2f2;}
-
-		.btn-course {
-			height: 100px;
-			vertical-align: middle;
-		}
-		.course-btn:hover{
-
-			color: #3E4FD7;
-		}
-		.course-txt{
-			vertical-align:middle;
-		}
-
-		.btn-lg{
-			height: 10em;
-		}
-
-		.btn-course{
-			margin-top: 2em;
-			margin-left: 1em;
-		}
-		.course{
-			margin-left: 1em;
-		}
-    a
-    {
-      text-decoration: none;
-      color: White;
-    }
-    a:hover{text-decoration: none;
-    color: White;}
-
-
-    .logo-small {
-      color: #f4511e;
-      font-size: 10px;
-    }
-
-	</style>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
@@ -88,8 +39,8 @@ session_start();
       <?php include("admin-side-dash.html") ?>
     	<div class="row">
 
-                    <div class="col-md-9 col-sm-12">
-                        <div class="content">
+  <div class="col-md-12 col-md-9">
+
                           <h1>Edit Test Details</h1>
                         <?php   if(isset($_POST['selectedcourse'])){
                             $id = $_POST['course_id'];
@@ -122,7 +73,9 @@ session_start();
                                       }
                                       else {
                                              ?>
-                      			<table class="table table-hover" >
+                                             <div class="search_results" id="search_results">
+
+                                            <table class="search_table" id="search_table" >
                       			<?php
                             echo "<tr>
                                       <th>Test Name</th>
@@ -135,20 +88,20 @@ session_start();
 
                               while ($row=mysqli_fetch_array($result))
                               {
-                      				echo "<tr><form action='test-process.php' method=post>";
-                              echo "<td><input type=hidden name=test_id value='".$row['test_id']."'</td>"; // This is hidden field
-                              echo "<td><input type=hidden name=course_id value='".$id."'</td>"; // This is hidden field
+                      				echo "<form action='test-process.php' method=post>";
+                              echo "<input type=hidden name=test_id value='".$row['test_id']."'</td>"; // This is hidden field
+                              echo "<input type=hidden name=course_id value='".$id."'</td>"; // This is hidden field
 
                               echo "<tr>
-                                        <td><input type=text name=test_name value='".htmlspecialchars($row['test_name'], ENT_QUOTES)."'</td>
+                                        <td><input class='inputwidthforemailandotherinputintable' type=text name=test_name value='".htmlspecialchars($row['test_name'], ENT_QUOTES)."'</td>
 
                                         <td>  <a href='edit-course.php'><label> $coursename </label></td></a>
 
-                                        <td><input type=text name=test_video value='".htmlspecialchars($row['test_video'], ENT_QUOTES)."'</td>
+                                        <td><input class='inputwidthforemailandotherinputintable' type=text name=test_video value='".htmlspecialchars($row['test_video'], ENT_QUOTES)."'</td>
 
 
-                                        <td><button type=submit name=update onclick='return ask2()'><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
-                                        <td><button type=submit name=delete onclick='return ask()'><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
+                                        <td><button type=submit class='delete name=update onclick='return ask2()'><span class='glyphicon glyphicon-wrench logo-small' style='font-size: 1.5em;'></span></button></td>
+                                        <td><button type=submit class='delete name=delete onclick='return ask()'><span class='glyphicon glyphicon-trash logo-small' style='font-size: 1.5em;'></span></button></td>
                                    </tr>";
                         				echo "</form></tr>";
                               }
