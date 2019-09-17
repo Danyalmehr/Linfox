@@ -102,7 +102,8 @@ session_start();
 
     <div class="container-fluid">
       <?php include("admin-side-dash.html") ?>
-          <div class="col-md-9">
+      <div class="row">
+          <div class="col-md-12">
             <div class="user-admin-menu">
 
 
@@ -128,6 +129,7 @@ session_start();
           </div>
 
             </div>
+              </div>
         </div>
 	<?php include("include/footer.inc") ?>
 <!--!	<script>
