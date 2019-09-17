@@ -125,7 +125,7 @@ height: 100px;}
 
                                               <?php echo "
                                               <td><lable>".$row['att_date']."</label></td>
-                                              <td><lable>".$row['final_score']."</label></td>
+                                              <td><lable>".$row['final_score']."%"."</label></td>
                                               </tr>";
                                               echo "</form></tr>"; ?>
                                           <?php   } else {?>
@@ -139,7 +139,7 @@ height: 100px;}
                                               <td style="background-color: #ADFFB4"><lable> <?= $array1[$x];?> </label> </td>
                                             <?php echo "
                                               <td><lable>".$row['att_date']."</label></td>
-                                              <td><lable>".$row['final_score']."</label></td>
+                                              <td><lable>".$row['final_score']."%"."</label></td>
                                               </tr>";
                                               echo "</tr>"; ?>
 

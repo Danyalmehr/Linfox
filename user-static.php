@@ -36,6 +36,102 @@ include_once('database.php');
     <title> Take test </title>
 
 </head>
+
+<style>
+.user_image1{ border: 1px solid black;
+  border-radius: 50%;
+height:140px;}
+
+.user-process{
+border: 1.2px solid black;
+border-radius: 50%;
+height:80px;
+width: 80px;
+font-size: 25px;
+font-weight: bolder;
+font-family: sans-serif;
+text-align: center;
+margin-bottom: 6px;
+left: 50px;
+vertical-align: middle;
+line-height: 70px;
+margin: 19px 15px;
+}
+
+.user-process-green
+{
+  border: 1.2px solid black;
+  background-color: #ADFFB4;
+  border-radius: 50%;
+  height:80px;
+  width: 80px;
+  font-size: 25px;
+  font-weight: bolder;
+  font-family: sans-serif;
+  text-align: center;
+  margin-bottom: 6px;
+  left: 50px;
+  vertical-align: middle;
+  line-height: 70px;
+  margin: 19px 15px;
+  color: green;
+}
+
+
+
+.user-process-red
+{
+  border: 1.2px solid black;
+  background-color: #ff9C9E;
+  border-radius: 50%;
+  height:80px;
+  width: 80px;
+  font-size: 25px;
+  font-weight: bolder;
+  font-family: sans-serif;
+  text-align: center;
+  margin-bottom: 6px;
+  left: 50px;
+  vertical-align: middle;
+  line-height: 70px;
+  margin: 19px 15px;
+  color: red;
+}
+
+.user-process-1{
+font-size: 25px;
+font-weight: bolder;
+font-family: sans-serif;
+}
+
+.user-process-12
+{
+  margin-top: 2%;
+  font-size: 18px;
+  font-weight: bolder;
+  font-family: sans-serif;
+}
+
+.colum2-user-process
+{
+  padding: 6px;
+}
+
+.colum2-user-process-green
+{
+    padding: 6px;
+    color: green;
+
+}
+
+.colum2-user-process-red
+{
+    padding: 6px;
+    color: red;
+
+}
+</style>
+
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
 
@@ -56,6 +152,7 @@ include_once('database.php');
         $result=mysqli_query($con,$fetchqry);
         $num=array(mysqli_num_rows($result));
 
+
         $fetchqry3 = "SELECT DISTINCT attempt.test_id
                      FROM courses
                      INNER JOIN test ON courses.course_id = test.course_id
@@ -72,17 +169,21 @@ include_once('database.php');
         $result1=mysqli_query($con,$fetchqry1);
         $row1=mysqli_fetch_array($result1);
 
-        $fetchqry2 = "SELECT fname, lname, course_name, email
+        $fetchqry2 = "SELECT fname, lname, course_name, email ,image_name
                      FROM user, courses
                      WHERE course_id = $course_id AND user_id = $user_id
                       ";
         $result2=mysqli_query($con,$fetchqry2);
         $row2=mysqli_fetch_array($result2);
 
+
+
+
         $fname = $row2['fname'];
         $lname = $row2['lname'];
         $course_name = $row2['course_name'];
         $email = $row2['email'];
+        $image_name = $row2['image_name'];
         $name = "{$fname} {$lname}";
 
 
@@ -104,13 +205,78 @@ include_once('database.php');
           <?php include("admin-side-dash.html") ?>
 
           <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-12 col-md-8">
+            <center>
 
-            </div>
-            <div class="col-md-8 search_results" id="search_results">
-            <center> <table class="search_table" id="search_table" >
-              <tr><center class="table_heading">Course name: <?= $course_name ?> <br> <br> Name: <?= $name ?> <br> <br> Email: <?= $email ?> <br> <br> Percentage of course completed: <?= "$percentage_completed%" ?> </Center></tr><br><br>
+
+                <div class="col-md-12 heading1">
+                <?php echo " <img class='user_image1' src='images/".  $image_name."' width ='140'>";?>
+                <br> <br>
+                <div class="user-process-1">
+                  <?= $name ?>
+                </div>
+                <div class="user-process-12">
+                  Course name : <?= $course_name ?>
+                </div>
+               <br> <br>
+                </div>
+                <div class="row">
+                <div class="col-sm-2 colum2-user-process">
+                    <div class=" user-process">
+                      <?php $percentage_to_be_completed = round((100 - $percentage_completed),0); ?>
+                      <?= "$percentage_to_be_completed%"?>
+                    </div>
+                      Percentage of course to be completed
+                  </div>
+
+                  <div class="col-sm-2 colum2-user-process">
+                    <div class=" user-process">
+                      <?php $percentage_completed_1  = round($percentage_completed,0); ?>
+                      <?= "$percentage_completed_1%" ?>
+                    </div>
+                      Percentage of course completed
+                  </div>
+
+                  <div class="col-sm-2 colum2-user-process">
+                    <div class=" user-process">
+                    <?= $count_test ?>
+                    </div>
+                      Total number of tests
+                  </div>
+
+                  <div class="col-sm-2 colum2-user-process-green">
+                    <div class=" user-process-green">
+                      <?= $num3 ?>
+                    </div>
+                      Tests completed
+                  </div>
+                  <div class="col-sm-2 colum2-user-process-red">
+                    <div class="user-process-red">
+                      <?= $count_test - $num3 ?>
+                    </div>
+                      Incompleted tests
+                  </div>
+
+                  <div class="col-sm-2 colum2-user-process">
+                    <div class="user-process">
+                      <?= implode($num) ?>
+                    </div>
+                      Total number of attempts
+                  </div>
+              </div>
+
+
+
+
+
+
+
+            <br><br>
+                <div class="search_results" id="search_results">
+                <table class="search_table" id="search_table" >
+
             <?php
+
             echo "<tr>
                   <th>Test name</th>
                   <th>Attempt number</th>
@@ -129,6 +295,9 @@ include_once('database.php');
                 $hour = floor($time_taken / 3600);
                 $min =floor($time_taken / 60);
                 $secs = ($time_taken - ($min * 60));
+
+
+
 
                 $array1 = array();
 
@@ -150,7 +319,7 @@ include_once('database.php');
 
                               <?php echo "
                               <td><lable>".$row['att_date']."</label></td>
-                              <td><lable>".$row['final_score']."</label></td>
+                              <td><lable>".$row['final_score']."%"."</label></td>
                               </tr>";
                               echo "</form></tr>"; ?>
                           <?php   } else {?>
@@ -163,7 +332,7 @@ include_once('database.php');
                               <td style="background-color: #ADFFB4"><lable> <?= $array1[$x];?> </label> </td>
                             <?php echo "
                               <td><lable>".$row['att_date']."</label></td>
-                              <td><lable>".$row['final_score']."</label></td>
+                              <td><lable>".$row['final_score']."%"."</label></td>
                               </tr>";
                               echo "</tr>"; ?>
 
@@ -177,6 +346,7 @@ include_once('database.php');
       </table></Center>
          </div>
           </div>
+            </div>
 
 </div>
 

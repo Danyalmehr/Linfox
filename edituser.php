@@ -55,7 +55,7 @@ height: 40px;}
                           	<table class="search_table" id="search_table" >
                       			<?php
                             echo "<tr>
-                                      <th> Image </th>
+
                                       <th> First name </th>
                                       <th> Last name</th>
                                       <th> Email </th>
@@ -69,13 +69,6 @@ height: 40px;}
                       				echo "<tr><form action=user-process.php method=post>";
                               echo "<input type=hidden name=user_id value='".$row['user_id']."'>"; // This is hidden field
                               echo "<tr>
-                                        <td>
-                                        <img id='btnfile' class='user_image' id='btnfile' src='images/".$row['image_name']."' width='70px;'></td>
-
-                                        <div class='image_select_div' style='display:none'>
-                                               <input type=file id=imagename name=imagename />
-                                          </div>
-
                                         <td><input class='inputwidthforemailandotherinputintable' type=text name=fname value='".$row['fname']."' </td>
                                         <td><input class='inputwidthforemailandotherinputintable' type=text name=lname value='".$row['lname']."'</td>
                                         <td><input class='inputwidthforemailandotherinputintable' type=email name=email value='".$row['email']."'</td>

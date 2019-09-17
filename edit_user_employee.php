@@ -20,6 +20,10 @@ session_start();
     <script src="js/read_more.js"></script>
 
 
+    <script src="croppie.js"></script>
+    <link rel="stylesheet" href="croppie.css" />
+
+
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -136,9 +140,7 @@ session_start();
 
 						</div>
 					</div>
-          </div>
-        </div>
-
+        
 
 
 

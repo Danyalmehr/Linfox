@@ -106,13 +106,8 @@ include_once('database.php');
           if (isset($_POST['update']))
 
               {
-                $name = $_FILES['imagename']['name'];
-                $temp_name  = $_FILES['imagename']['tmp_name'];
-
-
-
-                    $fetchqry = "UPDATE user SET `fname`= '$_POST[fname]', `lname`= '$_POST[lname]', `email`= '$_POST[email]',
-                     `password`= '$_POST[password]', `user_type`= '$_POST[user_type]' , `image_name` = '$name'
+                  $fetchqry = "UPDATE user SET `fname`= '$_POST[fname]', `lname`= '$_POST[lname]', `email`= '$_POST[email]',
+                     `password`= '$_POST[password]', `user_type`= '$_POST[user_type]'
                     WHERE user_id ='$_POST[user_id]'";
                       if(mysqli_query($con,$fetchqry))
                       {
@@ -145,6 +140,52 @@ include_once('database.php');
                                 echo 'You should select a file to upload !!';
                             }
                 }
+
+
+
+                if (isset($_POST['update1']))
+
+                    {
+                      $name = $_FILES['imagename']['name'];
+                      $temp_name  = $_FILES['imagename']['tmp_name'];
+
+
+
+                          $fetchqry = "UPDATE user SET `fname`= '$_POST[fname]', `lname`= '$_POST[lname]', `email`= '$_POST[email]',
+                           `password`= '$_POST[password]', `user_type`= '$_POST[user_type]' , `image_name` = '$name'
+                          WHERE user_id ='$_POST[user_id]'";
+                            if(mysqli_query($con,$fetchqry))
+                            {
+                              echo "your new details have been successfully UPDATED!!". mysqli_error($con);
+                              echo "<br>redirecting...";
+                              $user_type = $_POST['user_type'];
+
+                             if ($user_type == 'Admin') {
+                                  header("refresh:3;  URL=edit_user_admin.php");
+                                }
+                                else {
+                                    header("refresh:3;  URL=edit_user_employee.php");
+                                }
+
+                            }
+                            else
+                            {
+                              echo "something is wrong with Update". mysqli_error($con);
+                            }
+
+
+                            if(isset($name)){
+                                if(!empty($name)){
+                                    $location = 'images/';
+                                    if(move_uploaded_file($temp_name, $location.$name)){
+                                        echo 'File uploaded successfully';
+                                    }
+                                }
+                                  }  else {
+                                      echo 'You should select a file to upload !!';
+                                  }
+                      }
+
 
  ?>
 
