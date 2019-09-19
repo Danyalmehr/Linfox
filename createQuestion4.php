@@ -210,15 +210,7 @@ include_once('database.php');
 <script type="text/javascript" src="js/confirmation.js"></script>
 
 <script type="text/javascript">
-/*$(document).ready(function(){
 
-    $("#mcq").click(function(e) {
-        $("#mcqform").show();
-
-        e.preventDefault();
-
-    });
-});*/
 
 var mcqform = document.getElementById("mcqform");
 var shortanswerform = document.getElementById("shortanswerform");
