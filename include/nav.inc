@@ -30,7 +30,7 @@ include_once('include/database.php');
  					$user_check = $_SESSION['valid_user'];
  					$ses_sql = "select fname, email , image_name, user_type from user where email='$user_check'";
  					$result = $conn -> query($ses_sql);
- 					$row = $result -> fetch_assoc();
+ 					$row = mysqli_fetch_assoc($result);
  					$fname = $row['fname'];
           $user_type = $row['user_type'];
           $image_name = $row['image_name'];
