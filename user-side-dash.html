@@ -166,10 +166,10 @@
                                       11</b> </a></li>-->
 
 
-                                  <li id="2" onClick="nav_item_selected(1)"><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
+                                  <li id="1" onClick="nav_item_selected(1)"><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
                                           <!--  <li id="3" onClick="nav_item_selected(3)"><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>-->
-                                                  <li id="4" onClick="nav_item_selected(2)"><a href="edit_user_employee.php"><i class="menu-icon icon-edit"></i>My profile </a></li>
-                                                  <li id="5" onClick="nav_item_selected(3)"><a href="index.php"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                                                  <li id="2" onClick="nav_item_selected(2)"><a href="edit_user_employee.php"><i class="menu-icon icon-edit"></i>My profile </a></li>
+                                                  <li id="3" onClick="nav_item_selected(3)"><a href="index.php"><i class="menu-icon icon-signout"></i>Logout </a></li>
 
 
                 </ul>
@@ -193,11 +193,11 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li id="0" onClick="nav_item_selected(0)"><a href="dashboard.php"><i class="menu-icon icon-dashboard"></i>Dashboard</a></li>
-		<li id="1" onClick="nav_item_selected(1)"><a href="Stest.php"><i class="menu-icon icon-inbox"></i>Test</a></li>
-		<li id="2" onClick="nav_item_selected(2)"><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
-	    <li id="3" onClick="nav_item_selected(3)"><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>
-		<li id="4" onClick="nav_item_selected(4)"><a href="edit_user_employee.php"><i class="menu-icon icon-edit"></i>Edit user </a></li>
-		<li id="5" onClick="nav_item_selected(5)"><a href="index.php"><i class="menu-icon icon-signout"></i>Logout </a></li>
+		<!--<li id="1" onClick="nav_item_selected(1)"><a href="Stest.php"><i class="menu-icon icon-inbox"></i>Test</a></li>-->
+		<li id="1" onClick="nav_item_selected(1)"><a href="previousresults.php"><i class="menu-icon icon-file"></i>Results </a></li>
+	   <!-- <li id="3" onClick="nav_item_selected(3)"><a href="certificates.php"><i class="menu-icon icon-certificate"></i>Certificates </a></li>-->
+		<li id="2" onClick="nav_item_selected(2)"><a href="edit_user_employee.php"><i class="menu-icon icon-edit"></i>My profile </a></li>
+		<li id="3" onClick="nav_item_selected(3)"><a href="index.php"><i class="menu-icon icon-signout"></i>Logout </a></li>
 
       </ul>
 
@@ -219,7 +219,7 @@
 }
 
 function nav_item_selected(item_id) {
-    for(i = 0; i < 4; i++) {
+    for(i = 0; i < 3; i++) {
         document.getElementById(i.toString()).classList.remove("active");
     }
     document.getElementById(item_id.toString()).classList.add("active");
