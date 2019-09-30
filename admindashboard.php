@@ -155,15 +155,16 @@ require 'database.php';
       $result1=mysqli_query($con,$fetchqry1);
       $row1=mysqli_fetch_array($result1);
 
-      $fetchqry = "SELECT count(Distinct test_id) AS countOfTestId, count(Distinct user_id) AS countOfUserId
+      $fetchqry2 = "SELECT count(Distinct test_id) AS countOfTestId, count(Distinct user_id) AS countOfUserId
                    FROM useranswer
                    WHERE ans_status IS NULL
                     ";
-      $result=mysqli_query($con,$fetchqry);
+      $result2=mysqli_query($con,$fetchqry2);
+      $row2=mysqli_fetch_array($result2);
 
       $count_ans = $row1['countOfAnsId'];
-      $count_test = $row['countOfTestId'];
-      $count_user = $row['countOfUserId'];
+      $count_test = $row2['countOfTestId'];
+      $count_user = $row2['countOfUserId'];
 
 
        ?>
@@ -208,8 +209,6 @@ require 'database.php';
 					</div>
           </div>
 
-
-
           <div class="row">
 
                         <div class="col-md-12">
@@ -222,55 +221,16 @@ require 'database.php';
     <a href="question-course.php"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> Create Question</button></a>
     <a href="create-course.php"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> Create Course</button></a>
     <a href="check-on-user.php"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> Create Test</button></a>
-  </div>
-</div>
-
-</div>
-</div>
-</div>
-
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart()
-    {
-         var data = google.visualization.arrayToDataTable([
-                   ['test_id', 'user_id'],
-                   <?php
-                   while($row = mysqli_fetch_array($result))
-                   {
-                        echo "['".$row["countOfTestId"]."', '".$row["countOfUserId"]."'],";
-                   }
-                   ?>
-              ]);
-         var options = {
-               title: 'Percentage of Male and Female Employee',
-               //is3D:true,
-               pieHole: 0.4
-              };
-         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-         chart.draw(data, options);
-    }
-    </script>
-
-    <div class="row">
-
-      <br /><br />
-    <div style="width:900px;">
-         <h3 align="center">Make Simple Pie Chart by Google Chart API with PHP Mysql</h3>
-         <br />
-         <div id="piechart" style="width: 900px; height: 500px;"></div>
-    </div>
-  </div>
 
 
 
 
+                                    </div>
 
-
-
+                                </div>
+                </div>
+              </div>
+              </div>
         </div>
 	<?php  include("include/footer.inc") ?>
 

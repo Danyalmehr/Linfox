@@ -3,132 +3,152 @@
 session_start();
 include_once('database.php');
 
-
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>jQuery Circlos: Circular Progress/Loading Bar Examples</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+   .container { margin: 150px auto; }
+   .mb20{
+       margin: 7px 20px;
+   }
 
-    <link rel="stylesheet" href="css/test.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+   .cdev {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin:0 auto;
+}
 
-      <link type="text/css" href="css/theme.css" rel="stylesheet">
-    <script src="js/nav.js"></script>
-    <script src="js/read_more.js"></script>
+.cdev div {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
 
-        <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link type="text/css" href="css/theme.css" rel="stylesheet">
-        <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
-        <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+.cdev div span {
+  position: absolute;
+  font-family: Arial;
+  font-size: 25px;
+  line-height: 75px;
+  height: 75px;
+  width: 75px;
+  left: 12.5px;
+  top: 12.5px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+}
 
+.cdev .background { background-color: #b3cef6; }
 
+.cdev .rotate {
+  clip: rect(0 50px 100px 0);
+  background-color: #4b86db;
+}
 
-    <link type="text/css" href="css/theme.css" rel="stylesheet">
+.cdev .left {
+  clip: rect(0 50px 100px 0);
+  opacity: 1;
+  background-color: #b3cef6;
+}
 
-    <title> Take test </title>
-
+.cdev .right {
+  clip: rect(0 50px 100px 0);
+  transform: rotate(180deg);
+  opacity: 0;
+  background-color: #4b86db;
+}
+ </style>
 </head>
-<body onLoad="run_first()">
-	<?php include("include/banner.inc") ?>
+<body>
+  <?php include("include/banner.inc") ?>
 
     <?php include("include/nav.inc") ?>
+
+
     <?php
       if(!empty($_GET['id'] && $_GET['name']))
       {
         $id=$_GET['id'];
 
-        $fetchqry = "SELECT DISTINCT attempt.user_id, user.fname, user.lname
-        FROM attempt
-        INNER JOIN user ON user.user_id = attempt.user_id
-        INNER JOIN test ON test.test_id = attempt.test_id
-        INNER JOIN courses ON courses.course_id = test.course_id
-        WHERE courses.course_id = '$id'
-        ";
+
+        $fetchqry = "SELECT attempt.user_id, count(distinct attempt.test_id) as countOfTestId, fname, lname
+                     FROM courses
+                     INNER JOIN test ON courses.course_id = test.course_id
+                     INNER JOIN attempt ON attempt.test_id = test.test_id
+                     INNER JOIN user ON attempt.user_id = user.user_id
+                     WHERE att_status = 'Completed' AND courses.course_id = $id
+                     GROUP BY user_id;
+                      ";
         $result=mysqli_query($con,$fetchqry);
+        $num=mysqli_num_rows($result);
 
 
-     ?>
+        $fetchqry1 = "SELECT count(test_id) AS totalTest
+                     FROM test
+                     WHERE course_id = $id
+                      ";
+        $result1=mysqli_query($con,$fetchqry1);
+        $row1=mysqli_fetch_array($result1);
 
-        <div class="container-fluid">
-          <?php include("admin-side-dash.html") ?>
-
-
-          <div class="row">
-            <div class="col-md-1">
-
-            </div>
-              <div class="col-md-8">
-                <center class="table_heading">
-
-                  <h1>Choose user</h1>
-                  <?php  while ($row=mysqli_fetch_array($result))
-                      {
-                        $user_id = $row['user_id'];
-                        $first_name = $row['fname'];
-                        $last_name = $row['lname'];
-                        $name = "{$first_name} {$last_name}"
-                        ?>
-
-      <a href="user-static.php?user_id=<?=$user_id?>&course_id=<?=$id?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $name  ?></button></a>
-      </center>
-                        <?php
-                      }
-
-                  ?>
-
-                </center>
+        $total_test = $row1['totalTest'];
+          }
+          ?>
 
 
+  <div class="container-fluid">
+    <?php include("admin-side-dash.html") ?>
 
-                       <?php } ?>
-                             </div>
-                           </div>
-
-
-
-     </div>
-
-
-	<?php include("include/footer.inc") ?>
-<script type="text/javascript" src="js/confirmation.js"></script>
-
-<script type="text/javascript">
-/*$(document).ready(function(){
-
-    $("#mcq").click(function(e) {
-        $("#mcqform").show();
-
-        e.preventDefault();
-
-    });
-});*/
-
-var mcqform = document.getElementById("mcqform");
-var shortanswerform = document.getElementById("shortanswerform");
+    <?php
+    while ($row=mysqli_fetch_array($result)) {
+    $countOfTestId = $row['countOfTestId'];
+    $user_id = $row['user_id'];
+    $fname = $row['fname'];
+    $lname = $row['lname'];
+    $name = "{$fname} {$lname}";
 
 
-function showmcqform(){
-    mcqform.style.display = "block";
-    shortanswerform.style.display = "none";
+    $completed = $countOfTestId/$total_test;
+    $percentage_completed = round($completed*100);
 
 
-}
+    ?>
 
-function hidemcqform() {
-      shortanswerform.style.display = "block";
-      mcqform.style.display = "none";
 
-}
+  <div class="row">
+    <div class="col-md-1 mb20">
+      <div class="cdev" data-percent="<?= $percentage_completed ?>" data-duration="2000" data-color=",orange"></div>
+      <div class="col-md-1 mb20"> <a href="user-static.php?user_id=<?=$user_id?>&course_id=<?=$id?>"><button class="btn btn-secondary btn-md span1 btn-course" name="selectedtest" style="float: auto;"> <?= $name  ?></button></a>  </div>
+    </div>
 
-</script>
+  </div>
 
-  </body>
+<?php   } ?>
+</div>
+
+       
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="circlos.js"></script>
+    <script>
+     $(document).ready(function(){
+      // init
+         $(".cdev").circlos();
+
+
+     });
+    </script>
+
+</body>
 </html>
