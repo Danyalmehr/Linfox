@@ -70,7 +70,7 @@ include_once('database.php');
                         $name = "{$first_name} {$last_name}"
                         ?>
 
-      <a href="byuser-check-user-course.php?id=<?=$user_id?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $name  ?></button></a>
+      <a href="byuser-check-user-course.php?id=<?=$user_id?>&name=<?= htmlentities($name) ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $name  ?></button></a>
       </center>
                         <?php
                       }

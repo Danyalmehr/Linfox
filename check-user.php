@@ -110,6 +110,15 @@ include_once('database.php');
     <?php include("admin-side-dash.html") ?>
 
     <?php
+    if ($num == '0') { ?>
+      <h1>No tests of any course has been taken by <?=$name ?></h1>
+  <?php  }
+    else {?>
+      <div class="row">
+
+      </div>
+    <h1> Courses taken by <?=$name ?></h1>
+      <?php
     while ($row=mysqli_fetch_array($result)) {
     $countOfTestId = $row['countOfTestId'];
     $user_id = $row['user_id'];
