@@ -68,7 +68,6 @@ include_once('database.php');
                   $email = $conn -> real_escape_string($_POST['email']);
                   $password = $conn -> real_escape_string($_POST['password']);
                   $user_type = $conn -> real_escape_string($_POST['user_type']);
-                  $image_name = $conn -> real_escape_string($_POST['selected_image']);
 
                   //create an insert query
                   $sql = "insert into user (fname, lname, email, password,user_type)
@@ -77,7 +76,10 @@ include_once('database.php');
                   //execute the query
                   if($conn -> query($sql))
                   {
-                      header("location: index.php");
+                    echo "New user is successfully created !!". mysqli_error($conn);
+                  echo "<br> Please wait...";
+
+                  header("refresh:3;  URL = Admin-user.php");
 
                   }
                   $conn -> close();
