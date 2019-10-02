@@ -546,6 +546,8 @@ p {
 					width:98%;
 					background-repeat: no-repeat;
 					background-size: cover;
+					margin-left: -2.3px;
+					margin-top: -0.9px;
 			}
 
 			.user-process-1{
@@ -728,7 +730,10 @@ p {
 		width:100%;
 		background-repeat: no-repeat;
 		background-size: cover;
-		margin-right:13px;
+		margin-left: 2px;
+		margin-top: -0.3px;
+
+
 
 	}
 

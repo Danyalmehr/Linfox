@@ -30,9 +30,12 @@ session_start();
 
 </head>
 <style>
-.user_image{ border: 1px solid black;
-  border-radius: 50px;
-height: 100px;}
+.imageprofile{
+  border: 1px solid black;
+  width:100px;
+  height: 100px;
+  border-radius: 50%;
+}
 </style>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
@@ -44,7 +47,7 @@ height: 100px;}
     	<div class="row">
 
                     <div class="col-md-12 col-md-9">
-                          <center> <h1>Edit User Details</h1></center>
+                          <!-- <center> <h1>Edit User Details</h1></center> -->
 
                       			<?php $fetchqry = "SELECT final_score, test_name, fname, lname, course_name, att_date, att_status, att_number,time_taken,image_name
                               FROM attempt
@@ -60,6 +63,7 @@ height: 100px;}
 
 
                       			 ?>
+                             <div class="member">
 
                              <div class="search_results" id="search_results">
                                <center>
@@ -69,9 +73,26 @@ height: 100px;}
 
                               <tr >
                                 <div class="row">
-                                                                  <div class="col-md-12">
-                                  <?php echo " <img class='user_image' src='images/".$_SESSION['image_name']."' width='100p' height='auto'>";?></center>
+                                  <div class="profileback">
+                                  </div>
+                                <div class="col-md-12">
+                                  <?php echo " <img class='imageprofile' src='images/".$_SESSION['image_name']."'>";?></center>
                                 </div>
+
+                                <div class="col-md-12 heading1">
+
+                                <div class="user-process-1">
+
+                                  <?= $fname ?> <?=  $_SESSION['last_name'] ?>
+                                  <br>
+                                  <br>
+
+                                  <br>
+
+                                </div>
+
+                                </div>
+
                                 <div class="col-md-12">
                                 <h3>Test results for  <?php echo" $fname "?> are as following </h3><br><br>
                                </div>
@@ -93,8 +114,14 @@ height: 100px;}
                                   </tr>";
                     			    while($row = mysqli_fetch_array($result)):
                       				{
+                                $fname =  $row['fname'];
+                                $Lname =  $row['lname'];
                                 $image_name =  $row['image_name'];
+
                                 $_SESSION['image_name'] = "$image_name";
+
+                                $_SESSION['first_name'] = "$fname";
+                                $_SESSION['last_name'] = "$Lname";
 
 
                                 $att_status =array($row['att_status']);
@@ -153,6 +180,8 @@ height: 100px;}
                     </center>
 
                          </div>
+                       </div>
+
                           </div>
 
 						</div>

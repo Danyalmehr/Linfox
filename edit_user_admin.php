@@ -29,8 +29,7 @@ session_start();
     <title>Dashboard</title>
 
 </head>
-<style>
-</style>
+
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
@@ -38,8 +37,9 @@ session_start();
     <div class="container-fluid">
 
       <?php    include("admin-side-dash.html");?>
-                    <div class="col-md-12 col-md-9">
-                             <div class="row containermember">
+ <div class="row containermember">
+        <div class="col-md-12 col-md-9">
+
                                     <div class="member">
                                       <?php $sql= "select * from user WHERE email = '$email'";
                                 			$records = mysqli_query($con,$sql);
@@ -140,9 +140,10 @@ session_start();
 
                           </div>
 
+
+
 					</div>
-          </div>
-        </div>
+
 
 
 
