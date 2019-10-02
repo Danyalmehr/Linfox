@@ -9,7 +9,6 @@
 #cssmenu {
   height: 6em; /* this is the height for the  navbar */
   display: block;
-  padding: 10px;
   border: 1px solid #080808;
   width: auto;
   border-bottom: 1px solid #ff7733;
@@ -46,18 +45,19 @@
 #cssmenu.align-center > ul > li:first-child > a {
   border-radius: 0;
 }
+
+
 #cssmenu > ul > li > a {
   outline: none;
   display: block;
   text-align: center;
   text-decoration: none;
   text-shadow: 2px 1px 0 rgba(0, 0, 0, 0.4);
-  font-size: 16px;/* this is the fontsize  for the  navbar */
+  font-size: 11px;
   color: #ffffff;
-  padding: 17px;
-  margin: 4px;
+  padding: 9px;
+  margin-top: 22px;
 }
-
 #cssmenu > ul > li:first-child > a {
 }
 
@@ -170,8 +170,21 @@ border-bottom: 2px solid #ff7733;
 
 /* --------------------------------------------------------------------------------------*/
 
-@media only screen and (max-width: 768px) and (min-width: 426px) {
+@media only screen and (max-width: 768px) and (min-width: 432px) {
   /* -----------------------For tablets: ----------------------------*/
+
+
+  #cssmenu > ul > li > a {
+    outline: none;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 1px 0 rgba(0, 0, 0, 0.4);
+    font-size: 17px;
+    color: #ffffff;
+    padding: 16px;
+    margin: 5px;
+}
 
   #cssmenu > ul
    {
@@ -197,17 +210,6 @@ border-bottom: 2px solid #ff7733;
 
   #cssmenu.align-center > ul > li:first-child > a {
     border-radius: 0;
-  }
-  #cssmenu > ul > li > a {
-    outline: none;
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    text-shadow: 2px 1px 0 rgba(0, 0, 0, 0.4);
-    font-size: 20px;/* this is the fontsize  for the  navbar */
-    color: #ffffff;
-    padding: 17px;
-    margin: 4px;
   }
 
   #cssmenu > ul > li:first-child > a {

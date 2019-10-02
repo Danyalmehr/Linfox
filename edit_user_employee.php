@@ -20,10 +20,6 @@ session_start();
     <script src="js/read_more.js"></script>
 
 
-    <script src="croppie.js"></script>
-    <link rel="stylesheet" href="croppie.css" />
-
-
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -33,6 +29,8 @@ session_start();
     <title>Dashboard</title>
 
 </head>
+<style>
+</style>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
@@ -40,17 +38,8 @@ session_start();
     <div class="container-fluid">
 
       <?php    include("user-side-dash.html");?>
-
-
-
-    	<div class="row">
-
                     <div class="col-md-12 col-md-9">
-
-
                              <div class="row containermember">
-
-                                  <div class="col-md-9">
                                     <div class="member">
                                       <?php $sql= "select * from user WHERE email = '$email'";
                                 			$records = mysqli_query($con,$sql);
@@ -61,19 +50,33 @@ session_start();
                                            $user_type =  $row['user_type'];
                                            $_SESSION['user_type'] = "$user_type";
                                            ?>
-                                           <h1>Edit User Details</h1>
-                                    <div class="row">
 
-                                      <form action="user-process.php" method="post" enctype="multipart/form-data">
-                                  <div class="col-md-4"></div>
-                                  <div class="col-md-4">
-                                  <?php echo " <img id='btnfile' src='images/".$row['image_name']."' width='auto;' height='auto;'>";?></center>
+                                  <form action="user-process.php" method="post" enctype="multipart/form-data">
+                                <div class="row ">
+                                  <div class="profileback">
+                                  </div>
+
+
+                                    <div class="col-md-12">
+
+                                  <?php echo " <img class='imageprofile' id='btnfile' src='images/".$row['image_name']."''>";?></center>
                                     </div>
-                                    <div class="col-md-4"></div>
+                                    <div class="col-md-12 heading1">
 
+                                    <div class="user-process-1">
+                                      <?php $fname = $row['fname'];
+                                      $lname = $row['lname'];
+
+                                      ?>
+                                      <?= $fname ?> <?= $lname ?>
+                                    </div>
+
+                                    </div>
+                                    <div class="col-md-12">
                                         <div class='image_select_div' style='display:none'>
                                                <input type=file id=imagename name=imagename />
                                           </div>
+                                            </div>
 
 
                                       </div>
@@ -87,21 +90,21 @@ session_start();
                                             <div class="row">
                                               <br>
                                               <div class="col">
-                                                  <label for="fname">FIRST NAME</label>
+                                                  <label class='labelclass' for="fname">FIRST NAME</label>
                                                   <?php echo "<input class='inputwidthforvreateuser' type=text name=fname value='".$row['fname']."'>"; ?>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                               <div class="col">
-                                                  <label for="lname">LAST NAME</label>
+                                                  <label class='labelclass' for="lname">LAST NAME</label>
                                                   <?php echo "<input class='inputwidthforvreateuser' type=text name=lname value='".$row['lname']."'>"; ?>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                               <div class="col">
-                                                  <label for="email">EMAIL</label>
+                                                  <label class='labelclass' for="email">EMAIL</label>
                                                   <?php echo "<input class='inputwidthforvreateuser' type=text name=email value='".$row['email']."'>"; ?>
                                                 </div>
                                             </div>
@@ -109,7 +112,7 @@ session_start();
 
                                                       <div class="row">
                                               <div class="col">
-                                                  <label for="password">PASSWORD</label>
+                                                  <label class='labelclass' for="password">PASSWORD</label>
                                                     <?php echo "<input class='inputwidthforvreateuser' type=text name=password value='".$row['password']."'>"; ?>
                                                     <span id="pwd_msg" class="error_msg"></span>
                                                     <span id="password_check" class="error_msg" style="color: red"></span>
@@ -120,14 +123,13 @@ session_start();
                         <br>
                                             <div class="row">
                                               <div class="col">
-                                                  <label>&nbsp;</label>
-                                                    <button type=submit class="button_signup_member" onclick='return ask2()' name="update"><span> Update </span></button></a>
+                                                  <label class='labelclass1' >&nbsp;</label>
+                                                    <button type=submit class="button_signup_member" onclick='return ask2()' name="update1"><span> Update </span></button></a>
                                                 </div>
                                             </div>
 
                                         </form>
                                     </div>
-                        </div>
                                   </div>
 
                               <?php    }
@@ -138,9 +140,10 @@ session_start();
 
                           </div>
 
-						</div>
 					</div>
-        
+          </div>
+        </div>
+
 
 
 
