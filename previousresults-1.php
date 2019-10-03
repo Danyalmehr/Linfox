@@ -29,6 +29,8 @@ session_start();
     <title>Dashboard</title>
 
 </head>
+
+
 <style>
 .imageprofile{
   border: 1px solid black;
@@ -36,6 +38,24 @@ session_start();
   height: 100px;
   border-radius: 50%;
 }
+    .user-admin-menu>h2 {text-align: center;
+    /* Black background with 0.5 opacity */
+    color: Black;}
+
+    .user-admin-menu
+    {
+      align-items: center;text-align: center;
+      background: rgb(0,0,0,0.1); /* Fallback color */
+      background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+      color: #ff7733;
+      padding:3%;
+    }
+      .container-menu {
+      position: relative;
+      width: auto;
+      display: inline-block;
+
+    }
 </style>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
@@ -45,8 +65,8 @@ session_start();
 
       <?php include("user-side-dash.html") ?>
     	<div class="row">
-
-                    <div class="col-md-12 col-md-9">
+        <div class="col-md-12 col-md-9">
+        <div class="user-admin-menu">
                           <!-- <center> <h1>Edit User Details</h1></center> -->
 
                       			<?php $fetchqry = "SELECT final_score, test_name, fname, lname, course_name, att_date, att_status, att_number,time_taken,image_name
@@ -186,6 +206,8 @@ session_start();
 
 						</div>
 					</div>
+        </div>
+
 
 
 	<?php include("include/footer.inc") ?>

@@ -29,7 +29,27 @@ session_start();
     <title>Dashboard</title>
 
 </head>
+<style>
 
+    .user-admin-menu>h2 {text-align: center;
+    /* Black background with 0.5 opacity */
+    color: Black;}
+
+    .user-admin-menu
+    {
+      align-items: center;text-align: center;
+      background: rgb(0,0,0,0.1); /* Fallback color */
+      background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+      color: #ff7733;
+      padding:3%;
+    }
+      .container-menu {
+      position: relative;
+      width: auto;
+      display: inline-block;
+
+    }
+</style>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
@@ -38,7 +58,9 @@ session_start();
 
       <?php    include("user-side-dash.html");?>
  <div class="row containermember">
-        <div class="col-md-12 col-md-9">
+     <div class="col-md-12 col-md-9">
+     <div class="user-admin-menu">
+
 
                                     <div class="member">
                                       <?php $sql= "select * from user WHERE email = '$email'";
@@ -52,12 +74,12 @@ session_start();
                                            ?>
 
                                   <form action="user-process.php" method="post" enctype="multipart/form-data">
+
                                 <div class="row ">
                                   <div class="profileback">
-                                  </div>
+                               </div>
 
-
-                                    <div class="col-md-12">
+                                <div class="col-md-12">
 
                                   <?php echo " <img class='imageprofile1' id='btnfile' src='images/".$row['image_name']."''>";?></center>
                                     </div>
@@ -142,7 +164,10 @@ session_start();
 
 
 
-					</div>
+        </div>
+      </div>
+
+
 
 
 
