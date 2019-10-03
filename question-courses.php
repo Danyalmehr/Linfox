@@ -200,8 +200,8 @@ color: Black;}
     <div class="container-fluid">
       <?php include("admin-side-dash.html") ?>
       <div class="row">
-
-        <div class="col-md-12">
+		<h1 style="font-size: 40Px; margin-bottom: 1em; margin: auto"> Creating Questions</h1>
+        <div class="col-md-12" style="margin-top: 3em;">
           <div class="user-admin-menu">
             <?php
 

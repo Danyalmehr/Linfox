@@ -61,6 +61,7 @@ include_once('database.php');
     <div class="container-fluid">
       <?php include("admin-side-dash.html") ?>
       <div class="row">
+		  <h1 style="font-size: 40Px; margin-bottom: 1em; margin: auto"> Creating Questions</h1>
           <div class="col-md-offset-2 col-md-8">
             <?php
             $_SESSION['coursename'] = $_GET['name'];
@@ -98,11 +99,13 @@ include_once('database.php');
                               $test_id=$row['test_id'];
                               $test_name = $row['test_name'];
                                ?>
-            <a href="createquestion4.php?test_id=<?=$test_id?>&name= <?= htmlentities($test_name) ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $test_name  ?></button></a>
+            <a href="createquestion4.php?test_id=<?=$test_id?>&name= <?= htmlentities($test_name) ?>" style="text-decoration: none">
+				
+				<button class="button_login" style="vertical-align:middle; display: block; width: 50%; height: 15%; font-size: 20px" value="Submit"><?=$test_name?> </button></a>
 
             <?php }
           }?>
-            <a href="question-courses.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> Back to course page </span> </button></a>
+            <div class="back" style="margin:3% 20em;"><a href="question-courses.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span> Back to course page </span> </button></a></div>
 
 
 
