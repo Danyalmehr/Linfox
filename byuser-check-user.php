@@ -178,6 +178,8 @@ color: Black;}
 
 
           <div class="row">
+            <div class="user-admin-menu">
+
             <div class="col-md-12">
                   <h1>Choose user</h1>
                   <br><br><br>
@@ -217,6 +219,8 @@ color: Black;}
 
 
      </div>
+   </div>
+
 
 
 	<?php include("include/footer.inc") ?>

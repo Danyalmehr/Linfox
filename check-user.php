@@ -5,7 +5,6 @@ include_once('database.php');
 
 ?>
 
-<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -68,6 +67,33 @@ include_once('database.php');
   opacity: 0;
   background-color: #4b86db;
 }
+
+
+.user-admin-menu>h2 {
+  text-align: center;
+/* Black background with 0.5 opacity */
+color: Black;}
+.user-admin-menu
+{
+align-items: center;text-align: center;background: rgb(0, 0, 0); /* Fallback color */
+background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+color: ##ff7733;
+padding: 3%;
+margin: 14px;
+}
+
+  .container-menu {
+  position: relative;
+  width: auto;
+  display: inline-block;
+
+}
+.percentdiv
+{
+  margin: 52px;
+  padding: 12px;
+}
+
  </style>
 </head>
 <body>
@@ -108,16 +134,19 @@ include_once('database.php');
 
   <div class="container-fluid">
     <?php include("admin-side-dash.html") ?>
+    <div class="row">
+      <div class="user-admin-menu">
+        <div class="col-md-12 col-md-8">
+
 
     <?php
     if ($num == '0') { ?>
-      <h1>No tests of any course has been taken by <?=$name ?></h1>
+      <h2> No tests of any course has been taken by <?= $_SESSION['name'] ?> </h2>
   <?php  }
     else {?>
-      <div class="row">
 
-      </div>
-    <h1> Courses taken by <?=$name ?></h1>
+    <h2> Courses taken by <?= $_SESSION['name'] ?></h2>
+
       <?php
     while ($row=mysqli_fetch_array($result)) {
     $countOfTestId = $row['countOfTestId'];
@@ -125,6 +154,8 @@ include_once('database.php');
     $fname = $row['fname'];
     $lname = $row['lname'];
     $name = "{$fname} {$lname}";
+    $_SESSION['name'] = "$name";
+
 
 
     $completed = $countOfTestId/$total_test;
@@ -134,16 +165,30 @@ include_once('database.php');
     ?>
 
 
-  <div class="row">
-    <div class="col-md-1 mb20">
+
+
+
+    <div class="col-md-1 mb20 percentdiv">
       <div class="cdev" data-percent="<?= $percentage_completed ?>" data-duration="2000" data-color=",orange"></div>
-      <div class="col-md-1 mb20"> <a href="user-static.php?user_id=<?=$user_id?>&course_id=<?=$id?>"><button class="btn btn-secondary btn-md span1 btn-course" name="selectedtest" style="float: auto;"> <?= $name  ?></button></a>  </div>
+      <div class="col-md-1 mb20">
+          <a href="user-static.php?user_id=<?=$user_id?>&course_id=<?=$id?>">
+            <p>
+              <?= $name  ?>
+            <p>
+          </a>
+      </div>
     </div>
 
-  </div>
+
+
+
+
 
 <?php   } ?>
 <?php   } ?>
+  </div>
+</div>
+</div>
 </div>
 
        
