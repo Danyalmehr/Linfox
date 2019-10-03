@@ -59,7 +59,7 @@ session_start();
 
                                     <div class="col-md-12">
 
-                                  <?php echo " <img class='imageprofile' id='btnfile' src='images/".$row['image_name']."''>";?></center>
+                                  <?php echo " <img class='imageprofile1' id='btnfile' src='images/".$row['image_name']."''>";?></center>
                                     </div>
                                     <div class="col-md-12 heading1">
 
@@ -139,7 +139,7 @@ session_start();
 
 
                           </div>
-                        
+
 
 
 					</div>

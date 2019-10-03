@@ -65,7 +65,10 @@ include_once('database.php');
               $course_name = mysqli_real_escape_string($con, $_POST['course_name']);
               $course_desc = mysqli_real_escape_string($con, $_POST['course_desc']);
 
-                $qry = "INSERT INTO `courses`(`course_name`, `course_desc`) VALUES ('$course_name','$course_desc')";
+              $name = $_FILES['imagename']['name'];
+              $temp_name  = $_FILES['imagename']['tmp_name'];
+
+                $qry = "INSERT INTO `courses`(`course_name`, `course_desc` ,`course_image_name`) VALUES ('$course_name','$course_desc','$name')";
                 if($result=mysqli_query($con,$qry))
                 {
                   echo "your new details have been successfully updated!!". mysqli_error($con);
@@ -77,6 +80,17 @@ include_once('database.php');
                 {
                   echo "something is wrong with insert". mysqli_error($con);
                 }
+                if(isset($name)){
+                    if(!empty($name)){
+                        $location = 'images/';
+                        if(move_uploaded_file($temp_name, $location.$name)){
+                            echo ' <br> New profile pic is uploaded successfully';
+                        }
+                      }
+                    }
+                    else {
+                    echo ' <br> New profile pic is uploaded unsuccessfully';
+                    }
 
               }
 

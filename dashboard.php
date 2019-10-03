@@ -260,6 +260,8 @@ background-color: #3e8e41;
                 $course_name=$row['course_name'];
                 $course_id=$row['course_id'];
                 $course_desc=$row['course_desc'];
+                  $course_image_name=$row['course_image_name'];
+
 
 
 ?>
@@ -272,12 +274,14 @@ background-color: #3e8e41;
 
               <div class="container-menu">
                 <a href="user-test.php?id=<?=$course_id?>&name= <?= htmlentities($course_name) ?>">
-                <img src="images/w2.jpg" class="image">
+                  <?php echo " <img class='image' id='btnfile' src='images/".  $course_image_name."''>";?>
                 <div class="overlay">
                   <div class="text"><?= $course_name ?></div>
                 </div>
                 </a>
               </div>
+
+
 
 
 

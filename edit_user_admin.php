@@ -52,14 +52,14 @@ session_start();
                                            ?>
 
                                   <form action="user-process.php" method="post" enctype="multipart/form-data">
+
                                 <div class="row ">
                                   <div class="profileback">
-                                  </div>
+                               </div>
 
+                                <div class="col-md-12">
 
-                                    <div class="col-md-12">
-
-                                  <?php echo " <img class='imageprofile' id='btnfile' src='images/".$row['image_name']."''>";?></center>
+                                  <?php echo " <img class='imageprofile1' id='btnfile' src='images/".$row['image_name']."''>";?></center>
                                     </div>
                                     <div class="col-md-12 heading1">
 
