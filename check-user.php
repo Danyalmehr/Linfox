@@ -143,6 +143,7 @@ include_once('database.php');
   </div>
 
 <?php   } ?>
+<?php   } ?>
 </div>
 
        

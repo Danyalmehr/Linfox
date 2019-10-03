@@ -43,7 +43,8 @@ include_once('database.php');
     <?php
 
 
-        $test_id=$_GET['test_id'];
+        $_SESSION['test_id']=$_GET['test_id'];
+        $test_id = $_SESSION['test_id'];
         $test_name=$_GET['name'];
 
         $fetchqry = "SELECT *
