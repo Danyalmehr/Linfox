@@ -88,10 +88,11 @@ include_once('database.php');
                      group by course_name
                       ";
         $result=mysqli_query($con,$fetchqry);
+        $row=mysqli_fetch_array($result);
         $num=mysqli_num_rows($result);
 
 
-        $fetchqry1 = "SELECT count(test_id) AS totalTest, course_name
+        $fetchqry1 = "SELECT count(test_id) AS totalTest, course_name, courses.course_id
                      FROM test
                      INNER JOIN courses on courses.course_id = test.course_id
                      group by course_name
@@ -101,11 +102,31 @@ include_once('database.php');
         $num1=mysqli_num_rows($result1);
 
         $array1 = array();
+        $array2 = array();
+        $array3 = array();
+        $array4 = array();
+        $array5 = array();
+
 
         foreach ($result1 as $res) {
             array_push($array1, $res['totalTest']);
+            array_push($array3, $res['course_name']);
+            array_push($array4, $res['course_id']);
+
+
           }
-          print_r($array1);
+
+
+          foreach ($result as $test) {
+              array_push($array2, $test['countOfTestId']);
+              array_push($array5, $test['course_id']);
+
+            }
+
+sort($array4);
+sort($array5);
+
+
 
 
           ?>
@@ -125,28 +146,28 @@ include_once('database.php');
     <h1> Courses taken by you</h1>
       <?php
       for ($i=0; $i < $num1 ; $i++) {
-        // code...
 
-    while ($row=mysqli_fetch_array($result)) {
+        if (empty("$array5[$i]")) {
+            $percentage_completed = 0;}
+            else {
 
-    $countOfTestId = $row['countOfTestId'];
-    $course_name = $row['course_name'];
-    $course_id = $row['course_id'];
 
-    $completed = $countOfTestId/"$array1[$i]";
-    $percentage_completed = round($completed*100);
-
+          $completed = "$array2[$i]"/"$array1[$i]";
+          $percentage_completed = round($completed*100);}
     ?>
 
   <div class="row">
     <div class="col-md-1 mb20">
       <div class="cdev" data-percent="<?= $percentage_completed ?>" data-duration="2000" data-color=",orange"></div>
-      <div class="col-md-1 mb20"> <a href="user-static.php?user_id=<?=$user_id?>&course_id=<?=$course_id?>"><button class="btn btn-secondary btn-md span1 btn-course" name="selectedtest" style="float: auto;"> <?= $course_name  ?></button></a>  </div>
+      <div class="col-md-1 mb20"> <a href="user-static.php?user_id=<?=$user_id?>&course_id=<?=$course_id?>"><button class="btn btn-secondary btn-md span1 btn-course" name="selectedtest" style="float: auto;"> <?= "$array3[$i]"  ?></button></a>  </div>
     </div>
 
   </div>
 
-<?php  } } } ?>
+
+<?php ?>
+<?php
+}  }  ?>
 </div>
 
        
