@@ -159,7 +159,7 @@ sort($array5);
   <div class="row">
     <div class="col-md-1 mb20">
       <div class="cdev" data-percent="<?= $percentage_completed ?>" data-duration="2000" data-color=",orange"></div>
-      <div class="col-md-1 mb20"> <a href="user-static.php?user_id=<?=$user_id?>&course_id=<?=$course_id?>"><button class="btn btn-secondary btn-md span1 btn-course" name="selectedtest" style="float: auto;"> <?= "$array3[$i]"  ?></button></a>  </div>
+      <div class="col-md-1 mb20"> <a href="user-static.php?user_id=<?=$user_id?>"><button class="btn btn-secondary btn-md span1 btn-course" name="selectedtest" style="float: auto;"> <?= "$array3[$i]"  ?></button></a>  </div>
     </div>
 
   </div>

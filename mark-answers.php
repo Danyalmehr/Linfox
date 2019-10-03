@@ -62,8 +62,10 @@ include_once('database.php');
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
+		
       <?php include("admin-side-dash.html") ?>
       <div class="row">
+		  <h1 style="font-size: 30Px; margin-left: 35%"> Marking Answers</h1>
           <div class="col-md-offset-2 col-md-8">
             <?php
 
@@ -136,7 +138,7 @@ include_once('database.php');
 
 
               <?php } ?>
-              <button type="submit" class="btn btn-outline-success">Success</button>
+              <button type="submit" class="btn btn-success" style="margin-left: 45%; width: 10%">Next</button>
             </form>
 
              </div>
