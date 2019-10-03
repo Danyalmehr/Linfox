@@ -293,6 +293,7 @@ include_once('database.php');
     <div class="container-fluid">
       <?php include("admin-side-dash.html") ?>
       <div class="row">
+		  
 		  <h1 style="font-size: 30Px; margin-bottom: 1em; margin: auto"> Marking Courses</h1>
           <div class="col-md-12" style="margin-top: 2%">
               <div class="user-admin-menu">
