@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 14, 2019 at 04:42 AM
+-- Generation Time: Oct 03, 2019 at 10:45 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `attempt` (
   PRIMARY KEY (`att_id`),
   KEY `test_id` (`test_id`),
   KEY `email_FK` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=288 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=289 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `attempt`
@@ -75,7 +75,8 @@ INSERT INTO `attempt` (`att_id`, `final_score`, `att_number`, `test_id`, `user_i
 (284, '60', 2, 2, 11, '2019-09-10 02:15:24pm', 'Completed', 33),
 (285, '0', 14, 2, 8, '2019-09-11 11:26:29pm', 'Not completed', 0),
 (286, '20', 15, 2, 8, '2019-09-14 12:51:52pm', 'Completed', 11),
-(287, '20', 16, 2, 8, '2019-09-14 02:39:01pm', 'Completed', 17);
+(287, '20', 16, 2, 8, '2019-09-14 02:39:01pm', 'Completed', 17),
+(288, '0', 17, 2, 8, '2019-10-03 05:48:22pm', 'Not completed', 0);
 
 -- --------------------------------------------------------
 
@@ -88,17 +89,21 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `course_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
   `course_name` text NOT NULL,
   `course_desc` text NOT NULL,
+  `course_image_name` varchar(255) DEFAULT 'no-image.jpg',
   PRIMARY KEY (`course_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`course_id`, `course_name`, `course_desc`) VALUES
-(2, 'Laser tag', ''),
-(3, 'Parkour', 'Nothing much'),
-(4, 'Finalcheck', 'Nothing much');
+INSERT INTO `courses` (`course_id`, `course_name`, `course_desc`, `course_image_name`) VALUES
+(2, 'Laser tag', '', 'no-image.jpg'),
+(3, 'Parkour', 'Nothing much', 'no-image.jpg'),
+(4, 'Finalcheck', 'Nothing much', 'no-image.jpg'),
+(5, 'a', 'a', 'no-image.jpg'),
+(6, 'asd', 'asd', 'no-image.jpg'),
+(7, 'aaa', 'aaa', 'dark-blur-abstract-4k-v3-1920x1080.jpg');
 
 -- --------------------------------------------------------
 
@@ -157,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `test` (
 --
 
 INSERT INTO `test` (`test_id`, `test_name`, `course_id`, `test_video`) VALUES
-(2, 'Safety', 2, 'UFetGppb7Eg'),
+(2, 'Safetyaaaa', 2, 'UFetGppb7Eg'),
 (3, 'coding challenge', 3, NULL),
 (11, 'as', 3, NULL),
 (13, 'Starting the game', 2, NULL),
@@ -182,18 +187,21 @@ CREATE TABLE IF NOT EXISTS `user` (
   `image_name` varchar(255) NOT NULL DEFAULT 'no-image.jpg',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_id`, `fname`, `lname`, `password`, `email`, `user_type`, `image_name`) VALUES
-(2, 's', 's', '12345678', 's@s.s', 'Admin', 'no-image.jpg'),
+(2, 'shesh', 'Sonar', '12345678', 's@s.s', 'Admin', 'assassins-creed-judgment-of-atlantis-wallpaper-2-3840x2160_477989-mm-90.jpg'),
 (3, 'shesh', 'sonar', 'sheshbhushan', 'shesh@s.s', 'Admin', 'no-image.jpg'),
 (7, 'dan', 'wqe', '12345678', 'abc@sad', 'Employee', 'no-image.jpg'),
-(8, 'dan', 'dan', '123456789', 'dan@dan', 'Employee', 'the-joker-joaquin-phoenix-art-new-sm-1920x1080.jpg'),
-(11, 'f', 'f', '12345678', 'f@f', 'Employee', 'no-image.jpg');
+(8, 'Dan', 'Dan', '123456789', 'dan@dan', 'Employee', 'dew-on-the-flower-petals-3840x2160_66984-mm-90.jpg'),
+(11, 'f', 'f', '12345678', 'f@f', 'Employee', 'no-image.jpg'),
+(12, 'asdfasdfsadf', 'asdfasdfasdf', 'asdasdasd', 'saaa@saaa.saaa', 'Admin', 'no-image.jpg'),
+(18, 'shesh3', 'sonar2', 'shesh3shesh3', 'shesh3@shesh3.s', 'Admin', 'no-image.jpg'),
+(19, 'shesh', 'sonar2', 'asdasdasdasd', 's@s.s12', 'Admin', 'no-image.jpg');
 
 -- --------------------------------------------------------
 
