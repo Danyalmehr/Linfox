@@ -163,10 +163,10 @@ session_start();
 
 
     	<div class="row containermember">
-
-        <div class="col-md-9">
+        <div class="col-md-12 col-md-9">
+        <div class="user-admin-menu">
           <div class="member">
-					                 <h1 style="margin: 1em"> Create Course</h1><br>
+					                 <h2 style="margin: 1em"> Create Course</h2><br>
                            <br>
 
 
@@ -242,6 +242,8 @@ session_start();
                             </div>
 						</div>
 					</div>
+        </div>
+
 
 	<?php include("include/footer.inc") ?>
   <script type="text/javascript" src="js/confirmation.js"></script>

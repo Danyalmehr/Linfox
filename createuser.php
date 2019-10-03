@@ -28,6 +28,27 @@ session_start();
     <title>Dashboard</title>
 
 </head>
+<style>
+
+    .user-admin-menu>h2 {text-align: center;
+    /* Black background with 0.5 opacity */
+    color: Black;}
+
+    .user-admin-menu
+    {
+      align-items: center;text-align: center;
+      background: rgb(0,0,0,0.1); /* Fallback color */
+      background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+      color: #ff7733;
+      padding:3%;
+    }
+      .container-menu {
+      position: relative;
+      width: auto;
+      display: inline-block;
+
+    }
+</style>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
@@ -35,32 +56,32 @@ session_start();
     <div class="container-fluid">
       <?php include("admin-side-dash.html") ?>
     	<div class="row containermember">
-
-          <div class="col-md-9">
+        <div class="col-md-12 col-md-9">
+        <div class="user-admin-menu">
             <div class="member">
               <form action="user-process.php" method="post">
                   <br>
-                  <h1>Create New User </h1>
+                  <h2>Create New User </h2>
 
                   <br>
                   <br>
                     <div class="row">
                       <div class="col">
-                          <label for="fname">FIRST NAME</label>
+                          <label class='labelclass' for="fname">FIRST NAME</label>
                             <input type="text" class="inputwidthforvreateuser" id="fname" name="fname" size="30" maxlength="50" placeholder=" John " required />
                         </div>
                     </div>
 
                     <div class="row">
                       <div class="col">
-                          <label for="lname">LAST NAME</label>
+                          <label class='labelclass' for="lname">LAST NAME</label>
                             <input type="text" id="lname" class="inputwidthforvreateuser" name="lname" size="30" maxlength="50" placeholder=" Cena " required />
                         </div>
                     </div>
 
                     <div class="row">
                       <div class="col">
-                          <label for="email">EMAIL</label>
+                          <label class='labelclass' for="email">EMAIL</label>
                           <input type="email" id="email" class="inputwidthforvreateuser" name="email" size="30" maxlength="50" placeholder=" abc@abc.com " required />
                         </div>
                     </div>
@@ -68,7 +89,7 @@ session_start();
 
                               <div class="row">
                       <div class="col">
-                          <label for="password">PASSWORD</label>
+                          <label class='labelclass' for="password">PASSWORD</label>
                             <input type="password" id="password" class="inputwidthforvreateuser" class="password" name="password" size="30" maxlength="20" required  onChange="passwordCheck(document)"/>
                             <span id="pwd_msg" class="error_msg"></span>
                             <span id="password_check" class="error_msg" style="color: red"></span>
@@ -77,7 +98,7 @@ session_start();
                     </div>
                     <div class="row">
                       <div class="col">
-                          <label for="rePassword">RE-TRY:</label>
+                          <label class='labelclass' for="rePassword">RE-TRY PASSWORD </label>
                             <input type="password" id="rePassword" class="inputwidthforvreateuser" size="30" maxlength="20"
                                        onChange="checkRePassword(document)" />
 
@@ -85,7 +106,7 @@ session_start();
                     </div>
                     <div class="row">
                       <div class="col">
-                          <label for="User type">USER TYPE </label>
+                          <label class='labelclass' for="User type">USER TYPE </label>
                           <select name="user_type" class="inputwidthforcreateuser">
                            <option value="Employee">Employee</option>
                            <option value="Admin">Admin</option>
@@ -96,7 +117,7 @@ session_start();
 <br>
                     <div class="row">
                       <div class="col">
-                          <label>&nbsp;</label>
+                          <label class='labelclass1'>&nbsp;</label>
                             <button class="button_signup_member" name="submit" value="Create"><span> Create User </span></button></a>
                         </div>
                     </div>
@@ -106,6 +127,8 @@ session_start();
 </div>
           </div>
         </div>
+      </div>
+
 	<?php include("include/footer.inc") ?>
 
 </body>
