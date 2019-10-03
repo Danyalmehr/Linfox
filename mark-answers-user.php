@@ -55,6 +55,126 @@ include_once('database.php');
     overflow: hidden;
 }
 
+.user-process{
+border: 1.2px solid black;
+border-radius: 50%;
+height:80px;
+width: 80px;
+font-size: 25px;
+font-weight: bolder;
+font-family: sans-serif;
+text-align: center;
+margin-bottom: 6px;
+left: 50px;
+vertical-align: middle;
+line-height: 70px;
+margin: 19px 15px;
+}
+
+
+.user-admin-menu>h2 {text-align: center;
+/* Black background with 0.5 opacity */
+color: Black;}
+
+.user-admin-menu
+{
+  align-items: center;text-align: center;
+  background: rgb(0,0,0,0.1); /* Fallback color */
+  background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+  color: #ff7733;
+  padding:3%;
+}
+  .container-menu {
+  position: relative;
+  width: auto;
+  display: inline-block;
+
+}
+
+
+    .image {
+      display: inline-block;
+
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+      margin: 8px;
+    }
+
+    .image:hover {
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+      margin-top: 4px;
+      opacity: 0.9;
+      transition: .5s ease;
+      padding: 1%;
+      border: 3px solid black;
+
+    }
+
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgb(0, 0, 0); /* Fallback color */
+     background: rgba(0, 0, 0, 0.7); /* Black background with 0.5 opacity */
+     color: #f1f1f1;
+      width: inherit;
+      height: 30%;
+      -webkit-transition: .3s ease;
+      transition: .3s ease
+      border: 1px dotted black;
+      padding: 1%;
+        display: inline-block;
+        margin: 8px;
+
+    }
+
+.overlay:hover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+ background: rgba(0, 0, 0, 0.9); /* Black background with 0.5 opacity */
+ color: #f1f1f1;
+  width: inherit;
+  height: 30%;
+  -webkit-transition: .3s ease;
+  transition: .3s ease
+  border: 1px dotted black;
+  padding: 1%;
+    display: inline-block;
+}
+
+
+
+.container-menu:hover .overlay {
+
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  border: 1px dotted black;
+  padding: 1%;
+  display: inline-block;
+}
+
+.text {
+  color: Orange;
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+    display: inline-block;
+}
+
 	</style>
 </head>
 <body onLoad="run_first()">
@@ -64,13 +184,15 @@ include_once('database.php');
     <div class="container-fluid">
       <?php include("admin-side-dash.html") ?>
       <div class="row">
-          <div class="col-md-offset-2 col-md-8">
+        <div class="col-md-12">
+          <div class="user-admin-menu">
+
             <?php
 
             $_SESSION['course_id'] = $_GET['id'];
             $_SESSION['course_name'] = $_GET['name'];
 
-            $fetchqry = "SELECT DISTINCT fname, lname, useranswer.user_id
+            $fetchqry = "SELECT DISTINCT fname, image_name, lname, useranswer.user_id
                       FROM useranswer
                       INNER JOIN question ON question.que_id = useranswer.que_id
                       INNER JOIN user ON user.user_id = useranswer.user_id
@@ -80,8 +202,8 @@ include_once('database.php');
             					$result = mysqli_query($con,$fetchqry);
 
                       ?>
-                      <center> <h1>Course name: <?= $_SESSION['course_name'] ?></h1> </center>
-                      <h2 style="float: auto;"> Choose the user you want to mark their question</h2>
+                      <center> <h2>Course name: <?= $_SESSION['course_name'] ?></h2> </center>
+                      <h3 style="float: auto;"> Choose the user you want to mark</h3>
                       <h3>STEP 2: Choose the USER</h3>
 
 
@@ -93,16 +215,32 @@ include_once('database.php');
                             $fname=$row['fname'];
                             $lname=$row['lname'];
                             $user_id=$row['user_id'];
+                          $img_profile=$row['image_name'];
+
                             $name = "{$fname} {$lname}";
 
 
                             ?>
 
-              <a href="mark-answers-test.php?user_id=<?=$user_id?>&name= <?= htmlentities($name)  ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $name  ?></button></a>
+                            <div class="container-menu">
+                              <a href="mark-answers-test.php?user_id=<?=$user_id?>&name= <?= htmlentities($name)  ?>">
+                                <?php echo " <img class='image' id='btnfile' src='images/".$img_profile."''>";?>
+                              <div class="overlay">
+                                <div class="text"><?= $name  ?></div>
+                              </div>
+                              </a>
+                            </div>
+
+            <!--  <a href="mark-answers-test.php?user_id=<?=$user_id?>&name= <?= htmlentities($name)  ?>">
+                <button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;">
+                  <?= $name  ?>
+                </button>
+              </a> -->
 
 
               <?php } ?>
    </div>
+ </div>
  </div>
 </div>
 

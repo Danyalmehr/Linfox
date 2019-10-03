@@ -260,47 +260,9 @@ require 'database.php';
     vertical-align: middle;
     line-height: 70px;
     margin: 19px 15px;
+    color: black;
     }
 
-    .user-process-green
-    {
-      border: 1.2px solid black;
-      background-color: #ADFFB4;
-      border-radius: 50%;
-      height:80px;
-      width: 80px;
-      font-size: 25px;
-      font-weight: bolder;
-      font-family: sans-serif;
-      text-align: center;
-      margin-bottom: 6px;
-      left: 50px;
-      vertical-align: middle;
-      line-height: 70px;
-      margin: 19px 15px;
-      color: green;
-    }
-
-
-
-    .user-process-red
-    {
-      border: 1.2px solid black;
-      background-color: #ff9C9E;
-      border-radius: 50%;
-      height:80px;
-      width: 80px;
-      font-size: 25px;
-      font-weight: bolder;
-      font-family: sans-serif;
-      text-align: center;
-      margin-bottom: 6px;
-      left: 50px;
-      vertical-align: middle;
-      line-height: 70px;
-      margin: 19px 15px;
-      color: red;
-    }
 
     .user-process-1{
     font-size: 25px;
@@ -344,9 +306,8 @@ require 'database.php';
     {
       width: 100%;
       font-size: 15px;
+      color: black;
     }
-
-
 
 	</style>
 </head>
@@ -372,54 +333,65 @@ require 'database.php';
       $result2=mysqli_query($con,$fetchqry2);
       $row2=mysqli_fetch_array($result2);
 
+
+      $fetchqry3 = "SELECT count(ans_status) AS countOfansstatus
+                   FROM useranswer
+                   WHERE ans_status IS NOT NULL
+                    ";
+      $result3=mysqli_query($con,$fetchqry3);
+      $row3=mysqli_fetch_array($result3);
+
       $count_ans = $row1['countOfAnsId'];
       $count_test = $row2['countOfTestId'];
       $count_user = $row2['countOfUserId'];
+
+        $count_Of_ans_status = $row3['countOfansstatus'];
        ?>
 
        <div class="row">
-         <h1 style="margin: 1em"> Admin Dashboard</h1>
+         <div class="user-admin-menu">
+           <h2 style="margin: 1em"> Admin Dashboard</h2>
 
-         <div class="col-md-12 col-md-8">
-         <center>
 
+         <div class="col-md-12">
+
+<center>
           <div class="col-sm-3 colum2-user-process">
             <div class=" user-process">
             <?= $count_ans ?>
             </div>
-            <p class="text1">  Total number of unmarked ANSWERS</p>
+            <p class="text1">  Number of unmarked ANSWERS</p>
           </div>
 
           <div class="col-sm-3 colum2-user-process">
             <div class=" user-process">
             <?= $count_test ?>
             </div>
-              <p class="text1">  Total number of unmarked TESTS  </p>
+              <p class="text1">  Number of unmarked TESTS  </p>
           </div>
 
           <div class="col-sm-3 colum2-user-process">
             <div class=" user-process">
             <?= $count_user ?>
             </div>
-              <p class="text1">  Total number of unmarked USERS  </p>
+              <p class="text1">  Number of unmarked USERS  </p>
           </div>
 
-
-					</div>
-        </center>
-
+          <div class="col-sm-3 colum2-user-process">
+            <div class=" user-process">
+            <?= $count_Of_ans_status ?>
+            </div>
+            <p class="text1">  Number of marked USERS</p>
           </div>
+</center>
+        </div>
+
+
 
           <div class="row">
+            <div class="col-md-12">
+              <h2 style="margin: 1em"> Shortcuts</h2>
 
-                        <div class="col-md-12">
-                            <div class="content">
-                                <div class="btn-controls">
-                                    <div class="btn-box-row row-fluid course">
-              <h1 style="margin: 1em"> Shortcuts</h1>
-
-
-              <div class="user-admin-menu">
               <div class="container-menu">
                 <a href="check-on-user.php">
                 <img src="images/w2.jpg" class="image">
@@ -466,13 +438,11 @@ require 'database.php';
 
 
 
-                                    </div>
 
-                                </div>
-                </div>
               </div>
               </div>
         </div>
+
 	<?php  include("include/footer.inc") ?>
 
 </body>
