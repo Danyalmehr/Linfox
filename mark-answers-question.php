@@ -62,8 +62,11 @@ include_once('database.php');
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
+		
+		
       <?php include("admin-side-dash.html") ?>
       <div class="row">
+		  <h1 style="font-size: 30Px; margin-left: 35%"> Marking Answers</h1>
           <div class="col-md-offset-2 col-md-8">
             <?php
 
@@ -103,7 +106,7 @@ include_once('database.php');
                             $que_id = $row['que_id'];
 
                             ?>
-        <a href="mark-answers.php?que_id=<?=$que_id?>&que=<?=htmlentities($que)?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $que  ?></button></a>
+        <a href="mark-answers.php?que_id=<?=$que_id?>&que=<?=htmlentities($que)?>" style="text-decoration: none"><button class="button_login" style="vertical-align:middle; display: block; width: 50%; height: 15%; font-size: 20px"><?=$que?> </button></a>
 
 
               <?php } ?>
