@@ -116,7 +116,7 @@ include_once('database.php');
                 {
                   $que_id = $row['que_id'];
                   $que_type = $row['que_type'];
-                  if ($que_type == "mcq") {
+
 
 
                   $question = array($row['que_id'], $row['que'], $row['option 1'], $row['option 2'], $row['option 3'], $row['option 4'], $row['ans'],$row['test_id']);
@@ -127,12 +127,15 @@ include_once('database.php');
 
                   <form class="test-display" action="checkresult.php" method="post">
                     <div class="options">
-
-                      <p><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></p>
                       <?php $test_id = $row['test_id'];
                       echo '<input type="hidden" name="test_id" value="'.htmlentities($test_id).'">'; ?>
                       <input type="hidden" name="attemptNumber" value="<?=$attemptNumber?>">
                       <input type="hidden" name="que_id[<?=$que_id?>]" value="<?=$que_id?>">
+                      <?php
+                      if ($que_type == "mcq") {
+                       ?>
+                      <p><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></p>
+
 
                       <p><input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[0]?>">&nbsp;<?=$ans_array[0]?></p>
                       <p><input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[1]?>">&nbsp;<?=$ans_array[1]?></p>

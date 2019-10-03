@@ -12,16 +12,10 @@ include_once('database.php');
      $wans3 = mysqli_real_escape_string($con, $_POST['wrong_answer3']);
 
      $insertqry = "INSERT INTO `question`(`que`, `option 1`, `option 2`, `option 3`, `option 4`, `ans`, `test_id`, `que_type`) VALUES ('$que','$wans3',
-       '$wans1','$wans2','$ans','$ans','$test_id','MCQ' )";
+       '$wans1','$wans2','$ans','$ans','$test_id','mcq' )";
      if(mysqli_query($con,$insertqry))
      {
        echo "your new details have been successfully INSERTED!!". mysqli_error($con);
-       ?>
-       <form class="" action="createquestion4.php" method="post">
-         <input type="hidden" name="test_id" value="<?=$test_id?>"><label><?php $test_id?></label>
-         <button type="submit" name="selectedtest" class="btn btn-default">Submit</button>
-       </form>
-       <?php
 
      }
      else
@@ -32,6 +26,7 @@ include_once('database.php');
 
    if(isset($_POST['shortanswer'])){
      $test_id = $_SESSION["test_id"];
+     echo "$test_id";
 
     $que = mysqli_real_escape_string($con, $_POST['question']);
 
@@ -65,12 +60,6 @@ include_once('database.php');
            if(mysqli_query($con,$updateqry))
            {
              echo "your new details have been successfully UPDATED!!". mysqli_error($con);
-             ?>
-             <form class="" action="createquestion4.php" method="post">
-               <input type="hidden" name="test_id" value="<?=$test_id?>"><label><?php$test_id?></label>
-               <button type="submit" name="selectedtest" class="btn btn-default">Submit</button>
-             </form>
-             <?php
            }
            else
            {
@@ -86,12 +75,7 @@ include_once('database.php');
            if(mysqli_query($con,$deleteqry))
            {
              echo "your question has been successfully DELETED!!". mysqli_error($con);
-             ?>
-             <form class="" action="createquestion4.php" method="post">
-               <input type="hidden" name="test_id" value="<?=$test_id?>"><label><?php$test_id?></label>
-               <button type="submit" name="selectedtest" class="btn btn-default">Submit</button>
-             </form>
-             <?php
+
            }
            else
            {
@@ -100,12 +84,3 @@ include_once('database.php');
          }
 
          ?>
-
-       <td><a href="createquestion3.php?delete=' <? echo $id; ?>'" onclick="return confirm('Are you sure?');">Delete</a></td>
-   </tr>
-</table>
-
-          <form class="" action="createquestion4.php" method="post">
-            <input type="hidden" name="test_id" value="<?=$test_id?>"><label><?php $test_id?></label>
-            <button type="submit" name="selectedtest" class="btn btn-default">Submit</button>
-          </form>

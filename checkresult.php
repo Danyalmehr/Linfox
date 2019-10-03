@@ -39,12 +39,9 @@ require 'database.php';
 
 
 	<style>
-
-
 		.results{
 			margin-left: 25em;
 		}
-
 	</style>
 </head>
 <body onLoad="run_first()">
@@ -62,21 +59,15 @@ require 'database.php';
     <div class="options">
           <center class="result_display">
               <?php
-
-
                 $date_after = "";
                 $date_after = strtotime(getcurrentdate($date_after));
-
                 $date_bebore = $_SESSION["datebefore"];
                 $date_bebore1 = strtotime($_SESSION["datebefore"]);
                 $time_taken = $date_after-$date_bebore1;
                 $_SESSION["time_taken"] = $time_taken;
-
-
                 echo "<h2>Course name: ".  $_SESSION["coursename"] . "</h2><br>";
                 echo " <h2>Test name: ".  $_SESSION['testname'] . "</h2><br>";
               //  echo "<h4>Submission date: ". $time_taken. "</h4>";
-
               ?>
 
                 </center>
@@ -84,36 +75,27 @@ require 'database.php';
 
 
     <?php
-
       $userid = $_SESSION["userid"];
 			if(isset($_POST['submit']))
 			{
-
       if(!empty($_POST['userans']))
 				{
           $test_id = $_POST['test_id'];
           $attemptNumber = $_POST['attemptNumber'];
           $id = $_POST['que_id'];
-
-
           $count = count($_POST['userans']);
 					//echo " <h3> There were ".$count." questions in this test </h3>";
-
 					 $score = 0;
 					 $selected = $_POST['userans'];
-
 				//	print_r($selected); //check to see weather it is retriving the value that user have selected
 					$fetchqry = "SELECT * FROM question where test_id='$test_id'";
 					$result = mysqli_query($con,$fetchqry);
           $num=mysqli_num_rows($result);
 				  $row = mysqli_fetch_array($result);
-
           $array1 = array();
           $array2 = array();
           $array3 = array();
           $array4 = array();
-
-
           foreach ($result as $res) {
               array_push($array2, $res['ans']);
               array_push($array3, $res['que_id']);
@@ -122,21 +104,15 @@ require 'database.php';
           foreach ($selected as $checkans) {
             array_push($array1, mysqli_real_escape_string($con, $checkans));
           }
-
-
           for ($i=0; $i < $count ; $i++){
-
             $fetchqry2 = "INSERT INTO useranswer(`userans`, `que_id`, `user_id`, `test_id`) values ('$array1[$i]','$array3[$i]', '$userid', '$test_id')";
             $result2 = mysqli_query($con,$fetchqry2);
                   }
-
           if ($result2) {
           //   echo " Your answers have been submitted!";
           } else {
              echo "Error: " . $fetchqry2 . "" . mysqli_error($con);
           }
-
-
 				}
 				// If unable to fetch the value
 				else
@@ -144,7 +120,6 @@ require 'database.php';
 					echo("Failed to retrive the data");
 				}
 			}
-
       $i = 1;
       for ($x=0; $x < $count ; $x++) {?>
         <form class="test-display" action="" method="post">
@@ -168,7 +143,6 @@ require 'database.php';
         $scorePercentage = ($score/$count)*100;
         $att_status = "Completed";
         $fetchqry3 = "UPDATE attempt SET final_score=$scorePercentage, att_date='$date_bebore', att_status='$att_status', time_taken='$time_taken' WHERE user_id =$userid AND test_id=$test_id AND att_number=$attemptNumber";
-
         $result3 = mysqli_query($con,$fetchqry3)or die(mysql_error());
 ?>
 
