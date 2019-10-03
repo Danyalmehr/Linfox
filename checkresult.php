@@ -53,6 +53,7 @@ require 'database.php';
     <div class="container-fluid">
       <?php include("user-side-dash.html") ?>
       <div class="row">
+		  <h1 style="font-size: 30Px; margin: auto"> Checking with Correct Answers</h1>
         <div class="col-md-2"></div>
           <div class="col-md-8">
 
