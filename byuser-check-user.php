@@ -36,6 +36,129 @@ include_once('database.php');
     <title> Take test </title>
 
 </head>
+
+<style>
+
+.user-process{
+border: 1.2px solid black;
+border-radius: 50%;
+height:80px;
+width: 80px;
+font-size: 25px;
+font-weight: bolder;
+font-family: sans-serif;
+text-align: center;
+margin-bottom: 6px;
+left: 50px;
+vertical-align: middle;
+line-height: 70px;
+margin: 19px 15px;
+}
+
+
+.user-admin-menu>h2 {text-align: center;
+/* Black background with 0.5 opacity */
+color: Black;}
+
+.user-admin-menu
+{
+  align-items: center;text-align: center;
+  background: rgb(0,0,0,0.1); /* Fallback color */
+  background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+  color: #ff7733;
+  padding:3%;
+}
+  .container-menu {
+  position: relative;
+  width: auto;
+  display: inline-block;
+
+}
+
+
+.image {
+  display: inline-block;
+
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin-top: 4px;
+}
+
+.image:hover {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin-top: 4px;
+  opacity: 0.9;
+  transition: .5s ease;
+  padding: 1%;
+  border: 3px solid black;
+
+}
+
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+ background: rgba(0, 0, 0, 0.7); /* Black background with 0.5 opacity */
+ color: #f1f1f1;
+  width: inherit;
+  height: 30%;
+  -webkit-transition: .3s ease;
+  transition: .3s ease
+  border: 1px dotted black;
+  padding: 1%;
+    display: inline-block;
+}
+
+.overlay:hover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+ background: rgba(0, 0, 0, 0.9); /* Black background with 0.5 opacity */
+ color: #f1f1f1;
+  width: inherit;
+  height: 30%;
+  -webkit-transition: .3s ease;
+  transition: .3s ease
+  border: 1px dotted black;
+  padding: 1%;
+    display: inline-block;
+}
+
+
+
+.container-menu:hover .overlay {
+
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  border: 1px dotted black;
+  padding: 1%;
+  display: inline-block;
+}
+
+.text {
+  color: Orange;
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+    display: inline-block;
+}
+
+
+</style>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
 
@@ -55,31 +178,41 @@ include_once('database.php');
 
 
           <div class="row">
-            <div class="col-md-1">
-
-            </div>
-              <div class="col-md-8">
-                <center class="table_heading">
-
+            <div class="col-md-12">
                   <h1>Choose user</h1>
+                  <br><br><br>
+
                   <?php  while ($row=mysqli_fetch_array($result))
                       {
                         $user_id = $row['user_id'];
                         $first_name = $row['fname'];
                         $last_name = $row['lname'];
+                        $img_profile_ =  $row['image_name'];
                         $name = "{$first_name} {$last_name}"
                         ?>
 
-      <a href="byuser-check-user-course.php?id=<?=$user_id?>&name=<?= htmlentities($name) ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $name  ?></button></a>
-      </center>
-                        <?php
+
+
+                  <div class="container-menu">
+                    <a href="byuser-check-user-course.php?id=<?=$user_id?>&name=<?= htmlentities($name) ?>">
+                      <?php echo " <img class='image' id='btnfile' src='images/".$img_profile_."''>";?>
+                    <div class="overlay">
+                      <div class="text"><?= $name  ?></div>
+                    </div>
+                    </a>
+                  </div>
+
+
+
+                  <?php
                       }
 
                   ?>
 
                 </center>
-                             </div>
+
                            </div>
+                             </div>
 
 
 
