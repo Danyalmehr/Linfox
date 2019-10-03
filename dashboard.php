@@ -223,9 +223,7 @@ background-color: #3e8e41;
     	<div class="row">
 
                     <div class="col-md-12">
-                        <div class="content">
-                            <div class="btn-controls">
-                                <div class="btn-box-row row-fluid course">
+
 
 
 	<?php
@@ -282,10 +280,7 @@ background-color: #3e8e41;
 
 ?>
 </div>
-                                </div>
 
-                            </div>
-						</div>
 					</div>
           </div>
         </div>
