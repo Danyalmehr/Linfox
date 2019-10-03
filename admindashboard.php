@@ -240,6 +240,111 @@ require 'database.php';
         display: inline-block;
     }
 
+    .user_image1{ border: 1px solid black;
+      border-radius: 50%;
+    height:140px;}
+
+    .user-process{
+    border: 1.2px solid black;
+    border-radius: 50%;
+    height:80px;
+    width: 80px;
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    text-align: center;
+    margin-bottom: 6px;
+    left: 50px;
+    vertical-align: middle;
+    line-height: 70px;
+    margin: 19px 15px;
+    }
+
+    .user-process-green
+    {
+      border: 1.2px solid black;
+      background-color: #ADFFB4;
+      border-radius: 50%;
+      height:80px;
+      width: 80px;
+      font-size: 25px;
+      font-weight: bolder;
+      font-family: sans-serif;
+      text-align: center;
+      margin-bottom: 6px;
+      left: 50px;
+      vertical-align: middle;
+      line-height: 70px;
+      margin: 19px 15px;
+      color: green;
+    }
+
+
+
+    .user-process-red
+    {
+      border: 1.2px solid black;
+      background-color: #ff9C9E;
+      border-radius: 50%;
+      height:80px;
+      width: 80px;
+      font-size: 25px;
+      font-weight: bolder;
+      font-family: sans-serif;
+      text-align: center;
+      margin-bottom: 6px;
+      left: 50px;
+      vertical-align: middle;
+      line-height: 70px;
+      margin: 19px 15px;
+      color: red;
+    }
+
+    .user-process-1{
+    font-size: 25px;
+    @ -104,32 +65,9 @@ font-weight: bolder;
+    font-family: sans-serif;
+    }
+
+    .user-process-12
+    {
+      margin-top: 2%;
+      font-size: 18px;
+      font-weight: bolder;
+      font-family: sans-serif;
+    }
+
+    .colum2-user-process
+    {
+      padding: 6px;
+    }
+
+    .colum2-user-process-green
+    {
+        padding: 6px;
+        color: green;
+
+    }
+
+    .colum2-user-process-red
+    {
+        padding: 6px;
+        color: red;
+
+    }
+    .user-process-1{
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    }
+
+    .text1
+    {
+      width: 100%;
+      font-size: 15px;
+    }
+
+
 
 	</style>
 </head>
@@ -270,39 +375,37 @@ require 'database.php';
       $count_user = $row2['countOfUserId'];
        ?>
 
-    	<div class="row">
+       <div class="row">
+         <h1 style="margin: 1em"> Admin Dashboard</h1>
 
-                    <div class="col-md-12">
-                        <div class="content">
-                            <div class="btn-controls">
-                                <div class="btn-box-row row-fluid course">
-					<h1 style="margin: 1em"> Admin Dashboard</h1>
+         <div class="col-md-12 col-md-8">
+         <center>
 
-          <div class="col-sm-2 colum2-user-process">
+          <div class="col-sm-3 colum2-user-process">
             <div class=" user-process">
             <?= $count_ans ?>
             </div>
-              Total number of unmarked ANSWERS
+            <p class="text1">  Total number of unmarked ANSWERS</p>
           </div>
 
-          <div class="col-sm-2 colum2-user-process">
+          <div class="col-sm-3 colum2-user-process">
             <div class=" user-process">
             <?= $count_test ?>
             </div>
-              Total number of unmarked TESTS
+              <p class="text1">  Total number of unmarked TESTS  </p>
           </div>
 
-          <div class="col-sm-2 colum2-user-process">
+          <div class="col-sm-3 colum2-user-process">
             <div class=" user-process">
             <?= $count_user ?>
             </div>
-              Total number of unmarked USERS
+              <p class="text1">  Total number of unmarked USERS  </p>
           </div>
-                                </div>
 
-                            </div>
-						</div>
+
 					</div>
+        </center>
+
           </div>
 
           <div class="row">

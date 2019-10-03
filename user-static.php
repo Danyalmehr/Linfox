@@ -136,8 +136,21 @@ font-weight: bolder;
 font-family: sans-serif;
 }
 
+.user-admin-menu>h2 {text-align: center;
+/* Black background with 0.5 opacity */
+color: Black;}
+.user-admin-menu{align-items: center;text-align: center;background: rgb(0, 0, 0); /* Fallback color */
+background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+color: ##ff7733;
+padding: 3%;
+}
 
+  .container-menu {
+  position: relative;
+  width: auto;
+  display: inline-block;
 
+}
 
 </style>
 
@@ -215,6 +228,8 @@ font-family: sans-serif;
 
           <div class="row">
             <div class="col-md-12 col-md-8">
+              <div class="user-admin-menu">
+
             <center>
 
 
@@ -355,6 +370,8 @@ font-family: sans-serif;
       </table></Center>
          </div>
           </div>
+        </div>
+
             </div>
 
 </div>
