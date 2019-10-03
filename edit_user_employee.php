@@ -26,7 +26,7 @@ session_start();
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
 
-    <title>Dashboard</title>
+    <title>Profile</title>
 
 </head>
 <style>
@@ -58,7 +58,8 @@ session_start();
 
       <?php    include("user-side-dash.html");?>
  <div class="row containermember">
-     <div class="col-md-12 col-md-9">
+	 <h1 style="font-size: 30Px; margin:auto"> Profile</h1>
+     <div class="col-md-12 col-md-9" style="margin-top: 2%">
      <div class="user-admin-menu">
 
 
