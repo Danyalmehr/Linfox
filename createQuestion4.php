@@ -36,6 +36,79 @@ include_once('database.php');
     <title> Take test </title>
 
 </head>
+
+	<style>
+
+
+.user-admin-menu>h2 {text-align: center;
+/* Black background with 0.5 opacity */
+color: Black;}
+.user-admin-menu{align-items: center;text-align: center;background: rgb(0, 0, 0); /* Fallback color */
+background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+color: ##ff7733;
+padding: 3%;
+}
+
+  .container-menu {
+  position: relative;
+  width: auto;
+  display: inline-block;
+
+}
+
+.image {
+  display: inline-block;
+
+  height: auto;
+  border: 1px dotted black;
+  padding: 1%;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+ background: rgba(0, 0, 0, 0.9); /* Black background with 0.5 opacity */
+ color: #f1f1f1;
+  overflow: hidden;
+  width: inherit;
+  height: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s ease;
+  transition: .3s ease
+  border: 1px dotted black;
+  padding: 1%;
+    display: inline-block;
+}
+
+.container-menu:hover .overlay {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  border: 1px dotted black;
+  padding: 1%;
+    display: inline-block;
+}
+
+.text {
+  color: Orange;
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+    display: inline-block;
+}
+	</style>
+
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
 
@@ -61,11 +134,9 @@ include_once('database.php');
 
 
           <div class="row">
-            <div class="col-md-1">
+                     <div class="col-md-12 col-md-8">
 
 
-            </div>
-              <div class="col-md-8">
                 <center class="table_heading">
 
                   <h3>Course name: <?= $_SESSION['coursename'] ?> </h3>
@@ -136,9 +207,6 @@ include_once('database.php');
                           <input type="text" class="form-control" id="wrong_answer3" name="wrong_answer3" placeholder="Wrong answer 3" Required>
                         </div>
                       </div>
-
-
-
                         <div class="btn-group">
                           <div class="col-sm-offset-2 col-sm-10">
 
@@ -153,13 +221,11 @@ include_once('database.php');
 
 
                     </div>
-                  </div>
+
 
                            <div class="row">
-                             <div class="col-md-1">
-                             </div>
-
-                             <div class="col-md-10 col-md-7">
+                             <div class="col-md-12 ">
+                                 <div class="user-admin-menu">
 
                                 <center class="table_heading">
                                <h3>Edit question for:</h3>
@@ -200,7 +266,12 @@ include_once('database.php');
                          </table>
                           </div>
                              </div>
+                             </div>
                            </div>
+
+
+
+                         </div>
 
 
 
