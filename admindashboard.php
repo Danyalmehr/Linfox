@@ -165,7 +165,7 @@ require 'database.php';
       display: inline-block;
       width: 300px;
       height: 300px;
-      margin-top: 4px;
+      margin: 8px;
     }
 
     .image:hover {
@@ -196,6 +196,8 @@ require 'database.php';
       border: 1px dotted black;
       padding: 1%;
         display: inline-block;
+        margin: 8px;
+
     }
 
     .overlay:hover {

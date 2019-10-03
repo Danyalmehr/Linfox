@@ -76,44 +76,46 @@ color: Black;}
 }
 
 
-.image {
-  display: inline-block;
+    .image {
+      display: inline-block;
 
-  display: inline-block;
-  width: 300px;
-  height: 300px;
-  margin-top: 4px;
-}
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+      margin: 8px;
+    }
 
-.image:hover {
-  display: inline-block;
-  width: 300px;
-  height: 300px;
-  margin-top: 4px;
-  opacity: 0.9;
-  transition: .5s ease;
-  padding: 1%;
-  border: 3px solid black;
+    .image:hover {
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+      margin-top: 4px;
+      opacity: 0.9;
+      transition: .5s ease;
+      padding: 1%;
+      border: 3px solid black;
 
-}
+    }
 
 
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgb(0, 0, 0); /* Fallback color */
- background: rgba(0, 0, 0, 0.7); /* Black background with 0.5 opacity */
- color: #f1f1f1;
-  width: inherit;
-  height: 30%;
-  -webkit-transition: .3s ease;
-  transition: .3s ease
-  border: 1px dotted black;
-  padding: 1%;
-    display: inline-block;
-}
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgb(0, 0, 0); /* Fallback color */
+     background: rgba(0, 0, 0, 0.7); /* Black background with 0.5 opacity */
+     color: #f1f1f1;
+      width: inherit;
+      height: 30%;
+      -webkit-transition: .3s ease;
+      transition: .3s ease
+      border: 1px dotted black;
+      padding: 1%;
+        display: inline-block;
+        margin: 8px;
+
+    }
 
 .overlay:hover {
   position: absolute;
