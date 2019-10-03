@@ -402,7 +402,7 @@ require 'database.php';
               </div>
 
               <div class="container-menu">
-                <a href="question-course.php">
+                <a href="question-courses.php">
                 <img src="images/w3.jpg" alt="Avatar" class="image">
                 <div class="overlay">
                   <div class="text">Create Question</div>
