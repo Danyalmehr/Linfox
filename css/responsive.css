@@ -3,7 +3,10 @@
 /* For mobile phones: */
 
 body {
-
+	background-image:url(https://cdn.wallpapersafari.com/6/25/kYMbd6.jpg);
+	width:100%;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 h1 {
