@@ -140,7 +140,7 @@ include_once('database.php');
                                $test_name = $_SESSION['testname'];
 
                           ?>
-                          
+
                           <center>
 
                   <h1>course: <?=  $course_name  ?></h1>
@@ -153,7 +153,7 @@ include_once('database.php');
               ?>
 
 
-              <form class="test" action="stest.php" method="post">
+              <form class="test" action="Stest.php" method="post">
                 <input type="hidden" name="test_id" value="<?=$test_id?>"><label for=""><?php $test_id?></label>
 
                 <button type="submit" name="selectedtest" class="btn btn-outline-dark btn-lg span5 btn-course test" style="margin-left:0.5em"><span class="course_name"> Take the test </span></button>
