@@ -112,7 +112,7 @@ padding: 3%;
             <h2>Check progress</h2>
             <div class="container-menu">
               <a href="check-user-course.php">
-              <img src="images/images.png" style="background-color:white;"width="192px;" alt="Avatar" class="image23">
+              <img src="images/course1.png" style="background-color:white;"width="192px;" alt="Avatar" class="image23">
               <div class="overlay">
                 <div class="text">By Course/Test</div>
               </div>
@@ -121,7 +121,7 @@ padding: 3%;
 
             <div class="container-menu">
               <a href="byuser-check-user.php">
-              <img src="images/default-challenges.png" alt="Avatar"style="background-color:white;" width="192px;"class="image23">
+              <img src="images/user1.png" alt="Avatar"style="background-color:white;" width="192px;"class="image23">
               <div class="overlay">
                 <div class="text">By User</div>
               </div>
