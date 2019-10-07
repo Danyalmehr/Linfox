@@ -388,6 +388,49 @@ p {
 				cursor: pointer;
 
 			}
+
+			.image {
+	      display: inline-block;
+	      width: 220px;
+	      height: 220px;
+				margin: 8px;
+	    }
+
+	    .image:hover {
+	      display: inline-block;
+	      width: 200px;
+	      height: 200px;
+	      margin-top: 4px;
+	      opacity: 0.9;
+	      transition: .5s ease;
+	      padding: 1%;
+	      border: 3px solid black;
+
+	    }
+
+			.image23 {image {
+			  display: inline-block;
+			  height: auto;
+			  border: 1px dotted black;
+			  padding: 1%;
+			  display: inline-block;
+			}
+			}
+
+			.image23:hover {
+			  display: inline-block;
+
+			  height: auto;
+			  border: 1px dotted black;
+			  padding: 1%;
+			  display: inline-block;
+
+				opacity: 0.9;
+				transition: .5s ease;
+			
+
+			}
+
 			.profileback
 			{
 
@@ -595,6 +638,27 @@ p {
 						cursor: pointer;
 
 					}
+
+					.image {
+			      display: inline-block;
+			      display: inline-block;
+			      width: 300px;
+			      height: 300px;
+			      margin: 8px;
+			    }
+
+			    .image:hover {
+			      display: inline-block;
+			      width: 300px;
+			      height: 300px;
+			      margin-top: 4px;
+			      opacity: 0.9;
+			      transition: .5s ease;
+			      padding: 1%;
+			      border: 3px solid black;
+
+			    }
+
 					.profileback
 					{
 
@@ -785,6 +849,27 @@ p {
 		 border-radius: 50%;
 		 margin-top:-59px;
 	}
+
+
+	    .image {
+	      display: inline-block;
+	      display: inline-block;
+	      width: 300px;
+	      height: 300px;
+	      margin: 8px;
+	    }
+
+	    .image:hover {
+	      display: inline-block;
+	      width: 300px;
+	      height: 300px;
+	      margin-top: 4px;
+	      opacity: 0.9;
+	      transition: .5s ease;
+	      padding: 1%;
+	      border: 3px solid black;
+
+	    }
 
 
 		.imageprofile1

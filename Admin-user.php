@@ -113,7 +113,7 @@ padding: 3%;
             <h2>User</h2>
             <div class="container-menu">
               <a href="createuser.php">
-              <img src="images/images.png" style="background-color:white;"width="192px;" alt="Avatar" class="image">
+              <img src="images/images.png" style="background-color:white;"width="192px;" alt="Avatar" class="image23">
               <div class="overlay">
                 <div class="text">Create User</div>
               </div>
@@ -122,7 +122,7 @@ padding: 3%;
 
             <div class="container-menu">
               <a href="edituser.php">
-              <img src="images/default-challenges.png" alt="Avatar"style="background-color:white;" width="192px;"class="image">
+              <img src="images/default-challenges.png" alt="Avatar"style="background-color:white;" width="192px;"class="image23">
               <div class="overlay">
                 <div class="text">Edit User</div>
               </div>
@@ -130,7 +130,7 @@ padding: 3%;
             </div>
             <div class="container-menu">
               <a href="check-on-user.php">
-              <img src="images/download.jpg" alt="Avatar"style="background-color:white;" width="192px;"class="image">
+              <img src="images/download.jpg" alt="Avatar"style="background-color:white;" width="192px;"class="image23">
               <div class="overlay">
                 <div class="text">User progress</div>
               </div>

@@ -112,7 +112,7 @@ session_start();
             <h2>Courses</h2>
             <div class="container-menu">
               <a href="create-course.php">
-                <img src="images/add-event-icon.png" style="background-color:white;"width="192px;" alt="Avatar" class="image">
+                <img src="images/add-event-icon.png" style="background-color:white;"width="192px;" alt="Avatar" class="image23">
               <div class="overlay">
                 <div class="text">Create Course</div>
               </div>
@@ -121,7 +121,7 @@ session_start();
 
             <div class="container-menu">
               <a href="edit-course.php">
-                <img src="images/default-challenges.png" alt="Avatar"style="background-color:white;" width="192px;"class="image">
+                <img src="images/default-challenges.png" alt="Avatar"style="background-color:white;" width="192px;"class="image23">
               <div class="overlay">
                 <div class="text">Edit Course</div>
               </div>

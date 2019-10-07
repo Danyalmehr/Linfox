@@ -235,7 +235,7 @@ background-color: #3e8e41;
 
 ?>
           <div class="user-admin-menu">
-            <h1 style="margin: 1em"> Available Courses</h1>
+            <h2 style="margin: 1em"> Available Courses</h2>
 
             <?php
 
