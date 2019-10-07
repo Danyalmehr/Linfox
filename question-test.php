@@ -36,6 +36,25 @@ include_once('database.php');
 
 	<style>
 
+      .user-admin-menu>h2 {text-align: center;
+      /* Black background with 0.5 opacity */
+      color: Black;}
+
+      .user-admin-menu
+      {
+        align-items: center;text-align: center;
+        background: rgb(0,0,0,0.1); /* Fallback color */
+        background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+        color: #ff7733;
+        padding:3%;
+      }
+        .container-menu {
+        position: relative;
+        width: auto;
+        display: inline-block;
+
+      }
+
   ul.unstyled, ol.unstyled {
      margin-left: 0;
      list-style: none;
@@ -61,8 +80,9 @@ include_once('database.php');
     <div class="container-fluid">
       <?php include("admin-side-dash.html") ?>
       <div class="row">
-		  <h1 style="font-size: 40Px; margin-bottom: 1em; margin: auto"> Creating Questions</h1>
-          <div class="col-md-offset-2 col-md-8">
+      <div class="col-md-12">
+        <div class="user-admin-menu">
+		  <h2 style="font-size: 40Px; margin-bottom: 1em; margin: auto"> Creating Questions</h2> <br>
             <?php
             $_SESSION['coursename'] = $_GET['name'];
             $course_id = $_GET['id'];
@@ -76,7 +96,7 @@ include_once('database.php');
 
                         ?>
 
-                        <h1>Tests for <?= $_SESSION["coursename"] ?> </h1>
+                        <h3>Tests for <?= $_SESSION["coursename"] ?> </h3>
                         <h3>STEP 2: Choose your test</h3>
                         <h4>Choose the test you wanna create your question for:</h4>
 
@@ -99,9 +119,11 @@ include_once('database.php');
                               $test_id=$row['test_id'];
                               $test_name = $row['test_name'];
                                ?>
-            <a href="createquestion4.php?test_id=<?=$test_id?>&name= <?= htmlentities($test_name) ?>" style="text-decoration: none">
-				
-				<button class="button_login" style="vertical-align:middle; display: block; width: 50%; height: 15%; font-size: 20px; background-color: #CB5D32; border-style: solid"><?=$test_name?> </button></a>
+            <a href="createQuestion4.php?test_id=<?=$test_id?>&name= <?= htmlentities($test_name) ?>" style="text-decoration: none">
+
+				<button class="button_login" style="vertical-align:middle; display: block; width: 50%; height: 15%; font-size: 20px; "><?=$test_name?>
+        </button>
+      </a>
 
             <?php }
           }?>
@@ -112,6 +134,7 @@ include_once('database.php');
 
    </div>
  </div>
+</div>
 </div>
 
 
