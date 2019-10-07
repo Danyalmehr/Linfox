@@ -53,8 +53,9 @@ require 'database.php';
     <div class="container-fluid">
       <?php include("user-side-dash.html") ?>
       <div class="row">
+		  <h1 style="font-size: 30Px; margin: auto"> Checking with Correct Answers</h1>
         <div class="col-md-2"></div>
-          <div class="col-md-8">
+          <div class="col-md-12" style="margin-top: 2%">
 
     <div class="options">
           <center class="result_display">

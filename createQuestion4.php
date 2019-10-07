@@ -223,7 +223,7 @@ padding: 3%;
                     </div>
 
 
-                           <div class="row">
+                           <div class="row" style="margin: auto">
                              <div class="col-md-12 ">
                                  <div class="user-admin-menu">
 

@@ -51,7 +51,7 @@ include_once('database.php');
 
 
 
-                <div class="col-md-8">
+                <div class="col-md-12">
 
   <?php
     $user = $_SESSION["userid"];

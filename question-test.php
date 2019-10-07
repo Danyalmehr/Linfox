@@ -101,7 +101,7 @@ include_once('database.php');
                                ?>
             <a href="createquestion4.php?test_id=<?=$test_id?>&name= <?= htmlentities($test_name) ?>" style="text-decoration: none">
 				
-				<button class="button_login" style="vertical-align:middle; display: block; width: 50%; height: 15%; font-size: 20px"><?=$test_name?> </button></a>
+				<button class="button_login" style="vertical-align:middle; display: block; width: 50%; height: 15%; font-size: 20px; "><?=$test_name?> </button></a>
 
             <?php }
           }?>

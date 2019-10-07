@@ -78,12 +78,12 @@ include_once('database.php');
                         $test_id=$row['test_id'];
                         $test_name = $row['test_name'];
                         ?>
-                        <a href="test-video.php?test_id=<?=$test_id?>&name= <?= htmlentities($test_name) ?>"><button class="btn btn-secondary btn-lg span5 btn-course" name="selectedtest" style="float: auto;"> <?= $test_name  ?></button></a>
+                        <a href="test-video.php?test_id=<?=$test_id?>&name= <?= htmlentities($test_name) ?>" style="text-decoration: none"><button class="button_login" style="vertical-align:middle; display: block; width: 50%; height: 15%; font-size: 20px"><?=$test_name?> </button></a>
 
                         <?php
                       }
                       ?>
-                      <a href="dashboard.php"> <button class="btn btn-danger btn-lg" style="float: auto;"> <span class="test_name"> Back to HOME page </span> </button></a>
+                      <div class="back" style="margin:3% 50%;"><a href="dashboard.php"> <button class="btn btn-danger btn-lg" style="margin: auto"> <span> Back to course page </span> </button></a></div>
 
 
                       <?php
