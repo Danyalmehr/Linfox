@@ -121,24 +121,6 @@ require 'database.php';
 			}
 
 		}
-
-    .user-process{
-    border: 1.2px solid black;
-    border-radius: 50%;
-    height:80px;
-    width: 80px;
-    font-size: 25px;
-    font-weight: bolder;
-    font-family: sans-serif;
-    text-align: center;
-    margin-bottom: 6px;
-    left: 50px;
-    vertical-align: middle;
-    line-height: 70px;
-    margin: 19px 15px;
-    }
-
-
     .user-admin-menu>h2 {text-align: center;
     /* Black background with 0.5 opacity */
     color: Black;}

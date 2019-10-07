@@ -106,6 +106,8 @@ margin: 14px;
       if(!empty($_GET['id'] && $_GET['name']))
       {
         $id=$_GET['id'];
+        $course_name=$_GET['name'];
+
 
 
         $fetchqry = "SELECT attempt.user_id, count(distinct attempt.test_id) as countOfTestId, fname, lname
@@ -141,11 +143,11 @@ margin: 14px;
 
     <?php
     if ($num == '0') { ?>
-      <h2> No tests of any course has been taken by <?= $_SESSION['name'] ?> </h2>
+      <h2> Nobody has taken course <?= $course_name ?> </h2>
   <?php  }
     else {?>
 
-    <h2> Courses taken by <?= $_SESSION['name'] ?></h2>
+    <h2> Users taken course <?= $course_name ?></h2>
 
       <?php
     while ($row=mysqli_fetch_array($result)) {

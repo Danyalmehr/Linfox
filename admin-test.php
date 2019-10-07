@@ -110,7 +110,7 @@ session_start();
             <h2> Test </h2>
             <div class="container-menu">
               <a href="create-test.php">
-                <img src="images/11-512.png" alt="Avatar"style="background-color:white;" width="192px;"class="image">
+                <img src="images/11-512.png" alt="Avatar"style="background-color:white;" width="192px;"class="image23">
               <div class="overlay">
                 <div class="text">Create Test</div>
               </div>
@@ -119,7 +119,7 @@ session_start();
 
             <div class="container-menu">
               <a href="edit-test-course.php">
-                <img src="images/default-challenges.png" alt="Avatar"style="background-color:white;" width="192px;"class="image">
+                <img src="images/default-challenges.png" alt="Avatar"style="background-color:white;" width="192px;"class="image23">
               <div class="overlay">
                 <div class="text">Edit Test</div>
               </div>
