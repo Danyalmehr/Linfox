@@ -1093,8 +1093,10 @@ height: auto;
 
 
 .inputwidthforemailandotherinputintable3 {
-	 background-color: transparent;
-    border-bottom:2px solid #ff7733;
+
+	 background: rgb(0,0,0,0.1);
+	 background: rgba(0, 0, 0, 0.1);
+    border-bottom:1px solid black;
 		border-top: none;
 		border-left: none;
 		border-right: none;

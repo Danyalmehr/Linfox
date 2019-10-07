@@ -37,7 +37,7 @@ include_once('include/database.php');
           $email = $row['email'];
 
         ?>
-//d
+
           <div id='cssmenu' class="cssmenu">
           <ul>
             <li>  <?php echo " <img class='user_image' src='images/".  $image_name."' width='60px' height='auto'>";?></li>
