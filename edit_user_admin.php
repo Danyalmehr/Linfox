@@ -55,11 +55,11 @@ session_start();
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
-		
+
 
       <?php    include("admin-side-dash.html");?>
  <div class="row containermember">
-	 <h1 style="font-size: 35Px; margin-bottom: 1em; margin-left: 50%"> Profile</h1>
+	<!-- <h1 style="font-size: 35Px; margin-bottom: 1em; margin-left: 50%"> Profile</h1> -->
      <div class="col-md-12 col-md-9">
      <div class="user-admin-menu">
 
@@ -82,6 +82,7 @@ session_start();
                                </div>
 
                                 <div class="col-md-12">
+
 
                                   <?php echo " <img class='imageprofile1' id='btnfile' src='images/".$row['image_name']."''>";?></center>
                                     </div>
