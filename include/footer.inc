@@ -11,13 +11,7 @@
 <footer class="footer-distributed">
 	<div class="footer-left">
 		<h2><span style="color:#ff7733;"> URBAN XTREME </span></h2>
-			<p class="footer-links">
-					<a href="dashboard1.php"> Home | </a>
-
-					<a href="test.php"> Test | </a>
-
-					<a href="courses.php"> Courses </a>
-			</p>
+		
 			<p class="footer-company-name" style="color:#ff7733;"> URBAN XTREME &copy; 2019 </p>
 			<div class="footer-icons">
 						<a href="https://www.facebook.com/urbanxtremeadventures"><i class="fa fa-facebook"></i></a>

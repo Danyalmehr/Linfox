@@ -39,6 +39,24 @@ include_once('database.php');
 
 	<style>
 
+    .user-admin-menu>h2 {text-align: center;
+    /* Black background with 0.5 opacity */
+    color: Black;}
+
+    .user-admin-menu
+    {
+      align-items: center;text-align: center;
+      background: rgb(0,0,0,0.1); /* Fallback color */
+      background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+      color: #ff7733;
+      padding:3%;
+    }
+      .container-menu {
+      position: relative;
+      width: auto;
+      display: inline-block;
+
+    }
   ul.unstyled, ol.unstyled {
      margin-left: 0;
      list-style: none;
@@ -62,11 +80,12 @@ include_once('database.php');
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
-		
+
       <?php include("admin-side-dash.html") ?>
       <div class="row">
-		  <h1 style="font-size: 30Px; margin-left: 35%"> Marking Answers</h1>
-          <div class="col-md-offset-2 col-md-8">
+      <div class="col-md-12">
+        <div class="user-admin-menu">
+		  <h2 style="font-size: 30Px;"> Marking Answers</h2>
             <?php
 
             $que = $_GET['que'];
@@ -92,9 +111,9 @@ include_once('database.php');
                       $test_id = $_SESSION['test_id'];
                       ?>
                       <center>
-                        <h1>Course name: <?= $_SESSION['course_name'] ?></h1>
-                        <h1>Test name: <?= $_SESSION['test_name'] ?></h1>
-                        <h1>User name: <?= $_SESSION['name'] ?></h1>
+                        <h3>Course name: <?= $_SESSION['course_name'] ?></h3>
+                        <h3>Test name: <?= $_SESSION['test_name'] ?></h3>
+                        <h3>User name: <?= $_SESSION['name'] ?></h3>
                       </center>
                       <h3>Choose the question you want to mark <?= $_SESSION['name'] ?> answer:</h3>
 
@@ -109,8 +128,8 @@ include_once('database.php');
 
 
                             ?>
-                            <p> <?= $que ?> </p>
-                            <p> <?= $user_ans ?> </p>
+                            <p style="color:black;"> <?= $que ?> </p>
+                            <p style="color:black;"> <?= $user_ans ?> </p>
 
 
                             <form id="frmbox" action="mark-process.php" method="post" onsubmit="return formSubmit();">
@@ -138,12 +157,13 @@ include_once('database.php');
 
 
               <?php } ?>
-              <button type="submit" class="btn btn-success" style="margin-left: 45%; width: 10%">Next</button>
+              <button type="submit" class="btn btn-success" style="width: 10%">Next</button>
             </form>
 
              </div>
            </div>
           </div>
+            </div>
 
 	<?php include("include/footer.inc") ?>
 

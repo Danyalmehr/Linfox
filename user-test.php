@@ -163,14 +163,12 @@ include_once('database.php');
                         $test_name = $row['test_name'];
                         ?>
 
-                        <div class="container-menu">
-                          <a href="test-video.php?test_id=<?=$test_id?>&name= <?= htmlentities($test_name) ?>" style="text-decoration: none">
-                          <img src="images/w4.jpg" alt="Avatar" class="image">
-                          <div class="overlay">
-                            <div class="text"><?=$test_name?></div>
-                          </div>
-                          </a>
-                        </div>
+                    
+
+                        <a href="test-video.php?test_id=<?=$test_id?>&name= <?= htmlentities($test_name) ?>" style="text-decoration: none">
+                         <button class="button_login" style="vertical-align:middle; display: block; width: 50%; height: 15%; font-size: 20px; "><?=$test_name?>
+                         </button>
+                         </a>
 
                         <?php
                       }

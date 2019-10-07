@@ -55,23 +55,6 @@ include_once('database.php');
     overflow: hidden;
 }
 
-.user-process{
-border: 1.2px solid black;
-border-radius: 50%;
-height:80px;
-width: 80px;
-font-size: 25px;
-font-weight: bolder;
-font-family: sans-serif;
-text-align: center;
-margin-bottom: 6px;
-left: 50px;
-vertical-align: middle;
-line-height: 70px;
-margin: 19px 15px;
-}
-
-
 .user-admin-menu>h2 {text-align: center;
 /* Black background with 0.5 opacity */
 color: Black;}
@@ -184,9 +167,10 @@ color: Black;}
     <div class="container-fluid">
       <?php include("admin-side-dash.html") ?>
       <div class="row">
-		  <h1 style="font-size: 30Px; margin-bottom: 1em; margin: auto"> Marking Users</h1>
-        <div class="col-md-12" style="margin-top: 2%">
+        <div class="col-md-12">
           <div class="user-admin-menu">
+            <h2> Marking Courses</h2>
+
 
             <?php
 
@@ -203,7 +187,7 @@ color: Black;}
             					$result = mysqli_query($con,$fetchqry);
 
                       ?>
-                      <center> <h2>Course name: <?= $_SESSION['course_name'] ?></h2> </center>
+                      <center> <h3>Course name: <?= $_SESSION['course_name'] ?></h3> </center>
                       <h3 style="float: auto;"> Choose the user you want to mark</h3>
                       <h3>STEP 2: Choose the USER</h3>
 

@@ -39,6 +39,28 @@ include_once('database.php');
 
 	<style>
 
+
+  .user-admin-menu>h2 {text-align: center;
+  /* Black background with 0.5 opacity */
+  color: Black;}
+
+  .user-admin-menu
+  {
+    align-items: center;text-align: center;
+    background: rgb(0,0,0,0.1); /* Fallback color */
+    background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+    color: #ff7733;
+    padding:3%;
+  }
+    .container-menu {
+    position: relative;
+    width: auto;
+    display: inline-block;
+
+  }
+
+
+
   ul.unstyled, ol.unstyled {
      margin-left: 0;
      list-style: none;
@@ -55,21 +77,86 @@ include_once('database.php');
     overflow: hidden;
 }
 
+        .overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: rgb(0, 0, 0); /* Fallback color */
+         background: rgba(0, 0, 0, 0.7); /* Black background with 0.5 opacity */
+         color: #f1f1f1;
+          width: inherit;
+          height: 30%;
+          -webkit-transition: .3s ease;
+          transition: .3s ease
+          border: 1px dotted black;
+          padding: 1%;
+            display: inline-block;
+            margin: 8px;
+
+        }
+
+        .overlay:hover {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: rgb(0, 0, 0); /* Fallback color */
+         background: rgba(0, 0, 0, 0.9); /* Black background with 0.5 opacity */
+         color: #f1f1f1;
+          width: inherit;
+          height: 30%;
+          -webkit-transition: .3s ease;
+          transition: .3s ease
+          border: 1px dotted black;
+          padding: 1%;
+            display: inline-block;
+        }
+
+
+
+        .container-menu:hover .overlay {
+
+          -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+          transform: scale(1);
+          border: 1px dotted black;
+          padding: 1%;
+          display: inline-block;
+        }
+
+        .text {
+          color: Orange;
+          font-size: 22px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center;
+            display: inline-block;
+        }
+
+
+
 	</style>
 </head>
 <body onLoad="run_first()">
 	<?php include("include/banner.inc") ?>
     <?php include("include/nav.inc") ?>
 
-	
+
     <div class="container-fluid">
-		
-		  
+
+
       <?php include("admin-side-dash.html") ?>
       <div class="row">
-		  <h1 style="font-size: 30Px; margin-left: 35%"> Marking Answers</h1>
-		  
-          <div class="col-md-offset-2 col-md-8">
+
+      <div class="col-md-12">
+        <div class="user-admin-menu">
+          <h2 style="font-size: 30Px;"> Marking Answers</h2>
+
             <?php
 
             $_SESSION['name'] = $_GET['name'];
@@ -85,8 +172,8 @@ include_once('database.php');
                       ";
             					$result = mysqli_query($con,$courses);
                       ?>
-                      <center> <h1>Course name: <?= $_SESSION['course_name'] ?></h1>
-                       <h1>User name: <?= $_SESSION['name'] ?></h1> </center>
+                      <center> <h3>Course name: <?= $_SESSION['course_name'] ?></h3>
+                       <h3>User name: <?= $_SESSION['name'] ?></h3> </center>
 
                       <h3 style="float: auto;"> The tests that must to be marked:</h3>
                       <h3>STEP 3: Choose the TEST</h3>
@@ -101,12 +188,18 @@ include_once('database.php');
 
                             ?>
 
-                            <a href="mark-answers-question.php?test_id=<?=$test_id?>&test_name=<?=htmlentities($test_name)?>" style="text-decoration: none"><button class="button_login" style="vertical-align:middle; display: block; width: 50%; height: 15%; font-size: 20px"><?=$test_name?> </button></a>
+                        
+      <a href="mark-answers-question.php?test_id=<?=$test_id?>&test_name=<?=htmlentities($test_name)?>" style="text-decoration: none">
+       <button class="button_login" style="vertical-align:middle; display: block; width: 50%; height: 15%; font-size: 20px; "><?=$test_name?>
+       </button>
+       </a>
+
 
 
               <?php } ?>
    </div>
  </div>
+</div>
 </div>
 
 

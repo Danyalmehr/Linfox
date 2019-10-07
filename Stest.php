@@ -36,7 +36,34 @@ include_once('database.php');
 	<style>
 	.span3 {
 			margin-right: 4em;
+        color: Black;
 		}
+
+    .user-admin-menu>h2 {text-align: center;
+    /* Black background with 0.5 opacity */
+    color: Black;}
+
+    .user-admin-menu
+    {
+      align-items: center;text-align: center;
+      background: rgb(0,0,0,0.1); /* Fallback color */
+      background: rgba(0, 0, 0, 0.4); /* Black background with 0.5 opacity */
+      padding:3%;
+      color: White;
+    }
+      .container-menu {
+      position: relative;
+      width: auto;
+      display: inline-block;
+
+    }
+    .text1
+    {
+      width: 100%;
+      font-size: 15px;
+      color: black;
+    }
+    .options{font-size: 20px;padding-top: 10px;}
 	</style>
 </head>
 <body onLoad="run_first()">
@@ -47,8 +74,10 @@ include_once('database.php');
     <div class="container-fluid">
       <?php include("user-side-dash.html") ?>
 
-          	<div class="row">
-                <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12">
+        <div class="user-admin-menu">
+
 
   <?php
     $user = $_SESSION["userid"];
@@ -88,9 +117,9 @@ include_once('database.php');
               $_SESSION["datebefore"] = $date_bebore;
 
 
-              echo " <h2>Course name: ".  $_SESSION["coursename"] . "</h2><br>";
-              echo " <h2>Test name: ".  $_SESSION['testname'] . "</h2>";
-              echo " <h4>This is your attempt number:".  $attemptNumber . "</h4>";
+              echo " <h2 style='color:white;'>Course name: ".  $_SESSION["coursename"] . "</h2><br>";
+              echo " <h2 style='color:white;'>Test name: ".  $_SESSION['testname'] . "</h2>";
+              echo " <h4 style='color:white;'>This is your attempt number:".  $attemptNumber . "</h4>";
               //echo " <h4>This is date before :".   $_SESSION["datebefore"] . "</h4>";
 
 
@@ -138,17 +167,16 @@ include_once('database.php');
                       <p><input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[1]?>">&nbsp;<?=$ans_array[1]?></p>
                       <p><input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[2]?>">&nbsp;<?=$ans_array[2]?></p>
                       <p><input required type="radio" name="userans[<?=$que_id?>]" value="<?=$ans_array[3]?>">&nbsp;<?=$ans_array[3]?></p>
-                  </div>
-
+  </div>
 
                       <div style="border-bottom: 1px dotted black; margin: 1em; background-color: black;"></div>
 
                     <?php }
                     else{?>
-                      <div class="">
-                        <p><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></p>
+  <div>
+                      <p><?= $questionNum ?>.&nbsp;<?php echo $row['que']; ?></p>
                       <textarea class="form-control" name="userans[<?=$que_id?>]" rows="5" id="comment"></textarea>
-                    </div>
+  </div>
 
 
 
@@ -176,20 +204,36 @@ include_once('database.php');
 
                    </div>
                </div>
-                </div> </div>
+
+
+
+
+               <?php
+               function get_date()
+               {
+                    date_default_timezone_set("Australia/Brisbane");
+                    $date_after_submit = date("Y-m-d h:i:sa");
+                    echo "$date_after_submit";
+                  }
+
+                ?>
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
 
 	<?php include("include/footer.inc") ?>
 
-
-<?php
-function get_date()
-{
-     date_default_timezone_set("Australia/Brisbane");
-     $date_after_submit = date("Y-m-d h:i:sa");
-     echo "$date_after_submit";
-   }
-
- ?>
 
 
   </body>

@@ -42,6 +42,37 @@ require 'database.php';
 		.results{
 			margin-left: 25em;
 		}
+
+  	.span3 {
+  			margin-right: 4em;
+          color: Black;
+  		}
+
+      .user-admin-menu>h2 {text-align: center;
+      /* Black background with 0.5 opacity */
+      color: Black;}
+
+      .user-admin-menu
+      {
+        align-items: center;text-align: center;
+        background: rgb(0,0,0,0.1); /* Fallback color */
+        background: rgba(0, 0, 0, 0.4); /* Black background with 0.5 opacity */
+        padding:3%;
+        color: White;
+      }
+        .container-menu {
+        position: relative;
+        width: auto;
+        display: inline-block;
+
+      }
+      .text1
+      {
+        width: 100%;
+        font-size: 15px;
+        color: black;
+      }
+      .options{font-size: 20px;padding-top: 10px;}
 	</style>
 </head>
 <body onLoad="run_first()">
@@ -53,9 +84,9 @@ require 'database.php';
     <div class="container-fluid">
       <?php include("user-side-dash.html") ?>
       <div class="row">
-		  <h1 style="font-size: 30Px; margin: auto"> Checking with Correct Answers</h1>
-        <div class="col-md-2"></div>
           <div class="col-md-12" style="margin-top: 2%">
+            <div class="user-admin-menu">
+
 
     <div class="options">
           <center class="result_display">
@@ -65,9 +96,10 @@ require 'database.php';
                 $date_bebore = $_SESSION["datebefore"];
                 $date_bebore1 = strtotime($_SESSION["datebefore"]);
                 $time_taken = $date_after-$date_bebore1;
-                $_SESSION["time_taken"] = $time_taken;
-                echo "<h2>Course name: ".  $_SESSION["coursename"] . "</h2><br>";
-                echo " <h2>Test name: ".  $_SESSION['testname'] . "</h2><br>";
+                $_SESSION["time_taken"] = $time_taken;?>
+                <h2 style="color:white;"> Test result</h2> <br><?php
+                echo "<h3 style='color:white;'>Course name: ".  $_SESSION["coursename"] . "</h3>";
+                echo " <h3 style='color:white;'>Test name: ".  $_SESSION['testname'] . "</h3>";
               //  echo "<h4>Submission date: ". $time_taken. "</h4>";
               ?>
 
@@ -129,12 +161,12 @@ require 'database.php';
 
             <p><?php echo $i ?>.&nbsp;<?=$array4[$x]?></p>
             <?php if ($array2[$x] != $array1[$x]) {?>
-              <p> <span style="background-color: #ff9C9E"><?= $array1[$x]; ?></span> </p>
-              <p> <span style="background-color: #ADFFB4"><?= $array2[$x] ?></span> </p>
+              <p> <span style="background-color: #ff9C9E; color:black;"><?= $array1[$x]; ?></span> </p>
+              <p> <span style="background-color: #ADFFB4;color:black;"><?= $array2[$x] ?></span> </p>
 
           <?php   } else {?>
 
-            <p> <span style="background-color: #ADFFB4"><?= $array1[$x] ?></span> </p>
+            <p> <span style="background-color: #ADFFB4;color:black;"><?= $array1[$x] ?></span> </p>
             <?php $score = $score + 1; ?>
 
             <?php  }?>
@@ -150,24 +182,35 @@ require 'database.php';
 
             <div class="result_display">
 
-            <p style="text-align: left;">Your 'short answer' questions will be marked and seen by you supervisor!!</p>
-            <h3 style="text-align: center;"> Number of questions :<?= $count ?> </h3>
-            <h3 style="text-align: center;"> Number of correct MCQ answers : <?=$score ?> </h3>
-            <h3 style="text-align: center;">Status : <?= $att_status ?> </h3>
+            <h2 style="text-align: center;color:white;">Your 'short answer' questions will be marked and seen by your supervisor!!</h2>
+            <h3 style="text-align: center;color:white;"> Number of questions :<?= $count ?> </h3>
+            <h3 style="text-align: center;color:white;"> Number of correct MCQ answers : <?=$score ?> </h3>
+            <h3 style="text-align: center;color:white;">Status : <?= $att_status ?> </h3>
 
         </div>
 
         <?php  mysqli_free_result($result);?>
 
             <!--<input type="button" class="button" name="back" style="vertical-align:middle" value="Take the test again" onclick="history.go(-1)">-->
-            <a href="dashboard.php"><button type="button" class="btn btn-danger"   style=" text-decoration: underline;  display: block; max-width: 300px; margin: auto;"> back to Dashboard </button> </a>
+          <!--  <a href="dashboard.php"><button type="button" class="btn btn-danger"   style=" text-decoration: underline;  display: block; max-width: 300px; margin: auto;"> back to Dashboard </button> </a> -->
 
 
 
 			</div>
       	</div>
           <div class="col-md-2"></div>
-    </div>  </div>
+    </div>
+
+
+
+
+
+
+  </div>
+  </div>
+
+
+  </div>
 
 
 

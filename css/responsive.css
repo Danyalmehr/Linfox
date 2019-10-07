@@ -5,6 +5,7 @@
 body {
 	background-image:url(https://cdn.wallpapersafari.com/6/25/kYMbd6.jpg);
 	width:100%;
+	height: auto;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -126,15 +127,14 @@ p {
 
 /* For mobile phones: */
 
-	.login_header {background-color: red;}
-	.login_header h1{text-align:center;}
+	.login_header h1{text-align:center;color: white;}
 	.login{ margin:2%;position: relative;display: flex;justify-content: center;align-content:center; padding:4%;  border:1px solid black;
 	color:black; border-radius:4px; width:100%;display: inline-block;}
 
 	.button_login {
 	  display: inline-block;
-	  border-radius: 4px;
-	  background-color: #07D14A;
+	  border-radius: 4px;	background: rgb(0,0,0,0.1); /* Fallback color */
+			background: rgba(0, 0, 0, 0.5);
 	  border: none;
 		position: relative;
 		left: 29%;
@@ -150,7 +150,8 @@ p {
 	.button_login:hover {
 	  display: inline-block;
 	  border-radius: 4px;
-	  background-color: #1C8F42;
+		background: rgb(0,0,0,0.1); /* Fallback color */
+ 		background: rgba(0, 0, 0, 0.5);
 	  border: none;
 		position: relative;
 		left: 24%;
@@ -200,14 +201,14 @@ p {
 
 
 	.login_header {background-color: red;}
-	.login_header h1{text-align:center;}
+	.login_header h1{text-align:center;color: black;}
 	.login{ margin:4%;position: relative;display: flex;justify-content: center;align-content:center; padding:4%;  border:1px solid black;
 	color:black; border-radius:4px; width:72%;left:14%;display: inline-block;}
 
 	.button_login {
 	  display: inline-block;
-	  border-radius: 4px;
-	  background-color: #07D14A;
+	  border-radius: 4px;	background: rgb(0,0,0,0.1); /* Fallback color */
+			background: rgba(0, 0, 0, 0.1);
 	  border: none;
 		position: relative;
 		left: 24%;
@@ -219,11 +220,15 @@ p {
 	  transition: all 0.5s;
 	  cursor: pointer;
 
+
+
+
 	}
 	.button_login:hover {
 	  display: inline-block;
 	  border-radius: 4px;
-	  background-color: #1C8F42;
+		background: rgb(0,0,0,0.1); /* Fallback color */
+ 		background: rgba(0, 0, 0, 0.5);
 	  border: none;
 		position: relative;
 		left: 24%;
@@ -272,14 +277,15 @@ p {
 @media only screen and (min-width: 769px) {
   /* For desktop: */
   .login_header {background-color: red;}
-	.login_header h1{text-align:center;}
+	.login_header h1{text-align:center;color: black;}
 	.login{ margin:4%;position: relative;display: flex;justify-content: center;align-content:center; padding:4%; border:1px solid black;
 	color:black; border-radius:4px; width:45%;left:26%;}
 
 	.button_login {
 	  display: inline-block;
 	  border-radius: 4px;
-	  background-color: #07D14A;
+		background: rgb(0,0,0,0.1); /* Fallback color */
+		background: rgba(0, 0, 0, 0.1);
 	  border: none;
 		position: relative;
 
@@ -292,20 +298,20 @@ p {
 	  cursor: pointer;
 
 	}
-	.button_login:hover {
-	  display: inline-block;
-	  border-radius: 4px;
-	  background-color: #1C8F42;
-	  border: none;
-		position: relative;
+	.button_login:hover { display: inline-block;
+	 border-radius: 4px;
+	 background: rgb(0,0,0,0.1); /* Fallback color */
+	 background: rgba(0, 0, 0, 0.5);
+	 border: none;
+	 position: relative;
 
-	  color: #FFFFFF;
-	  text-align: center;
-	  font-size: 1em;
-	  padding: 10px;
-	  width: 7em;
-	  transition: all 0.5s;
-	  cursor: pointer;
+	 color: #FFFFFF;
+	 text-align: center;
+	 font-size: 1em;
+	 padding: 10px;
+	 width: 7em;
+	 transition: all 0.5s;
+	 cursor: pointer;
 
 	}
 
@@ -427,7 +433,7 @@ p {
 
 				opacity: 0.9;
 				transition: .5s ease;
-			
+
 
 			}
 

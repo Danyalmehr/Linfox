@@ -55,6 +55,27 @@ include_once('database.php');
     overflow: hidden;
 }
 
+.user-admin-menu>h2 {text-align: center;
+/* Black background with 0.5 opacity */
+color: Black;}
+
+.user-admin-menu
+{
+  align-items: center;text-align: center;
+  background: rgb(0,0,0,0.1); /* Fallback color */
+  background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+  color: #ff7733;
+  padding:3%;
+}
+  .container-menu {
+  position: relative;
+  width: auto;
+  display: inline-block;
+
+}
+
+
+
 	</style>
 </head>
 <body onLoad="run_first()">
@@ -62,12 +83,13 @@ include_once('database.php');
     <?php include("include/nav.inc") ?>
 
     <div class="container-fluid">
-		
-		
+
+
       <?php include("admin-side-dash.html") ?>
       <div class="row">
-		  <h1 style="font-size: 30Px; margin-left: 35%"> Marking Answers</h1>
-          <div class="col-md-offset-2 col-md-8">
+        <div class="col-md-12">
+          <div class="user-admin-menu">
+		  <h2 style="font-size: 30Px;"> Marking Answers</h2>
             <?php
 
             $_SESSION['test_name'] = $_GET['test_name'];
@@ -90,9 +112,9 @@ include_once('database.php');
 
                       ?>
                     <center>
-                      <h1>Course name: <?= $_SESSION['course_name'] ?></h1>
-                      <h1>Test name: <?= $_SESSION['test_name'] ?></h1>
-                      <h1>User name: <?= $_SESSION['name'] ?></h1>
+                      <h3>Course name: <?= $_SESSION['course_name'] ?></h3>
+                      <h3>Test name: <?= $_SESSION['test_name'] ?></h1>
+                      <h3>User name: <?= $_SESSION['name'] ?></h3>
                     </center>
                     <h3>Choose the question you want to mark <?= $_SESSION['name'] ?> answer:</h3>
 
@@ -113,6 +135,7 @@ include_once('database.php');
              </div>
            </div>
           </div>
+            </div>
 
 
 

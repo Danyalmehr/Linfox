@@ -200,9 +200,10 @@ color: Black;}
     <div class="container-fluid">
       <?php include("admin-side-dash.html") ?>
       <div class="row">
-		<h1 style="font-size: 40Px; margin-bottom: 1em; margin: auto"> Creating Questions</h1>
-        <div class="col-md-12" style="margin-top: 3em;">
+        <div class="col-md-12">
           <div class="user-admin-menu">
+            <h2 style="font-size:; margin-bottom: 1em; margin: auto"> Creating Questions</h2>
+
             <?php
 
             $courses = "SELECT *
@@ -210,8 +211,8 @@ color: Black;}
                       ";
             					$result = mysqli_query($con,$courses);
                       ?>
-                      <h1 style="float: auto;"> To create questions you need to choose your course first</h1>
-                      <h3>STEP 1: Choose your COURSE</h3>
+                      <h2 style="float: auto;"> To create questions you need to choose your course first</h2>
+                      <h3 >STEP 1: Choose your COURSE</h3>
                       <h4>If you have not created your desired course yet, you MUST create your <a href="create-course.php"> <button class="btn btn-danger btn-md" style="float: auto; .btn"> <span>  course </span> </button></a> first</h4>
 
 

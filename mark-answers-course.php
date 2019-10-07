@@ -293,10 +293,11 @@ include_once('database.php');
     <div class="container-fluid">
       <?php include("admin-side-dash.html") ?>
       <div class="row">
-		  
-		  <h1 style="font-size: 30Px; margin-bottom: 1em; margin: auto"> Marking Courses</h1>
-          <div class="col-md-12" style="margin-top: 2%">
+
+          <div class="col-md-12">
               <div class="user-admin-menu">
+                <h2> Marking Courses</h2>
+
                     <?php
 
             $courses = "SELECT *
@@ -304,7 +305,7 @@ include_once('database.php');
                       ";
             					$result = mysqli_query($con,$courses);
                       ?>
-                      <h1 style="float: auto;"> To mark the "Short answer" questions choose the course</h1>
+                      <h2 style="float: auto;"> To mark the "Short answer" questions choose the course</h2>
                       <h3>STEP 1: Choose your COURSE</h3>
 
 
