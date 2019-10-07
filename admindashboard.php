@@ -318,7 +318,7 @@ require 'database.php';
     <div class="container-fluid">
       <?php include("admin-side-dash.html") ?>
       <?php
-      $fetchqry1 = "SELECT count(ans_id) AS countOfAnsId
+      $fetchqry1 = "SELECT count(distinct useranswer.que_id) AS countOfAnsId
                    FROM useranswer
                    INNER JOIN question ON question.que_id = useranswer.que_id
                    WHERE ans_status IS NULL and que_type= 'shortans'
