@@ -192,21 +192,17 @@ color: Black;}
                             $course_image_name=$row['course_image_name'];
 ?>
 
-            <form class="" action="edit-test.php" method="post">
-              <input type="hidden" name="course_id" value="<?=$course_id?>"><label for=""><?php $course_id?></label>
-              <input type="hidden" name="course_name" value="<?=$course_name?>"><label for=""><?php $course_name?></label>
 
 
-              <button name="selectedcourse" style="border:transparent;">
-              <div class="container-menu">
-              <?php echo " <img class='image' id='btnfile' src='images/".  $course_image_name."''>";?>
-              <div class="overlay">
-              <div class="text" name="selectedcourse"><?= $course_name ?></div>
-              </div>
-              </div>
-              </button>
 
-            </form>
+                <div class="container-menu">
+                <a href="edit-test.php?course_id=<?=$course_id?>&course_name=<?= htmlentities($course_name) ?>">
+                <?php echo " <img class='image' id='btnfile' src='images/".  $course_image_name."''>";?>
+                <div class="overlay">
+                <div class="text"><?= $course_name ?></div>
+                </div>
+                </a>
+                  </div>
 
               <?php } ?>
    </div>

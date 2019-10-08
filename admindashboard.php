@@ -316,7 +316,7 @@ require 'database.php';
       $row2=mysqli_fetch_array($result2);
 
 
-      $fetchqry3 = "SELECT count(ans_status) AS countOfansstatus
+      $fetchqry3 = "SELECT count(ans_status) AS countOfansstatus, count(Distinct user_id) AS countOfUsersMarked
                    FROM useranswer
                    WHERE ans_status IS NOT NULL
                     ";
@@ -327,7 +327,9 @@ require 'database.php';
       $count_test = $row2['countOfTestId'];
       $count_user = $row2['countOfUserId'];
 
+      $count_Of_users_marked = $row3['countOfUsersMarked'];
         $count_Of_ans_status = $row3['countOfansstatus'];
+        $unmarked_users = $count_user - $count_Of_users_marked;
        ?>
 
        <div class="row">
@@ -354,7 +356,7 @@ require 'database.php';
 
           <div class="col-sm-3 colum2-user-process">
             <div class=" user-process">
-            <?= $count_user ?>
+            <?= $unmarked_users ?>
             </div>
               <p class="text1">  Number of unmarked USERS  </p>
           </div>
@@ -363,7 +365,7 @@ require 'database.php';
             <div class=" user-process">
             <?= $count_Of_ans_status ?>
             </div>
-            <p class="text1">  Number of marked USERS</p>
+            <p class="text1">  Number of marked ANSWERS</p>
           </div>
 </center>
         </div>

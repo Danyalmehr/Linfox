@@ -149,9 +149,9 @@ color: Black;}
             <div class="user-admin-menu">
 
                           <h1>Edit Test Details</h1>
-                        <?php   if(isset($_POST['selectedcourse'])){
-                            $id = $_POST['course_id'];
-                            $coursename = $_POST['course_name'];
+                        <?php
+                            $id = $_GET['course_id'];
+                            $coursename = $_GET['course_name'];
                             $test = "SELECT *
                                       FROM test
                                       WHERE course_id = $id
@@ -163,7 +163,7 @@ color: Black;}
 
                                       ?>
 
-          <h1>Edit Tests for <?= $_POST['course_name'] ?> </h1>
+          <h1>Edit Tests for <?= $coursename ?> </h1>
           <h4 style="float: auto;">If your desired TEST is not here you MUST create your TEST first at <a href="create-test.php"> <button class="btn btn-danger btn-md" style="float: auto; .btn"> <span>  TEST </span> </button></a></h4>
 
 
@@ -214,7 +214,7 @@ color: Black;}
                         				echo "</form></tr>";
                               }
                             }
-                        };
+                        ;
                 ?>
                       </table>
                         </div>
