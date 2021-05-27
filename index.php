@@ -1,4 +1,4 @@
-<h2>hello world</h2>
+<h2>hello boy</h2>
 
 <?php
 //must appear BEFORE the <html> tag
