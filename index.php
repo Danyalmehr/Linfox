@@ -1,6 +1,6 @@
 <?php
 //must appear BEFORE the <html> tag
-session_start();
+/*session_start();
 include_once('include/database.php');
 
 //make the database connection
@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = 'Your Login Name or Password is invalid';
     }
 }
-?>
+?>*/
 
 
 
