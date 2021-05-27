@@ -1,3 +1,5 @@
+<h2>hello world</h2>
+
 <?php
 //must appear BEFORE the <html> tag
 session_start();
